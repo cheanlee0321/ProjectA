@@ -9,7 +9,7 @@ import { Suspense } from "react";
 
 export default async function DashboardPage() {
   const keys = await getUserApiKeys();
-  const data = await fetchMarketData(keys);
+  const data = await fetchMarketData(keys.finmind);
 
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center py-10 px-4 sm:px-6 relative overflow-hidden">
