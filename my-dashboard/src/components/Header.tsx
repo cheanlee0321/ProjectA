@@ -12,7 +12,7 @@ export default async function Header() {
       <div className="container mx-auto flex h-14 items-center px-4 justify-between">
         <div className="flex items-center">
           <Link href="/" className="font-bold flex items-center mr-6 text-lg">
-            <span>📈 股市儀表板</span>
+            <span>📈 投資決策中心</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-blue-500">
@@ -26,7 +26,7 @@ export default async function Header() {
             <ThemeToggle />
           </nav>
         </div>
-        
+
         <div className="flex items-center space-x-4">
           {user ? (
             <form action={logout}>

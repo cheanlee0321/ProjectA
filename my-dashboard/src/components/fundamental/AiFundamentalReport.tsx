@@ -14,6 +14,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [reportDate, setReportDate] = useState<string | null>(null);
   const hasFetched = useRef(false);
 
   useEffect(() => {
@@ -46,6 +47,9 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
           const json = await response.json();
           if (json.cached) {
             setContent(json.text);
+            if (json.updatedAt) {
+              setReportDate(new Date(json.updatedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }));
+            }
             setLoading(false);
             return;
           }
@@ -65,6 +69,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
           if (value) {
             if (isFirstChunk) {
               setLoading(false); // 收到第一個字節就取消 Loading 狀態
+              setReportDate(new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })); // 設定當下產生的時間
               isFirstChunk = false;
             }
             setContent((prev) => prev + decoder.decode(value, { stream: true }));
@@ -92,12 +97,17 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
   return (
     <div className="bg-foreground/5 border border-foreground/10 p-6 md:p-8 rounded-2xl h-full shadow-inner relative overflow-hidden flex flex-col">
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-foreground/10">
-        <div className="flex items-center gap-4">
-          <h3 className="text-xl font-bold text-foreground flex items-center">
-            <span className="text-2xl mr-2">🤖</span> Rule #1 AI 深度分析
-            <span className="ml-3 text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
+        <div className="flex flex-wrap items-center gap-4">
+          <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
+            <span className="text-2xl">🤖</span> Rule #1 AI 深度分析
+            <span className="text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
               {geminiModel || 'gemini-2.5-flash'}
             </span>
+            {reportDate && (
+              <span className="text-xs font-medium text-foreground/50 bg-foreground/5 px-2 py-0.5 rounded-full border border-foreground/10">
+                報告產出時間: {reportDate}
+              </span>
+            )}
           </h3>
           <span className="text-xs text-foreground/40 px-2 py-1 rounded border border-foreground/10 hidden sm:inline-block">
             ⚠️ AI 資料可能有誤，請審慎參考，詳實驗證

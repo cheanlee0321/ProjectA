@@ -20,9 +20,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: '未設定 Gemini API Key' }, { status: 400 });
     }
 
-    // 1. 檢查 Supabase 是否有 30 天內的快取
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    // 1. 檢查 Supabase 是否有 7 天內的快取 (1週)
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
     const { data: cachedReport } = await supabase
       .from('ai_reports')
@@ -31,9 +31,13 @@ export async function POST(req: Request) {
       .eq('user_id', user.id)
       .maybeSingle();
 
-    if (cachedReport && new Date(cachedReport.updated_at) > thirtyDaysAgo) {
+    if (cachedReport && new Date(cachedReport.updated_at) > sevenDaysAgo) {
       // 若有快取，直接以字串形式一次回傳 (不需串流)
-      return NextResponse.json({ cached: true, text: cachedReport.report_content });
+      return NextResponse.json({ 
+        cached: true, 
+        text: cachedReport.report_content,
+        updatedAt: cachedReport.updated_at
+      });
     }
 
     // 2. 準備 Gemini 模型

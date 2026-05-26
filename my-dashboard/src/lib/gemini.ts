@@ -54,9 +54,24 @@ export async function generateMarketSummary(data: MarketData, apiKey: string) {
   }
 }
 
+// Use globalThis to persist cache across hot-reloads in development
+const globalCache = globalThis as unknown as {
+  geminiSummaryCache?: {
+    [key: string]: {
+      text: string;
+      date: string;
+      timestamp: number;
+    }
+  }
+};
+
+if (!globalCache.geminiSummaryCache) {
+  globalCache.geminiSummaryCache = {};
+}
+
 // 透過傳入金鑰作為參數，Next.js 的 unstable_cache 會自動將參數進行雜湊 (Hash) 並加入快取鍵值中。
 // 這意味著不同金鑰會產生獨立的快取，確保使用者之間的資料完全隔離。
-export const getCachedMarketSummary = unstable_cache(
+const generateAndCacheSummary = unstable_cache(
   async (geminiApiKey: string, finmindToken: string) => {
     if (!geminiApiKey) {
       return { text: "請先至設定頁面填寫您的 Google Gemini API Key 以解鎖 AI 市場解讀功能。", date: "" };
@@ -79,4 +94,36 @@ export const getCachedMarketSummary = unstable_cache(
   ['gemini-market-summary-daily-dynamic'],
   { revalidate: 86400 } // Cache for 24 hours
 );
+
+export async function getCachedMarketSummary(geminiApiKey: string, finmindToken: string) {
+  const cacheKey = `${geminiApiKey}-${finmindToken}`;
+  const now = Date.now();
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+  // Check in-memory cache first (prevents regeneration on every entry in dev mode)
+  if (
+    globalCache.geminiSummaryCache && 
+    globalCache.geminiSummaryCache[cacheKey] && 
+    (now - globalCache.geminiSummaryCache[cacheKey].timestamp < ONE_DAY_MS)
+  ) {
+    return {
+      text: globalCache.geminiSummaryCache[cacheKey].text,
+      date: globalCache.geminiSummaryCache[cacheKey].date
+    };
+  }
+
+  // Fallback to unstable_cache (for production / Vercel Data Cache)
+  const result = await generateAndCacheSummary(geminiApiKey, finmindToken);
+
+  // Save to in-memory cache
+  if (globalCache.geminiSummaryCache) {
+    globalCache.geminiSummaryCache[cacheKey] = {
+      text: result.text,
+      date: result.date,
+      timestamp: now
+    };
+  }
+
+  return result;
+}
 
