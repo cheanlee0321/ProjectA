@@ -225,20 +225,20 @@ export async function fetchMarketData(): Promise<MarketData> {
     else if (dxyValue > 100) { dxyStatus = 'yellow'; dxyText = '美元偏強'; }
 
     return {
-      cape: { value: cape.current ?? 'N/A', status: cape.current > 35 ? 'red' : (cape.current > 25 ? 'yellow' : 'green'), text: cape.current > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
+      cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
       breadth: { value: breadthNumber, status: bStatus, text: bText, history: breadthHistory },
       buffett: { value: buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A', status: buffettStatus, text: buffettStatus==='red'?'極端高估':'估值合理', history: buffettHistory },
-      sahm: { value: sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A', status: sahm.current > 0.5 ? 'red' : (sahm.current > 0.3 ? 'yellow' : 'green'), text: sahm.current > 0.5 ? '實質衰退' : '無衰退跡象', history: sahm.history },
+      sahm: { value: sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A', status: (sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green'), text: (sahm.current ?? 0) > 0.5 ? '實質衰退' : '無衰退跡象', history: sahm.history },
       copperGold: { value: cgNumber, status: cgStatus, text: cgText, history: cgHistory },
-      sloos: { value: sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A', status: sloos.current > 40 ? 'red' : (sloos.current > 20 ? 'yellow' : 'green'), text: sloos.current > 40 ? '流動性枯竭' : '資金寬鬆', history: sloos.history },
-      yieldCurve: { value: yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A', status: yieldCurve.current < 0 ? 'yellow' : (yieldCurve.current < 0.5 && yieldCurve.current > 0 ? 'red' : 'green'), text: yieldCurve.current < 0 ? '曲線倒掛' : '正常', history: yieldCurve.history },
+      sloos: { value: sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A', status: (sloos.current ?? 0) > 40 ? 'red' : ((sloos.current ?? 0) > 20 ? 'yellow' : 'green'), text: (sloos.current ?? 0) > 40 ? '流動性枯竭' : '資金寬鬆', history: sloos.history },
+      yieldCurve: { value: yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A', status: (yieldCurve.current ?? 0) < 0 ? 'yellow' : ((yieldCurve.current ?? 0) < 0.5 && (yieldCurve.current ?? 0) > 0 ? 'red' : 'green'), text: (yieldCurve.current ?? 0) < 0 ? '曲線倒掛' : '正常', history: yieldCurve.history },
       m2: { value: m2YoyNumber.toFixed(2)+'%', status: m2Status, text: m2Text, history: m2History },
       dxy: { value: dxyValue.toFixed(2), status: dxyStatus, text: dxyText, history: dxy.history },
-      vix: { value: vix.current ? vix.current.toFixed(2) : 'N/A', status: vix.current > 20 ? 'red' : (vix.current > 15 ? 'yellow' : 'green'), text: vix.current > 20 ? '恐慌拋售' : '平穩安全', history: vix.history },
-      skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: skew.current > 140 ? 'red' : (skew.current > 130 ? 'yellow' : 'green'), text: skew.current > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
-      creditSpreads: { value: spread.current ? spread.current.toFixed(2)+'%' : 'N/A', status: spread.current > 6 ? 'red' : (spread.current > 4.5 ? 'yellow' : 'green'), text: spread.current > 6 ? '違約恐慌' : '資金充裕', history: spread.history },
-      fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: fg.current > 75 ? 'red' : (fg.current < 25 ? 'green' : 'yellow'), text: fg.current > 75 ? '極度貪婪' : '中立', history: fg.history },
-      marginDebt: { value: margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', status: margin.current/1000 > 800 ? 'red' : (margin.current/1000 > 650 ? 'yellow' : 'green'), text: margin.current/1000 > 800 ? '天量槓桿' : '常規水準', history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
+      vix: { value: vix.current ? vix.current.toFixed(2) : 'N/A', status: (vix.current ?? 0) > 20 ? 'red' : ((vix.current ?? 0) > 15 ? 'yellow' : 'green'), text: (vix.current ?? 0) > 20 ? '恐慌拋售' : '平穩安全', history: vix.history },
+      skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: (skew.current ?? 0) > 140 ? 'red' : ((skew.current ?? 0) > 130 ? 'yellow' : 'green'), text: (skew.current ?? 0) > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
+      creditSpreads: { value: spread.current ? spread.current.toFixed(2)+'%' : 'N/A', status: (spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green'), text: (spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕', history: spread.history },
+      fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
+      marginDebt: { value: margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', status: (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), text: (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準', history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { value: nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
     };
   } catch (error) {
