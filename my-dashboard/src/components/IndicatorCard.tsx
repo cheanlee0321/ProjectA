@@ -95,8 +95,8 @@ export default function IndicatorCard({
                 contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '12px' }}
                 itemStyle={{ color: getLineColor(), fontWeight: 'bold' }}
                 labelStyle={{ color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}
-                formatter={(value: number) => [value, '數值']}
-                labelFormatter={(label: string) => {
+                formatter={(value: any) => [value, '數值']}
+                labelFormatter={(label: any) => {
                   if (!label) return '日期: 未知';
                   const parts = label.split('-');
                   return parts.length >= 2 ? `日期: ${parts[0]}.${parts[1]}` : `日期: ${label}`;
