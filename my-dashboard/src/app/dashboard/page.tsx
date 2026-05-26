@@ -174,6 +174,37 @@ export default async function Home() {
           currentValue={data.marginDebt.value} statusText={data.marginDebt.text} status={data.marginDebt.status} history={data.marginDebt.history}
         />
       </div>
+
+      {/* --- Section 4: 台灣股市指標 --- */}
+      <SectionHeader title="台灣股市指標" emoji="🇹🇼" statuses={[data.taiwanBusinessIndicator.status, data.taiwanMargin.status]} />
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10 mb-20">
+        <a href="https://index.ndc.gov.tw/n/zh_tw/lightscore#/" target="_blank" rel="noopener noreferrer" className="block h-full">
+          <div className="glass-panel rounded-2xl p-6 flex flex-col justify-between transition-transform hover:scale-[1.02] hover:border-foreground/20 duration-300 relative overflow-hidden group h-full">
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-2 relative z-20">
+                <h3 className="text-lg font-semibold text-foreground/90 flex items-center gap-2">
+                  台灣-景氣對策信號
+                  <svg className="w-4 h-4 text-foreground/50 group-hover:text-foreground/80 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </h3>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 mb-2 z-10">
+              <div className="text-2xl font-bold tracking-tight text-foreground/80 group-hover:text-foreground transition-colors">前往國發會網站查詢 ➔</div>
+              <div className="text-sm font-medium text-foreground/50">點擊查看最新景氣燈號</div>
+            </div>
+            <div className="h-16 w-full mt-auto relative -mx-2 opacity-80 group-hover:opacity-100 transition-opacity z-10 flex items-end ml-2 pb-1">
+              <span className="text-xs text-foreground/30">資料來源：國家發展委員會</span>
+            </div>
+          </div>
+        </a>
+        <IndicatorCard
+          title="台灣-上市融資餘額"
+          description="衡量台股散戶槓桿程度。水位於高檔 (如>3000億) 或急速飆高時，籌碼凌亂且斷頭風險大增 (FinMind 即時)。"
+          currentValue={data.taiwanMargin.value} statusText={data.taiwanMargin.text} status={data.taiwanMargin.status} history={data.taiwanMargin.history}
+        />
+      </div>
     </main>
   );
 }

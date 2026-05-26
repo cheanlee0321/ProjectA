@@ -28,6 +28,9 @@ export interface MarketData {
   fearGreed: IndicatorData;
   marginDebt: IndicatorData;
   nfci: IndicatorData; // 新增
+  // 台灣股市指標
+  taiwanBusinessIndicator: IndicatorData;
+  taiwanMargin: IndicatorData;
 }
 
 const FRED_API_KEY = process.env.FRED_API_KEY || '';
@@ -123,9 +126,42 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
   return { current: null, history: [] };
 }
 
+
+
+async function fetchTaiwanMargin(): Promise<{current: number | null, history: {date: string, value: number}[]}> {
+  try {
+    const token = process.env.FINMIND_TOKEN || '';
+    const d = new Date();
+    d.setMonth(d.getMonth() - 6);
+    const startDate = d.toISOString().split('T')[0];
+    const res = await fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockTotalMarginPurchaseShortSale&start_date=${startDate}&token=${token}`, { next: { revalidate: 86400 } });
+    const data = await res.json();
+    if (data.data && data.data.length > 0) {
+      // Finmind returns MarginPurchase and MarginPurchaseMoney separately sometimes, we want MarginPurchaseMoney TodayBalance if available, or just MarginPurchase TodayBalance
+      const purchaseData = data.data.filter((d: any) => d.name === 'MarginPurchaseMoney' || d.name === 'MarginPurchase');
+      const history = purchaseData.map((d: any) => ({
+        date: d.date,
+        value: d.TodayBalance
+      }));
+      // group by date and take the max value to prefer MarginPurchaseMoney (which is in NTD, usually very large). Actually MarginPurchaseMoney is in dollars, MarginPurchase is in shares.
+      // Let's specifically filter MarginPurchaseMoney if it exists.
+      const moneyData = purchaseData.filter((d: any) => d.name === 'MarginPurchaseMoney');
+      const finalData = moneyData.length > 0 ? moneyData : purchaseData;
+      
+      const parsedHistory = finalData.map((d: any) => ({
+        date: d.date,
+        value: d.TodayBalance
+      }));
+      const current = parsedHistory[parsedHistory.length - 1].value;
+      return { current, history: parsedHistory };
+    }
+  } catch (e) {}
+  return { current: null, history: [] };
+}
+
 export async function fetchMarketData(): Promise<MarketData> {
   try {
-    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci] = await Promise.all([
+    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin] = await Promise.all([
       fetchYahooChart('^VIX', '1wk'),
       fetchYahooChart('^SKEW', '1wk'),
       fetchYahooChart('SPY', '1wk'),
@@ -143,7 +179,8 @@ export async function fetchMarketData(): Promise<MarketData> {
       fetchFearAndGreed(),
       fetchFredSeries('BOGZ1FL663067003Q'),
       fetchFredSeries('M2SL'), // 新增 M2
-      fetchFredSeries('NFCI')  // 新增 NFCI
+      fetchFredSeries('NFCI'),  // 新增 NFCI
+      fetchTaiwanMargin()
     ]);
 
     // 計算市場廣度歷史 (RSP / SPY)
@@ -229,6 +266,23 @@ export async function fetchMarketData(): Promise<MarketData> {
     if (dxyValue > 105) { dxyStatus = 'red'; dxyText = '強美元 (抽乾流動性)'; }
     else if (dxyValue > 100) { dxyStatus = 'yellow'; dxyText = '美元偏強'; }
 
+    // Taiwan Margin
+    let twMStatus: 'red'|'yellow'|'green' = 'green';
+    let twMText = '籌碼穩定';
+    let twMValueStr = 'N/A';
+    if (twMargin.current !== null) {
+      // if it's MarginPurchaseMoney, it's in NTD. e.g. 300,000,000,000 = 3000億
+      const isMoney = twMargin.current > 10000000; 
+      if (isMoney) {
+        const inBillion = twMargin.current / 100000000;
+        twMValueStr = `${inBillion.toFixed(0)}億`;
+        if (inBillion > 3000) { twMStatus = 'red'; twMText = '融資過熱(>3000億)'; }
+        else if (inBillion > 2500) { twMStatus = 'yellow'; twMText = '融資偏高'; }
+      } else {
+        twMValueStr = twMargin.current.toString() + '張';
+      }
+    }
+
     return {
       cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
       breadth: { value: breadthNumber, status: bStatus, text: bText, history: breadthHistory },
@@ -245,11 +299,13 @@ export async function fetchMarketData(): Promise<MarketData> {
       fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
       marginDebt: { value: margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', status: (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), text: (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準', history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { value: nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
+      taiwanBusinessIndicator: { value: 'N/A', status: 'loading', text: '', history: [] }, // 已改為純連結
+      taiwanMargin: { value: twMValueStr, status: twMStatus, text: twMText, history: twMargin.history }
     };
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj };
+    return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanMargin: errObj };
   }
 }
 
