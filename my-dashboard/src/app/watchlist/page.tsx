@@ -1,44 +1,48 @@
 export const dynamic = 'force-dynamic';
-import { getUserWatchlist, toggleWatchlist } from '@/app/actions/watchlist'
-import { redirect } from 'next/navigation'
-import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import YahooFinance from 'yahoo-finance2'
-
-const yahooFinance = new YahooFinance();
-
-export const revalidate = 60 // Revalidate quotes every 60 seconds
+import Link from 'next/link'
+import yahooFinance from 'yahoo-finance2'
 
 export default async function WatchlistPage() {
   const supabase = await createClient()
+  
   const { data: { user } } = await supabase.auth.getUser()
-
+  
   if (!user) {
-    redirect('/login')
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 text-center">
+        <h1 className="text-2xl font-bold text-foreground mb-4">請先登入</h1>
+        <p className="text-foreground/60 mb-8">登入後即可管理您的專屬股票追蹤清單。</p>
+        <Link href="/" className="px-6 py-3 rounded-full font-bold transition-all shadow-lg bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 border border-indigo-500/20">
+          返回首頁
+        </Link>
+      </div>
+    )
   }
 
-  const watchlist = await getUserWatchlist()
+  const { data: watchlistData } = await supabase
+    .from('watchlists')
+    .select('symbols')
+    .eq('user_id', user.id)
+    .single()
+
+  const rawSymbols = watchlistData?.symbols || []
   
-  let quotes: any[] = []
-  if (watchlist.length > 0) {
+  let quotes = []
+  if (rawSymbols.length > 0) {
     try {
-      const symbols = watchlist.map(w => w.symbol)
-      const res = await yahooFinance.quote(symbols)
+      const symbolsToFetch = rawSymbols.map((item: any) => item.symbol)
+      const res = await yahooFinance.quote(symbolsToFetch)
       quotes = Array.isArray(res) ? res : [res]
-    } catch (e) {
-      console.error('Error fetching watchlist quotes:', e)
+    } catch (err) {
+      console.error('Failed to fetch quotes:', err)
     }
   }
 
-  const data = watchlist.map(item => {
-    // Yahoo Finance sometimes returns symbols with different suffixes (e.g. .TW vs .TWO), so we match smartly
-    const exactMatch = quotes.find(q => q.symbol === item.symbol)
-    const fuzzyMatch = !exactMatch ? quotes.find(q => q.symbol.split('.')[0] === item.symbol.split('.')[0]) : null
-    const quote = exactMatch || fuzzyMatch
-
+  const enhancedList = rawSymbols.map((item: any) => {
+    const quote = quotes.find((q: any) => q.symbol === item.symbol)
     return {
-      symbol: item.symbol,
-      addedAt: new Date(item.created_at).toLocaleDateString('zh-TW'),
+      ...item,
       price: quote?.regularMarketPrice || null,
       change: quote?.regularMarketChange || null,
       changePercent: quote?.regularMarketChangePercent || null,
@@ -47,83 +51,71 @@ export default async function WatchlistPage() {
   })
 
   return (
-    <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <main className="min-h-screen bg-background text-foreground flex flex-col items-center py-10 px-4 sm:px-6 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 -left-1/4 w-3/4 h-[600px] bg-rose-500/5 rounded-full blur-[150px] -z-10 animate-pulse-slow"></div>
 
-      <div className="z-10 w-full max-w-7xl mx-auto relative">
-        <div className="mb-12 flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground flex items-center gap-4">
-              <span className="text-5xl">�?/span> ?��?追蹤清單
-            </h1>
-            <p className="text-foreground/60 mt-4 text-lg">
-              管�??��??�趣?�股票。即?�報?�由 Yahoo Finance ?��???            </p>
-          </div>
-          <Link href="/" className="text-foreground/50 hover:text-foreground transition-colors flex items-center group bg-foreground/5 px-4 py-2 rounded-full border border-foreground/10 hover:border-foreground/20">
-            返�?首�?
-          </Link>
+      <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-center mb-12 z-10 gap-6">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter flex items-center">
+            <span className="text-5xl mr-4">⭐</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-rose-500">
+              我的追蹤清單
+            </span>
+          </h1>
+          <p className="text-foreground/60 text-lg font-medium tracking-wide">
+            管理您感興趣的股票。即時報價由 Yahoo Finance 提供。
+          </p>
         </div>
+        <Link href="/" className="px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 flex items-center whitespace-nowrap">
+          ← 返回首頁
+        </Link>
+      </div>
 
-        {data.length === 0 ? (
-          <div className="glass-panel p-16 rounded-3xl text-center flex flex-col items-center justify-center border border-dashed border-foreground/20">
-            <div className="text-6xl mb-6 opacity-50">?��</div>
-            <h2 className="text-2xl font-bold text-foreground mb-4">清單空空如�?</h2>
-            <p className="text-foreground/60 mb-8 max-w-md">
-              ?��?沒�?追蹤任�??�票?��?往?�個股?�本?��??�」�?尋您?��?�???�票，並點�??��??�入追蹤?��?
+      <div className="w-full max-w-5xl z-10">
+        {enhancedList.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-20 bg-foreground/5 border border-foreground/10 rounded-3xl text-center px-6">
+            <div className="text-6xl mb-6 opacity-50">👀</div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">清單空空如也</h2>
+            <p className="text-foreground/60 text-lg max-w-md mx-auto leading-relaxed mb-8">
+              您目前沒有追蹤任何股票。<br/>請前往「個股基本面分析」搜尋您關注的股票，並點擊右上角加入追蹤清單。
             </p>
-            <Link href="/fundamental" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-medium transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:-translate-y-1">
-              ?��??��??�票
-            </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {data.map(stock => {
-              const isUp = stock.change !== null && stock.change >= 0;
-              const isDown = stock.change !== null && stock.change < 0;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {enhancedList.map((stock: any) => {
+              const isUp = stock.changePercent && stock.changePercent > 0;
+              const isDown = stock.changePercent && stock.changePercent < 0;
               
               return (
-                <Link href={`/fundamental/${stock.symbol}`} key={stock.symbol}>
-                  <div className="glass-panel p-6 rounded-2xl h-full flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-foreground/20 border border-foreground/10 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-foreground/5 to-transparent rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform"></div>
-                    
+                <Link href={`/fundamental/${stock.symbol}`} key={stock.symbol} className="group relative bg-foreground/5 border border-foreground/10 p-6 rounded-3xl hover:bg-foreground/10 hover:border-foreground/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden flex flex-col justify-between">
+                  
+                  <div className="flex justify-between items-start mb-6">
                     <div>
-                      <div className="flex justify-between items-start mb-2">
-                        <h2 className="text-2xl font-bold text-foreground tracking-tight">{stock.symbol}</h2>
-                        {/* Interactive remove button inside Link requires e.preventDefault, which we skip here for simplicity. 
-                            Users can remove it by entering the detail page. */}
-                      </div>
-                      <p className="text-foreground/50 text-sm truncate font-medium mb-6" title={stock.name}>
-                        {stock.name}
-                      </p>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-indigo-400 transition-colors">{stock.symbol}</h3>
+                      <p className="text-sm text-foreground/50 truncate max-w-[150px]">{stock.name}</p>
                     </div>
-
-                    <div>
-                      <div className="flex items-end justify-between">
-                        <div className="text-3xl font-bold text-foreground">
-                          {stock.price !== null ? stock.price.toFixed(2) : '-'}
-                        </div>
-                        <div className={`text-lg font-semibold flex items-center ${isUp ? 'text-safe' : isDown ? 'text-danger' : 'text-foreground/40'}`}>
-                          {isUp && '??}
-                          {isDown && '??}
-                          {stock.changePercent !== null ? Math.abs(stock.changePercent).toFixed(2) + '%' : ''}
-                        </div>
+                    <div className="text-right">
+                      <div className="text-3xl font-black font-mono tracking-tighter">
+                        {stock.price !== null ? stock.price.toFixed(2) : '-'}
                       </div>
-                      <div className="mt-4 text-xs text-foreground/30 flex justify-between items-center border-t border-foreground/10 pt-4">
-                        <span>?�入??{stock.addedAt}</span>
-                        <span className="flex items-center text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                          ?��? <span className="text-lg leading-none ml-1">??/span>
-                        </span>
+                      <div className={`text-lg font-semibold flex items-center justify-end ${isUp ? 'text-emerald-400' : isDown ? 'text-rose-400' : 'text-foreground/40'}`}>
+                        {isUp && '▲ '}
+                        {isDown && '▼ '}
+                        {stock.changePercent !== null ? Math.abs(stock.changePercent).toFixed(2) + '%' : ''}
                       </div>
                     </div>
                   </div>
+
+                  <div className="flex justify-between items-center text-xs text-foreground/40 font-medium">
+                    <span>加入於 {stock.addedAt}</span>
+                  </div>
                 </Link>
-              )
+              );
             })}
           </div>
         )}
       </div>
     </main>
-  )
+  );
 }
-
