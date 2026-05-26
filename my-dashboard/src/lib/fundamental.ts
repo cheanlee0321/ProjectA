@@ -122,7 +122,7 @@ async function fetchTaiwanFundamentalData(ticker: string) {
           date: item.date,
           fiscalYear: year,
           earningsYield: item.PER ? 1 / item.PER : 0,
-          evToEBITDA: 0,
+          evToEBITDA: null,
           freeCashFlowYield: item.dividend_yield ? item.dividend_yield / 100 : 0
         };
       });

@@ -42,9 +42,11 @@ export default function ClientFundamentalView({ data }: { data: any }) {
     });
   };
 
-  const formatTooltipValue = (value: number, isPercent?: boolean) => {
-    if (isPercent) return `${(value * 100).toFixed(2)}%`;
-    return value.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  const formatTooltipValue = (value: number | string | any, isPercent?: boolean) => {
+    const numValue = Number(value);
+    if (isNaN(numValue)) return value;
+    if (isPercent) return `${(numValue * 100).toFixed(2)}%`;
+    return numValue.toLocaleString(undefined, { maximumFractionDigits: 2 });
   };
 
   return (
@@ -205,7 +207,7 @@ export default function ClientFundamentalView({ data }: { data: any }) {
                       <Tooltip 
                         contentStyle={{ backgroundColor: '#1f2937', borderColor: '#e11d4850', color: '#fff', borderRadius: '12px' }}
                         itemStyle={{ color: '#fb7185' }}
-                        formatter={(value: number) => formatTooltipValue(value, selectedChart.isPercent)}
+                        formatter={(value: any) => formatTooltipValue(value, selectedChart.isPercent)}
                       />
                       <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: '#111' }} activeDot={{ r: 8 }} />
                     </LineChart>
@@ -289,7 +291,7 @@ export default function ClientFundamentalView({ data }: { data: any }) {
                       <Tooltip 
                         contentStyle={{ backgroundColor: '#1f2937', borderColor: '#e11d4850', color: '#fff', borderRadius: '12px' }}
                         itemStyle={{ color: '#fb7185' }}
-                        formatter={(value: number) => formatTooltipValue(value, selectedChart.isPercent)}
+                        formatter={(value: any) => formatTooltipValue(value as number, selectedChart.isPercent)}
                       />
                       <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: '#111' }} activeDot={{ r: 8 }} />
                     </LineChart>
