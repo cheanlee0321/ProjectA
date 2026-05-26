@@ -14,11 +14,14 @@ export async function saveApiKey(formData: FormData) {
 
   const provider = formData.get('provider') as string
   const apiKey = formData.get('apiKey') as string
+  const selectedModel = formData.get('selectedModel') as string | null
 
   if (!apiKey || !provider) return
 
   // 加密 API Key
   const { encryptedData, iv } = encrypt(apiKey)
+  
+  const metadata = selectedModel ? { selectedModel } : {}
 
   const { error } = await supabase
     .from('api_keys')
@@ -27,11 +30,12 @@ export async function saveApiKey(formData: FormData) {
       provider: provider,
       encrypted_key: encryptedData,
       iv: iv,
+      metadata: metadata,
     }, { onConflict: 'user_id, provider' })
 
   if (error) {
     console.error('儲存 API Key 失敗:', error)
-    throw new Error('儲存失敗')
+    throw new Error(error.message || '儲存失敗')
   }
 
   revalidatePath('/settings')

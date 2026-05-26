@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { saveApiKey } from './actions'
+import GeminiKeyForm from '@/components/settings/GeminiKeyForm'
 
 export default async function SettingsPage() {
   const supabase = await createClient()
@@ -12,9 +13,12 @@ export default async function SettingsPage() {
     .select('*')
     .eq('user_id', user.id)
 
-  const hasGeminiKey = apiKeys?.some(k => k.provider === 'gemini')
   const hasFmpKey = apiKeys?.some(k => k.provider === 'fmp')
   const hasFinmindKey = apiKeys?.some(k => k.provider === 'finmind')
+  
+  const geminiKeyRow = apiKeys?.find(k => k.provider === 'gemini')
+  const hasGeminiKey = !!geminiKeyRow
+  const initialModel = geminiKeyRow?.metadata?.selectedModel || null
 
   return (
     <div className="container mx-auto p-4 max-w-2xl mt-10">
@@ -73,28 +77,7 @@ export default async function SettingsPage() {
         </section>
 
         {/* Gemini API Key */}
-        <section className="p-6 border rounded-lg bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
-          <h2 className="text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300">Google Gemini API Key</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">用於產生 AI 個股分析與市場解讀。</p>
-          
-          <form action={saveApiKey} className="flex flex-col gap-4">
-            <input type="hidden" name="provider" value="gemini" />
-            <input
-              type="password"
-              name="apiKey"
-              placeholder={hasGeminiKey ? "已儲存 (輸入新金鑰以覆蓋)" : "AIzaSy..."}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-inherit focus:ring-2 focus:ring-blue-500 outline-none"
-              required
-            />
-            <button className="self-end px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-              儲存金鑰
-            </button>
-          </form>
-          {hasGeminiKey && <p className="text-sm text-green-600 dark:text-green-400 mt-2 flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-            已成功設定
-          </p>}
-        </section>
+        <GeminiKeyForm hasKey={hasGeminiKey} initialModel={initialModel} />
       </div>
     </div>
   )

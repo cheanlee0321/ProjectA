@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { Activity } from 'lucide-react';
+import AiFundamentalReport from './AiFundamentalReport';
 
-export default function ClientFundamentalView({ data }: { data: any }) {
-  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios'>('summary');
+export default function ClientFundamentalView({ data, ticker, geminiApiKey, geminiModel }: { data: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null }) {
+  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'ai-report'>('summary');
   const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean } | null>(null);
 
   if (!data || !data.profile) {
@@ -56,7 +57,8 @@ export default function ClientFundamentalView({ data }: { data: any }) {
         {[
           { id: 'summary', label: '公司概況 & 圖表' },
           { id: 'financials', label: '損益表 (Income Statement)' },
-          { id: 'ratios', label: '關鍵指標 (Key Metrics)' }
+          { id: 'ratios', label: '關鍵指標 (Key Metrics)' },
+          { id: 'ai-report', label: '🤖 AI 分析報告' }
         ].map(tab => (
           <button
             key={tab.id}
@@ -299,6 +301,12 @@ export default function ClientFundamentalView({ data }: { data: any }) {
                 </div>
               </div>
             )}
+          </div>
+        )}
+
+        {activeTab === 'ai-report' && (
+          <div className="h-[800px] w-full">
+            <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
           </div>
         )}
 

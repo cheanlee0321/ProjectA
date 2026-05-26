@@ -5,6 +5,7 @@ export interface UserApiKeys {
   fmp: string;
   finmind: string;
   gemini: string;
+  geminiModel: string | null;
   userId: string | null;
 }
 
@@ -14,6 +15,7 @@ export async function getUserApiKeys(): Promise<UserApiKeys> {
     fmp: process.env.FMP_API_KEY || '',
     finmind: process.env.FINMIND_TOKEN || '',
     gemini: process.env.GEMINI_API_KEY || '',
+    geminiModel: null,
     userId: null,
   }
 
@@ -38,7 +40,10 @@ export async function getUserApiKeys(): Promise<UserApiKeys> {
           const decrypted = decrypt(k.encrypted_key, k.iv)
           if (k.provider === 'fmp' && decrypted) defaultKeys.fmp = decrypted
           if (k.provider === 'finmind' && decrypted) defaultKeys.finmind = decrypted
-          if (k.provider === 'gemini' && decrypted) defaultKeys.gemini = decrypted
+          if (k.provider === 'gemini' && decrypted) {
+            defaultKeys.gemini = decrypted
+            defaultKeys.geminiModel = k.metadata?.selectedModel || null
+          }
         } catch (e) {
           console.error(`Error decrypting key for provider ${k.provider}:`, e)
         }

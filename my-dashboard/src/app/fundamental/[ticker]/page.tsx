@@ -102,7 +102,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
           </div>
         )}
 
-        {data && <ClientFundamentalView data={data} />}
+        {data && <ClientFundamentalView data={data} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} />}
       </div>
     </main>
   );
