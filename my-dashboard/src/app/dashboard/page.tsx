@@ -47,7 +47,7 @@ export default async function DashboardPage() {
         {/* Left Column: AI Summary */}
         <div className="xl:col-span-1 h-full min-h-[600px]">
           <Suspense fallback={<div className="bg-foreground/5 animate-pulse rounded-3xl h-full w-full"></div>}>
-            <AiSummary data={data} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} />
+            <AiSummary />
           </Suspense>
         </div>
 
