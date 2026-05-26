@@ -28,7 +28,7 @@ export default async function WatchlistPage() {
 
   const rawSymbols = watchlistData?.symbols || []
   
-  let quotes = []
+  let quotes: any[] = []
   if (rawSymbols.length > 0) {
     try {
       const symbolsToFetch = rawSymbols.map((item: any) => item.symbol)

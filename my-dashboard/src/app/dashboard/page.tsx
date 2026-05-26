@@ -125,9 +125,9 @@ export default async function DashboardPage() {
   );
 }
 
-function SectionHeader({ title, emoji, statuses }: { title: string, emoji: string, statuses: ('safe' | 'warning' | 'danger')[] }) {
-  const hasDanger = statuses.includes('danger');
-  const hasWarning = statuses.includes('warning');
+function SectionHeader({ title, emoji, statuses }: { title: string, emoji: string, statuses: string[] }) {
+  const hasDanger = statuses.includes('danger') || statuses.includes('red');
+  const hasWarning = statuses.includes('warning') || statuses.includes('yellow');
   
   return (
     <div className="flex items-center mb-8 border-b border-foreground/10 pb-4">

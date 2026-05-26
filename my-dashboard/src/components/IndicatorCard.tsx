@@ -8,8 +8,8 @@ type LightStatus = 'red' | 'yellow' | 'green' | 'loading';
 interface IndicatorCardProps {
   title: string;
   description: string;
-  currentValue: string | number;
-  statusText: string;
+  value: string | number;
+  statusText?: string;
   status: LightStatus;
   history?: { date: string; value: number }[];
 }
@@ -17,7 +17,7 @@ interface IndicatorCardProps {
 export default function IndicatorCard({
   title,
   description,
-  currentValue,
+  value,
   statusText,
   status,
   history
@@ -80,8 +80,8 @@ export default function IndicatorCard({
 
       {/* Middle Section */}
       <div className="flex flex-col gap-1 mb-2 z-10">
-        <div className="text-4xl font-bold tracking-tight">{currentValue}</div>
-        <div className={`text-sm font-medium ${getStatusTextColor()}`}>{statusText}</div>
+        <div className="text-4xl font-bold tracking-tight">{value}</div>
+        {statusText && <div className={`text-sm font-medium ${getStatusTextColor()}`}>{statusText}</div>}
       </div>
 
       {/* Bottom Section (Sparkline) */}
