@@ -1,7 +1,8 @@
 export const dynamic = 'force-dynamic';
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
-import yahooFinance from 'yahoo-finance2'
+import YahooFinance from 'yahoo-finance2'
+const yahooFinance = new YahooFinance()
 
 export default async function WatchlistPage() {
   const supabase = await createClient()
@@ -22,7 +23,7 @@ export default async function WatchlistPage() {
 
   const { data: watchlistData } = await supabase
     .from('watchlists')
-    .select('symbols')
+    .select('symbols, created_at')
     .eq('user_id', user.id)
     .single()
 
@@ -31,7 +32,7 @@ export default async function WatchlistPage() {
   let quotes: any[] = []
   if (rawSymbols.length > 0) {
     try {
-      const symbolsToFetch = rawSymbols.map((item: any) => item.symbol)
+      const symbolsToFetch = rawSymbols;
       const res = await yahooFinance.quote(symbolsToFetch)
       quotes = Array.isArray(res) ? res : [res]
     } catch (err) {
@@ -39,14 +40,19 @@ export default async function WatchlistPage() {
     }
   }
 
-  const enhancedList = rawSymbols.map((item: any) => {
-    const quote = quotes.find((q: any) => q.symbol === item.symbol)
+  const enhancedList = rawSymbols.map((symbol: string) => {
+    const quote = quotes.find((q: any) => q.symbol === symbol)
+    const addedDate = watchlistData?.created_at 
+      ? new Date(watchlistData.created_at).toLocaleDateString() 
+      : '未知';
+      
     return {
-      ...item,
+      symbol,
+      addedAt: addedDate,
       price: quote?.regularMarketPrice || null,
       change: quote?.regularMarketChange || null,
       changePercent: quote?.regularMarketChangePercent || null,
-      name: quote?.shortName || quote?.longName || item.symbol
+      name: quote?.shortName || quote?.longName || symbol
     }
   })
 

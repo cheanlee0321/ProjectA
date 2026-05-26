@@ -21,12 +21,8 @@ export default async function DashboardPage() {
       {/* Header */}
       <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mb-16 z-10 gap-6">
         <div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter flex items-center">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-indigo-500 mr-4">
-              Antigravity
-            </span>
-            <span className="text-foreground/80 font-light">|</span>
-            <span className="ml-4 text-3xl font-bold tracking-tight">避險儀表板</span>
+          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter">
+            風險指標儀表板
           </h1>
           <p className="text-foreground/60 text-lg md:text-xl font-medium tracking-wide max-w-2xl leading-relaxed">
             綜合 15 項總經、市場結構與關鍵情緒指標，偵測系統性泡沫與修正風險。
@@ -42,60 +38,60 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      <div className="w-full max-w-7xl grid grid-cols-1 xl:grid-cols-4 gap-8 z-10">
+      <div className="w-full max-w-7xl flex flex-col gap-12 z-10">
         
-        {/* Left Column: AI Summary */}
-        <div className="xl:col-span-1 h-full min-h-[600px]">
-          <Suspense fallback={<div className="bg-foreground/5 animate-pulse rounded-3xl h-full w-full"></div>}>
+        {/* Top Section: AI Summary */}
+        <div className="w-full">
+          <Suspense fallback={<div className="bg-foreground/5 animate-pulse rounded-3xl min-h-[300px] w-full"></div>}>
             <AiSummary />
           </Suspense>
         </div>
 
-        {/* Right Column: Indicators Grid */}
-        <div className="xl:col-span-3 space-y-12">
+        {/* Indicators Grid */}
+        <div className="space-y-12">
           
           {/* Section 1 */}
           <SectionHeader title="市場估值與結構" emoji="📊" statuses={[data.cape.status, data.breadth.status, data.buffett.status]} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <IndicatorCard title="席勒本益比 (CAPE)" value={data.cape.value} status={data.cape.status} 
+            <IndicatorCard title="席勒本益比 (CAPE)" value={data.cape.value} status={data.cape.status} statusText={data.cape.text} history={data.cape.history} 
               description="使用過去 10 年通膨調整後的平均實質盈餘計算本益比。大於 30-35 屬嚴重高估。" />
-            <IndicatorCard title="市場廣度 (RSP/SPY)" value={data.breadth.value} status={data.breadth.status} 
+            <IndicatorCard title="市場廣度 (RSP/SPY)" value={data.breadth.value} status={data.breadth.status} statusText={data.breadth.text} history={data.breadth.history} 
               description="等權重指數與市值加權之比。持續下滑代表大盤全靠少數權值股撐場。" />
-            <IndicatorCard title="巴菲特指標" value={data.buffett.value} status={data.buffett.status} 
+            <IndicatorCard title="巴菲特指標" value={data.buffett.value} status={data.buffett.status} statusText={data.buffett.text} history={data.buffett.history} 
               description="美股總市值除以美國 GDP。大於 1.5 到 2 個標準差代表資產泡沫。" />
           </div>
 
           {/* Section 2 */}
           <SectionHeader title="總體經濟與資金" emoji="🌍" statuses={[data.m2.status, data.dxy.status, data.sahm.status, data.copperGold.status, data.sloos.status, data.yieldCurve.status]} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <IndicatorCard title="M2 貨幣供給 (YoY)" value={data.m2.value} status={data.m2.status} 
+            <IndicatorCard title="M2 貨幣供給 (YoY)" value={data.m2.value} status={data.m2.status} statusText={data.m2.text} history={data.m2.history} 
               description="美國廣義貨幣供給年增率。當資金急縮 (負值)，極易戳破股市泡沫。" />
-            <IndicatorCard title="美元指數 (DXY)" value={data.dxy.value} status={data.dxy.status} 
+            <IndicatorCard title="美元指數 (DXY)" value={data.dxy.value} status={data.dxy.status} statusText={data.dxy.text} history={data.dxy.history} 
               description="衡量美元對一籃子貨幣的強弱。強勢美元 (>105) 往往會抽乾全球新興市場風險資金。" />
-            <IndicatorCard title="薩姆規則 (Sahm Rule)" value={data.sahm.value} status={data.sahm.status} 
+            <IndicatorCard title="薩姆規則 (Sahm Rule)" value={data.sahm.value} status={data.sahm.status} statusText={data.sahm.text} history={data.sahm.history} 
               description="近 3 個月失業率移動平均值，較低點上升 0.5% 時，代表經濟已實質進入衰退。" />
-            <IndicatorCard title="銅金比 (Copper/Gold)" value={data.copperGold.value} status={data.copperGold.status} 
+            <IndicatorCard title="銅金比 (Copper/Gold)" value={data.copperGold.value} status={data.copperGold.status} statusText={data.copperGold.text} history={data.copperGold.history} 
               description="銅代表實體工業需求，黃金代表避險情緒。下滑代表需求疲軟且避險升溫。" />
-            <IndicatorCard title="銀行放款標準 (SLOOS)" value={data.sloos.value} status={data.sloos.status} 
+            <IndicatorCard title="銀行放款標準 (SLOOS)" value={data.sloos.value} status={data.sloos.status} statusText={data.sloos.text} history={data.sloos.history} 
               description="淨緊縮銀行比例。大於 40% 經常引發企業資金斷鏈與衰退。" />
-            <IndicatorCard title="殖利率倒掛 (10Y-2Y)" value={data.yieldCurve.value} status={data.yieldCurve.status} 
+            <IndicatorCard title="殖利率倒掛 (10Y-2Y)" value={data.yieldCurve.value} status={data.yieldCurve.status} statusText={data.yieldCurve.text} history={data.yieldCurve.history} 
               description="長短天期公債利差。倒掛結束且急劇陡峭時，通常伴隨崩盤。" />
           </div>
 
           {/* Section 3 */}
           <SectionHeader title="信用風險與情緒" emoji="🚨" statuses={[data.nfci.status, data.vix.status, data.skew.status, data.creditSpreads.status, data.fearGreed.status, data.marginDebt.status]} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <IndicatorCard title="金融條件指數 (NFCI)" value={data.nfci.value} status={data.nfci.status} 
+            <IndicatorCard title="金融條件指數 (NFCI)" value={data.nfci.value} status={data.nfci.status} statusText={data.nfci.text} history={data.nfci.history} 
               description="芝加哥聯儲統整的 105 項金融指標。大於 0 表示金融環境異常緊縮。" />
-            <IndicatorCard title="VIX 恐慌指數" value={data.vix.value} status={data.vix.status} 
+            <IndicatorCard title="VIX 恐慌指數" value={data.vix.value} status={data.vix.status} statusText={data.vix.text} history={data.vix.history} 
               description="泡沫期常被壓至極低檔，突然跳升突破 20 往往是崩盤前兆。" />
-            <IndicatorCard title="SKEW 黑天鵝指數" value={data.skew.value} status={data.skew.status} 
+            <IndicatorCard title="SKEW 黑天鵝指數" value={data.skew.value} status={data.skew.status} statusText={data.skew.text} history={data.skew.history} 
               description="衡量市場對極端尾部風險的定價，大於 140 代表大戶正瘋狂避險。" />
-            <IndicatorCard title="信用利差 (High Yield)" value={data.creditSpreads.value} status={data.creditSpreads.status} 
+            <IndicatorCard title="信用利差 (High Yield)" value={data.creditSpreads.value} status={data.creditSpreads.status} statusText={data.creditSpreads.text} history={data.creditSpreads.history} 
               description="垃圾債與無風險公債利差。急速飆高代表邊緣企業融資極度困難。" />
-            <IndicatorCard title="CNN 恐懼與貪婪指數" value={data.fearGreed.value} status={data.fearGreed.status} 
+            <IndicatorCard title="CNN 恐懼與貪婪指數" value={data.fearGreed.value} status={data.fearGreed.status} statusText={data.fearGreed.text} history={data.fearGreed.history} 
               description="綜合動能與避險情緒。長期處於 >75 以上，代表市場被非理性貪婪 (FOMO) 主導。" />
-            <IndicatorCard title="FINRA 融資餘額" value={data.marginDebt.value} status={data.marginDebt.status} 
+            <IndicatorCard title="FINRA 融資餘額" value={data.marginDebt.value} status={data.marginDebt.status} statusText={data.marginDebt.text} history={data.marginDebt.history} 
               description="衡量投資人「借錢買股」的槓桿程度。若從歷史高點回落 >10% 易引發斷頭踩踏。" />
           </div>
 
@@ -115,7 +111,7 @@ export default async function DashboardPage() {
               </p>
             </a>
             
-            <IndicatorCard title="台灣-上市融資餘額" value={data.taiwanMargin.value} status={data.taiwanMargin.status} 
+            <IndicatorCard title="台灣-上市融資餘額" value={data.taiwanMargin.value} status={data.taiwanMargin.status} statusText={data.taiwanMargin.text} history={data.taiwanMargin.history} 
               description="衡量台股散戶槓桿程度。水位過高 (如 3000億) 且急速拉高時，籌碼凌亂，斷頭風險大增。" />
           </div>
 

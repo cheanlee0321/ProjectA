@@ -1,5 +1,7 @@
 import { unstable_cache } from 'next/cache';
+import YahooFinance from 'yahoo-finance2';
 
+const yahooFinance = new YahooFinance();
 const BASE_URL = 'https://financialmodelingprep.com/stable';
 
 export async function getCompanyProfile(ticker: string, fmpKey: string) {
@@ -85,7 +87,47 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
   // 使用 fmpKey 去抓取台股的 Profile (FMP 支援台股基本資訊，包含價格)
   let profile = await getCompanyProfile(ticker, fmpKey);
 
+  let quotePrice = 0;
+  let quoteChange = 0;
+  let quoteCurrency = 'TWD';
+  let quoteExchange = 'TWSE';
+  let quoteName = stockId;
+
+  try {
+    const quote = await yahooFinance.quote(ticker);
+    if (quote) {
+      quotePrice = quote.regularMarketPrice || 0;
+      quoteChange = quote.regularMarketChange || 0;
+      quoteCurrency = quote.currency || 'TWD';
+      quoteExchange = quote.fullExchangeName || 'TWSE';
+      quoteName = quote.longName || quote.shortName || stockId;
+    }
+  } catch (e) {
+    console.error('Yahoo Finance Error:', e);
+  }
+
   if (!finmindToken) {
+    if (!profile) {
+      profile = {
+        symbol: ticker,
+        companyName: quoteName !== stockId ? quoteName : stockId,
+        industry: '-',
+        sector: '-',
+        description: '資料來源: FinMind 台灣金融數據 API',
+        ceo: '-',
+        city: 'Taiwan',
+        state: '',
+        price: quotePrice,
+        changes: quoteChange,
+        currency: quoteCurrency,
+        exchangeShortName: quoteExchange
+      };
+    } else {
+      profile.price = quotePrice || profile.price;
+      profile.changes = quoteChange || profile.changes;
+      profile.currency = quoteCurrency || profile.currency;
+      profile.exchangeShortName = quoteExchange || profile.exchangeShortName;
+    }
     return { profile, income: [], balance: [], metrics: [] };
   }
 
@@ -136,6 +178,12 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
         if (item.type === 'CurrentLiabilities') yearlyBalance[year].currentLiabilities = val;
       });
     }
+    
+    const balance = Object.keys(yearlyBalance).map(year => ({
+      date: `${year}-12-31`,
+      fiscalYear: year,
+      ...yearlyBalance[year]
+    })).sort((a, b) => a.fiscalYear.localeCompare(b.fiscalYear));
 
     const yearlyMetrics: Record<string, any> = {};
     if (perRes.data) {
@@ -170,17 +218,26 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
     if (!profile) {
       profile = {
         symbol: ticker,
-        companyName: stockId,
+        companyName: quoteName !== stockId ? quoteName : stockId,
         industry: '-',
         sector: '-',
         description: '資料來源: FinMind 台灣金融數據 API',
         ceo: '-',
         city: 'Taiwan',
-        state: ''
+        state: '',
+        price: quotePrice,
+        changes: quoteChange,
+        currency: quoteCurrency,
+        exchangeShortName: quoteExchange
       };
+    } else {
+      profile.price = quotePrice || profile.price;
+      profile.changes = quoteChange || profile.changes;
+      profile.currency = quoteCurrency || profile.currency;
+      profile.exchangeShortName = quoteExchange || profile.exchangeShortName;
     }
 
-    return { profile, income, balance: [], metrics };
+    return { profile, income, balance, metrics };
 
   } catch (error) {
     console.error("FinMind Error:", error);
