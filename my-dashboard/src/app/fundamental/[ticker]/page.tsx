@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { fetchFullFundamentalData } from '@/lib/fundamental';
 import ClientFundamentalView from '@/components/fundamental/ClientFundamentalView';
 import Link from 'next/link';
