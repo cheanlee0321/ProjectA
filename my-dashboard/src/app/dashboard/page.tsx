@@ -1,7 +1,6 @@
 import IndicatorCard from "@/components/IndicatorCard";
 import { fetchMarketData } from "@/lib/indicators";
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
 
 import AiSummary from "@/components/AiSummary";
 import { Suspense } from "react";
@@ -60,7 +59,6 @@ export default async function Home() {
             </svg>
             返回首頁
           </Link>
-          <ThemeToggle />
         </div>
 
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 relative z-10 flex flex-wrap items-center gap-4">

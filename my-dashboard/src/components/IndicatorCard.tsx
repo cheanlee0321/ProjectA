@@ -68,7 +68,7 @@ export default function IndicatorCard({
           <div className="w-5 h-5 rounded-full border border-foreground/20 text-foreground/50 flex items-center justify-center text-xs cursor-help">
             i
             {/* Tooltip */}
-            <div className="absolute left-0 top-6 w-64 p-3 bg-black/90 border border-foreground/10 rounded-lg text-sm text-white/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+            <div className="absolute left-0 top-6 w-64 p-3 bg-background/90 border border-foreground/10 rounded-lg text-sm text-foreground/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
               {description}
             </div>
           </div>
