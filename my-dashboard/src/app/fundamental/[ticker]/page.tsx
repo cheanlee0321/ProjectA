@@ -2,6 +2,8 @@ import { fetchFullFundamentalData } from '@/lib/fundamental';
 import ClientFundamentalView from '@/components/fundamental/ClientFundamentalView';
 import Link from 'next/link';
 import { getUserApiKeys } from '@/lib/keys';
+import WatchlistButton from '@/components/fundamental/WatchlistButton';
+import { getWatchlistStatus } from '@/app/actions/watchlist';
 
 export default async function FundamentalDetailPage({ params }: { params: { ticker: string } }) {
   // Await the params object itself in Next.js 15 before destructuring
@@ -36,6 +38,10 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
   }
 
   const data = await fetchFullFundamentalData(ticker, keys.fmp, keys.finmind);
+  
+  // 獲取此檔股票的追蹤狀態
+  const isLoggedIn = !!keys.userId;
+  const isWatched = isLoggedIn ? await getWatchlistStatus(ticker) : false;
 
   return (
     <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
@@ -56,18 +62,22 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
         {data && data.profile ? (
           <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-foreground/10 pb-8">
             <div>
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-2 flex items-center gap-4 flex-wrap">
-                {data.profile.companyName}
-                <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
-                  {ticker}
-                </span>
+              <div className="flex items-center flex-wrap">
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground flex items-center gap-4 flex-wrap">
+                  {data.profile.companyName}
+                  <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
+                    {ticker}
+                  </span>
+                </h1>
+                <WatchlistButton symbol={ticker} initialIsWatched={isWatched} isLoggedIn={isLoggedIn} />
+              </div>
+              
+              <div className="text-foreground/60 text-lg flex items-center gap-4 mt-6">
                 {data.fetchDate && (
-                  <span className="text-sm font-normal text-foreground/40 ml-4 md:ml-6 tracking-wide whitespace-nowrap self-end pb-2">
-                    (資料取得日期: {data.fetchDate})
+                  <span className="text-sm font-normal text-foreground/40 mr-2 tracking-wide border border-foreground/10 px-2 py-0.5 rounded">
+                    資料日期: {data.fetchDate}
                   </span>
                 )}
-              </h1>
-              <div className="text-foreground/60 text-lg flex items-center gap-4 mt-4">
                 <span>{data.profile.exchangeShortName}</span>
                 <span>•</span>
                 <span>{data.profile.industry}</span>
