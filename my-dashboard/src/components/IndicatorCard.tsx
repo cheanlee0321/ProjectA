@@ -59,16 +59,16 @@ export default function IndicatorCard({
   const padding = (maxVal - minVal) * 0.1;
 
   return (
-    <div className="glass-panel rounded-2xl p-6 flex flex-col justify-between transition-transform hover:scale-[1.02] hover:border-white/20 duration-300 relative overflow-hidden group">
+    <div className="glass-panel rounded-2xl p-6 flex flex-col justify-between transition-transform hover:scale-[1.02] hover:border-foreground/20 duration-300 relative overflow-hidden group">
       
       {/* Top Section */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-2 relative z-20">
-          <h3 className="text-lg font-semibold text-white/90">{title}</h3>
-          <div className="w-5 h-5 rounded-full border border-white/20 text-white/50 flex items-center justify-center text-xs cursor-help">
+          <h3 className="text-lg font-semibold text-foreground/90">{title}</h3>
+          <div className="w-5 h-5 rounded-full border border-foreground/20 text-foreground/50 flex items-center justify-center text-xs cursor-help">
             i
             {/* Tooltip */}
-            <div className="absolute left-0 top-6 w-64 p-3 bg-black/90 border border-white/10 rounded-lg text-sm text-white/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+            <div className="absolute left-0 top-6 w-64 p-3 bg-black/90 border border-foreground/10 rounded-lg text-sm text-white/80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
               {description}
             </div>
           </div>
@@ -115,8 +115,8 @@ export default function IndicatorCard({
             </LineChart>
           </ResponsiveContainer>
         ) : (
-          <div className="w-full h-full border-b border-dashed border-white/20 flex items-end ml-2 pb-1">
-            <span className="text-xs text-white/30">暫無歷史走勢</span>
+          <div className="w-full h-full border-b border-dashed border-foreground/20 flex items-end ml-2 pb-1">
+            <span className="text-xs text-foreground/30">暫無歷史走勢</span>
           </div>
         )}
       </div>

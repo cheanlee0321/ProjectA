@@ -5,7 +5,7 @@ export default async function Home() {
   const data = await fetchMarketData();
 
   const SectionHeader = ({ title, emoji }: { title: string, emoji: string }) => (
-    <h2 className="text-2xl font-bold text-white/90 mt-16 mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
+    <h2 className="text-2xl font-bold text-foreground/90 mt-16 mb-6 flex items-center gap-3 border-b border-foreground/10 pb-4">
       <span className="text-3xl">{emoji}</span>
       {title}
     </h2>
@@ -21,11 +21,11 @@ export default async function Home() {
         
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 relative z-10 flex flex-wrap items-center gap-4">
           股市風險指標<span className="text-danger drop-shadow-[0_0_15px_rgba(255,64,129,0.5)]">儀表板</span>
-          <span className="text-sm font-normal text-white/50 px-3 py-1 border border-white/10 rounded-full bg-white/5 whitespace-nowrap">
+          <span className="text-sm font-normal text-foreground/60 px-3 py-1 border border-foreground/10 rounded-full bg-foreground/5 whitespace-nowrap">
             🟢 Real-time API Connected
           </span>
         </h1>
-        <p className="text-white/60 text-lg max-w-2xl relative z-10">
+        <p className="text-foreground/60 text-lg max-w-2xl relative z-10">
           綜合 15 項總經與市場結構關鍵指標，預判潛在的股市泡沫與修正風險。
           <br/>(已啟用 Yahoo 即時串接、FRED 總經資料庫與 Web 爬蟲，15 項指標皆為真實即時數據！)
         </p>
