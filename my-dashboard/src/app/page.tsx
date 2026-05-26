@@ -100,6 +100,20 @@ export default function PortalPage() {
           </Link>
 
         </div>
+
+        {/* Footer / Contact Info & Disclaimer */}
+        <div className="mt-24 text-center flex flex-col items-center">
+          <div className="text-foreground/40 text-sm font-medium mb-8">
+            <p className="mb-1">聯絡資訊</p>
+            <a href="mailto:projectanalyzer0321@gmail.com" className="text-indigo-400/80 hover:text-indigo-300 transition-colors">
+              projectanalyzer0321@gmail.com
+            </a>
+          </div>
+          
+          <div className="max-w-4xl text-xs text-foreground/30 leading-relaxed text-justify md:text-center">
+            免責聲明： 投資決策中心所提供的財務數據與工具，純屬資訊交流與教育培訓之目的。我們並非投資顧問、證券經紀商或投資公司，且本文（或本平台）中的任何內容均不構成投資建議或推薦。所有資訊均依第三方來源之「現狀」提供，不保證其準確性、完整性或即時性。投資伴隨風險，包括可能損失本金。在做出任何投資決策之前，請務必自行進行徹底的盡職調查。投資決策中心對因使用此處資訊而導致的任何損失概不負責。
+          </div>
+        </div>
       </div>
     </main>
   );
