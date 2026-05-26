@@ -96,7 +96,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Section 4 */}
-          <SectionHeader title="台灣專屬指標" emoji="🇹🇼" statuses={[data.taiwanBusinessIndicator.status, data.taiwanMargin.status]} />
+          <SectionHeader title="台灣專屬指標" emoji="🇹🇼" statuses={[data.taiwanBusinessIndicator?.status || '', data.taiwanMargin.status]} hideLights />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <a href="https://www.ndc.gov.tw/nc_27_4422" target="_blank" rel="noopener noreferrer" className="group block relative overflow-hidden bg-foreground/5 border border-foreground/10 rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-foreground/30 hover:bg-foreground/10 cursor-pointer h-full">
               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
@@ -121,18 +121,37 @@ export default async function DashboardPage() {
   );
 }
 
-function SectionHeader({ title, emoji, statuses }: { title: string, emoji: string, statuses: string[] }) {
-  const hasDanger = statuses.includes('danger') || statuses.includes('red');
-  const hasWarning = statuses.includes('warning') || statuses.includes('yellow');
+function SectionHeader({ title, emoji, statuses, hideLights }: { title: string, emoji: string, statuses: string[], hideLights?: boolean }) {
+  if (hideLights) {
+    return (
+      <div className="flex items-center mb-8 border-b border-foreground/10 pb-4">
+        <div className="text-3xl mr-4 bg-foreground/5 p-3 rounded-2xl border border-foreground/10">{emoji}</div>
+        <h2 className="text-2xl font-bold text-foreground/80 tracking-tight">{title}</h2>
+      </div>
+    );
+  }
+
+  const redCount = statuses.filter(s => s === 'danger' || s === 'red').length;
+  const yellowCount = statuses.filter(s => s === 'warning' || s === 'yellow').length;
+  const greenCount = statuses.length - redCount - yellowCount;
   
   return (
     <div className="flex items-center mb-8 border-b border-foreground/10 pb-4">
       <div className="text-3xl mr-4 bg-foreground/5 p-3 rounded-2xl border border-foreground/10">{emoji}</div>
       <h2 className="text-2xl font-bold text-foreground/80 tracking-tight">{title}</h2>
-      <div className="ml-auto flex gap-2">
-        {hasDanger && <span className="w-3 h-3 rounded-full bg-rose-500 animate-pulse shadow-[0_0_10px_rgba(244,63,94,0.5)]"></span>}
-        {hasWarning && !hasDanger && <span className="w-3 h-3 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></span>}
-        {!hasDanger && !hasWarning && <span className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>}
+      <div className="ml-auto flex gap-3">
+        <div className="flex items-center gap-2 bg-rose-500/10 px-3 py-1.5 rounded-full border border-rose-500/20">
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse"></span>
+          <span className="text-rose-400 font-bold text-sm leading-none">{redCount}</span>
+        </div>
+        <div className="flex items-center gap-2 bg-yellow-400/10 px-3 py-1.5 rounded-full border border-yellow-400/20">
+          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)]"></span>
+          <span className="text-yellow-400 font-bold text-sm leading-none">{yellowCount}</span>
+        </div>
+        <div className="flex items-center gap-2 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="text-emerald-500 font-bold text-sm leading-none">{greenCount}</span>
+        </div>
       </div>
     </div>
   );
