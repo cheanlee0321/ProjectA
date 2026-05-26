@@ -27,7 +27,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
     }
 
     hasFetched.current = true;
-    
+
     const fetchReport = async () => {
       try {
         const response = await fetch('/api/ai/fundamental', {
@@ -99,7 +99,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-foreground/10">
         <div className="flex flex-wrap items-center gap-4">
           <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
-            <span className="text-2xl">🤖</span> Rule #1 AI 深度分析
+            <span className="text-2xl">🤖</span> Rule #1 AI 深度分析 (實驗版)
             <span className="text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
               {geminiModel || 'gemini-2.5-flash'}
             </span>
@@ -128,7 +128,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
               <div className="absolute inset-2 rounded-full border-r-2 border-indigo-400 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
             </div>
             <p className="text-center text-sm leading-relaxed max-w-[200px]">
-              AI 正在閱讀 {ticker} 最新財報與搜尋網路新聞...<br/>這可能需要 30~60 秒，請耐心等候。
+              AI 正在閱讀 {ticker} 最新財報與搜尋網路新聞...<br />這可能需要 30~60 秒，請耐心等候。
             </p>
           </div>
         ) : (
@@ -137,7 +137,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
           </div>
         )}
       </div>
-      
+
       {/* Scrollbar styles to add to globals.css later if needed, but standard tailwind prose handles most of it nicely */}
     </div>
   );

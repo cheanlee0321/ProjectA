@@ -10,34 +10,32 @@ export async function POST(req: Request) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
 
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const { ticker, geminiApiKey, geminiModel, data } = await req.json();
 
     if (!geminiApiKey) {
       return NextResponse.json({ error: '未設定 Gemini API Key' }, { status: 400 });
     }
 
-    // 1. 檢查 Supabase 是否有 7 天內的快取 (1週)
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    // 1. 檢查 Supabase 是否有 7 天內的快取 (1週) - 僅限有登入的使用者
+    if (user) {
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-    const { data: cachedReport } = await supabase
-      .from('ai_reports')
-      .select('report_content, updated_at')
-      .eq('ticker', ticker)
-      .eq('user_id', user.id)
-      .maybeSingle();
+      const { data: cachedReport } = await supabase
+        .from('ai_reports')
+        .select('report_content, updated_at')
+        .eq('ticker', ticker)
+        .eq('user_id', user.id)
+        .maybeSingle();
 
-    if (cachedReport && new Date(cachedReport.updated_at) > sevenDaysAgo) {
-      // 若有快取，直接以字串形式一次回傳 (不需串流)
-      return NextResponse.json({ 
-        cached: true, 
-        text: cachedReport.report_content,
-        updatedAt: cachedReport.updated_at
-      });
+      if (cachedReport && new Date(cachedReport.updated_at) > sevenDaysAgo) {
+        // 若有快取，直接以字串形式一次回傳 (不需串流)
+        return NextResponse.json({ 
+          cached: true, 
+          text: cachedReport.report_content,
+          updatedAt: cachedReport.updated_at
+        });
+      }
     }
 
     // 2. 準備 Gemini 模型
@@ -110,13 +108,15 @@ export async function POST(req: Request) {
             controller.enqueue(encoder.encode(chunkText));
           }
           
-          // 串流結束後，將完整內容寫入 Supabase 快取
-          await supabase.from('ai_reports').upsert({
-            ticker,
-            user_id: user.id,
-            report_content: fullText,
-            updated_at: new Date().toISOString()
-          }, { onConflict: 'ticker,user_id' });
+          // 串流結束後，若有登入才將完整內容寫入 Supabase 快取
+          if (user) {
+            await supabase.from('ai_reports').upsert({
+              ticker,
+              user_id: user.id,
+              report_content: fullText,
+              updated_at: new Date().toISOString()
+            }, { onConflict: 'ticker,user_id' });
+          }
 
           controller.close();
         } catch (error) {
