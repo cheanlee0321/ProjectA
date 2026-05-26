@@ -86,12 +86,12 @@ export default function ClientFundamentalView({ data }: { data: any }) {
               <div className="h-[400px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={summaryChartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
-                    <XAxis dataKey="year" stroke="#ffffff80" />
-                    <YAxis stroke="#ffffff80" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.2} />
+                    <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.8} />
+                    <YAxis stroke="var(--foreground)" strokeOpacity={0.8} />
                     <Tooltip 
-                      contentStyle={{ backgroundColor: '#1f2937', borderColor: '#ffffff20', color: '#fff', borderRadius: '12px' }}
-                      itemStyle={{ color: '#fff' }}
+                      contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
+                      itemStyle={{ color: 'var(--foreground)' }}
                     />
                     <Legend />
                     <Bar dataKey="revenue" name="營收 (Revenue)" fill="#6366f1" radius={[4, 4, 0, 0]} />
@@ -201,15 +201,15 @@ export default function ClientFundamentalView({ data }: { data: any }) {
                 <div className="h-[350px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={selectedChart.data} margin={{ top: 10, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-                      <XAxis dataKey="year" stroke="#ffffff60" />
-                      <YAxis stroke="#ffffff60" domain={['auto', 'auto']} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.1} />
+                      <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.6} />
+                      <YAxis stroke="var(--foreground)" strokeOpacity={0.6} domain={['auto', 'auto']} />
                       <Tooltip 
-                        contentStyle={{ backgroundColor: '#1f2937', borderColor: '#e11d4850', color: '#fff', borderRadius: '12px' }}
+                        contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
                         itemStyle={{ color: '#fb7185' }}
                         formatter={(value: any) => formatTooltipValue(value, selectedChart.isPercent)}
                       />
-                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: '#111' }} activeDot={{ r: 8 }} />
+                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -285,15 +285,15 @@ export default function ClientFundamentalView({ data }: { data: any }) {
                 <div className="h-[350px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={selectedChart.data} margin={{ top: 10, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" />
-                      <XAxis dataKey="year" stroke="#ffffff60" />
-                      <YAxis stroke="#ffffff60" domain={['auto', 'auto']} tickFormatter={(value) => selectedChart.isPercent ? `${(value * 100).toFixed(0)}%` : value.toString()} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.1} />
+                      <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.6} />
+                      <YAxis stroke="var(--foreground)" strokeOpacity={0.6} domain={['auto', 'auto']} tickFormatter={(value) => selectedChart.isPercent ? `${(value * 100).toFixed(0)}%` : value.toString()} />
                       <Tooltip 
-                        contentStyle={{ backgroundColor: '#1f2937', borderColor: '#e11d4850', color: '#fff', borderRadius: '12px' }}
+                        contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
                         itemStyle={{ color: '#fb7185' }}
                         formatter={(value: any) => formatTooltipValue(value as number, selectedChart.isPercent)}
                       />
-                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: '#111' }} activeDot={{ r: 8 }} />
+                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
