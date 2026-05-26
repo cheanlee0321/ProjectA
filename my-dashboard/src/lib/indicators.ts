@@ -241,9 +241,10 @@ export async function fetchMarketData(): Promise<MarketData> {
       marginDebt: { value: margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', status: (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), text: (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準', history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { value: nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
     return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj };
   }
 }
+

@@ -44,10 +44,10 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
             
             <div className="mt-6 md:mt-0 text-right">
               <div className="text-5xl font-bold text-white mb-2">
-                ${data.profile.price.toFixed(2)}
+                ${data.profile.price?.toFixed(2) || '0.00'}
               </div>
               <div className={`text-xl font-medium flex items-center justify-end ${data.profile.changes > 0 ? 'text-green-400' : 'text-rose-400'}`}>
-                {data.profile.changes > 0 ? '▲' : '▼'} {Math.abs(data.profile.changes).toFixed(2)} 
+                {data.profile.changes > 0 ? '▲' : '▼'} {Math.abs(data.profile.changes || 0).toFixed(2)} 
               </div>
             </div>
           </div>
