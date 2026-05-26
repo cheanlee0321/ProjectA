@@ -3,15 +3,47 @@ import { fetchMarketData } from "@/lib/indicators";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
+import AiSummary from "@/components/AiSummary";
+import { Suspense } from "react";
+
 export default async function Home() {
   const data = await fetchMarketData();
 
-  const SectionHeader = ({ title, emoji }: { title: string, emoji: string }) => (
-    <h2 className="text-2xl font-bold text-foreground/90 mt-16 mb-6 flex items-center gap-3 border-b border-foreground/10 pb-4">
-      <span className="text-3xl">{emoji}</span>
-      {title}
-    </h2>
-  );
+  const SectionHeader = ({ title, emoji, statuses }: { title: string, emoji: string, statuses: string[] }) => {
+    const red = statuses.filter(s => s === 'red').length;
+    const yellow = statuses.filter(s => s === 'yellow').length;
+    const green = statuses.filter(s => s === 'green').length;
+
+    return (
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-foreground/10 mt-16 mb-6 pb-4">
+        <h2 className="text-2xl font-bold text-foreground/90 flex items-center gap-3">
+          <span className="text-3xl">{emoji}</span>
+          {title}
+        </h2>
+        
+        <div className="flex items-center gap-4 mt-4 sm:mt-0 bg-foreground/5 rounded-full px-4 py-2 border border-foreground/10">
+          {green > 0 && (
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-safe shadow-[0_0_10px_rgba(0,230,118,0.5)]"></div>
+              <span className="font-semibold text-safe">{green}</span>
+            </div>
+          )}
+          {yellow > 0 && (
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-warning shadow-[0_0_10px_rgba(255,215,64,0.5)]"></div>
+              <span className="font-semibold text-warning">{yellow}</span>
+            </div>
+          )}
+          {red > 0 && (
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-danger animate-pulse-danger shadow-[0_0_10px_rgba(255,64,129,0.5)]"></div>
+              <span className="font-semibold text-danger">{red}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen p-8 md:p-12 lg:p-20 max-w-7xl mx-auto">
@@ -43,8 +75,20 @@ export default async function Home() {
         </p>
       </header>
 
+      {/* AI Summary Section */}
+      <Suspense fallback={
+        <div className="bg-indigo-900/10 border border-indigo-500/20 rounded-3xl p-8 mb-12 relative z-10 animate-pulse flex items-center justify-center min-h-[200px]">
+          <div className="flex flex-col items-center gap-4">
+            <div className="text-4xl animate-bounce">✨</div>
+            <p className="text-indigo-300 font-medium">Gemini AI 正在分析最新數據...</p>
+          </div>
+        </div>
+      }>
+        <AiSummary />
+      </Suspense>
+
       {/* --- Section 1: 市場估值與結構 --- */}
-      <SectionHeader title="市場估值與結構" emoji="🏛️" />
+      <SectionHeader title="市場估值與結構" emoji="🏛️" statuses={[data.cape.status, data.breadth.status, data.buffett.status]} />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10">
         <IndicatorCard
           title="席勒本益比 (CAPE)"
@@ -64,7 +108,7 @@ export default async function Home() {
       </div>
 
       {/* --- Section 2: 總體經濟與流動性 --- */}
-      <SectionHeader title="總體經濟與流動性" emoji="🌍" />
+      <SectionHeader title="總體經濟與流動性" emoji="🌍" statuses={[data.m2.status, data.dxy.status, data.sahm.status, data.copperGold.status, data.sloos.status, data.yieldCurve.status]} />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10">
         <IndicatorCard
           title="M2 貨幣供給量 (YoY)"
@@ -99,7 +143,7 @@ export default async function Home() {
       </div>
 
       {/* --- Section 3: 信用風險與情緒 --- */}
-      <SectionHeader title="信用風險與情緒" emoji="🔥" />
+      <SectionHeader title="信用風險與情緒" emoji="🔥" statuses={[data.nfci.status, data.vix.status, data.skew.status, data.creditSpreads.status, data.fearGreed.status, data.marginDebt.status]} />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 relative z-10 mb-20">
         <IndicatorCard
           title="金融條件指數 (NFCI)"
