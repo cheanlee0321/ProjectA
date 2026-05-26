@@ -29,7 +29,7 @@ export interface MarketData {
   nfci: IndicatorData; // 新增
 }
 
-const FRED_API_KEY = '72f7e7aac93ea6642b1709247b3f96be';
+const FRED_API_KEY = process.env.FRED_API_KEY || '';
 async function fetchFredSeries(seriesId: string): Promise<{current: number | null, history: {date: string, value: number}[]}> {
   try {
     const d = new Date();

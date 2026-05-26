@@ -1,5 +1,5 @@
 const BASE_URL = 'https://financialmodelingprep.com/stable';
-const FINMIND_TOKEN = process.env.FINMIND_TOKEN || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY2hlYW5sZWUwMzIxIiwiZW1haWwiOiJjaGVhbmxlZTAzMjFAZ21haWwuY29tIiwidG9rZW5fdmVyc2lvbiI6MH0.LxuXk1vAyDQwHx2rxHNfy0h4vz_feyB2R6EPZMAuTo8';
+const FINMIND_TOKEN = process.env.FINMIND_TOKEN || '';
 
 export async function getCompanyProfile(ticker: string) {
   const res = await fetch(`${BASE_URL}/profile?symbol=${ticker}&apikey=${process.env.FMP_API_KEY}`, {
