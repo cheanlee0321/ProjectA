@@ -57,7 +57,8 @@ export default function PortalPage() {
                   <div className="w-16 h-16 rounded-2xl bg-rose-500/20 flex items-center justify-center mb-8 border border-rose-500/30 group-hover:scale-110 transition-transform duration-500">
                     <span className="text-3xl">🏢</span>
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">個股基本面分析</h2>
+                  <h2 className="text-3xl font-bold text-foreground mb-1">個股基本面分析</h2>
+                  <p className="text-rose-400/80 text-sm font-medium mb-4">註: 基本面資料一週更新一次</p>
                   <p className="text-foreground/60 text-lg leading-relaxed">
                     深度解析個別公司的財務報表、獲利能力與成長潛力，發掘具備長期護城河的優質標的。
                   </p>

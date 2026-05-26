@@ -1,12 +1,14 @@
 import IndicatorCard from "@/components/IndicatorCard";
 import { fetchMarketData } from "@/lib/indicators";
 import Link from "next/link";
+import { getUserApiKeys } from "@/lib/keys";
 
 import AiSummary from "@/components/AiSummary";
 import { Suspense } from "react";
 
 export default async function Home() {
-  const data = await fetchMarketData();
+  const keys = await getUserApiKeys();
+  const data = await fetchMarketData(keys.finmind);
 
   const SectionHeader = ({ title, emoji, statuses }: { title: string, emoji: string, statuses: string[] }) => {
     const red = statuses.filter(s => s === 'red').length;

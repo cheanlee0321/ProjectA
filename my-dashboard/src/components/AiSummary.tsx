@@ -1,8 +1,10 @@
 import { getCachedMarketSummary } from "@/lib/gemini";
 import ReactMarkdown from "react-markdown";
+import { getUserApiKeys } from "@/lib/keys";
 
 export default async function AiSummary() {
-  const { text: summary, date } = await getCachedMarketSummary();
+  const keys = await getUserApiKeys();
+  const { text: summary, date } = await getCachedMarketSummary(keys.gemini, keys.finmind);
 
   return (
     <div className="bg-foreground/5 border border-foreground/10 rounded-3xl p-8 mb-12 relative z-10 backdrop-blur-md shadow-2xl">

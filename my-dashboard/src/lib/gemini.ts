@@ -1,14 +1,14 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { MarketData } from "./indicators";
+import { unstable_cache } from 'next/cache';
+import { fetchMarketData } from './indicators';
 
-const apiKey = process.env.GEMINI_API_KEY || "";
-const genAI = new GoogleGenerativeAI(apiKey);
-
-export async function generateMarketSummary(data: MarketData) {
+export async function generateMarketSummary(data: MarketData, apiKey: string) {
   if (!apiKey) {
-    return "錯誤：未設定 GEMINI_API_KEY 環境變數。";
+    return "錯誤：未設定 GEMINI_API_KEY，請先至設定頁面填寫。";
   }
 
+  const genAI = new GoogleGenerativeAI(apiKey);
   // Choose the model recommended for fast text generation
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
@@ -45,19 +45,25 @@ export async function generateMarketSummary(data: MarketData) {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
-  } catch (error) {
+  } catch (error: any) {
     console.error("Gemini AI Error:", error);
+    if (error.message && error.message.includes("API key not valid")) {
+      return "AI 生成失敗：您提供的 Gemini API Key 無效，請檢查設定。";
+    }
     return "AI 生成失敗，請稍後再試。";
   }
 }
 
-import { unstable_cache } from 'next/cache';
-import { fetchMarketData } from './indicators';
-
+// 透過傳入金鑰作為參數，Next.js 的 unstable_cache 會自動將參數進行雜湊 (Hash) 並加入快取鍵值中。
+// 這意味著不同金鑰會產生獨立的快取，確保使用者之間的資料完全隔離。
 export const getCachedMarketSummary = unstable_cache(
-  async () => {
-    const data = await fetchMarketData();
-    const text = await generateMarketSummary(data);
+  async (geminiApiKey: string, finmindToken: string) => {
+    if (!geminiApiKey) {
+      return { text: "請先至設定頁面填寫您的 Google Gemini API Key 以解鎖 AI 市場解讀功能。", date: "" };
+    }
+
+    const data = await fetchMarketData(finmindToken);
+    const text = await generateMarketSummary(data, geminiApiKey);
     
     const date = new Date().toLocaleString('zh-TW', { 
       timeZone: 'Asia/Taipei',
@@ -70,7 +76,7 @@ export const getCachedMarketSummary = unstable_cache(
     
     return { text, date };
   },
-  ['gemini-market-summary-daily'],
+  ['gemini-market-summary-daily-dynamic'],
   { revalidate: 86400 } // Cache for 24 hours
 );
 

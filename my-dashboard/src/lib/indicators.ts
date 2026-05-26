@@ -128,9 +128,8 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
 
 
 
-async function fetchTaiwanMargin(): Promise<{current: number | null, history: {date: string, value: number}[]}> {
+async function fetchTaiwanMargin(token: string): Promise<{current: number | null, history: {date: string, value: number}[]}> {
   try {
-    const token = process.env.FINMIND_TOKEN || '';
     const d = new Date();
     d.setMonth(d.getMonth() - 6);
     const startDate = d.toISOString().split('T')[0];
@@ -159,7 +158,7 @@ async function fetchTaiwanMargin(): Promise<{current: number | null, history: {d
   return { current: null, history: [] };
 }
 
-export async function fetchMarketData(): Promise<MarketData> {
+export async function fetchMarketData(finmindToken: string): Promise<MarketData> {
   try {
     const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin] = await Promise.all([
       fetchYahooChart('^VIX', '1wk'),
@@ -180,7 +179,7 @@ export async function fetchMarketData(): Promise<MarketData> {
       fetchFredSeries('BOGZ1FL663067003Q'),
       fetchFredSeries('M2SL'), // 新增 M2
       fetchFredSeries('NFCI'),  // 新增 NFCI
-      fetchTaiwanMargin()
+      fetchTaiwanMargin(finmindToken)
     ]);
 
     // 計算市場廣度歷史 (RSP / SPY)

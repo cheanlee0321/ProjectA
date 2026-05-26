@@ -38,10 +38,13 @@ export default function FundamentalAnalysisPage() {
         </div>
 
         <div className="border-b border-foreground/10 pb-8 mb-16 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 drop-shadow-lg flex items-center justify-center gap-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-2 drop-shadow-lg flex items-center justify-center gap-4">
             <span className="text-5xl">🏢</span>
             個股基本面分析
           </h1>
+          <p className="text-rose-400/80 text-sm font-medium mb-6">
+            註: 基本面資料一週更新一次
+          </p>
           <p className="mt-4 text-foreground/60 text-xl max-w-2xl mx-auto">
             快速查詢並深度解析公司財務體質，支援美股與台股市場。
           </p>

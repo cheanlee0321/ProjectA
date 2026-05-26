@@ -1,53 +1,71 @@
-const BASE_URL = 'https://financialmodelingprep.com/stable';
-const FINMIND_TOKEN = process.env.FINMIND_TOKEN || '';
+import { unstable_cache } from 'next/cache';
 
-export async function getCompanyProfile(ticker: string) {
-  const res = await fetch(`${BASE_URL}/profile?symbol=${ticker}&apikey=${process.env.FMP_API_KEY}`, {
-    next: { revalidate: 86400 }
+const BASE_URL = 'https://financialmodelingprep.com/stable';
+
+export async function getCompanyProfile(ticker: string, fmpKey: string) {
+  if (!fmpKey) return null;
+  const res = await fetch(`${BASE_URL}/profile?symbol=${ticker}&apikey=${fmpKey}`, {
+    next: { revalidate: 604800 }
   });
   if (!res.ok) return null;
   const data = await res.json();
   return Array.isArray(data) && data.length > 0 ? data[0] : null;
 }
 
-export async function getIncomeStatement(ticker: string, limit = 5) {
-  const res = await fetch(`${BASE_URL}/income-statement?symbol=${ticker}&limit=${limit}&apikey=${process.env.FMP_API_KEY}`, {
-    next: { revalidate: 86400 } // Cache for 24 hours
+export async function getIncomeStatement(ticker: string, fmpKey: string, limit = 5) {
+  if (!fmpKey) return [];
+  const res = await fetch(`${BASE_URL}/income-statement?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
+    next: { revalidate: 604800 } // Cache for 7 days
   });
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : []; // Reverse to have oldest first for charts
 }
 
-export async function getBalanceSheet(ticker: string, limit = 5) {
-  const res = await fetch(`${BASE_URL}/balance-sheet-statement?symbol=${ticker}&limit=${limit}&apikey=${process.env.FMP_API_KEY}`, {
-    next: { revalidate: 86400 }
+export async function getBalanceSheet(ticker: string, fmpKey: string, limit = 5) {
+  if (!fmpKey) return [];
+  const res = await fetch(`${BASE_URL}/balance-sheet-statement?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
+    next: { revalidate: 604800 }
   });
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : [];
 }
 
-export async function getKeyMetrics(ticker: string, limit = 5) {
-  const res = await fetch(`${BASE_URL}/key-metrics?symbol=${ticker}&limit=${limit}&apikey=${process.env.FMP_API_KEY}`, {
-    next: { revalidate: 86400 }
+export async function getKeyMetrics(ticker: string, fmpKey: string, limit = 5) {
+  if (!fmpKey) return [];
+  const res = await fetch(`${BASE_URL}/key-metrics?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
+    next: { revalidate: 604800 }
   });
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : [];
 }
 
-export async function fetchFullFundamentalData(ticker: string) {
+export const fetchFullFundamentalData = unstable_cache(
+  async (ticker: string, fmpKey: string, finmindToken: string) => {
+    const data = await _fetchFullFundamentalData(ticker, fmpKey, finmindToken);
+    if (!data) return null;
+    return {
+      ...data,
+      fetchDate: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' })
+    };
+  },
+  ['fundamental-data-dynamic'],
+  { revalidate: 604800 }
+);
+
+async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmindToken: string) {
   if (ticker.endsWith('.TW') || ticker.endsWith('.TWO')) {
-    return await fetchTaiwanFundamentalData(ticker);
+    return await fetchTaiwanFundamentalData(ticker, fmpKey, finmindToken);
   }
 
   const symbol = ticker.toUpperCase();
   const [profile, income, balance, metrics] = await Promise.all([
-    getCompanyProfile(symbol),
-    getIncomeStatement(symbol),
-    getBalanceSheet(symbol),
-    getKeyMetrics(symbol)
+    getCompanyProfile(symbol, fmpKey),
+    getIncomeStatement(symbol, fmpKey),
+    getBalanceSheet(symbol, fmpKey),
+    getKeyMetrics(symbol, fmpKey)
   ]);
 
   if (!profile) return null;
@@ -60,17 +78,22 @@ export async function fetchFullFundamentalData(ticker: string) {
   };
 }
 
-async function fetchTaiwanFundamentalData(ticker: string) {
+async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmindToken: string) {
   const stockId = ticker.split('.')[0]; // e.g. 2330.TW -> 2330
   const startDate = '2019-01-01'; // Get last 5 years
 
-  let profile = await getCompanyProfile(ticker);
+  // 使用 fmpKey 去抓取台股的 Profile (FMP 支援台股基本資訊，包含價格)
+  let profile = await getCompanyProfile(ticker, fmpKey);
+
+  if (!finmindToken) {
+    return { profile, income: [], balance: [], metrics: [] };
+  }
 
   try {
     const [finRes, perRes, bsRes] = await Promise.all([
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json()),
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json()),
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json())
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json()),
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json()),
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json())
     ]);
 
     const yearlyIncome: Record<string, any> = {};
