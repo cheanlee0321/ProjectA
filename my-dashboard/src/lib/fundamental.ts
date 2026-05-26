@@ -3,7 +3,7 @@ const FINMIND_TOKEN = process.env.FINMIND_TOKEN || '';
 
 export async function getCompanyProfile(ticker: string) {
   const res = await fetch(`${BASE_URL}/profile?symbol=${ticker}&apikey=${process.env.FMP_API_KEY}`, {
-    next: { revalidate: 3600 }
+    next: { revalidate: 86400 }
   });
   if (!res.ok) return null;
   const data = await res.json();
@@ -68,9 +68,9 @@ async function fetchTaiwanFundamentalData(ticker: string) {
 
   try {
     const [finRes, perRes, bsRes] = await Promise.all([
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 3600 } }).then(r => r.json()),
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 3600 } }).then(r => r.json()),
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 3600 } }).then(r => r.json())
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json()),
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json()),
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${FINMIND_TOKEN}`, { next: { revalidate: 86400 } }).then(r => r.json())
     ]);
 
     const yearlyIncome: Record<string, any> = {};

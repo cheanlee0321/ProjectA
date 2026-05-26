@@ -1,4 +1,5 @@
 import YahooFinance from 'yahoo-finance2';
+import { unstable_cache } from 'next/cache';
 const yahooFinance = new YahooFinance();
 
 export interface IndicatorData {
@@ -35,7 +36,7 @@ async function fetchFredSeries(seriesId: string): Promise<{current: number | nul
     const d = new Date();
     d.setFullYear(d.getFullYear() - 3); // 抓過去三年，為了計算 YoY
     const startDate = d.toISOString().split('T')[0];
-    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}`, { next: { revalidate: 3600 } });
+    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}`, { next: { revalidate: 86400 } });
     const data = await res.json();
     const history = [];
     if (data.observations && data.observations.length > 0) {
@@ -51,25 +52,29 @@ async function fetchFredSeries(seriesId: string): Promise<{current: number | nul
   return { current: null, history: [] };
 }
 
-async function fetchYahooChart(symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') {
-  try {
-    const d = new Date();
-    d.setFullYear(d.getFullYear() - 2);
-    const chart = await yahooFinance.chart(symbol, { period1: d, interval });
-    const history = chart.quotes.map(q => ({
-      date: q.date.toISOString().split('T')[0],
-      value: q.close ?? 0
-    })).filter(q => q.value !== 0);
-    const current = history.length > 0 ? history[history.length - 1].value : null;
-    return { current, history };
-  } catch(e) { return { current: null, history: [] }; }
-}
+const fetchYahooChart = unstable_cache(
+  async (symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') => {
+    try {
+      const d = new Date();
+      d.setFullYear(d.getFullYear() - 2);
+      const chart = await yahooFinance.chart(symbol, { period1: d, interval });
+      const history = chart.quotes.map(q => ({
+        date: q.date.toISOString().split('T')[0],
+        value: q.close ?? 0
+      })).filter(q => q.value !== 0);
+      const current = history.length > 0 ? history[history.length - 1].value : null;
+      return { current, history };
+    } catch(e) { return { current: null, history: [] }; }
+  },
+  ['yahoo-finance-chart'],
+  { revalidate: 86400 }
+);
 
 async function fetchCapeRatio(): Promise<{current: number | null, history: {date: string, value: number}[]}> {
   try {
     const res = await fetch('https://www.multpl.com/shiller-pe/table/by-month', {
       headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-      next: { revalidate: 3600 }
+      next: { revalidate: 86400 }
     });
     const html = await res.text();
     
@@ -105,7 +110,7 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
   try {
     const res = await fetch('https://production.dataviz.cnn.io/index/fearandgreed/graphdata', {
       headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36', 'Accept': 'application/json' },
-      next: { revalidate: 3600 }
+      next: { revalidate: 86400 }
     });
     const data = await res.json();
     const current = data.fear_and_greed?.score ?? null;
