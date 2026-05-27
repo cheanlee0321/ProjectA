@@ -56,7 +56,7 @@ export const fetchFullFundamentalData = unstable_cache(
       fetchDate: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' })
     };
   },
-  ['fundamental-data-v2'],
+  ['fundamental-data-v3'],
   { revalidate: 604800 }
 );
 
@@ -83,6 +83,11 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
     if (e.message === 'PREMIUM_RESTRICTED') {
       isPremiumRestricted = true;
       profile = await getCompanyProfile(symbol, fmpKey);
+      
+      const yfData = await fetchYahooFinanceFundamentalData(symbol);
+      income = yfData.income;
+      balance = yfData.balance;
+      metrics = yfData.metrics;
     } else {
       console.error("FMP API Error:", e);
       profile = await getCompanyProfile(symbol, fmpKey);
@@ -98,6 +103,74 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
     metrics,
     isPremiumRestricted
   };
+}
+
+async function fetchYahooFinanceFundamentalData(ticker: string) {
+  try {
+    const symbol = ticker.toUpperCase();
+    const startDate = new Date();
+    startDate.setFullYear(startDate.getFullYear() - 5);
+    const period1 = startDate.toISOString().split('T')[0];
+
+    const tsData = await yahooFinance.fundamentalsTimeSeries(symbol, {
+      period1,
+      module: 'all',
+      type: 'annual'
+    });
+
+    const income: any[] = [];
+    const balance: any[] = [];
+    const metrics: any[] = [];
+
+    const sorted = tsData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+    for (const item of sorted) {
+      if (!item.date) continue;
+      const year = new Date(item.date).getFullYear().toString();
+      const dateStr = new Date(item.date).toISOString().split('T')[0];
+
+      income.push({
+        date: dateStr,
+        fiscalYear: year,
+        revenue: item.totalRevenue || item.operatingRevenue || 0,
+        costOfRevenue: item.costOfRevenue || 0,
+        grossProfit: item.grossProfit || 0,
+        operatingExpenses: item.operatingExpense || item.totalExpenses || 0,
+        operatingIncome: item.operatingIncome || item.EBIT || 0,
+        netIncome: item.netIncome || item.netIncomeCommonStockholders || 0,
+        eps: item.dilutedEPS || item.basicEPS || 0
+      });
+
+      const totalAssets = item.totalAssets || 0;
+      const totalEquity = item.stockholdersEquity || item.totalEquityGrossMinorityInterest || item.commonStockEquity || 0;
+      const currentAssets = item.currentAssets || 0;
+      const currentLiabilities = item.currentLiabilities || 0;
+
+      balance.push({
+        date: dateStr,
+        fiscalYear: year,
+        totalAssets,
+        totalEquity,
+        currentAssets,
+        currentLiabilities
+      });
+
+      const netIncome = item.netIncome || item.netIncomeCommonStockholders || 0;
+      
+      metrics.push({
+        date: dateStr,
+        fiscalYear: year,
+        returnOnEquity: totalEquity ? netIncome / totalEquity : 0,
+        returnOnAssets: totalAssets ? netIncome / totalAssets : 0,
+        currentRatio: currentLiabilities ? currentAssets / currentLiabilities : 0
+      });
+    }
+
+    return { income, balance, metrics };
+  } catch (error) {
+    console.error("Yahoo Finance TS Error:", error);
+    return { income: [], balance: [], metrics: [] };
+  }
 }
 
 async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmindToken: string) {

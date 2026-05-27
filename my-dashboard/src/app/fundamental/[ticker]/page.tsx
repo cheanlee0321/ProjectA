@@ -12,7 +12,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
   const resolvedParams = await params;
   const ticker = resolvedParams.ticker.toUpperCase();
   const keys = await getUserApiKeys();
-  
+
   const isTaiwan = ticker.endsWith('.TW') || ticker.endsWith('.TWO');
   if ((isTaiwan && !keys.finmind) || (!isTaiwan && !keys.fmp)) {
     return (
@@ -23,7 +23,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
           <h1 className="text-3xl font-bold mb-4 text-foreground">缺少 API 金鑰</h1>
           <p className="text-foreground/60 mb-8 leading-relaxed">
             查詢 {isTaiwan ? '台灣' : '美國'} 股票基本面需要使用 {isTaiwan ? 'Finmind Token' : 'FMP (Financial Modeling Prep) API Key'}。
-            <br/><br/>
+            <br /><br />
             系統未偵測到您的專屬金鑰，也無法使用預設金鑰。請前往設定頁面填寫。
           </p>
           <Link href="/settings" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-medium transition-colors inline-block shadow-lg shadow-blue-500/20">
@@ -40,7 +40,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
   }
 
   const data = await fetchFullFundamentalData(ticker, keys.fmp, keys.finmind);
-  
+
   // 獲取此檔股票的追蹤狀態
   const isLoggedIn = !!keys.userId;
   const isWatched = isLoggedIn ? await getWatchlistStatus(ticker) : false;
@@ -50,7 +50,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
 
   return (
     <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
-      
+
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -73,15 +73,19 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
                   <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
                     {ticker}
                   </span>
-                  {'isPremiumRestricted' in data && (data as any).isPremiumRestricted && (
-                    <span className="text-sm font-bold text-amber-500 bg-amber-500/10 px-3 py-1.5 rounded-full border border-amber-500/20 flex items-center shadow-[0_0_10px_rgba(245,158,11,0.2)]">
-                      ⚠️ Require FMP API Premium
-                    </span>
-                  )}
                 </h1>
                 <WatchlistButton symbol={ticker} initialIsWatched={isWatched} isLoggedIn={isLoggedIn} />
               </div>
-              
+
+              {'isPremiumRestricted' in data && (data as any).isPremiumRestricted && (
+                <div className="mt-4">
+                  <span className="text-sm font-bold tracking-wider text-amber-500 bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20 inline-flex items-center shadow-[0_0_10px_rgba(245,158,11,0.2)] gap-3">
+                    <span>⚠️ Require FMP API Premium</span>
+                    <span className="text-xs tracking-widest text-amber-500/70 ml-2 border-l border-amber-500/20 pl-3">Switch to yahoo finance</span>
+                  </span>
+                </div>
+              )}
+
               <div className="text-foreground/60 text-lg flex items-center gap-4 mt-6">
                 {data.fetchDate && (
                   <span className="text-sm font-normal text-foreground/40 mr-2 tracking-wide border border-foreground/10 px-2 py-0.5 rounded">
@@ -95,13 +99,13 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
                 <span className="text-foreground/80">{data.profile.currency}</span>
               </div>
             </div>
-            
+
             <div className="mt-6 md:mt-0 text-right">
               <div className="text-5xl font-bold text-foreground mb-2">
                 ${data.profile.price?.toFixed(2) || '0.00'}
               </div>
               <div className={`text-xl font-medium flex items-center justify-end ${data.profile.changes > 0 ? 'text-safe' : 'text-danger'}`}>
-                {data.profile.changes > 0 ? '▲' : '▼'} {Math.abs(data.profile.changes || 0).toFixed(2)} 
+                {data.profile.changes > 0 ? '▲' : '▼'} {Math.abs(data.profile.changes || 0).toFixed(2)}
               </div>
             </div>
           </div>
