@@ -31,6 +31,12 @@ export default async function ReportDetailPage({ params }: { params: { id: strin
   const isOwner = userEmailPrefix === report.author;
   const canDelete = isDeveloper || isOwner;
 
+  // Fix old HTML content that has hardcoded tailwind classes
+  const cleanContent = report.content
+    .replace(/bg-gray-100 dark:bg-gray-800/g, 'bg-foreground/5 border border-foreground/10')
+    .replace(/text-gray-500/g, 'text-foreground/50')
+    .replace(/rounded-lg/g, 'rounded-2xl p-6');
+
   return (
     <main className="min-h-screen bg-background text-foreground p-6 md:p-12 relative overflow-hidden">
       {/* Background Glow */}
@@ -83,12 +89,12 @@ export default async function ReportDetailPage({ params }: { params: { id: strin
           </header>
 
           <div className="prose prose-blue dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-500 mb-16 prose-p:text-foreground/80 prose-headings:text-foreground">
-            {report.file_type === 'txt' ? (
-              <div dangerouslySetInnerHTML={{ __html: report.content }} />
-            ) : report.file_type === 'docx' ? (
-              <div dangerouslySetInnerHTML={{ __html: report.content }} />
+            {report.file_type === 'gdoc' ? (
+              <div className="p-6 bg-foreground/5 border border-foreground/10 rounded-2xl not-prose">
+                <p className="text-center text-foreground/50 m-0">這是一份外部連結的 Google Doc 報告，我們無法直接顯示內文。請點擊下方的原始連結查看。</p>
+              </div>
             ) : (
-              <div dangerouslySetInnerHTML={{ __html: report.content }} />
+              <div dangerouslySetInnerHTML={{ __html: cleanContent }} />
             )}
           </div>
 

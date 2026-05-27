@@ -91,7 +91,7 @@ export async function uploadReport(formData: FormData) {
       }
       original_file_url = url;
       file_type = 'gdoc';
-      content = '<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg"><p class="text-center text-gray-500">這是一份外部連結的 Google Doc 報告，我們無法直接顯示內文。請點擊下方的原始連結查看。</p></div>';
+      content = '<div class="p-6 bg-foreground/5 border border-foreground/10 rounded-2xl"><p class="text-center text-foreground/50">這是一份外部連結的 Google Doc 報告，我們無法直接顯示內文。請點擊下方的原始連結查看。</p></div>';
     }
 
     // 寫入資料庫
