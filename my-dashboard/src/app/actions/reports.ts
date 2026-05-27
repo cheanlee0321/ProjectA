@@ -3,7 +3,9 @@
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import mammoth from 'mammoth'
-import YahooFinance from 'yahoo-finance2'
+import yahooFinance from 'yahoo-finance2'
+
+const YahooFinance = new yahooFinance();
 
 export async function uploadReport(formData: FormData) {
   const supabase = await createClient()
