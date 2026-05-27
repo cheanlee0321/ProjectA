@@ -18,7 +18,7 @@ export default function PortalPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           
           {/* Dashboard Card */}
           <Link href="/dashboard" className="group">
@@ -99,7 +99,35 @@ export default function PortalPage() {
             </div>
           </Link>
 
+          {/* Report Library Card */}
+          <Link href="/reports" className="group">
+            <div className="h-full relative p-8 md:p-12 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-foreground/10 hover:border-foreground/20 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)]">
+              {/* Inner Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-8 border border-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
+                    <span className="text-3xl">📚</span>
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">投資報告圖書館</h2>
+                  <p className="text-foreground/60 text-lg leading-relaxed">
+                    上傳、解析並集中管理您的投資研究報告，支援純文字與 Word 格式，讓您隨時隨地回顧重要分析。
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center text-emerald-500 font-medium group-hover:text-emerald-400 transition-colors">
+                  <span>進入圖書館</span>
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </Link>
+
         </div>
+
+
 
         {/* Footer / Contact Info & Disclaimer */}
         <div className="mt-24 text-center flex flex-col items-center">

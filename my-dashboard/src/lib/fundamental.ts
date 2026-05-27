@@ -19,6 +19,7 @@ export async function getIncomeStatement(ticker: string, fmpKey: string, limit =
   const res = await fetch(`${BASE_URL}/income-statement?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
     next: { revalidate: 604800 } // Cache for 7 days
   });
+  if (res.status === 402 || res.status === 403) throw new Error('PREMIUM_RESTRICTED');
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : []; // Reverse to have oldest first for charts
@@ -29,6 +30,7 @@ export async function getBalanceSheet(ticker: string, fmpKey: string, limit = 5)
   const res = await fetch(`${BASE_URL}/balance-sheet-statement?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
     next: { revalidate: 604800 }
   });
+  if (res.status === 402 || res.status === 403) throw new Error('PREMIUM_RESTRICTED');
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : [];
@@ -39,6 +41,7 @@ export async function getKeyMetrics(ticker: string, fmpKey: string, limit = 5) {
   const res = await fetch(`${BASE_URL}/key-metrics?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
     next: { revalidate: 604800 }
   });
+  if (res.status === 402 || res.status === 403) throw new Error('PREMIUM_RESTRICTED');
   if (!res.ok) return [];
   const data = await res.json();
   return Array.isArray(data) ? data.reverse() : [];
@@ -53,7 +56,7 @@ export const fetchFullFundamentalData = unstable_cache(
       fetchDate: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' })
     };
   },
-  ['fundamental-data-dynamic'],
+  ['fundamental-data-v2'],
   { revalidate: 604800 }
 );
 
@@ -63,12 +66,28 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
   }
 
   const symbol = ticker.toUpperCase();
-  const [profile, income, balance, metrics] = await Promise.all([
-    getCompanyProfile(symbol, fmpKey),
-    getIncomeStatement(symbol, fmpKey),
-    getBalanceSheet(symbol, fmpKey),
-    getKeyMetrics(symbol, fmpKey)
-  ]);
+  let profile = null, income = [], balance = [], metrics = [], isPremiumRestricted = false;
+
+  try {
+    const results = await Promise.all([
+      getCompanyProfile(symbol, fmpKey),
+      getIncomeStatement(symbol, fmpKey),
+      getBalanceSheet(symbol, fmpKey),
+      getKeyMetrics(symbol, fmpKey)
+    ]);
+    profile = results[0];
+    income = results[1];
+    balance = results[2];
+    metrics = results[3];
+  } catch (e: any) {
+    if (e.message === 'PREMIUM_RESTRICTED') {
+      isPremiumRestricted = true;
+      profile = await getCompanyProfile(symbol, fmpKey);
+    } else {
+      console.error("FMP API Error:", e);
+      profile = await getCompanyProfile(symbol, fmpKey);
+    }
+  }
 
   if (!profile) return null;
 
@@ -76,7 +95,8 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
     profile,
     income,
     balance,
-    metrics
+    metrics,
+    isPremiumRestricted
   };
 }
 

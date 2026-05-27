@@ -4,9 +4,10 @@ import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { Activity } from 'lucide-react';
 import AiFundamentalReport from './AiFundamentalReport';
+import ReportLibrary from '@/components/reports/ReportLibrary';
 
-export default function ClientFundamentalView({ data, ticker, geminiApiKey, geminiModel }: { data: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null }) {
-  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'ai-report'>('summary');
+export default function ClientFundamentalView({ data, ticker, geminiApiKey, geminiModel, relatedReports = [] }: { data: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[] }) {
+  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'ai-report' | 'related-reports'>('summary');
   const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean } | null>(null);
 
   if (!data || !data.profile) {
@@ -58,7 +59,8 @@ export default function ClientFundamentalView({ data, ticker, geminiApiKey, gemi
           { id: 'summary', label: '公司概況 & 圖表' },
           { id: 'financials', label: '損益表 (Income Statement)' },
           { id: 'ratios', label: '關鍵指標 (Key Metrics)' },
-          { id: 'ai-report', label: '🤖 AI 分析報告' }
+          { id: 'ai-report', label: '🤖 AI 分析報告' },
+          { id: 'related-reports', label: '📚 相關報告' }
         ].map(tab => (
           <button
             key={tab.id}
@@ -307,6 +309,17 @@ export default function ClientFundamentalView({ data, ticker, geminiApiKey, gemi
         {activeTab === 'ai-report' && (
           <div className="h-[800px] w-full">
             <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+          </div>
+        )}
+
+        {activeTab === 'related-reports' && (
+          <div className="w-full">
+            <ReportLibrary 
+              initialReports={relatedReports} 
+              userEmail={null} 
+              hideHeader={true} 
+              hideSymbolFilter={true} 
+            />
           </div>
         )}
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { getUserApiKeys } from '@/lib/keys';
 import WatchlistButton from '@/components/fundamental/WatchlistButton';
 import { getWatchlistStatus } from '@/app/actions/watchlist';
+import { getReports } from '@/app/actions/reports';
 
 export default async function FundamentalDetailPage({ params }: { params: { ticker: string } }) {
   // Await the params object itself in Next.js 15 before destructuring
@@ -44,6 +45,9 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
   const isLoggedIn = !!keys.userId;
   const isWatched = isLoggedIn ? await getWatchlistStatus(ticker) : false;
 
+  // 獲取此檔股票的相關報告
+  const relatedReports = await getReports(ticker, 'date');
+
   return (
     <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
       
@@ -69,6 +73,11 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
                   <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
                     {ticker}
                   </span>
+                  {data.isPremiumRestricted && (
+                    <span className="text-sm font-bold text-amber-500 bg-amber-500/10 px-3 py-1.5 rounded-full border border-amber-500/20 flex items-center shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                      ⚠️ Require FMP API Premium
+                    </span>
+                  )}
                 </h1>
                 <WatchlistButton symbol={ticker} initialIsWatched={isWatched} isLoggedIn={isLoggedIn} />
               </div>
@@ -103,7 +112,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
           </div>
         )}
 
-        {data && <ClientFundamentalView data={data} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} />}
+        {data && <ClientFundamentalView data={data} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} relatedReports={relatedReports} />}
       </div>
     </main>
   );

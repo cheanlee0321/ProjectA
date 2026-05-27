@@ -98,7 +98,7 @@ export default async function DashboardPage() {
           {/* Section 4 */}
           <SectionHeader title="台灣專屬指標" emoji="🇹🇼" statuses={[data.taiwanBusinessIndicator?.status || '', data.taiwanMargin.status]} hideLights />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="https://www.ndc.gov.tw/nc_27_4422" target="_blank" rel="noopener noreferrer" className="group block relative overflow-hidden bg-foreground/5 border border-foreground/10 rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-foreground/30 hover:bg-foreground/10 cursor-pointer h-full">
+            <a href="https://index.ndc.gov.tw/n/zh_tw/lightscore#/" target="_blank" rel="noopener noreferrer" className="group block relative overflow-hidden bg-foreground/5 border border-foreground/10 rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-foreground/30 hover:bg-foreground/10 cursor-pointer h-full">
               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
               <h3 className="text-lg font-semibold text-foreground/70 mb-4 tracking-wide group-hover:text-indigo-400 transition-colors">台灣-景氣對策信號</h3>
               <div className="flex flex-col h-[80px] justify-center items-center gap-2 mb-6">
