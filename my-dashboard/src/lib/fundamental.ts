@@ -124,7 +124,8 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
 
     const sorted = tsData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
-    for (const item of sorted) {
+    for (const _item of sorted) {
+      const item = _item as any;
       if (!item.date) continue;
       const year = new Date(item.date).getFullYear().toString();
       const dateStr = new Date(item.date).toISOString().split('T')[0];
