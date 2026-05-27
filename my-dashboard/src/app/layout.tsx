@@ -16,7 +16,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "股市儀表板",
+  title: "投資決策中心",
   description: "個人化股市分析與 Watchlist",
 };
 

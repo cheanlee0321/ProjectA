@@ -127,7 +127,73 @@ export default function PortalPage() {
 
         </div>
 
+        {/* Education Resources Section */}
+        <div className="mt-24 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 drop-shadow-md">
+              投資理財教學資源
+            </h2>
+            <p className="text-foreground/60 max-w-2xl mx-auto">
+              掌握正確的分析觀念與實務操作，建構穩健的投資體系。
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {/* Balance Sheet */}
+            <Link href="/education/balance-sheet" className="group">
+              <div className="h-full relative p-6 rounded-2xl bg-foreground/5 backdrop-blur-lg border border-foreground/10 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-foreground/10 hover:shadow-[0_10px_20px_-10px_rgba(225,29,72,0.3)]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mr-4 border border-rose-500/30 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">資產負債表分析</h3>
+                </div>
+                <p className="text-foreground/60 text-sm leading-relaxed">檢視企業資產品質與負債結構，掌握公司真實財務體質。</p>
+              </div>
+            </Link>
+
+            {/* Income Statement */}
+            <Link href="/education/income-statement" className="group">
+              <div className="h-full relative p-6 rounded-2xl bg-foreground/5 backdrop-blur-lg border border-foreground/10 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-foreground/10 hover:shadow-[0_10px_20px_-10px_rgba(245,158,11,0.3)]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mr-4 border border-amber-500/30 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">📊</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">損益表分析</h3>
+                </div>
+                <p className="text-foreground/60 text-sm leading-relaxed">拆解營收、毛利與淨利，評估企業核心業務的獲利能力。</p>
+              </div>
+            </Link>
+
+            {/* Cash Flow */}
+            <Link href="/education/cash-flow" className="group">
+              <div className="h-full relative p-6 rounded-2xl bg-foreground/5 backdrop-blur-lg border border-foreground/10 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-foreground/10 hover:shadow-[0_10px_20px_-10px_rgba(16,185,129,0.3)]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mr-4 border border-emerald-500/30 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">💰</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">現金流量表分析</h3>
+                </div>
+                <p className="text-foreground/60 text-sm leading-relaxed">追蹤企業真實金流進出，避開帳面獲利但缺乏現金的陷阱。</p>
+              </div>
+            </Link>
+
+            {/* DCF */}
+            <Link href="/education/dcf" className="group">
+              <div className="h-full relative p-6 rounded-2xl bg-foreground/5 backdrop-blur-lg border border-foreground/10 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-foreground/10 hover:shadow-[0_10px_20px_-10px_rgba(79,70,229,0.3)]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mr-4 border border-indigo-500/30 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">📈</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">DCF 教學</h3>
+                </div>
+                <p className="text-foreground/60 text-sm leading-relaxed">深入了解現金流折現模型，計算企業內在價值與合理買點。</p>
+              </div>
+            </Link>
+
+          </div>
+        </div>
 
         {/* Footer / Contact Info & Disclaimer */}
         <div className="mt-24 text-center flex flex-col items-center">

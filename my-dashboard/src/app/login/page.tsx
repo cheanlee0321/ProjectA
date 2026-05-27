@@ -10,8 +10,8 @@ export default async function LoginPage({
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <form className="flex w-full max-w-md flex-col justify-center gap-4 text-foreground">
-        <h1 className="text-2xl font-bold text-center mb-6">歡迎使用股市儀表板</h1>
-        
+        <h1 className="text-2xl font-bold text-center mb-6">歡迎使用投資決策中心</h1>
+
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium" htmlFor="email">
             Email
@@ -49,13 +49,12 @@ export default async function LoginPage({
         >
           註冊
         </button>
-        
+
         {resolvedSearchParams?.message && (
-          <p className={`mt-4 p-4 text-center text-sm rounded-md ${
-            resolvedSearchParams.message.includes('失敗') 
-              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800' 
+          <p className={`mt-4 p-4 text-center text-sm rounded-md ${resolvedSearchParams.message.includes('失敗')
+              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800'
               : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800'
-          }`}>
+            }`}>
             {resolvedSearchParams.message}
           </p>
         )}
