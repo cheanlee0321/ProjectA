@@ -24,9 +24,19 @@ export default async function SettingsPage() {
   return (
     <div className="container mx-auto p-4 max-w-2xl mt-10">
       <h1 className="text-2xl font-bold mb-6">設定 API Keys</h1>
-      <p className="text-gray-500 dark:text-gray-400 mb-8">
-        請提供您的 API Keys 以獲取個人化的資料分析。您的金鑰會被加密儲存於資料庫，只有後端可以解密，絕對不會暴露給前端或其他使用者。
-      </p>
+      <div className="text-gray-500 dark:text-gray-400 mb-8 space-y-2">
+        <p>
+          請提供您的 API Keys 以啟用更進階的個人化資料分析。為保障您的隱私，所有金鑰均會加密儲存於資料庫中，且僅限後端存取，絕不外流。
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            <strong>FMP & Finmind：</strong> 系統預設使用免費版 API，資料取得的年份與次數會有所限制。若您已購買 Premium 方案，請在此綁定您的 API Key，以解鎖更完整的歷史數據與詳細資訊。
+          </li>
+          <li>
+            <strong>Gemini：</strong> 設定專屬的 API Key 後，即可啟用更強大的 Gemini 3.1 Pro 模型，體驗更深度的 AI 分析功能。
+          </li>
+        </ul>
+      </div>
 
       <div className="space-y-8">
         {/* FMP API Key */}

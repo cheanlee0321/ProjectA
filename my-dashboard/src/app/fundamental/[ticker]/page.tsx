@@ -41,12 +41,15 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
 
   const data = await fetchFullFundamentalData(ticker, keys.fmp, keys.finmind);
 
-  // 獲取此檔股票的追蹤狀態
   const isLoggedIn = !!keys.userId;
   const isWatched = isLoggedIn ? await getWatchlistStatus(ticker) : false;
 
   // 獲取此檔股票的相關報告
   const relatedReports = await getReports(ticker, 'date');
+
+  // 獲取進階財務模型分析資料 (DuPont, F-Score)
+  const { getAdvancedAnalysisData } = await import('@/lib/advancedAnalysis');
+  const advancedData = await getAdvancedAnalysisData(ticker, keys.fmp, keys.finmind);
 
   return (
     <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
@@ -116,7 +119,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
           </div>
         )}
 
-        {data && <ClientFundamentalView data={data} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} relatedReports={relatedReports} />}
+        {data && <ClientFundamentalView data={data} advancedData={advancedData} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} relatedReports={relatedReports} />}
       </div>
     </main>
   );

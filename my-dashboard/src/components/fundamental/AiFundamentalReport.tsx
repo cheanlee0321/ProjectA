@@ -17,24 +17,29 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
   const [reportDate, setReportDate] = useState<string | null>(null);
   const hasFetched = useRef(false);
 
-  useEffect(() => {
-    // 確保只觸發一次 fetch
-    if (hasFetched.current) return;
+  const fetchReport = async (forceRefresh = false) => {
+    if (!forceRefresh && hasFetched.current) return;
     if (!geminiApiKey) {
       setError('請先至設定頁面填寫您的 Google Gemini API Key 以解鎖 AI 深度分析功能。');
       setLoading(false);
       return;
     }
 
-    hasFetched.current = true;
+    if (!forceRefresh) {
+      hasFetched.current = true;
+    } else {
+      setLoading(true);
+      setContent('');
+      setError(null);
+    }
 
-    const fetchReport = async () => {
-      try {
-        const response = await fetch('/api/ai/fundamental', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ticker, geminiApiKey, geminiModel, data })
-        });
+    try {
+      const response = await fetch('/api/ai/fundamental', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ticker, geminiApiKey, geminiModel, data, forceRefresh })
+      });
+
 
         if (!response.ok) {
           const errData = await response.json();
@@ -75,12 +80,13 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
             setContent((prev) => prev + decoder.decode(value, { stream: true }));
           }
         }
-      } catch (err: any) {
-        setError(err.message || '發生未知錯誤');
-        setLoading(false);
-      }
-    };
+    } catch (err: any) {
+      setError(err.message || '發生未知錯誤');
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchReport();
   }, [ticker, geminiApiKey, data]);
 
@@ -99,7 +105,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-foreground/10">
         <div className="flex flex-wrap items-center gap-4">
           <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
-            <span className="text-2xl">🤖</span> Rule #1 AI 深度分析 (實驗版)
+            🤖 AI 財報與法說會深度解析
             <span className="text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
               {geminiModel || 'gemini-2.5-flash'}
             </span>
@@ -113,11 +119,21 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
             ⚠️ AI 資料可能有誤，請審慎參考，詳實驗證
           </span>
         </div>
-        {loading && (
-          <span className="text-xs font-medium bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full animate-pulse border border-rose-500/30">
-            分析中...
-          </span>
-        )}
+        <div className="flex items-center gap-4">
+          {loading && (
+            <span className="text-xs font-medium bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full animate-pulse border border-rose-500/30">
+              分析中...
+            </span>
+          )}
+          {!loading && (
+            <button 
+              onClick={() => fetchReport(true)}
+              className="text-xs px-3 py-1.5 bg-foreground/10 hover:bg-foreground/20 text-foreground/80 rounded-md transition-colors"
+            >
+              重新產生報告
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">

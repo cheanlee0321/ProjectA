@@ -10,16 +10,16 @@ export async function POST(req: Request) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
 
-    const { ticker, geminiApiKey, geminiModel, data } = await req.json();
+    const { ticker, geminiApiKey, geminiModel, data, forceRefresh } = await req.json();
 
     if (!geminiApiKey) {
       return NextResponse.json({ error: '未設定 Gemini API Key' }, { status: 400 });
     }
 
-    // 1. 檢查 Supabase 是否有 7 天內的快取 (1週) - 僅限有登入的使用者
-    if (user) {
-      const sevenDaysAgo = new Date();
-      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    // 1. 檢查 Supabase 是否有 30 天內的快取 (1個月) - 僅限有登入的使用者，且未要求強迫刷新
+    if (user && !forceRefresh) {
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
       const { data: cachedReport } = await supabase
         .from('ai_reports')
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
         .eq('user_id', user.id)
         .maybeSingle();
 
-      if (cachedReport && new Date(cachedReport.updated_at) > sevenDaysAgo) {
+      if (cachedReport && new Date(cachedReport.updated_at) > thirtyDaysAgo) {
         // 若有快取，直接以字串形式一次回傳 (不需串流)
         return NextResponse.json({ 
           cached: true, 
@@ -48,49 +48,41 @@ export async function POST(req: Request) {
 
     const prompt = `
 # 角色設定
-你是一位華爾街頂尖的價值投資分析師，同時也是 Phil Town 「Rule #1 投資法則」與查理·蒙格（Charlie Munger）反向思考哲學的忠實實踐者。你擅長透過閱讀財報、分析商業模式、同業競爭與計算現金流折現（DCF），來找出具有強大護城河且價格遠低於內在價值的優質公司。
+你是一位華爾街頂尖的股票分析師。你擅長透過深度閱讀最新的財報 (Earnings Release) 與法說會逐字稿 (Earnings Call Transcript)，來挖掘市場忽略的細節、管理層的隱含情緒 (Sentiment)，並給出具體的投資洞察。
 
 # 任務目標
-請針對股票代碼：${ticker} 進行深度分析。
-你必須強制使用網頁搜尋功能，獲取最新的 TTM（過去十二個月）數據進行全面且深度的投資分析。
-【極度重要】全篇財務分析（特別是 EPS、淨利與本益比計算）必須強制使用 GAAP（一般公認會計原則）數據。嚴禁編造任何財務數據，若遇到資料缺失，請明確標示「無資料」。
+請針對股票代碼：${ticker} 進行最新的財報與法說會深度解析。
+你必須強制使用網頁搜尋功能，找出該公司「最新一次」的財報發布與法說會內容。
 
-以下為系統目前抓取到的財務數據摘要，請將此資料與你搜尋到的最新資訊結合分析：
+以下為系統目前抓取到的財務數據摘要供你參考，請將此資料與你搜尋到的最新法說會資訊結合分析：
 公司簡介：${data?.profile?.description || '無'}
 目前股價：${data?.profile?.price || '無'}
+所屬產業：${data?.profile?.industry || '無'}
 
-# 分析步驟
-## 步驟一：Rule #1 企業體質與護城河 (The 4 M's)
-評估該公司的基本面與長期競爭力（Meaning, Moat, Management, Margin of Safety）。特別檢查「員工認股選擇權 (SBC)」比例是否過高。
+# 輸出格式與架構要求
+請使用繁體中文，善用 Markdown 語法與「表格」，確保結構清晰專業。
 
-## 步驟二：取得最新 TTM 財報數據與股東回報分析（GAAP 嚴格檢驗）
-取得當天日期與最新股價。強制搜尋最新的 10-K/10-Q 財報數據，以「表格」列出過去 5 年（包含最新 TTM）的核心財務指標並點評：四大成長率、GAAP vs Non-GAAP、ROIC、還債能力、股本稀釋情況。
+## 📍 【最新財報發布日期】：YYYY-MM-DD
+*(請務必在報告最上方明確標示出你搜尋到的最新財報發布確切日期)*
 
-## 步驟三：同業比較與近年重要事件驅動
-列出 2-3 家競爭對手對比營收與利潤率。分析近 1-3 年重大事件對未來現金流的影響。
+## 1. 財報「驚喜」與「驚嚇」 (Earnings Surprises)
+*   條列式總結本季營收與獲利是否擊敗市場預期 (Beat/Miss)。
+*   點出財報中最令人意外的亮點 (Surprise) 或隱憂 (Disappointment)。
 
-## 步驟四：情境假設與 10 年期 DCF 估值 (核心估值)
-設定三種情境（悲觀、基準、樂觀），執行 10 年期 DCF 模型。
-* 必須以最新 TTM 嚴格自由現金流作為第 0 年基準。
-* 折現率 (Discount Rate) 強制鎖定為 12%。
-* 終值倍數 (Terminal Multiple) 使用合理預估。
-* 以表格列出假設與三種情境的「每股內在價值」。
+## 2. CEO/CFO 談話情緒與前瞻指引 (Management Sentiment & Guidance)
+*   **情緒分析**：管理層在法說會上的語氣是樂觀、保守還是防禦性？
+*   **前瞻指引 (Guidance)**：管理層對下一季或全年的營收/利潤預期為何？有沒有下修或上調展望？
 
-## 步驟五：歷史估值倍數雙重驗證 (Sanity Check)
-對比過去 5 年平均 P/E 與 P/FCF 與目前的倍數。
+## 3. Q&A 環節：分析師最尖銳的問題
+*   統整法說會最後的問答時間 (Q&A) 中，華爾街分析師們最關心、或最具攻擊性的 2~3 個問題。
+*   總結管理層是如何回應這些敏感問題的（有沒有避重就輕？）。
 
-## 步驟六：價值陷阱全面檢核 (Value Trap Stress Test)
-若目前估值低於基準假設，深度掃描是否為價值陷阱（現金流品質、ROIC趨勢、負債與資本配置、零成長壓力測試）。若高於基準假設，可略過。
+## 4. 競爭對手對比與護城河狀態
+*   簡短提及 1~2 家主要競爭對手（如：台積電對比三星，Intel 對比 AMD）。
+*   分析該公司在本季的表現是否從對手手中奪取了市佔率，或是護城河遭受威脅。
 
-## 步驟七：反向思考 (Pre-mortem) 與最終行動建議
-* 根據「基準情境」內在價值，計算 Rule #1 買入價（打 5 折，50% 安全邊際）。
-* 給出明確結論。
-* 驗屍報告 (The Pre-mortem)：想像 5 年後投資失敗，寫出最有可能導致護城河瓦解的衰退劇本，並列出 1-2 個「先行追蹤指標」。
-
-# 輸出格式與防呆要求
-* 請使用繁體中文。
-* 善用 Markdown 語法與「表格」，確保結構清晰。
-* 例外處理：若為金融業或無正自由現金流之企業，請切換至合適的替代估值法（如 PB vs ROE 或 P/S）。
+## 5. 分析師總結建議
+*   給出一小段總結，對於這份財報的整體看法，以及給投資人的後續關注焦點。
     `;
 
     // 3. 呼叫 Streaming API

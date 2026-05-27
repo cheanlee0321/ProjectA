@@ -5,9 +5,11 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { Activity } from 'lucide-react';
 import AiFundamentalReport from './AiFundamentalReport';
 import ReportLibrary from '@/components/reports/ReportLibrary';
+import FScoreDashboard from './FScoreDashboard';
+import DuPontAnalysisChart from './DuPontAnalysisChart';
 
-export default function ClientFundamentalView({ data, ticker, geminiApiKey, geminiModel, relatedReports = [] }: { data: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[] }) {
-  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'ai-report' | 'related-reports'>('summary');
+export default function ClientFundamentalView({ data, advancedData, ticker, geminiApiKey, geminiModel, relatedReports = [] }: { data: any, advancedData: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[] }) {
+  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'advanced-analysis' | 'ai-report' | 'related-reports'>('summary');
   const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean } | null>(null);
 
   if (!data || !data.profile) {
@@ -59,6 +61,7 @@ export default function ClientFundamentalView({ data, ticker, geminiApiKey, gemi
           { id: 'summary', label: '公司概況 & 圖表' },
           { id: 'financials', label: '損益表 (Income Statement)' },
           { id: 'ratios', label: '關鍵指標 (Key Metrics)' },
+          { id: 'advanced-analysis', label: '進階財務模型' },
           { id: 'ai-report', label: '🤖 AI 分析報告' },
           { id: 'related-reports', label: '📚 相關報告' }
         ].map(tab => (
@@ -309,6 +312,13 @@ export default function ClientFundamentalView({ data, ticker, geminiApiKey, gemi
         {activeTab === 'ai-report' && (
           <div className="h-[800px] w-full">
             <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+          </div>
+        )}
+
+        {activeTab === 'advanced-analysis' && (
+          <div className="w-full">
+            <FScoreDashboard result={advancedData?.fScoreResult} />
+            <DuPontAnalysisChart data={advancedData?.dupont || []} />
           </div>
         )}
 
