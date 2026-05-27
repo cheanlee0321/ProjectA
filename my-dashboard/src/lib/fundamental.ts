@@ -56,7 +56,7 @@ export const fetchFullFundamentalData = unstable_cache(
       fetchDate: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' })
     };
   },
-  ['fundamental-data-v3'],
+  ['fundamental-data-v4'],
   { revalidate: 604800 }
 );
 
@@ -118,6 +118,17 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
       type: 'annual'
     });
 
+    let quotes: any[] = [];
+    try {
+      const chart = await yahooFinance.chart(symbol, {
+        period1,
+        interval: '1mo'
+      });
+      quotes = chart.quotes || [];
+    } catch (chartErr) {
+      console.warn("Could not fetch chart for PE calculation:", chartErr);
+    }
+
     const income: any[] = [];
     const balance: any[] = [];
     const metrics: any[] = [];
@@ -127,8 +138,9 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
     for (const _item of sorted) {
       const item = _item as any;
       if (!item.date) continue;
-      const year = new Date(item.date).getFullYear().toString();
-      const dateStr = new Date(item.date).toISOString().split('T')[0];
+      const targetDate = new Date(item.date);
+      const year = targetDate.getFullYear().toString();
+      const dateStr = targetDate.toISOString().split('T')[0];
 
       income.push({
         date: dateStr,
@@ -158,12 +170,29 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
 
       const netIncome = item.netIncome || item.netIncomeCommonStockholders || 0;
       
+      let closestPrice = 0;
+      if (quotes.length > 0) {
+        let minDiff = Infinity;
+        for (const q of quotes) {
+          if (!q.date) continue;
+          const qDate = new Date(q.date);
+          const diff = Math.abs(qDate.getTime() - targetDate.getTime());
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestPrice = q.close || 0;
+          }
+        }
+      }
+      const eps = item.dilutedEPS || item.basicEPS || 0;
+      const earningsYield = closestPrice > 0 && eps > 0 ? (eps / closestPrice) : 0;
+      
       metrics.push({
         date: dateStr,
         fiscalYear: year,
         returnOnEquity: totalEquity ? netIncome / totalEquity : 0,
         returnOnAssets: totalAssets ? netIncome / totalAssets : 0,
-        currentRatio: currentLiabilities ? currentAssets / currentLiabilities : 0
+        currentRatio: currentLiabilities ? currentAssets / currentLiabilities : 0,
+        earningsYield: earningsYield
       });
     }
 
