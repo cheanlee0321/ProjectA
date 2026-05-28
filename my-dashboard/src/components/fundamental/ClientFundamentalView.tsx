@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { Activity } from 'lucide-react';
 import AiFundamentalReport from './AiFundamentalReport';
+import AiCompetitorAnalysis from './AiCompetitorAnalysis';
 import ReportLibrary from '@/components/reports/ReportLibrary';
 import FScoreDashboard from './FScoreDashboard';
 import DuPontAnalysisChart from './DuPontAnalysisChart';
+import PriceChart from './PriceChart';
 
-export default function ClientFundamentalView({ data, advancedData, ticker, geminiApiKey, geminiModel, relatedReports = [] }: { data: any, advancedData: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[] }) {
+export default function ClientFundamentalView({ data, advancedData, ticker, geminiApiKey, geminiModel, relatedReports = [], historicalPrices = [] }: { data: any, advancedData: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[], historicalPrices?: any[] }) {
   const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'advanced-analysis' | 'ai-report' | 'related-reports'>('summary');
   const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean } | null>(null);
 
@@ -87,6 +89,11 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
         
         {activeTab === 'summary' && (
           <div className="space-y-12">
+            {/* Price Trend Chart Section */}
+            {historicalPrices && historicalPrices.length > 0 && (
+              <PriceChart data={historicalPrices} ticker={ticker} />
+            )}
+
             {/* Chart Section */}
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 border-b border-foreground/10 pb-4">營收與淨利趨勢 (十億美元)</h3>
@@ -310,8 +317,13 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
         )}
 
         {activeTab === 'ai-report' && (
-          <div className="h-[800px] w-full">
-            <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+          <div className="w-full flex flex-col gap-8">
+            <div className="h-[800px] w-full">
+              <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+            </div>
+            <div className="h-[800px] w-full">
+              <AiCompetitorAnalysis ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+            </div>
           </div>
         )}
 

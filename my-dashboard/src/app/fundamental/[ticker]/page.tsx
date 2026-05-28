@@ -1,5 +1,6 @@
 export const dynamic = 'force-dynamic';
 import { fetchFullFundamentalData } from '@/lib/fundamental';
+import { fetchHistoricalPrices } from '@/lib/price';
 import ClientFundamentalView from '@/components/fundamental/ClientFundamentalView';
 import Link from 'next/link';
 import { getUserApiKeys } from '@/lib/keys';
@@ -50,6 +51,9 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
   // 獲取進階財務模型分析資料 (DuPont, F-Score)
   const { getAdvancedAnalysisData } = await import('@/lib/advancedAnalysis');
   const advancedData = await getAdvancedAnalysisData(ticker, keys.fmp, keys.finmind);
+
+  // 獲取歷史股價資料 (用於走勢圖)
+  const historicalPrices = await fetchHistoricalPrices(ticker);
 
   return (
     <main className="min-h-screen bg-background p-6 md:p-12 lg:p-24 relative overflow-hidden">
@@ -119,7 +123,7 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
           </div>
         )}
 
-        {data && <ClientFundamentalView data={data} advancedData={advancedData} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} relatedReports={relatedReports} />}
+        {data && <ClientFundamentalView data={data} advancedData={advancedData} ticker={ticker} geminiApiKey={keys.gemini} geminiModel={keys.geminiModel} relatedReports={relatedReports} historicalPrices={historicalPrices} />}
       </div>
     </main>
   );

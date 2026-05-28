@@ -42,7 +42,13 @@ export default async function DashboardPage() {
         
         {/* Top Section: AI Summary */}
         <div className="w-full">
-          <Suspense fallback={<div className="bg-foreground/5 animate-pulse rounded-3xl min-h-[300px] w-full"></div>}>
+          <Suspense fallback={
+            <div className="bg-foreground/5 border border-foreground/10 rounded-3xl p-8 mb-12 relative z-10 backdrop-blur-md shadow-2xl flex flex-col items-center justify-center min-h-[300px] animate-pulse">
+              <div className="text-4xl mb-4 animate-bounce">✨</div>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Gemini AI 正在分析中...</h2>
+              <p className="text-foreground/60 text-sm">請稍候，正在綜合各項指標為您生成市場摘要</p>
+            </div>
+          }>
             <AiSummary />
           </Suspense>
         </div>

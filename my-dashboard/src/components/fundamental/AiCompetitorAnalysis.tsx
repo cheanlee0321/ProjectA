@@ -10,7 +10,7 @@ interface Props {
   data: any;
 }
 
-export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel, data }: Props) {
+export default function AiCompetitorAnalysis({ ticker, geminiApiKey, geminiModel, data }: Props) {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,12 +34,11 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
     }
 
     try {
-      const response = await fetch('/api/ai/fundamental', {
+      const response = await fetch('/api/ai/competitor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ticker, geminiApiKey, geminiModel, data, forceRefresh })
       });
-
 
       if (!response.ok) {
         const errData = await response.json();
@@ -105,7 +104,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-foreground/10">
         <div className="flex flex-wrap items-center gap-4">
           <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
-            🤖 AI 財報與法說會解析
+            ⚔️ AI 同業比較與競爭優勢分析
             <span className="text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
               {geminiModel || 'gemini-2.5-flash'}
             </span>
@@ -144,7 +143,7 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
               <div className="absolute inset-2 rounded-full border-r-2 border-indigo-400 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
             </div>
             <p className="text-center text-sm leading-relaxed max-w-[200px]">
-              AI 正在閱讀 {ticker} 最新財報與搜尋網路新聞...<br />這可能需要 30~60 秒，請耐心等候。
+              AI 正在為 {ticker} 搜尋競爭對手並比較數據...<br />這可能需要 30~60 秒，請耐心等候。
             </p>
           </div>
         ) : (
@@ -153,8 +152,6 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
           </div>
         )}
       </div>
-
-      {/* Scrollbar styles to add to globals.css later if needed, but standard tailwind prose handles most of it nicely */}
     </div>
   );
 }
