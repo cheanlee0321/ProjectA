@@ -8,9 +8,14 @@ export const metadata = {
 
 export default async function ReportsPage() {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  
+  // 平行發送請求，大幅縮短伺服器等待時間
+  const [authResponse, reports] = await Promise.all([
+    supabase.auth.getUser(),
+    getReports('all', 'date')
+  ]);
 
-  const reports = await getReports('all', 'date');
+  const user = authResponse.data.user;
 
   return (
     <main className="min-h-screen bg-background text-foreground p-6 md:p-12 relative overflow-hidden">
