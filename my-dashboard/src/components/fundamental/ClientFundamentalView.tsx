@@ -13,7 +13,7 @@ import OwnershipAnalysis from './OwnershipAnalysis';
 
 export default function ClientFundamentalView({ data, advancedData, ticker, geminiApiKey, geminiModel, relatedReports = [], historicalPrices = [] }: { data: any, advancedData: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[], historicalPrices?: any[] }) {
   const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'advanced-analysis' | 'ownership' | 'ai-report' | 'related-reports'>('summary');
-  const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean } | null>(null);
+  const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean, section?: string } | null>(null);
 
   if (!data || !data.profile) {
     return <div className="text-foreground text-center mt-20 text-2xl">找不到該股票資料，請確認代號是否正確。</div>;
@@ -31,6 +31,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
   const handleIncomeClick = (title: string, dataKey: string, divisor: number = 1000000) => {
     setSelectedChart({
       title: `${title} 歷史趨勢`,
+      section: 'income',
       data: income.map((item: any) => ({
         year: item.date ? item.date.split('-')[0] : item.fiscalYear,
         value: Number(item[dataKey]) / divisor
@@ -41,6 +42,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
   const handleBalanceClick = (title: string, dataKey: string, divisor: number = 1000000) => {
     setSelectedChart({
       title: `${title} 歷史趨勢`,
+      section: 'balance',
       data: balance.map((item: any) => ({
         year: item.date ? item.date.split('-')[0] : item.fiscalYear,
         value: Number(item[dataKey]) / divisor
@@ -51,6 +53,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
   const handleCashFlowClick = (title: string, dataKey: string, divisor: number = 1000000) => {
     setSelectedChart({
       title: `${title} 歷史趨勢`,
+      section: 'cashflow',
       data: (cashflow || []).map((item: any) => ({
         year: item.date ? item.date.split('-')[0] : item.fiscalYear,
         value: Number(item[dataKey]) / divisor
@@ -61,6 +64,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
   const handleMetricClick = (title: string, dataKey: string, isPercent: boolean = false, isInverse: boolean = false) => {
     setSelectedChart({
       title: `${title} 歷史趨勢`,
+      section: 'ratios',
       isPercent,
       data: metrics.map((item: any) => ({
         year: item.date ? item.date.split('-')[0] : item.fiscalYear,
@@ -74,6 +78,34 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
     if (isNaN(numValue)) return value;
     if (isPercent) return `${(numValue * 100).toFixed(2)}%`;
     return numValue.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  };
+
+  const renderDynamicChart = (sectionName: string) => {
+    if (!selectedChart || selectedChart.section !== sectionName) return null;
+    
+    return (
+      <div className="bg-background border border-rose-500/30 rounded-2xl p-6 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500 mt-6 mb-12">
+        <h4 className="text-xl font-bold text-rose-300 mb-6 flex items-center">
+          <Activity className="w-5 h-5 mr-2" />
+          {selectedChart.title}
+        </h4>
+        <div className="h-[350px] w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={selectedChart.data} margin={{ top: 10, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.1} />
+              <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.6} />
+              <YAxis stroke="var(--foreground)" strokeOpacity={0.6} domain={['auto', 'auto']} tickFormatter={(value) => selectedChart.isPercent ? `${(value * 100).toFixed(0)}%` : value.toString()} />
+              <Tooltip
+                contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
+                itemStyle={{ color: '#fb7185' }}
+                formatter={(value: any) => formatTooltipValue(value, selectedChart.isPercent)}
+              />
+              <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -226,6 +258,8 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
               </table>
             </div>
 
+            {renderDynamicChart('income')}
+
             {/* Balance Sheet Table */}
             <div className="overflow-x-auto mt-12">
               <div className="flex items-center justify-between mb-6">
@@ -269,6 +303,8 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
                 </tbody>
               </table>
             </div>
+
+            {renderDynamicChart('balance')}
 
             {/* Cash Flow Table */}
             {cashflow && cashflow.length > 0 && (
@@ -322,30 +358,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
               </div>
             )}
             
-            {/* Dynamic Chart for Financials */}
-            {selectedChart && (
-              <div className="bg-background border border-rose-500/30 rounded-2xl p-6 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h4 className="text-xl font-bold text-rose-300 mb-6 flex items-center">
-                  <Activity className="w-5 h-5 mr-2" />
-                  {selectedChart.title}
-                </h4>
-                <div className="h-[350px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={selectedChart.data} margin={{ top: 10, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.1} />
-                      <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.6} />
-                      <YAxis stroke="var(--foreground)" strokeOpacity={0.6} domain={['auto', 'auto']} />
-                      <Tooltip
-                        contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
-                        itemStyle={{ color: '#fb7185' }}
-                        formatter={(value: any) => formatTooltipValue(value, selectedChart.isPercent)}
-                      />
-                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            )}
+            {renderDynamicChart('cashflow')}
           </div>
         )}
 
@@ -406,30 +419,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
               </table>
             </div>
 
-            {/* Dynamic Chart for Metrics */}
-            {selectedChart && (
-              <div className="bg-background border border-rose-500/30 rounded-2xl p-6 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h4 className="text-xl font-bold text-rose-300 mb-6 flex items-center">
-                  <Activity className="w-5 h-5 mr-2" />
-                  {selectedChart.title}
-                </h4>
-                <div className="h-[350px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={selectedChart.data} margin={{ top: 10, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="var(--foreground)" strokeOpacity={0.1} />
-                      <XAxis dataKey="year" stroke="var(--foreground)" strokeOpacity={0.6} />
-                      <YAxis stroke="var(--foreground)" strokeOpacity={0.6} domain={['auto', 'auto']} tickFormatter={(value) => selectedChart.isPercent ? `${(value * 100).toFixed(0)}%` : value.toString()} />
-                      <Tooltip
-                        contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
-                        itemStyle={{ color: '#fb7185' }}
-                        formatter={(value: any) => formatTooltipValue(value as number, selectedChart.isPercent)}
-                      />
-                      <Line type="monotone" dataKey="value" name="數值" stroke="#fb7185" strokeWidth={3} dot={{ r: 6, fill: '#fb7185', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            )}
+            {renderDynamicChart('ratios')}
           </div>
         )}
 

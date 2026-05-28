@@ -33,7 +33,15 @@ export async function getBalanceSheet(ticker: string, fmpKey: string, limit = 5)
   if (res.status === 402 || res.status === 403) throw new Error('PREMIUM_RESTRICTED');
   if (!res.ok) return [];
   const data = await res.json();
-  return Array.isArray(data) ? data.reverse() : [];
+  if (Array.isArray(data)) {
+    return data.reverse().map(item => ({
+      ...item,
+      currentAssets: item.currentAssets ?? item.totalCurrentAssets ?? 0,
+      currentLiabilities: item.currentLiabilities ?? item.totalCurrentLiabilities ?? 0,
+      totalEquity: item.totalEquity ?? item.totalStockholdersEquity ?? 0
+    }));
+  }
+  return [];
 }
 
 export async function getCashFlowStatement(ticker: string, fmpKey: string, limit = 5) {
@@ -47,8 +55,8 @@ export async function getCashFlowStatement(ticker: string, fmpKey: string, limit
   if (Array.isArray(data)) {
     return data.reverse().map(item => ({
       ...item,
-      investingCashFlow: item.investingCashFlow ?? item.netCashUsedForInvestingActivites ?? 0,
-      financingCashFlow: item.financingCashFlow ?? item.netCashUsedProvidedByFinancingActivities ?? 0
+      investingCashFlow: item.investingCashFlow ?? item.netCashUsedForInvestingActivities ?? item.netCashUsedForInvestingActivites ?? item.netCashProvidedByInvestingActivities ?? 0,
+      financingCashFlow: item.financingCashFlow ?? item.netCashUsedProvidedByFinancingActivities ?? item.netCashProvidedByFinancingActivities ?? 0
     }));
   }
   return [];
