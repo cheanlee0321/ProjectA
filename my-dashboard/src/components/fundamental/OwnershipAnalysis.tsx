@@ -163,7 +163,7 @@ export default function OwnershipAnalysis({ ticker }: { ticker: string }) {
                     <YAxis stroke="var(--foreground)" strokeOpacity={0.6} tickFormatter={(value) => `${(value/1000).toFixed(0)}k`} />
                     <Tooltip 
                       contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
-                      formatter={(value: number) => [value.toLocaleString(), '淨買賣']}
+                      formatter={(value: any) => [Number(value).toLocaleString(), '淨買賣']}
                     />
                     <Legend />
                     <Bar dataKey="foreign" name="外資" fill="#ef4444" radius={[4, 4, 0, 0]}>
@@ -219,7 +219,7 @@ export default function OwnershipAnalysis({ ticker }: { ticker: string }) {
                     <Tooltip 
                       contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
                       itemStyle={{ color: '#ec4899' }}
-                      formatter={(value: number) => [`${value}%`, '大戶持股比例']}
+                      formatter={(value: any) => [`${value}%`, '大戶持股比例']}
                     />
                     <Line type="monotone" dataKey="percent" name="大戶持股比例" stroke="#ec4899" strokeWidth={3} dot={{ r: 4, fill: '#ec4899', strokeWidth: 2, stroke: 'var(--background)' }} activeDot={{ r: 8 }} />
                   </LineChart>
@@ -265,7 +265,7 @@ export default function OwnershipAnalysis({ ticker }: { ticker: string }) {
                     <YAxis dataKey="name" type="category" width={120} stroke="var(--foreground)" strokeOpacity={0.8} tick={{ fontSize: 12 }} />
                     <Tooltip 
                       contentStyle={{ backgroundColor: 'var(--background)', borderColor: 'var(--glass-border)', color: 'var(--foreground)', borderRadius: '12px' }}
-                      formatter={(value: number) => [`${value.toLocaleString(undefined, { maximumFractionDigits: 2 })}M`, '持股數 (百萬)']}
+                      formatter={(value: any) => [`${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}M`, '持股數 (百萬)']}
                     />
                     <Bar dataKey="percentage" radius={[0, 4, 4, 0]}>
                       {chartData.map((entry, index) => (

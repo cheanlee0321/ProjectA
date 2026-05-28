@@ -144,7 +144,7 @@ export default function PriceChart({ data, ticker }: PriceChartProps) {
                 }}
                 itemStyle={{ color: themeColor, fontWeight: 'bold' }}
                 labelStyle={{ color: 'var(--foreground)', opacity: 0.7, marginBottom: '4px' }}
-                formatter={(value: number) => [`$${value.toFixed(2)}`, '收盤價']}
+                formatter={(value: any) => [`$${Number(value).toFixed(2)}`, '收盤價']}
               />
 
               <Area
