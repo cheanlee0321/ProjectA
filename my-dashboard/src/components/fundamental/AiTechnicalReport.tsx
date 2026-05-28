@@ -7,11 +7,10 @@ interface Props {
   ticker: string;
   geminiApiKey: string | null;
   geminiModel: string | null;
-  data: any;
-  historicalPrices?: any[];
+  historicalPrices: any[];
 }
 
-export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel, data, historicalPrices = [] }: Props) {
+export default function AiTechnicalReport({ ticker, geminiApiKey, geminiModel, historicalPrices }: Props) {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,6 +25,12 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
       return;
     }
 
+    if (!historicalPrices || historicalPrices.length === 0) {
+      setError('無足夠的歷史股價資料以進行技術分析。');
+      setLoading(false);
+      return;
+    }
+
     if (!forceRefresh) {
       hasFetched.current = true;
     } else {
@@ -35,10 +40,12 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
     }
 
     try {
-      const response = await fetch('/api/ai/fundamental', {
+      const latestPrice = historicalPrices.length > 0 ? historicalPrices[historicalPrices.length - 1].close : null;
+
+      const response = await fetch('/api/ai/technical', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ticker, geminiApiKey, geminiModel, data, forceRefresh, historicalPrices })
+        body: JSON.stringify({ ticker, geminiApiKey, geminiModel, forceRefresh, historicalPrices, latestPrice })
       });
 
 
@@ -89,11 +96,11 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
 
   useEffect(() => {
     fetchReport();
-  }, [ticker, geminiApiKey, data]);
+  }, [ticker, geminiApiKey, historicalPrices]);
 
   if (error) {
     return (
-      <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-2xl text-red-400 h-full flex flex-col items-center justify-center text-center">
+      <div className="bg-red-500/10 border border-red-500/20 p-6 rounded-2xl text-red-400 h-full flex flex-col items-center justify-center text-center mt-8">
         <span className="text-4xl mb-4">⚠️</span>
         <h3 className="font-bold text-lg mb-2">AI 分析失敗</h3>
         <p className="text-sm">{error}</p>
@@ -102,12 +109,12 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
   }
 
   return (
-    <div className="bg-foreground/5 border border-foreground/10 p-6 md:p-8 rounded-2xl h-full shadow-inner relative overflow-hidden flex flex-col">
+    <div className="bg-foreground/5 border border-foreground/10 p-6 md:p-8 rounded-2xl shadow-inner relative overflow-hidden flex flex-col mt-8">
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-foreground/10">
         <div className="flex flex-wrap items-center gap-4">
           <h3 className="text-xl font-bold text-foreground flex items-center flex-wrap gap-2">
-            🤖 AI 財報與法說會解析
-            <span className="text-xs font-medium text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">
+            🤖 AI 技術面解析
+            <span className="text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
               {geminiModel || 'gemini-2.5-flash'}
             </span>
             {reportDate && (
@@ -117,12 +124,12 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
             )}
           </h3>
           <span className="text-xs text-foreground/40 px-2 py-1 rounded border border-foreground/10 hidden sm:inline-block">
-            ⚠️ AI 資料可能有誤，請審慎參考，詳實驗證
+            ⚠️ 技術分析僅供參考，請搭配基本面評估
           </span>
         </div>
         <div className="flex items-center gap-4">
           {loading && (
-            <span className="text-xs font-medium bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full animate-pulse border border-rose-500/30">
+            <span className="text-xs font-medium bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full animate-pulse border border-emerald-500/30">
               分析中...
             </span>
           )}
@@ -137,25 +144,23 @@ export default function AiFundamentalReport({ ticker, geminiApiKey, geminiModel,
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar" style={{ maxHeight: '600px' }}>
         {loading && !content ? (
           <div className="flex flex-col items-center justify-center h-full text-foreground/50 space-y-6 py-12">
             <div className="relative w-16 h-16">
-              <div className="absolute inset-0 rounded-full border-t-2 border-rose-400 animate-spin"></div>
+              <div className="absolute inset-0 rounded-full border-t-2 border-emerald-400 animate-spin"></div>
               <div className="absolute inset-2 rounded-full border-r-2 border-indigo-400 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
             </div>
             <p className="text-center text-sm leading-relaxed max-w-[200px]">
-              AI 正在閱讀 {ticker} 最新財報與搜尋網路新聞...<br />這可能需要 30~60 秒，請耐心等候。
+              AI 正在判讀 {ticker} 的 RSI 與 MACD 趨勢...<br />請耐心等候。
             </p>
           </div>
         ) : (
-          <div className="prose prose-invert prose-rose max-w-none text-sm md:text-base leading-relaxed prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-a:text-rose-400 prose-table:w-full prose-th:bg-foreground/10 prose-th:p-2 prose-td:p-2 prose-td:border-t prose-td:border-foreground/10">
+          <div className="prose prose-invert prose-emerald max-w-none text-sm md:text-base leading-relaxed prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-a:text-emerald-400 prose-table:w-full prose-th:bg-foreground/10 prose-th:p-2 prose-td:p-2 prose-td:border-t prose-td:border-foreground/10">
             <ReactMarkdown>{content}</ReactMarkdown>
           </div>
         )}
       </div>
-
-      {/* Scrollbar styles to add to globals.css later if needed, but standard tailwind prose handles most of it nicely */}
     </div>
   );
 }

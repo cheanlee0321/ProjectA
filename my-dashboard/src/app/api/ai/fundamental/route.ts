@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { createClient } from '@/lib/supabase/server';
+import { analyzeTechnicalIndicators } from '@/lib/technical';
 
 // 允許最長執行 60 秒 (若在 Vercel Pro/Enterprise 才有效，但我們用串流可一定程度避免 Timeout)
 export const maxDuration = 60; 
@@ -46,6 +47,7 @@ export async function POST(req: Request) {
       tools: [{ googleSearch: {} }] 
     });
 
+
     const prompt = `
 # 角色設定
 你是一位華爾街頂尖的股票分析師。你擅長透過深度閱讀最新的財報 (Earnings Release) 與法說會逐字稿 (Earnings Call Transcript)，來挖掘市場忽略的細節、管理層的隱含情緒 (Sentiment)，並給出具體的投資洞察。
@@ -58,6 +60,7 @@ export async function POST(req: Request) {
 公司簡介：${data?.profile?.description || '無'}
 目前股價：${data?.profile?.price || '無'}
 所屬產業：${data?.profile?.industry || '無'}
+
 
 # 輸出格式與架構要求
 請使用繁體中文，善用 Markdown 語法與「表格」，確保結構清晰專業。

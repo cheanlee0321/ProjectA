@@ -10,9 +10,10 @@ import FScoreDashboard from './FScoreDashboard';
 import DuPontAnalysisChart from './DuPontAnalysisChart';
 import PriceChart from './PriceChart';
 import OwnershipAnalysis from './OwnershipAnalysis';
+import TechnicalAnalysis from './TechnicalAnalysis';
 
 export default function ClientFundamentalView({ data, advancedData, ticker, geminiApiKey, geminiModel, relatedReports = [], historicalPrices = [] }: { data: any, advancedData: any, ticker: string, geminiApiKey: string | null, geminiModel: string | null, relatedReports?: any[], historicalPrices?: any[] }) {
-  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'advanced-analysis' | 'ownership' | 'ai-report' | 'related-reports'>('summary');
+  const [activeTab, setActiveTab] = useState<'summary' | 'financials' | 'ratios' | 'advanced-analysis' | 'technical' | 'ownership' | 'ai-report' | 'related-reports'>('summary');
   const [selectedChart, setSelectedChart] = useState<{ title: string, data: { year: string, value: number }[], isPercent?: boolean, isInverse?: boolean, section?: string } | null>(null);
 
   if (!data || !data.profile) {
@@ -82,7 +83,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
 
   const renderDynamicChart = (sectionName: string) => {
     if (!selectedChart || selectedChart.section !== sectionName) return null;
-    
+
     return (
       <div className="bg-background border border-rose-500/30 rounded-2xl p-6 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500 mt-6 mb-12">
         <h4 className="text-xl font-bold text-rose-300 mb-6 flex items-center">
@@ -113,13 +114,14 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
       {/* Tab Navigation */}
       <div className="flex space-x-2 border-b border-foreground/10 mb-8">
         {[
-          { id: 'summary', label: '公司概況 & 圖表' },
-          { id: 'financials', label: '三大報表 (Financial Statements)' },
-          { id: 'ratios', label: '關鍵指標 (Key Metrics)' },
+          { id: 'summary', label: '公司概況' },
+          { id: 'financials', label: '三大報表' },
+          { id: 'ratios', label: '關鍵指標' },
           { id: 'advanced-analysis', label: '進階財務模型' },
+          { id: 'technical', label: '技術面分析' },
           { id: 'ownership', label: '籌碼面分析' },
-          { id: 'ai-report', label: 'AI 分析報告' },
-          { id: 'related-reports', label: '📚 相關報告' }
+          { id: 'ai-report', label: 'AI 財報速讀' },
+          { id: 'related-reports', label: '📚分析報告書架' }
         ].map(tab => (
           <button
             key={tab.id}
@@ -128,8 +130,8 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
               setSelectedChart(null);
             }}
             className={`px-6 py-3 font-medium transition-all ${activeTab === tab.id
-                ? 'text-rose-400 border-b-2 border-rose-400 bg-foreground/5 rounded-t-lg'
-                : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5 rounded-t-lg'
+              ? 'text-rose-400 border-b-2 border-rose-400 bg-foreground/5 rounded-t-lg'
+              : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5 rounded-t-lg'
               }`}
           >
             {tab.label}
@@ -357,7 +359,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
                 </table>
               </div>
             )}
-            
+
             {renderDynamicChart('cashflow')}
           </div>
         )}
@@ -423,6 +425,17 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
           </div>
         )}
 
+        {activeTab === 'technical' && (
+          <div className="w-full">
+            <TechnicalAnalysis
+              ticker={ticker}
+              geminiApiKey={geminiApiKey}
+              geminiModel={geminiModel}
+              historicalPrices={historicalPrices}
+            />
+          </div>
+        )}
+
         {activeTab === 'ownership' && (
           <div className="w-full">
             <OwnershipAnalysis ticker={ticker} />
@@ -432,7 +445,7 @@ export default function ClientFundamentalView({ data, advancedData, ticker, gemi
         {activeTab === 'ai-report' && (
           <div className="w-full flex flex-col gap-8">
             <div className="h-[800px] w-full">
-              <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
+              <AiFundamentalReport ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} historicalPrices={historicalPrices} />
             </div>
             <div className="h-[800px] w-full">
               <AiCompetitorAnalysis ticker={ticker} geminiApiKey={geminiApiKey} geminiModel={geminiModel} data={data} />
