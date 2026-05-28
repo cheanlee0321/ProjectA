@@ -77,11 +77,13 @@ export default async function FundamentalDetailPage({ params }: { params: { tick
               <div className="flex items-center flex-wrap">
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground flex items-center gap-4 flex-wrap">
                   {data.profile.companyName}
-                  <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
-                    {ticker}
-                  </span>
+                  <div className="flex items-center shrink-0">
+                    <span className="text-2xl font-medium text-foreground/50 px-4 py-1 border border-foreground/10 rounded-full bg-foreground/5">
+                      {ticker}
+                    </span>
+                    <WatchlistButton symbol={ticker} initialIsWatched={isWatched} isLoggedIn={isLoggedIn} />
+                  </div>
                 </h1>
-                <WatchlistButton symbol={ticker} initialIsWatched={isWatched} isLoggedIn={isLoggedIn} />
               </div>
 
               {'isPremiumRestricted' in data && (data as any).isPremiumRestricted && (

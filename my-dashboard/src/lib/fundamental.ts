@@ -36,6 +36,24 @@ export async function getBalanceSheet(ticker: string, fmpKey: string, limit = 5)
   return Array.isArray(data) ? data.reverse() : [];
 }
 
+export async function getCashFlowStatement(ticker: string, fmpKey: string, limit = 5) {
+  if (!fmpKey) return [];
+  const res = await fetch(`${BASE_URL}/cash-flow-statement?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
+    next: { revalidate: 604800 }
+  });
+  if (res.status === 402 || res.status === 403) throw new Error('PREMIUM_RESTRICTED');
+  if (!res.ok) return [];
+  const data = await res.json();
+  if (Array.isArray(data)) {
+    return data.reverse().map(item => ({
+      ...item,
+      investingCashFlow: item.investingCashFlow ?? item.netCashUsedForInvestingActivites ?? 0,
+      financingCashFlow: item.financingCashFlow ?? item.netCashUsedProvidedByFinancingActivities ?? 0
+    }));
+  }
+  return [];
+}
+
 export async function getKeyMetrics(ticker: string, fmpKey: string, limit = 5) {
   if (!fmpKey) return [];
   const res = await fetch(`${BASE_URL}/key-metrics?symbol=${ticker}&limit=${limit}&apikey=${fmpKey}`, {
@@ -56,7 +74,7 @@ export const fetchFullFundamentalData = unstable_cache(
       fetchDate: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' })
     };
   },
-  ['fundamental-data-v4'],
+  ['fundamental-data-v5'],
   { revalidate: 604800 }
 );
 
@@ -66,19 +84,21 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
   }
 
   const symbol = ticker.toUpperCase();
-  let profile = null, income = [], balance = [], metrics = [], isPremiumRestricted = false;
+  let profile = null, income = [], balance = [], cashflow = [], metrics = [], isPremiumRestricted = false;
 
   try {
     const results = await Promise.all([
       getCompanyProfile(symbol, fmpKey),
       getIncomeStatement(symbol, fmpKey),
       getBalanceSheet(symbol, fmpKey),
+      getCashFlowStatement(symbol, fmpKey),
       getKeyMetrics(symbol, fmpKey)
     ]);
     profile = results[0];
     income = results[1];
     balance = results[2];
-    metrics = results[3];
+    cashflow = results[3];
+    metrics = results[4];
   } catch (e: any) {
     if (e.message === 'PREMIUM_RESTRICTED') {
       isPremiumRestricted = true;
@@ -87,6 +107,7 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
       const yfData = await fetchYahooFinanceFundamentalData(symbol);
       income = yfData.income;
       balance = yfData.balance;
+      cashflow = yfData.cashflow;
       metrics = yfData.metrics;
     } else {
       console.error("FMP API Error:", e);
@@ -100,6 +121,7 @@ async function _fetchFullFundamentalData(ticker: string, fmpKey: string, finmind
     profile,
     income,
     balance,
+    cashflow,
     metrics,
     isPremiumRestricted
   };
@@ -131,6 +153,7 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
 
     const income: any[] = [];
     const balance: any[] = [];
+    const cashflow: any[] = [];
     const metrics: any[] = [];
 
     const sorted = tsData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
@@ -168,6 +191,22 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
         currentLiabilities
       });
 
+      const operatingCashFlow = item.operatingCashFlow || item.cashFlowFromContinuingOperatingActivities || 0;
+      const investingCashFlow = item.investingCashFlow || item.cashFlowFromContinuingInvestingActivities || 0;
+      const financingCashFlow = item.financingCashFlow || item.cashFlowFromContinuingFinancingActivities || 0;
+      const capitalExpenditure = item.capitalExpenditure || 0;
+      const freeCashFlow = item.freeCashFlow || (operatingCashFlow - Math.abs(capitalExpenditure));
+
+      cashflow.push({
+        date: dateStr,
+        fiscalYear: year,
+        operatingCashFlow,
+        investingCashFlow,
+        financingCashFlow,
+        capitalExpenditure,
+        freeCashFlow
+      });
+
       const netIncome = item.netIncome || item.netIncomeCommonStockholders || 0;
       
       let closestPrice = 0;
@@ -196,10 +235,10 @@ async function fetchYahooFinanceFundamentalData(ticker: string) {
       });
     }
 
-    return { income, balance, metrics };
+    return { income, balance, cashflow, metrics };
   } catch (error) {
     console.error("Yahoo Finance TS Error:", error);
-    return { income: [], balance: [], metrics: [] };
+    return { income: [], balance: [], cashflow: [], metrics: [] };
   }
 }
 
@@ -251,14 +290,15 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
       profile.currency = quoteCurrency || profile.currency;
       profile.exchangeShortName = quoteExchange || profile.exchangeShortName;
     }
-    return { profile, income: [], balance: [], metrics: [] };
+    return { profile, income: [], balance: [], cashflow: [], metrics: [] };
   }
 
   try {
-    const [finRes, perRes, bsRes] = await Promise.all([
+    const [finRes, perRes, bsRes, cfRes] = await Promise.all([
       fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json()),
       fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json()),
-      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json())
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockBalanceSheet&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json()),
+      fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockCashFlowsStatement&data_id=${stockId}&start_date=${startDate}&token=${finmindToken}`, { next: { revalidate: 604800 } }).then(r => r.json())
     ]);
 
     const yearlyIncome: Record<string, any> = {};
@@ -307,6 +347,37 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
       fiscalYear: year,
       ...yearlyBalance[year]
     })).sort((a, b) => a.fiscalYear.localeCompare(b.fiscalYear));
+
+    const yearlyCashFlow: Record<string, any> = {};
+    if (cfRes && cfRes.data) {
+      cfRes.data.forEach((item: any) => {
+        const year = item.date.split('-')[0];
+        if (!yearlyCashFlow[year]) {
+          yearlyCashFlow[year] = { operatingCashFlow: 0, investingCashFlow: 0, financingCashFlow: 0, capitalExpenditure: 0 };
+        }
+        const val = Number(item.value);
+        if (item.type === 'CashFlowsFromOperatingActivities') yearlyCashFlow[year].operatingCashFlow = val;
+        if (item.type === 'CashProvidedByInvestingActivities' || item.type === 'NetCashFlowsFromUsedInInvestingActivities' || item.type === 'CashFlowsFromUsedInInvestingActivities') yearlyCashFlow[year].investingCashFlow = val;
+        if (item.type === 'CashFlowsProvidedFromFinancingActivities' || item.type === 'NetCashFlowsFromUsedInFinancingActivities' || item.type === 'CashFlowsFromUsedInFinancingActivities') yearlyCashFlow[year].financingCashFlow = val;
+        // Approximation for CapEx
+        if (item.type === 'PropertyAndPlantAndEquipment' || item.type === 'AcquisitionOfPropertyPlantAndEquipment') yearlyCashFlow[year].capitalExpenditure = -Math.abs(val);
+      });
+    }
+
+    const cashflow = Object.keys(yearlyCashFlow).map(year => {
+      const c = yearlyCashFlow[year];
+      const operatingCashFlow = c.operatingCashFlow || 0;
+      const capitalExpenditure = c.capitalExpenditure || 0;
+      return {
+        date: `${year}-12-31`,
+        fiscalYear: year,
+        operatingCashFlow,
+        investingCashFlow: c.investingCashFlow || 0,
+        financingCashFlow: c.financingCashFlow || 0,
+        capitalExpenditure,
+        freeCashFlow: operatingCashFlow + capitalExpenditure
+      };
+    }).sort((a, b) => a.fiscalYear.localeCompare(b.fiscalYear));
 
     const yearlyMetrics: Record<string, any> = {};
     if (perRes.data) {
@@ -360,10 +431,10 @@ async function fetchTaiwanFundamentalData(ticker: string, fmpKey: string, finmin
       profile.exchangeShortName = quoteExchange || profile.exchangeShortName;
     }
 
-    return { profile, income, balance, metrics };
+    return { profile, income, balance, cashflow, metrics };
 
   } catch (error) {
     console.error("FinMind Error:", error);
-    return { profile, income: [], balance: [], metrics: [] };
+    return { profile, income: [], balance: [], cashflow: [], metrics: [] };
   }
 }
