@@ -34,12 +34,18 @@ export interface MarketData {
 }
 
 const FRED_API_KEY = process.env.FRED_API_KEY || '';
-async function fetchFredSeries(seriesId: string): Promise<{current: number | null, history: {date: string, value: number}[]}> {
+async function fetchFredSeries(seriesId: string): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
     const d = new Date();
     d.setFullYear(d.getFullYear() - 3); // 抓過去三年，為了計算 YoY
     const startDate = d.toISOString().split('T')[0];
     const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}`, { next: { revalidate: 86400 } });
+    const contentType = res.headers.get('content-type');
+    if (!res.ok || (contentType && contentType.includes('text/html'))) {
+      const errText = await res.text();
+      console.error(`FRED API error for ${seriesId}: ${res.status} ${res.statusText}`, errText.slice(0, 200));
+      return { current: null, history: [], isError: true };
+    }
     const data = await res.json();
     const history = [];
     if (data.observations && data.observations.length > 0) {
@@ -49,10 +55,10 @@ async function fetchFredSeries(seriesId: string): Promise<{current: number | nul
         const val = parseFloat(obs.value);
         if(!isNaN(val)) history.push({ date: obs.date, value: val });
       }
-      return { current: isNaN(current) ? null : current, history };
+      return { current: isNaN(current) ? null : current, history, isError: false };
     }
   } catch (e) { console.error(`FRED error ${seriesId}:`, e); }
-  return { current: null, history: [] };
+  return { current: null, history: [], isError: true };
 }
 
 const fetchYahooChart = unstable_cache(
@@ -230,8 +236,17 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
       }
     }
     let buffettStatus: 'red'|'yellow'|'green' = 'green';
-    if (buffettRatio > 150) buffettStatus = 'red';
-    else if (buffettRatio > 130) buffettStatus = 'yellow';
+    let buffettText = '估值合理';
+    if (wilshire.isError || gdp.isError) {
+      buffettStatus = 'red';
+      buffettText = 'FRED API Error';
+    } else if (buffettRatio > 150) {
+      buffettStatus = 'red';
+      buffettText = '極端高估';
+    } else if (buffettRatio > 130) {
+      buffettStatus = 'yellow';
+      buffettText = '估值偏高';
+    }
 
     // M2 YoY
     const m2History = [];
@@ -248,15 +263,31 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
     const m2YoyNumber = m2History.length > 0 ? m2History[m2History.length - 1].value : 0;
     let m2Status: 'red'|'yellow'|'green' = 'green';
     let m2Text = '動能充沛';
-    if (m2YoyNumber < 0) { m2Status = 'red'; m2Text = '資金嚴重萎縮'; }
-    else if (m2YoyNumber < 4) { m2Status = 'yellow'; m2Text = '流動性放緩'; }
+    if (m2.isError) {
+      m2Status = 'red';
+      m2Text = 'FRED API Error';
+    } else if (m2YoyNumber < 0) {
+      m2Status = 'red';
+      m2Text = '資金嚴重萎縮';
+    } else if (m2YoyNumber < 4) {
+      m2Status = 'yellow';
+      m2Text = '流動性放緩';
+    }
 
     // NFCI
     const nfciValue = nfci.current ?? 0;
     let nfciStatus: 'red'|'yellow'|'green' = 'green';
     let nfciText = '環境寬鬆';
-    if (nfciValue > 0) { nfciStatus = 'red'; nfciText = '金融緊縮'; }
-    else if (nfciValue > -0.3) { nfciStatus = 'yellow'; nfciText = '中性偏緊'; }
+    if (nfci.isError) {
+      nfciStatus = 'red';
+      nfciText = 'FRED API Error';
+    } else if (nfciValue > 0) {
+      nfciStatus = 'red';
+      nfciText = '金融緊縮';
+    } else if (nfciValue > -0.3) {
+      nfciStatus = 'yellow';
+      nfciText = '中性偏緊';
+    }
 
     // DXY
     const dxyValue = dxy.current ?? 100;
@@ -285,19 +316,19 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
     return {
       cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
       breadth: { value: breadthNumber, status: bStatus, text: bText, history: breadthHistory },
-      buffett: { value: buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A', status: buffettStatus, text: buffettStatus==='red'?'極端高估':'估值合理', history: buffettHistory },
-      sahm: { value: sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A', status: (sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green'), text: (sahm.current ?? 0) > 0.5 ? '實質衰退' : '無衰退跡象', history: sahm.history },
+      buffett: { value: (wilshire.isError || gdp.isError) ? 'N/A' : (buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A'), status: buffettStatus, text: buffettText, history: buffettHistory },
+      sahm: { value: sahm.isError ? 'N/A' : (sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A'), status: sahm.isError ? 'red' : ((sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green')), text: sahm.isError ? 'FRED API Error' : ((sahm.current ?? 0) > 0.5 ? '實質衰退' : '無衰退跡象'), history: sahm.history },
       copperGold: { value: cgNumber, status: cgStatus, text: cgText, history: cgHistory },
-      sloos: { value: sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A', status: (sloos.current ?? 0) > 40 ? 'red' : ((sloos.current ?? 0) > 20 ? 'yellow' : 'green'), text: (sloos.current ?? 0) > 40 ? '流動性枯竭' : '資金寬鬆', history: sloos.history },
-      yieldCurve: { value: yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A', status: (yieldCurve.current ?? 0) < 0 ? 'yellow' : ((yieldCurve.current ?? 0) < 0.5 && (yieldCurve.current ?? 0) > 0 ? 'red' : 'green'), text: (yieldCurve.current ?? 0) < 0 ? '曲線倒掛' : '正常', history: yieldCurve.history },
-      m2: { value: m2YoyNumber.toFixed(2)+'%', status: m2Status, text: m2Text, history: m2History },
+      sloos: { value: sloos.isError ? 'N/A' : (sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A'), status: sloos.isError ? 'red' : ((sloos.current ?? 0) > 40 ? 'red' : ((sloos.current ?? 0) > 20 ? 'yellow' : 'green')), text: sloos.isError ? 'FRED API Error' : ((sloos.current ?? 0) > 40 ? '流動性枯竭' : '資金寬鬆'), history: sloos.history },
+      yieldCurve: { value: yieldCurve.isError ? 'N/A' : (yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A'), status: yieldCurve.isError ? 'red' : ((yieldCurve.current ?? 0) < 0 ? 'yellow' : ((yieldCurve.current ?? 0) < 0.5 && (yieldCurve.current ?? 0) > 0 ? 'red' : 'green')), text: yieldCurve.isError ? 'FRED API Error' : ((yieldCurve.current ?? 0) < 0 ? '曲線倒掛' : '正常'), history: yieldCurve.history },
+      m2: { value: m2.isError ? 'N/A' : m2YoyNumber.toFixed(2)+'%', status: m2Status, text: m2Text, history: m2History },
       dxy: { value: dxyValue.toFixed(2), status: dxyStatus, text: dxyText, history: dxy.history },
       vix: { value: vix.current ? vix.current.toFixed(2) : 'N/A', status: (vix.current ?? 0) > 20 ? 'red' : ((vix.current ?? 0) > 15 ? 'yellow' : 'green'), text: (vix.current ?? 0) > 20 ? '恐慌拋售' : '平穩安全', history: vix.history },
       skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: (skew.current ?? 0) > 140 ? 'red' : ((skew.current ?? 0) > 130 ? 'yellow' : 'green'), text: (skew.current ?? 0) > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
-      creditSpreads: { value: spread.current ? spread.current.toFixed(2)+'%' : 'N/A', status: (spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green'), text: (spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕', history: spread.history },
+      creditSpreads: { value: spread.isError ? 'N/A' : (spread.current ? spread.current.toFixed(2)+'%' : 'N/A'), status: spread.isError ? 'red' : ((spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green')), text: spread.isError ? 'FRED API Error' : ((spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕'), history: spread.history },
       fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
-      marginDebt: { value: margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', status: (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), text: (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準', history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
-      nfci: { value: nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
+      marginDebt: { value: margin.isError ? 'N/A' : (margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A'), status: margin.isError ? 'red' : ((margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green')), text: margin.isError ? 'FRED API Error' : ((margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
+      nfci: { value: nfci.isError ? 'N/A' : nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
       taiwanBusinessIndicator: { value: 'N/A', status: 'loading', text: '', history: [] }, // 已改為純連結
       taiwanMargin: { value: twMValueStr, status: twMStatus, text: twMText, history: twMargin.history }
     };

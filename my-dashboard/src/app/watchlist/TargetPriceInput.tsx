@@ -43,9 +43,9 @@ export default function TargetPriceInput({ symbol, initialPrice }: { symbol: str
 
   return (
     <div className="flex items-center gap-3 pointer-events-auto relative z-20">
-      <label htmlFor={`target-${symbol}`} className="text-foreground/80 text-base font-black tracking-wide">目標價</label>
+      <label htmlFor={`target-${symbol}`} className="text-foreground/80 text-xl font-black font-mono tracking-tighter">目標價</label>
       <div className="relative flex items-center">
-        <span className="absolute left-3 text-foreground/50 text-base font-semibold">$</span>
+        <span className="absolute left-3 text-foreground/50 text-xl font-black font-mono tracking-tighter">$</span>
         <input 
           ref={inputRef}
           id={`target-${symbol}`}
@@ -57,7 +57,7 @@ export default function TargetPriceInput({ symbol, initialPrice }: { symbol: str
           onKeyDown={handleKeyDown}
           disabled={isPending}
           placeholder="設定"
-          className="w-28 sm:w-32 pl-8 pr-4 py-2 text-base font-mono bg-background border-2 border-foreground/20 rounded-lg text-foreground focus:outline-none focus:border-indigo-500/60 focus:ring-4 focus:ring-indigo-500/20 disabled:opacity-50 transition-all text-right shadow-inner placeholder:text-foreground/30"
+          className="w-[5.25rem] sm:w-24 pl-8 pr-2 py-2 text-xl font-black font-mono tracking-tighter bg-background border-2 border-foreground/20 rounded-lg text-foreground focus:outline-none focus:border-indigo-500/60 focus:ring-4 focus:ring-indigo-500/20 disabled:opacity-50 transition-all text-right shadow-inner placeholder:text-foreground/30"
         />
         {isPending && (
           <span className="absolute -right-7 animate-spin text-base">⏳</span>
