@@ -22,10 +22,10 @@ export default function UploadReportModal({ isOpen, onClose, userEmail }: Upload
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg('');
-    
+
     const formData = new FormData(e.currentTarget);
     formData.append('fileSource', fileSource);
-    
+
     startTransition(async () => {
       const result = await uploadReport(formData);
       if (result.success) {
@@ -57,49 +57,49 @@ export default function UploadReportModal({ isOpen, onClose, userEmail }: Upload
             <div className="space-y-1.5">
               <label className="text-sm font-medium text-foreground/80">股票代號</label>
               <div className="flex gap-2">
-                <select 
+                <select
                   name="market"
                   className="w-1/2 px-2 py-2 bg-foreground/5 border border-foreground/10 text-foreground rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm sm:text-base"
                 >
-                  <option value="TW">台股 (TW)</option>
                   <option value="US">美股 (US)</option>
+                  <option value="TW">台股 (TW)</option>
                 </select>
-                <input 
-                  name="symbol" 
-                  required 
-                  placeholder="例如: TSLA, 2330" 
-                  className="w-1/2 px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
+                <input
+                  name="symbol"
+                  required
+                  placeholder="例如: TSLA, 2330"
+                  className="w-1/2 px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                 />
               </div>
             </div>
             <div className="space-y-1.5">
               <label className="text-sm font-medium text-foreground/80">報告日期</label>
-              <input 
-                name="reportDate" 
-                type="date" 
-                required 
+              <input
+                name="reportDate"
+                type="date"
+                required
                 defaultValue={new Date().toISOString().split('T')[0]}
-                className="w-full px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
+                className="w-full px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-foreground/80">報告標題</label>
-            <input 
-              name="title" 
-              required 
-              placeholder="輸入報告標題..." 
-              className="w-full px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
+            <input
+              name="title"
+              required
+              placeholder="輸入報告標題..."
+              className="w-full px-3 py-2 bg-foreground/5 border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
             />
           </div>
-          
+
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-foreground/80">作者</label>
-            <input 
-              disabled 
-              value={author} 
-              className="w-full px-3 py-2 bg-foreground/10 text-foreground/60 border border-foreground/10 rounded-xl outline-none cursor-not-allowed" 
+            <input
+              disabled
+              value={author}
+              className="w-full px-3 py-2 bg-foreground/10 text-foreground/60 border border-foreground/10 rounded-xl outline-none cursor-not-allowed"
             />
             <p className="text-xs text-foreground/40">作者名稱由系統自動帶入</p>
           </div>
@@ -132,9 +132,9 @@ export default function UploadReportModal({ isOpen, onClose, userEmail }: Upload
               {fileSource === 'upload' ? (
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">選擇檔案 (.txt, .docx)</label>
-                  <input 
-                    name="file" 
-                    type="file" 
+                  <input
+                    name="file"
+                    type="file"
                     accept=".txt,.docx"
                     required={fileSource === 'upload'}
                     className="block w-full text-sm text-zinc-500 dark:text-zinc-400
@@ -150,12 +150,12 @@ export default function UploadReportModal({ isOpen, onClose, userEmail }: Upload
               ) : (
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground/80">貼上 Google Doc 連結</label>
-                  <input 
-                    name="url" 
-                    type="url" 
+                  <input
+                    name="url"
+                    type="url"
                     required={fileSource === 'url'}
-                    placeholder="https://docs.google.com/document/d/..." 
-                    className="w-full px-3 py-2 bg-background border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
+                    placeholder="https://docs.google.com/document/d/..."
+                    className="w-full px-3 py-2 bg-background border border-foreground/10 text-foreground placeholder:text-foreground/30 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
                   />
                 </div>
               )}

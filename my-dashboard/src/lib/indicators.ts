@@ -31,15 +31,21 @@ export interface MarketData {
   // 台灣股市指標
   taiwanBusinessIndicator: IndicatorData;
   taiwanMargin: IndicatorData;
+  taiwanM1BM2: IndicatorData;
+  taiwanExport: IndicatorData;
+  usdTwd: IndicatorData;
+  cryptoFng: IndicatorData;
+  bitcoin: IndicatorData;
+  spy: { history: { date: string; value: number }[] };
 }
 
 const FRED_API_KEY = process.env.FRED_API_KEY || '';
-async function fetchFredSeries(seriesId: string): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
+async function fetchFredSeries(seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
     const d = new Date();
-    d.setFullYear(d.getFullYear() - 3); // 抓過去三年，為了計算 YoY
+    d.setFullYear(d.getFullYear() - 10); // 抓過去十年
     const startDate = d.toISOString().split('T')[0];
-    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}`, { next: { revalidate: 86400 } });
+    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}&units=${units}`, { next: { revalidate: 86400 } });
     const contentType = res.headers.get('content-type');
     if (!res.ok || (contentType && contentType.includes('text/html'))) {
       const errText = await res.text();
@@ -65,7 +71,7 @@ const fetchYahooChart = unstable_cache(
   async (symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') => {
     try {
       const d = new Date();
-      d.setFullYear(d.getFullYear() - 2);
+      d.setFullYear(d.getFullYear() - 10);
       const chart = await yahooFinance.chart(symbol, { period1: d, interval });
       const history = chart.quotes.map(q => ({
         date: q.date.toISOString().split('T')[0],
@@ -90,7 +96,7 @@ async function fetchCapeRatio(): Promise<{current: number | null, history: {date
     const history = [];
     const rows = html.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
     
-    for (let i = 0; i < Math.min(rows.length, 25); i++) {
+    for (let i = 0; i < Math.min(rows.length, 120); i++) {
       const row = rows[i];
       const cols = row.match(/<td>([\s\S]*?)<\/td>/gi);
       if (cols && cols.length >= 2) {
@@ -132,12 +138,36 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
   return { current: null, history: [] };
 }
 
-
+async function fetchCryptoFearGreed(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
+  try {
+    const res = await fetch('https://api.alternative.me/fng/?limit=0', { next: { revalidate: 86400 } });
+    const data = await res.json();
+    const history = [];
+    const cutoff = new Date();
+    cutoff.setFullYear(cutoff.getFullYear() - 10);
+    
+    for (let i = data.data.length - 1; i >= 0; i--) {
+      const item = data.data[i];
+      const d = new Date(parseInt(item.timestamp) * 1000);
+      if (d >= cutoff) {
+         history.push({
+            date: d.toISOString().split('T')[0],
+            value: parseInt(item.value)
+         });
+      }
+    }
+    const current = history.length > 0 ? history[history.length - 1].value : null;
+    return { current, history, isError: false };
+  } catch (e) {
+    console.error("fetchCryptoFearGreed error", e);
+  }
+  return { current: null, history: [], isError: true };
+}
 
 async function fetchTaiwanMargin(token: string): Promise<{current: number | null, history: {date: string, value: number}[]}> {
   try {
     const d = new Date();
-    d.setMonth(d.getMonth() - 6);
+    d.setFullYear(d.getFullYear() - 3); // 台股籌碼資料抓 3 年
     const startDate = d.toISOString().split('T')[0];
     const res = await fetch(`https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockTotalMarginPurchaseShortSale&start_date=${startDate}&token=${token}`, { next: { revalidate: 86400 } });
     const data = await res.json();
@@ -164,9 +194,45 @@ async function fetchTaiwanMargin(token: string): Promise<{current: number | null
   return { current: null, history: [] };
 }
 
+async function fetchTaiwanM1BM2(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
+  try {
+    const res = await fetch(`https://cpx.cbc.gov.tw/API/DataAPI/Get?FileName=EF15M01`, { next: { revalidate: 86400 } });
+    const data = await res.json();
+    const datasets = data.data.dataSets;
+    const history = [];
+    const cutoff = new Date();
+    cutoff.setFullYear(cutoff.getFullYear() - 10);
+    
+    for (const row of datasets) {
+       const dateStr = row[0]; // e.g., "2024M01"
+       if (!dateStr || dateStr.length < 7) continue;
+       const year = dateStr.substring(0, 4);
+       const month = dateStr.substring(5, 7);
+       const d = new Date(`${year}-${month}-01`);
+       
+       if (d < cutoff) continue;
+
+       const m1bYoy = parseFloat(row[28]);
+       const m2Yoy = parseFloat(row[30]);
+       
+       if (!isNaN(m1bYoy) && !isNaN(m2Yoy)) {
+          history.push({
+             date: d.toISOString().split('T')[0],
+             value: parseFloat((m1bYoy - m2Yoy).toFixed(2))
+          });
+       }
+    }
+    const current = history.length > 0 ? history[history.length - 1].value : null;
+    return { current, history, isError: false };
+  } catch (e) {
+    console.error("fetchTaiwanM1BM2 error", e);
+  }
+  return { current: null, history: [], isError: true };
+}
+
 export async function fetchMarketData(finmindToken: string): Promise<MarketData> {
   try {
-    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin] = await Promise.all([
+    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin, m1bm2, twExport, usdTwd, cryptoFng, btc] = await Promise.all([
       fetchYahooChart('^VIX', '1wk'),
       fetchYahooChart('^SKEW', '1wk'),
       fetchYahooChart('SPY', '1wk'),
@@ -185,7 +251,12 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
       fetchFredSeries('BOGZ1FL663067003Q'),
       fetchFredSeries('M2SL'), // 新增 M2
       fetchFredSeries('NFCI'),  // 新增 NFCI
-      fetchTaiwanMargin(finmindToken)
+      fetchTaiwanMargin(finmindToken),
+      fetchTaiwanM1BM2(), // 台灣 M1B & M2 剪刀差
+      fetchFredSeries('VALEXPTWM052N', 'pc1'), // 台灣出口 (YoY)
+      fetchYahooChart('TWD=X', '1wk'), // USD/TWD 匯率
+      fetchCryptoFearGreed(), // 加密貨幣恐懼與貪婪
+      fetchYahooChart('BTC-USD', '1wk') // 比特幣走勢
     ]);
 
     // 計算市場廣度歷史 (RSP / SPY)
@@ -313,6 +384,41 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
       }
     }
 
+    // Taiwan M1B & M2
+    let m1bm2Status: 'red'|'yellow'|'green' = 'green';
+    let m1bm2Text = '資金動能強';
+    if (m1bm2.isError) { m1bm2Status = 'red'; m1bm2Text = 'CBC API Error'; }
+    else if ((m1bm2.current ?? 0) < -2) { m1bm2Status = 'red'; m1bm2Text = '資金嚴重退潮'; }
+    else if ((m1bm2.current ?? 0) < 0) { m1bm2Status = 'yellow'; m1bm2Text = '資金動能轉弱'; }
+
+    // Taiwan Export
+    let twExportStatus: 'red'|'yellow'|'green' = 'green';
+    let twExportText = '出口擴張';
+    if (twExport.isError) { twExportStatus = 'red'; twExportText = 'FRED API Error'; }
+    else if ((twExport.current ?? 0) < 0) { twExportStatus = 'red'; twExportText = '出口衰退'; }
+    else if ((twExport.current ?? 0) < 5) { twExportStatus = 'yellow'; twExportText = '動能放緩'; }
+
+    // USD/TWD
+    let usdTwdStatus: 'red'|'yellow'|'green'|'neutral' = 'green';
+    let usdTwdText = '熱錢湧入';
+    if ((usdTwd.current ?? 0) > 32) { usdTwdStatus = 'red'; usdTwdText = '台幣重貶 (外資大賣)'; }
+    else if ((usdTwd.current ?? 0) > 30) { usdTwdStatus = 'yellow'; usdTwdText = '台幣偏弱'; }
+
+    // Crypto Fear & Greed
+    let cryptoFngStatus: 'red'|'yellow'|'green'|'neutral' = 'yellow';
+    let cryptoFngText = '中立';
+    if (cryptoFng.isError) { cryptoFngStatus = 'red'; cryptoFngText = 'API Error'; }
+    else if ((cryptoFng.current ?? 50) > 75) { cryptoFngStatus = 'red'; cryptoFngText = '極度貪婪'; }
+    else if ((cryptoFng.current ?? 50) < 25) { cryptoFngStatus = 'green'; cryptoFngText = '極度恐慌'; }
+
+    // Bitcoin
+    let btcStatus: 'red'|'yellow'|'green'|'neutral' = 'neutral';
+    let btcText = '觀察中';
+    let btcValueStr = 'N/A';
+    if (btc.current !== null) {
+      btcValueStr = `$${btc.current.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+    }
+
     return {
       cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
       breadth: { value: breadthNumber, status: bStatus, text: bText, history: breadthHistory },
@@ -330,12 +436,18 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
       marginDebt: { value: margin.isError ? 'N/A' : (margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A'), status: margin.isError ? 'red' : ((margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green')), text: margin.isError ? 'FRED API Error' : ((margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { value: nfci.isError ? 'N/A' : nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
       taiwanBusinessIndicator: { value: 'N/A', status: 'loading', text: '', history: [] }, // 已改為純連結
-      taiwanMargin: { value: twMValueStr, status: twMStatus, text: twMText, history: twMargin.history }
+      taiwanMargin: { value: twMValueStr, status: twMStatus, text: twMText, history: twMargin.history },
+      taiwanM1BM2: { value: m1bm2.isError ? 'N/A' : (m1bm2.current ? m1bm2.current.toFixed(2)+'%' : 'N/A'), status: m1bm2Status as any, text: m1bm2Text, history: m1bm2.history },
+      taiwanExport: { value: twExport.isError ? 'N/A' : (twExport.current ? twExport.current.toFixed(2)+'%' : 'N/A'), status: twExportStatus as any, text: twExportText, history: twExport.history },
+      usdTwd: { value: usdTwd.current ? usdTwd.current.toFixed(2) : 'N/A', status: usdTwdStatus as any, text: usdTwdText, history: usdTwd.history },
+      cryptoFng: { value: cryptoFng.isError ? 'N/A' : (cryptoFng.current ? cryptoFng.current.toString() : 'N/A'), status: cryptoFngStatus as any, text: cryptoFngText, history: cryptoFng.history },
+      bitcoin: { value: btcValueStr, status: btcStatus as any, text: btcText, history: btc.history },
+      spy: { history: spy.history }
     };
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanMargin: errObj };
+    return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, cryptoFng: errObj, bitcoin: errObj, spy: { history: [] } };
   }
 }
 

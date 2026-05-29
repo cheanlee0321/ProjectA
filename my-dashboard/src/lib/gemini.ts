@@ -36,9 +36,22 @@ export async function generateMarketSummary(data: MarketData, apiKey: string) {
 - CNN 恐懼與貪婪: ${data.fearGreed.value} (${data.fearGreed.text}) [燈號: ${data.fearGreed.status}]
 - 融資餘額: ${data.marginDebt.value} (${data.marginDebt.text}) [燈號: ${data.marginDebt.status}]
 
-請分別針對「市場估值與結構」、「總體經濟與流動性」、「信用風險與情緒」這三個面向，各用 50-80 字總結當前狀況與潛在風險。
-最後，給出一段 50 字以內的「整體投資建議」。
-請使用繁體中文，語氣保持客觀、專業、精準。
+【台灣專屬指標】
+- 台灣上市融資餘額: ${data.taiwanMargin.value} (${data.taiwanMargin.text}) [燈號: ${data.taiwanMargin.status}]
+- M1B 與 M2 剪刀差: ${data.taiwanM1BM2.value} (${data.taiwanM1BM2.text}) [燈號: ${data.taiwanM1BM2.status}]
+- 台灣出口總值 (YoY): ${data.taiwanExport.value} (${data.taiwanExport.text}) [燈號: ${data.taiwanExport.status}]
+- 台幣匯率 (USD/TWD): ${data.usdTwd.value} (${data.usdTwd.text}) [燈號: ${data.usdTwd.status}]
+
+【加密貨幣與投機情緒】
+- Crypto 恐懼與貪婪: ${data.cryptoFng.value} (${data.cryptoFng.text}) [燈號: ${data.cryptoFng.status}]
+- 比特幣走勢: ${data.bitcoin.value} (${data.bitcoin.text}) [燈號: ${data.bitcoin.status}]
+
+請依循以下架構撰寫：
+1. **整體盤勢與風險總結** (50-80 字)：綜合上述四大面向，評估當前整體系統性風險程度。
+2. **⚠️ 紅燈警示與具體避險建議**：請「特別挑出」上述資料中標示為 \`red\` 或 \`yellow\` 的指標 (尤其優先處理紅燈)。針對這些危險訊號，給出明確、具體的避險策略與資金控管建議 (例如：降低科技股部位、增加現金比重、轉入防禦性類股或短天期美債等)。若目前完全無紅黃燈，請給出適當的持股建議或預防性提示。
+3. **台灣市場與投機資金觀察** (50字內)：針對台灣專屬指標及加密貨幣情緒，給出簡短的資金流向評估。
+
+請使用繁體中文，語氣保持客觀、專業、精準，重點使用條列式以利閱讀。
 `;
 
   try {
@@ -69,6 +82,12 @@ if (!globalCache.geminiSummaryCache) {
   globalCache.geminiSummaryCache = {};
 }
 
+export function clearSummaryCache() {
+  if (globalCache.geminiSummaryCache) {
+    globalCache.geminiSummaryCache = {};
+  }
+}
+
 // 透過傳入金鑰作為參數，Next.js 的 unstable_cache 會自動將參數進行雜湊 (Hash) 並加入快取鍵值中。
 // 這意味著不同金鑰會產生獨立的快取，確保使用者之間的資料完全隔離。
 const generateAndCacheSummary = unstable_cache(
@@ -92,7 +111,10 @@ const generateAndCacheSummary = unstable_cache(
     return { text, date };
   },
   ['gemini-market-summary-daily-dynamic'],
-  { revalidate: 86400 } // Cache for 24 hours
+  { 
+    revalidate: 86400,
+    tags: ['gemini-market-summary-daily-dynamic'] 
+  } // Cache for 24 hours
 );
 
 export async function getCachedMarketSummary(geminiApiKey: string, finmindToken: string) {
