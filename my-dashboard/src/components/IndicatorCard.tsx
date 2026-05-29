@@ -85,7 +85,7 @@ export default function IndicatorCard({
 
   const filteredHistory = filterDataByTimeRange(history, timeRange);
 
-  const mergedData = useMemo(() => {
+  const mergedData: any[] = useMemo(() => {
     if (!filteredHistory || filteredHistory.length === 0) return [];
     if (!showSpy || !spyHistory) return filteredHistory.map(h => ({ ...h, indicatorValue: h.value }));
     
