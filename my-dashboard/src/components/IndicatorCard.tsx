@@ -120,8 +120,8 @@ export default function IndicatorCard({
   const modalMaxVal = mergedData.length > 0 ? Math.max(...mergedData.map(d => d.indicatorValue)) : 0;
   const modalPadding = (modalMaxVal - modalMinVal) * 0.1;
   
-  const spyMinVal = (showSpy && mergedData.length > 0) ? Math.min(...mergedData.map(d => d.spyValue || Infinity)) : 0;
-  const spyMaxVal = (showSpy && mergedData.length > 0) ? Math.max(...mergedData.map(d => d.spyValue || -Infinity)) : 0;
+  const spyMinVal = (showSpy && mergedData.length > 0) ? Math.min(...mergedData.map(d => (d as any).spyValue || Infinity)) : 0;
+  const spyMaxVal = (showSpy && mergedData.length > 0) ? Math.max(...mergedData.map(d => (d as any).spyValue || -Infinity)) : 0;
   const spyPadding = (spyMaxVal - spyMinVal) * 0.1;
 
   return (
