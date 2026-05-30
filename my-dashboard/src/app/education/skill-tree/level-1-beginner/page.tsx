@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import RiskQuiz from './RiskQuiz';
+import CaseStudyAccordion from '@/components/education/CaseStudyAccordion';
+import Rule72Calculator from '@/components/education/Rule72Calculator';
 
 export default function Level1Beginner() {
   return (
@@ -81,6 +83,15 @@ export default function Level1Beginner() {
               <div className="p-4 rounded-xl bg-blue-500/10 border-l-4 border-blue-500 text-sm">
                 <strong>新手村守則：</strong> 投機並非絕對的錯，但它需要極高的技術與心理素質。對於剛踏入市場的新手，我們強烈建議先從「投資」開始，建立防禦力，再來考慮是否要分配極小部分的資金進行投機嘗試。
               </div>
+
+              <CaseStudyAccordion title="買賣價差與滑價的「二手車比喻」" icon="🚗" theme="blue">
+                <p className="mb-2">很多新手喜歡頻繁交易，卻忽略了隱形的交易成本。想像你開著一台車去二手車行估價：</p>
+                <ul className="list-disc pl-5 space-y-2 mb-2">
+                  <li>車行老闆跟你說：「我願意用 <strong>50 萬</strong> 收購你的車。」（這就是<strong>買入報價 Bid</strong>）</li>
+                  <li>這時旁邊剛好有另一個客人想買同款車，老闆對他說：「這台車我要賣 <strong>60 萬</strong>。」（這就是<strong>賣出報價 Ask</strong>）</li>
+                </ul>
+                <p className="mt-2">這中間 10 萬塊的差價 (Spread)，就是車行賺走的利潤，也是你在市場中隱形的交易成本。在股市中，如果一檔股票非常冷門，這個價差就會像這台二手車一樣大到嚇人；頻繁短線投機，光是付這個價差就會吃光你的本金。</p>
+              </CaseStudyAccordion>
             </div>
           </section>
 
@@ -142,6 +153,17 @@ export default function Level1Beginner() {
                     </ul>
                   </div>
                 </div>
+
+                <CaseStudyAccordion title="信用卡循環利息的恐怖真相：10 萬變 30 萬" icon="💳" theme="rose">
+                  <p className="mb-2">很多人覺得「先刷卡享受，慢慢還就好」。但信用卡循環利息通常高達 <strong>15%</strong>，是一般投資報酬率的兩倍。來看看具體數字有多嚇人：</p>
+                  <ul className="list-disc pl-5 space-y-2 mb-3">
+                    <li><strong>場景：</strong> 小明刷了 10 萬元買新手機和旅遊，之後每個月只付「最低應繳金額」（通常是欠款的 2%-5%）。</li>
+                    <li><strong>結果：</strong> 在 15% 循環利率下，小明需要花費超過 <strong>15 年</strong>才能還清這 10 萬塊的卡債。而他最終總共付出的金額將超過 <strong>30 萬元</strong>，其中有 20 萬是利息！</li>
+                    <li><strong>對比：</strong> 如果小明當初沒有刷那 10 萬，而是拿去投資年化 8% 的 ETF，15 年後這 10 萬會變成 <strong>31.7 萬</strong>。一來一往，差距超過 <strong>60 萬</strong>。</li>
+                  </ul>
+                  <p className="mt-2 text-rose-400 font-bold">💡 鐵律：</p>
+                  <p>消滅高利率卡債是「保證報酬率 15%」的最佳投資。在你還有任何高利率壞債的情況下，把錢拿去投資股票都是不理性的行為。</p>
+                </CaseStudyAccordion>
               </div>
             </div>
           </section>
@@ -190,7 +212,20 @@ export default function Level1Beginner() {
                     <p className="text-foreground/80"><strong>認清「通膨」這個隱形小偷。</strong> 理財的第一步，至少要讓你的資金報酬率大於每年的通貨膨脹率（通常約 2%~3%）。單純的活存無法抵抗通膨，這就是我們必須投資的根本原因。</p>
                   </div>
                 </div>
+                
+                <div className="col-span-1 md:col-span-2">
+                  <CaseStudyAccordion title="長期投資到底能賺多少？(以美股為例)" icon="📈" theme="purple">
+                    <p className="mb-3">許多新手容易被「保證月賺 10%」的詐騙話術吸引，那是因為他們對真實世界的「合理報酬率」沒有概念。</p>
+                    <ul className="list-disc pl-5 space-y-2 mb-3">
+                      <li><strong>美國股市 (S&P 500)：</strong> 長期來看，年化報酬率約落在 <strong>8% ~ 10%</strong> 之間。</li>
+                      <li><strong>優質公債：</strong> 長期年化報酬率約為 <strong>3% ~ 5%</strong>。</li>
+                    </ul>
+                    <p>以歷史數據回測：假設你每個月穩定存下 1 萬元台幣，投資於年化報酬 8% 的大盤 ETF。持續 30 年後，你的總資產將變成 <strong>1,490 萬台幣</strong>！其中你真正拿出來的本金只有 360 萬，剩下的 1,130 萬全都是市場「複利」幫你賺的錢。</p>
+                  </CaseStudyAccordion>
+                </div>
               </div>
+
+              <Rule72Calculator />
             </div>
           </section>
 

@@ -1,0 +1,962 @@
+[
+  {
+    "year": "1990",
+    "memos": [
+      {
+        "year": "1990",
+        "title": "First Quarter Performance",
+        "id": "first-quarter-performance"
+      }
+    ]
+  },
+  {
+    "year": "1991",
+    "memos": [
+      {
+        "year": "1991",
+        "title": "Microeconomics 101: Supply, Demand and Convertibles",
+        "id": "microeconomics-101-supply-demand-and-convertibles"
+      }
+    ]
+  },
+  {
+    "year": "1992",
+    "memos": [
+      {
+        "year": "1992",
+        "title": "The Value of Predictions, or Where'd All This Rain Come From?",
+        "id": "the-value-of-predictions-or-where-d-all-this-rain-come-from"
+      }
+    ]
+  },
+  {
+    "year": "1994",
+    "memos": [
+      {
+        "year": "1994",
+        "title": "Risk in Today's Markets",
+        "id": "risk-in-today-s-markets"
+      },
+      {
+        "year": "1994",
+        "title": "\"Risk in Today's Markets\" Revisited",
+        "id": "risk-in-today-s-markets-revisited"
+      },
+      {
+        "year": "1994",
+        "title": "How the Game Should Be Played",
+        "id": "how-the-game-should-be-played"
+      }
+    ]
+  },
+  {
+    "year": "1995",
+    "memos": [
+      {
+        "year": "1995",
+        "title": "The Value of Predictions II (or \"Give That Man a Cigar\")",
+        "id": "the-value-of-predictions-ii-or-give-that-man-a-cigar"
+      }
+    ]
+  },
+  {
+    "year": "1996",
+    "memos": [
+      {
+        "year": "1996",
+        "title": "Will It Be Different This Time?",
+        "id": "will-it-be-different-this-time"
+      },
+      {
+        "year": "1996",
+        "title": "Are You An Investor or a Speculator?",
+        "id": "are-you-an-investor-or-a-speculator"
+      }
+    ]
+  },
+  {
+    "year": "1997",
+    "memos": [
+      {
+        "year": "1997",
+        "title": "Who Knew?",
+        "id": "who-knew"
+      }
+    ]
+  },
+  {
+    "year": "1998",
+    "memos": [
+      {
+        "year": "1998",
+        "title": "Genius Isn't Enough (and Other Lessons from Long-Term Capital Management)",
+        "id": "genius-isn-t-enough-and-other-lessons-from-long-term-capital-management"
+      },
+      {
+        "year": "1998",
+        "title": "How's the Market?",
+        "id": "how-s-the-market"
+      }
+    ]
+  },
+  {
+    "year": "1999",
+    "memos": [
+      {
+        "year": "1999",
+        "title": "bubble.com",
+        "id": "bubble-com"
+      },
+      {
+        "year": "1999",
+        "title": "We're Not In 1999 Anymore, Toto",
+        "id": "we-re-not-in-1999-anymore-toto"
+      }
+    ]
+  },
+  {
+    "year": "2000",
+    "memos": [
+      {
+        "year": "2000",
+        "title": "Irrational Exuberance",
+        "id": "irrational-exuberance"
+      },
+      {
+        "year": "2000",
+        "title": "Investment Miscellany",
+        "id": "investment-miscellany"
+      },
+      {
+        "year": "2000",
+        "title": "Safety First . . . But Where?",
+        "id": "safety-first-but-where"
+      }
+    ]
+  },
+  {
+    "year": "2001",
+    "memos": [
+      {
+        "year": "2001",
+        "title": "What's It All About, Alpha?",
+        "id": "what-s-it-all-about-alpha"
+      },
+      {
+        "year": "2001",
+        "title": "Notes from New York",
+        "id": "notes-from-new-york"
+      },
+      {
+        "year": "2001",
+        "title": "What Lies Ahead?",
+        "id": "what-lies-ahead"
+      },
+      {
+        "year": "2001",
+        "title": "You Can't Predict. You Can Prepare.",
+        "id": "you-can-t-predict-you-can-prepare"
+      },
+      {
+        "year": "2001",
+        "title": "Learning From Enron",
+        "id": "learning-from-enron"
+      }
+    ]
+  },
+  {
+    "year": "2002",
+    "memos": [
+      {
+        "year": "2002",
+        "title": "The Realist's Creed",
+        "id": "the-realist-s-creed"
+      },
+      {
+        "year": "2002",
+        "title": "Quo                  Vadis?",
+        "id": "quo-vadis"
+      },
+      {
+        "year": "2002",
+        "title": "Etorre's Wisdom",
+        "id": "etorre-s-wisdom"
+      },
+      {
+        "year": "2002",
+        "title": "Returns and How They Get That Way",
+        "id": "returns-and-how-they-get-that-way"
+      },
+      {
+        "year": "2002",
+        "title": "Whad’Y",
+        "id": "whad-y"
+      }
+    ]
+  },
+  {
+    "year": "2003",
+    "memos": [
+      {
+        "year": "2003",
+        "title": "What's Going On?",
+        "id": "what-s-going-on"
+      },
+      {
+        "year": "2003",
+        "title": "The Most Important Thing",
+        "id": "the-most-important-thing"
+      },
+      {
+        "year": "2003",
+        "title": "What’s Your Game Plan?",
+        "id": "what-s-your-game-plan"
+      },
+      {
+        "year": "2003",
+        "title": "The Feeling's Mutual",
+        "id": "the-feeling-s-mutual"
+      },
+      {
+        "year": "2003",
+        "title": "Hey, Steward!!",
+        "id": "hey-steward"
+      }
+    ]
+  },
+  {
+    "year": "2004",
+    "memos": [
+      {
+        "year": "2004",
+        "title": "Us and Them",
+        "id": "us-and-them"
+      },
+      {
+        "year": "2004",
+        "title": "The Happy",
+        "id": "the-happy"
+      },
+      {
+        "year": "2004",
+        "title": "Hedge Funds: A Case for Caution",
+        "id": "hedge-funds-a-case-for-caution"
+      },
+      {
+        "year": "2004",
+        "title": "Risk and Return Toda",
+        "id": "risk-and-return-toda"
+      },
+      {
+        "year": "2004",
+        "title": "Oaktree at Ten",
+        "id": "oaktree-at-ten"
+      }
+    ]
+  },
+  {
+    "year": "2005",
+    "memos": [
+      {
+        "year": "2005",
+        "title": "There They Go Again",
+        "id": "there-they-go-again"
+      },
+      {
+        "year": "2005",
+        "title": "A Case in Point",
+        "id": "a-case-in-point"
+      },
+      {
+        "year": "2005",
+        "title": "Hindsight First, Please  (or, What Were They Thinking?)",
+        "id": "hindsight-first-please-or-what-were-they-thinking"
+      },
+      {
+        "year": "2005",
+        "title": "Risk",
+        "id": "risk"
+      }
+    ]
+  },
+  {
+    "year": "2006",
+    "memos": [
+      {
+        "year": "2006",
+        "title": "It Is Wh",
+        "id": "it-is-wh"
+      },
+      {
+        "year": "2006",
+        "title": "You Can’t Eat IRR",
+        "id": "you-can-t-eat-irr"
+      },
+      {
+        "year": "2006",
+        "title": "Dare to Be Great",
+        "id": "dare-to-be-great"
+      },
+      {
+        "year": "2006",
+        "title": "The New Paradigm",
+        "id": "the-new-paradigm"
+      },
+      {
+        "year": "2006",
+        "title": "Pigweed",
+        "id": "pigweed"
+      },
+      {
+        "year": "2006",
+        "title": "The Race to the Bottom",
+        "id": "the-race-to-the-bottom"
+      }
+    ]
+  },
+  {
+    "year": "2007",
+    "memos": [
+      {
+        "year": "2007",
+        "title": "Everyone Knows",
+        "id": "everyone-knows"
+      },
+      {
+        "year": "2007",
+        "title": "It’",
+        "id": "it"
+      },
+      {
+        "year": "2007",
+        "title": "Now It’s All Bad?",
+        "id": "now-it-s-all-bad"
+      },
+      {
+        "year": "2007",
+        "title": "No Different This Time – The Lessons of ‘07",
+        "id": "no-different-this-time-the-lessons-of-07"
+      },
+      {
+        "year": "2007",
+        "title": "Now      What?",
+        "id": "now-what"
+      }
+    ]
+  },
+  {
+    "year": "2008",
+    "memos": [
+      {
+        "year": "2008",
+        "title": "Whodunit",
+        "id": "whodunit"
+      },
+      {
+        "year": "2008",
+        "title": "The Tide Goes Out",
+        "id": "the-tide-goes-out"
+      },
+      {
+        "year": "2008",
+        "title": "The      Aviary",
+        "id": "the-aviary"
+      },
+      {
+        "year": "2008",
+        "title": "Doesn’t Make Sense",
+        "id": "doesn-t-make-sense"
+      },
+      {
+        "year": "2008",
+        "title": "What      Worries      Me",
+        "id": "what-worries-me"
+      },
+      {
+        "year": "2008",
+        "title": "Nobody      Knows",
+        "id": "nobody-knows"
+      },
+      {
+        "year": "2008",
+        "title": "Plan      B",
+        "id": "plan-b"
+      },
+      {
+        "year": "2008",
+        "title": "The Limits to Negativism",
+        "id": "the-limits-to-negativism"
+      },
+      {
+        "year": "2008",
+        "title": "Volatility + Leverage = Dynamite",
+        "id": "volatility-leverage-dynamite"
+      },
+      {
+        "year": "2008",
+        "title": "The Long View",
+        "id": "the-long-view"
+      }
+    ]
+  },
+  {
+    "year": "2009",
+    "memos": [
+      {
+        "year": "2009",
+        "title": "Will It Work?",
+        "id": "will-it-work"
+      },
+      {
+        "year": "2009",
+        "title": "So Much That’s False and Nutty",
+        "id": "so-much-that-s-false-and-nutty"
+      },
+      {
+        "year": "2009",
+        "title": "Touchstones",
+        "id": "touchstones"
+      },
+      {
+        "year": "2009",
+        "title": "Tell Me I’m Wrong",
+        "id": "tell-me-i-m-wrong"
+      }
+    ]
+  },
+  {
+    "year": "2010",
+    "memos": [
+      {
+        "year": "2010",
+        "title": "I’d Rather Be Wrong",
+        "id": "i-d-rather-be-wrong"
+      },
+      {
+        "year": "2010",
+        "title": "Warning Flags",
+        "id": "warning-flags"
+      },
+      {
+        "year": "2010",
+        "title": "It’s Greek to Me",
+        "id": "it-s-greek-to-me"
+      },
+      {
+        "year": "2010",
+        "title": "Hemlines",
+        "id": "hemlines"
+      },
+      {
+        "year": "2010",
+        "title": "Open and Shut",
+        "id": "open-and-shut"
+      },
+      {
+        "year": "2010",
+        "title": "All That Glitters",
+        "id": "all-that-glitters"
+      },
+      {
+        "year": "2010",
+        "title": "On Regulation",
+        "id": "on-regulation"
+      }
+    ]
+  },
+  {
+    "year": "2011",
+    "memos": [
+      {
+        "year": "2011",
+        "title": "How Quickly They Forget",
+        "id": "how-quickly-they-forget"
+      },
+      {
+        "year": "2011",
+        "title": "Down to the Wire",
+        "id": "down-to-the-wire"
+      },
+      {
+        "year": "2011",
+        "title": "What’s Behind the Downturn?",
+        "id": "what-s-behind-the-downturn"
+      },
+      {
+        "year": "2011",
+        "title": "It’s All Very Taxing",
+        "id": "it-s-all-very-taxing"
+      },
+      {
+        "year": "2011",
+        "title": "What Can We Do For You?",
+        "id": "what-can-we-do-for-you"
+      }
+    ]
+  },
+  {
+    "year": "2012",
+    "memos": [
+      {
+        "year": "2012",
+        "title": "Assessing Performance Records – A Case Study",
+        "id": "assessing-performance-records-a-case-study"
+      },
+      {
+        "year": "2012",
+        "title": "Déjà Vu All Over Again",
+        "id": "d-j-vu-all-over-again"
+      },
+      {
+        "year": "2012",
+        "title": "It’s All a Big Mistake",
+        "id": "it-s-all-a-big-mistake"
+      },
+      {
+        "year": "2012",
+        "title": "On Uncertain Ground",
+        "id": "on-uncertain-ground"
+      },
+      {
+        "year": "2012",
+        "title": "A Fresh Start (Hopefully)",
+        "id": "a-fresh-start-hopefully"
+      },
+      {
+        "year": "2012",
+        "title": "Ditto",
+        "id": "ditto"
+      }
+    ]
+  },
+  {
+    "year": "2013",
+    "memos": [
+      {
+        "year": "2013",
+        "title": "High Yield Bonds Today",
+        "id": "high-yield-bonds-today"
+      },
+      {
+        "year": "2013",
+        "title": "The Outlook for Equities",
+        "id": "the-outlook-for-equities"
+      },
+      {
+        "year": "2013",
+        "title": "The Role of Confidence",
+        "id": "the-role-of-confidence"
+      },
+      {
+        "year": "2013",
+        "title": "The Race Is On",
+        "id": "the-race-is-on"
+      },
+      {
+        "year": "2013",
+        "title": "Getting Lucky",
+        "id": "getting-lucky"
+      }
+    ]
+  },
+  {
+    "year": "2014",
+    "memos": [
+      {
+        "year": "2014",
+        "title": "Dare to Be Great II",
+        "id": "dare-to-be-great-ii"
+      },
+      {
+        "year": "2014",
+        "title": "Risk Revisited",
+        "id": "risk-revisited"
+      },
+      {
+        "year": "2014",
+        "title": "The Lessons of Oil",
+        "id": "the-lessons-of-oil"
+      },
+      {
+        "year": "2014",
+        "title": "Liquidity",
+        "id": "liquidity"
+      }
+    ]
+  },
+  {
+    "year": "2015",
+    "memos": [
+      {
+        "year": "2015",
+        "title": "Risk Revisited Again",
+        "id": "risk-revisited-again"
+      },
+      {
+        "year": "2015",
+        "title": "It’",
+        "id": "it"
+      },
+      {
+        "year": "2015",
+        "title": "Inspiration from the World of Sports",
+        "id": "inspiration-from-the-world-of-sports"
+      },
+      {
+        "year": "2015",
+        "title": "On the Couch",
+        "id": "on-the-couch"
+      }
+    ]
+  },
+  {
+    "year": "2016",
+    "memos": [
+      {
+        "year": "2016",
+        "title": "What Does the Market Know?",
+        "id": "what-does-the-market-know"
+      },
+      {
+        "year": "2016",
+        "title": "Economic Reality",
+        "id": "economic-reality"
+      },
+      {
+        "year": "2016",
+        "title": "Political        Reality",
+        "id": "political-reality"
+      },
+      {
+        "year": "2016",
+        "title": "Implications of the Election",
+        "id": "implications-of-the-election"
+      },
+      {
+        "year": "2016",
+        "title": "Go Figure!",
+        "id": "go-figure"
+      },
+      {
+        "year": "2016",
+        "title": "Expert Opinion",
+        "id": "expert-opinion"
+      }
+    ]
+  },
+  {
+    "year": "2017",
+    "memos": [
+      {
+        "year": "2017",
+        "title": "Lines in the Sand",
+        "id": "lines-in-the-sand"
+      },
+      {
+        "year": "2017",
+        "title": "There They Go Again . . . Again",
+        "id": "there-they-go-again-again"
+      },
+      {
+        "year": "2017",
+        "title": "Yet Again?",
+        "id": "yet-again"
+      },
+      {
+        "year": "2017",
+        "title": "Latest Thinking",
+        "id": "latest-thinking"
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "memos": [
+      {
+        "year": "2018",
+        "title": "Investing Without People",
+        "id": "investing-without-people"
+      },
+      {
+        "year": "2018",
+        "title": "The Seven Worst Words in the World",
+        "id": "the-seven-worst-words-in-the-world"
+      },
+      {
+        "year": "2018",
+        "title": "Political Reality Meets Economic Reality",
+        "id": "political-reality-meets-economic-reality"
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "memos": [
+      {
+        "year": "2019",
+        "title": "Growing the Pie",
+        "id": "growing-the-pie"
+      },
+      {
+        "year": "2019",
+        "title": "This Time It’s Different",
+        "id": "this-time-it-s-different"
+      },
+      {
+        "year": "2019",
+        "title": "On the Other Hand",
+        "id": "on-the-other-hand"
+      },
+      {
+        "year": "2019",
+        "title": "Mysterious",
+        "id": "mysterious"
+      },
+      {
+        "year": "2019",
+        "title": "You Bet!",
+        "id": "you-bet"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "memos": [
+      {
+        "year": "2020",
+        "title": "Nobody Knows II",
+        "id": "nobody-knows-ii"
+      },
+      {
+        "year": "2020",
+        "title": "Latest Update",
+        "id": "latest-update"
+      },
+      {
+        "year": "2020",
+        "title": "Which Way Now?",
+        "id": "which-way-now"
+      },
+      {
+        "year": "2020",
+        "title": "Calibrating",
+        "id": "calibrating"
+      },
+      {
+        "year": "2020",
+        "title": "Knowledge of the Future",
+        "id": "knowledge-of-the-future"
+      },
+      {
+        "year": "2020",
+        "title": "Uncertainty",
+        "id": "uncertainty"
+      },
+      {
+        "year": "2020",
+        "title": "Uncertainty II",
+        "id": "uncertainty-ii"
+      },
+      {
+        "year": "2020",
+        "title": "Not Enough",
+        "id": "not-enough"
+      },
+      {
+        "year": "2020",
+        "title": "The Anatomy of a Rally",
+        "id": "the-anatomy-of-a-rally"
+      },
+      {
+        "year": "2020",
+        "title": "Time for Thinking",
+        "id": "time-for-thinking"
+      },
+      {
+        "year": "2020",
+        "title": "Coming into Focus",
+        "id": "coming-into-focus"
+      },
+      {
+        "year": "2020",
+        "title": "Something of Value",
+        "id": "something-of-value"
+      },
+      {
+        "year": "2020",
+        "title": "2020 in R",
+        "id": "2020-in-r"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "memos": [
+      {
+        "year": "2021",
+        "title": "The Route to Performance",
+        "id": "the-route-to-performance"
+      },
+      {
+        "year": "2021",
+        "title": "Thinking About",
+        "id": "thinking-about"
+      },
+      {
+        "year": "2021",
+        "title": "The",
+        "id": "the"
+      },
+      {
+        "year": "2021",
+        "title": "Selling Out",
+        "id": "selling-out"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "memos": [
+      {
+        "year": "2022",
+        "title": "The Pendulu",
+        "id": "the-pendulu"
+      },
+      {
+        "year": "2022",
+        "title": "Bul",
+        "id": "bul"
+      },
+      {
+        "year": "2022",
+        "title": "Conversat",
+        "id": "conversat"
+      },
+      {
+        "year": "2022",
+        "title": "I Beg to D",
+        "id": "i-beg-to-d"
+      },
+      {
+        "year": "2022",
+        "title": "The Illus",
+        "id": "the-illus"
+      },
+      {
+        "year": "2022",
+        "title": "What Rea",
+        "id": "what-rea"
+      },
+      {
+        "year": "2022",
+        "title": "Sea Chan",
+        "id": "sea-chan"
+      },
+      {
+        "year": "2022",
+        "title": "Les",
+        "id": "les"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "memos": [
+      {
+        "year": "2023",
+        "title": "Taking the",
+        "id": "taking-the"
+      },
+      {
+        "year": "2023",
+        "title": "Fewer Lo",
+        "id": "fewer-lo"
+      },
+      {
+        "year": "2023",
+        "title": "Further",
+        "id": "further"
+      },
+      {
+        "year": "2023",
+        "title": "Easy Money",
+        "id": "easy-money"
+      }
+    ]
+  },
+  {
+    "year": "2024",
+    "memos": [
+      {
+        "year": "2024",
+        "title": "The Indispensability of Risk",
+        "id": "the-indispensability-of-risk"
+      },
+      {
+        "year": "2024",
+        "title": "The Impact of Debt",
+        "id": "the-impact-of-debt"
+      },
+      {
+        "year": "2024",
+        "title": "The Folly of Certainty",
+        "id": "the-folly-of-certainty"
+      },
+      {
+        "year": "2024",
+        "title": "Mr. Market Miscalculates",
+        "id": "mr-market-miscalculates"
+      },
+      {
+        "year": "2024",
+        "title": "Shall We Repeal the Laws of Economics?",
+        "id": "shall-we-repeal-the-laws-of-economics"
+      },
+      {
+        "year": "2024",
+        "title": "Ruminating on Asset Allocation",
+        "id": "ruminating-on-asset-allocation"
+      },
+      {
+        "year": "2024",
+        "title": "On Bubble Watch",
+        "id": "on-bubble-watch"
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "memos": [
+      {
+        "year": "2025",
+        "title": "The Complete Collection",
+        "id": "the-complete-collection"
+      },
+      {
+        "year": "2025",
+        "title": "Gimme C",
+        "id": "gimme-c"
+      },
+      {
+        "year": "2025",
+        "title": "Nobody Knows",
+        "id": "nobody-knows"
+      },
+      {
+        "year": "2025",
+        "title": "More on R",
+        "id": "more-on-r"
+      },
+      {
+        "year": "2025",
+        "title": "A Look Under the Hood",
+        "id": "a-look-under-the-hood"
+      },
+      {
+        "year": "2025",
+        "title": "Is It a Bubble?",
+        "id": "is-it-a-bubble"
+      }
+    ]
+  }
+]

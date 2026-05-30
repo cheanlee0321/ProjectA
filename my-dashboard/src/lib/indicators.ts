@@ -42,10 +42,8 @@ export interface MarketData {
 const FRED_API_KEY = process.env.FRED_API_KEY || '';
 async function fetchFredSeries(seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
-    const d = new Date();
-    d.setFullYear(d.getFullYear() - 10); // 抓過去十年
-    const startDate = d.toISOString().split('T')[0];
-    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&observation_start=${startDate}&units=${units}`, { next: { revalidate: 86400 } });
+    // 不再限制過去十年，抓取 FRED 提供的所有歷史資料
+    const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&units=${units}`, { next: { revalidate: 86400 } });
     const contentType = res.headers.get('content-type');
     if (!res.ok || (contentType && contentType.includes('text/html'))) {
       const errText = await res.text();
@@ -70,8 +68,8 @@ async function fetchFredSeries(seriesId: string, units: string = 'lin'): Promise
 const fetchYahooChart = unstable_cache(
   async (symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') => {
     try {
-      const d = new Date();
-      d.setFullYear(d.getFullYear() - 10);
+      // 設定一個夠早的日期以抓取所有歷史資料
+      const d = new Date('1970-01-01');
       const chart = await yahooFinance.chart(symbol, { period1: d, interval });
       const history = chart.quotes.map(q => ({
         date: q.date.toISOString().split('T')[0],
@@ -96,7 +94,7 @@ async function fetchCapeRatio(): Promise<{current: number | null, history: {date
     const history = [];
     const rows = html.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
     
-    for (let i = 0; i < Math.min(rows.length, 120); i++) {
+    for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
       const cols = row.match(/<td>([\s\S]*?)<\/td>/gi);
       if (cols && cols.length >= 2) {
@@ -259,22 +257,32 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
       fetchYahooChart('BTC-USD', '1wk') // 比特幣走勢
     ]);
 
-    // 計算市場廣度歷史 (RSP / SPY)
+    // 計算市場廣度歷史 (RSP YoY - SPY YoY 績效差)
     const breadthHistory = [];
     const minLen = Math.min(rsp.history.length, spy.history.length);
-    for(let i=0; i<minLen; i++) {
-      if(spy.history[i].value > 0) {
+    // interval 為 1wk，52 週約為 1 年
+    for(let i=52; i<minLen; i++) {
+      const rspToday = rsp.history[i].value;
+      const rspLastYear = rsp.history[i-52].value;
+      const spyToday = spy.history[i].value;
+      const spyLastYear = spy.history[i-52].value;
+      
+      if(rspLastYear > 0 && spyLastYear > 0) {
+        const rspYoy = ((rspToday - rspLastYear) / rspLastYear) * 100;
+        const spyYoy = ((spyToday - spyLastYear) / spyLastYear) * 100;
+        const diff = rspYoy - spyYoy; // 負值代表 RSP 績效落後 SPY
+        
         breadthHistory.push({
           date: rsp.history[i].date,
-          value: parseFloat((rsp.history[i].value / spy.history[i].value).toFixed(3))
+          value: parseFloat(diff.toFixed(2))
         });
       }
     }
-    const breadthNumber = breadthHistory.length > 0 ? breadthHistory[breadthHistory.length - 1].value : (rsp.current && spy.current ? parseFloat((rsp.current / spy.current).toFixed(3)) : 0);
+    const breadthNumber = breadthHistory.length > 0 ? breadthHistory[breadthHistory.length - 1].value : 0;
     let bStatus: 'red'|'yellow'|'green' = 'green';
     let bText = '結構健康';
-    if (breadthNumber < 0.3) { bStatus = 'yellow'; bText = '資金集中權值股'; }
-    if (breadthNumber < 0.28) { bStatus = 'red'; bText = '極端背離 (虛胖)'; }
+    if (breadthNumber < -15) { bStatus = 'red'; bText = '極端背離 (虛胖)'; }
+    else if (breadthNumber < -5) { bStatus = 'yellow'; bText = '資金集中權值股'; }
 
     // 銅金比歷史
     const cgHistory = [];
@@ -421,7 +429,7 @@ export async function fetchMarketData(finmindToken: string): Promise<MarketData>
 
     return {
       cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
-      breadth: { value: breadthNumber, status: bStatus, text: bText, history: breadthHistory },
+      breadth: { value: breadthNumber > 0 ? `+${breadthNumber.toFixed(2)}%` : `${breadthNumber.toFixed(2)}%`, status: bStatus, text: bText, history: breadthHistory },
       buffett: { value: (wilshire.isError || gdp.isError) ? 'N/A' : (buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A'), status: buffettStatus, text: buffettText, history: buffettHistory },
       sahm: { value: sahm.isError ? 'N/A' : (sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A'), status: sahm.isError ? 'red' : ((sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green')), text: sahm.isError ? 'FRED API Error' : ((sahm.current ?? 0) > 0.5 ? '實質衰退' : '無衰退跡象'), history: sahm.history },
       copperGold: { value: cgNumber, status: cgStatus, text: cgText, history: cgHistory },

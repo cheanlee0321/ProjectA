@@ -32,7 +32,7 @@ export default function IndicatorCard({
 }: IndicatorCardProps) {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [timeRange, setTimeRange] = useState<'1Y' | '3Y' | '5Y' | 'MAX'>('MAX');
+  const [timeRange, setTimeRange] = useState<'1Y' | '3Y' | '5Y' | '10Y' | '20Y' | '50Y' | 'MAX'>('MAX');
   const [showSpy, setShowSpy] = useState(false);
 
   const getStatusColor = () => {
@@ -74,11 +74,11 @@ export default function IndicatorCard({
   const padding = (maxVal - minVal) * 0.1;
 
   // Modal 邏輯
-  const filterDataByTimeRange = (data: {date: string, value: number}[] | undefined, range: '1Y' | '3Y' | '5Y' | 'MAX') => {
+  const filterDataByTimeRange = (data: {date: string, value: number}[] | undefined, range: '1Y' | '3Y' | '5Y' | '10Y' | '20Y' | '50Y' | 'MAX') => {
     if (!data || data.length === 0) return [];
     if (range === 'MAX') return data;
     const now = new Date();
-    const years = range === '1Y' ? 1 : range === '3Y' ? 3 : 5;
+    const years = range === '1Y' ? 1 : range === '3Y' ? 3 : range === '5Y' ? 5 : range === '10Y' ? 10 : range === '20Y' ? 20 : 50;
     const cutoff = new Date(now.setFullYear(now.getFullYear() - years));
     return data.filter(d => new Date(d.date) >= cutoff);
   };
@@ -240,7 +240,7 @@ export default function IndicatorCard({
             {/* Modal Controls */}
             <div className="px-6 md:px-8 py-4 flex flex-wrap justify-between items-center gap-4 bg-background/30">
               <div className="flex gap-2">
-                {['1Y', '3Y', '5Y', 'MAX'].map(t => (
+                {['1Y', '3Y', '5Y', '10Y', '20Y', '50Y', 'MAX'].map(t => (
                   <button
                     key={t}
                     onClick={() => setTimeRange(t as any)}

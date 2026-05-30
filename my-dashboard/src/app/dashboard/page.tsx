@@ -57,14 +57,11 @@ export default async function DashboardPage() {
         <div className="space-y-12">
           
           {/* Section 1 */}
-          <SectionHeader title="市場估值與結構" emoji="📊" statuses={[data.cape.status, data.breadth.status, data.buffett.status]} />
+          <SectionHeader title="市場估值與結構" emoji="📊" statuses={[data.cape.status, data.buffett.status]} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <IndicatorCard spyHistory={data.spy.history} title="席勒本益比 (CAPE)" value={data.cape.value} status={data.cape.status} statusText={data.cape.text} history={data.cape.history} 
               description="使用過去 10 年通膨調整後的平均實質盈餘計算本益比。大於 30-35 屬嚴重高估。"
               criteria={{ red: '> 35', yellow: '25-35', green: '< 25' }} />
-            <IndicatorCard spyHistory={data.spy.history} title="市場廣度 (RSP/SPY)" value={data.breadth.value} status={data.breadth.status} statusText={data.breadth.text} history={data.breadth.history} 
-              description="等權重指數與市值加權之比。持續下滑代表大盤全靠少數權值股撐場。"
-              criteria={{ red: '< 0.28', yellow: '0.28-0.3', green: '> 0.3' }} />
             <IndicatorCard spyHistory={data.spy.history} title="巴菲特指標" value={data.buffett.value} status={data.buffett.status} statusText={data.buffett.text} history={data.buffett.history} 
               description="美股總市值除以美國 GDP。大於 1.5 到 2 個標準差代表資產泡沫。"
               criteria={{ red: '> 150%', yellow: '130-150%', green: '< 130%' }} />

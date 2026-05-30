@@ -180,7 +180,7 @@ export default function PortalPage() {
           </Link>
 
           {/* Investment Inspiration Card */}
-          <a href="https://www.dataroma.com/m/home.php" target="_blank" rel="noopener noreferrer" className="group">
+          <Link href="/inspiration" className="group">
             <div className="h-full relative p-8 md:p-12 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-foreground/10 hover:border-foreground/20 hover:shadow-[0_20px_40px_-15px_rgba(236,72,153,0.3)]">
               {/* Inner Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -203,10 +203,10 @@ export default function PortalPage() {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Stock Screener Card */}
-          <Link href="/screener" className="group">
+          <a href="https://stockinvestoriq.com/stock-screeners/" target="_blank" rel="noopener noreferrer" className="group">
             <div className="h-full relative p-8 md:p-12 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-foreground/10 hover:border-foreground/20 hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.3)]">
               {/* Inner Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -229,7 +229,7 @@ export default function PortalPage() {
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Education Main Card */}
           <Link href="/education" className="group">

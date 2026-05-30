@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import ExpenseCalculator from '@/components/education/ExpenseCalculator';
+import CaseStudyAccordion from '@/components/education/CaseStudyAccordion';
 
 export default function Level2Basic() {
   return (
@@ -280,7 +282,82 @@ export default function Level2Basic() {
                   </ul>
                 </div>
 
+                {/* 共同基金 vs ETF 比較表 */}
+                <div className="p-6 rounded-2xl bg-foreground/5 border border-foreground/10 shadow-sm md:col-span-2 lg:col-span-3 mt-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">🥊</span>
+                    <h3 className="text-xl font-bold text-foreground">4. 共同基金 vs ETF：為何我們推崇 ETF？</h3>
+                  </div>
+                  <p className="text-sm text-foreground/80 mb-4">銀行理專最常推銷的是「主動型共同基金」，因為手續費傭金極高。了解兩者的差異，是避免被當成韭菜收割的第一步：</p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm text-left border-collapse">
+                      <thead>
+                        <tr className="border-b border-foreground/10">
+                          <th className="py-3 px-4 font-bold text-foreground">比較項目</th>
+                          <th className="py-3 px-4 font-bold text-rose-400">傳統共同基金 (Mutual Fund)</th>
+                          <th className="py-3 px-4 font-bold text-emerald-400">ETF (指數股票型基金)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-foreground/5 text-foreground/80">
+                        <tr className="hover:bg-foreground/5 transition-colors">
+                          <td className="py-3 px-4 font-semibold text-foreground/90">操盤邏輯</td>
+                          <td className="py-3 px-4">經理人主動挑股，試圖「打敗大盤」</td>
+                          <td className="py-3 px-4">電腦被動追蹤指數，獲取「市場平均報酬」</td>
+                        </tr>
+                        <tr className="hover:bg-foreground/5 transition-colors">
+                          <td className="py-3 px-4 font-semibold text-foreground/90">內扣費用 (管理費)</td>
+                          <td className="py-3 px-4 text-rose-400 font-bold">極高 (通常 1.5% ~ 3%)</td>
+                          <td className="py-3 px-4 text-emerald-400 font-bold">極低 (通常 0.03% ~ 0.5%)</td>
+                        </tr>
+                        <tr className="hover:bg-foreground/5 transition-colors">
+                          <td className="py-3 px-4 font-semibold text-foreground/90">交易方式</td>
+                          <td className="py-3 px-4">向銀行或投信申購，一天只有一個結算淨值</td>
+                          <td className="py-3 px-4">像股票一樣在交易所買賣，盤中價格隨時跳動</td>
+                        </tr>
+                        <tr className="hover:bg-foreground/5 transition-colors">
+                          <td className="py-3 px-4 font-semibold text-foreground/90">持股透明度</td>
+                          <td className="py-3 px-4">低（通常每月或每季才公布一次前十大持股）</td>
+                          <td className="py-3 px-4">極高（每天都能在官網查到所有成分股與權重）</td>
+                        </tr>
+                        <tr className="hover:bg-foreground/5 transition-colors">
+                          <td className="py-3 px-4 font-semibold text-foreground/90">長期勝率 (10年以上)</td>
+                          <td className="py-3 px-4">超過 80% 的基金績效落後給大盤</td>
+                          <td className="py-3 px-4">保證獲得大盤報酬，穩贏多數主動基金</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-4 p-3 rounded-lg bg-emerald-500/10 border-l-4 border-emerald-500">
+                    <p className="text-sm font-bold text-emerald-400">💡 結論：共同基金是銀行的印鈔機，ETF 才是投資人的好朋友。</p>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2 lg:col-span-3 mt-4">
+                  <CaseStudyAccordion title="實戰策略：定期定額 (DCA) vs 單筆投入 (Lump Sum)" icon="🎯" theme="indigo">
+                    <p className="mb-2">當你手上有一筆閒錢時，該分批慢慢買，還是直接全部買進？</p>
+                    <ul className="list-disc pl-5 space-y-3 mb-3">
+                      <li>
+                        <strong>定期定額 (DCA - Dollar Cost Averaging)：</strong> 
+                        把資金切成 12 份或 24 份，每個月固定日期買入固定金額。
+                        <br/><span className="text-emerald-400">優點：</span>買在平均成本（微笑曲線），不用去猜高低點，心理壓力極小，是情緒管理的最佳工具。
+                        <br/><span className="text-rose-400">缺點：</span>在長期向上的多頭市場中，越晚投入的資金買得越貴，導致整體績效落後。
+                      </li>
+                      <li>
+                        <strong>單筆投入 (Lump Sum)：</strong> 
+                        看好標的後，直接把資金一次性全部買入。
+                        <br/><span className="text-emerald-400">優點：</span>根據 Vanguard 等權威機構的歷史回測，因為市場長期趨勢向上，<strong>「單筆投入」在 68% 的時間裡績效會勝過「定期定額」</strong>。
+                        <br/><span className="text-rose-400">缺點：</span>如果剛買完隔天就遇到股災暴跌 20%，多數新手的心理素質會崩潰而認賠殺出。
+                      </li>
+                    </ul>
+                    <p className="mt-2 text-indigo-400 font-bold">💡 實戰結論：</p>
+                    <p>數學上「單筆投入」勝率較高，但投資往往是心理戰。如果你一次全押會睡不著覺，那就老老實實用「定期定額」，因為<strong>能讓你抱得住的策略，才是好策略</strong>。</p>
+                  </CaseStudyAccordion>
+                </div>
+
               </div>
+
+              {/* Expense Calculator Widget */}
+              <ExpenseCalculator />
             </div>
           </section>
 
