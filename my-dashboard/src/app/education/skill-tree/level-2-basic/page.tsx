@@ -332,7 +332,7 @@ export default function Level2Basic() {
                   </div>
                 </div>
 
-                <div className="md:col-span-2 lg:col-span-3 mt-4">
+                <div className="md:col-span-2 lg:col-span-3 mt-4 space-y-4">
                   <CaseStudyAccordion title="實戰策略：定期定額 (DCA) vs 單筆投入 (Lump Sum)" icon="🎯" theme="indigo">
                     <p className="mb-2">當你手上有一筆閒錢時，該分批慢慢買，還是直接全部買進？</p>
                     <ul className="list-disc pl-5 space-y-3 mb-3">
@@ -351,6 +351,22 @@ export default function Level2Basic() {
                     </ul>
                     <p className="mt-2 text-indigo-400 font-bold">💡 實戰結論：</p>
                     <p>數學上「單筆投入」勝率較高，但投資往往是心理戰。如果你一次全押會睡不著覺，那就老老實實用「定期定額」，因為<strong>能讓你抱得住的策略，才是好策略</strong>。</p>
+                  </CaseStudyAccordion>
+
+                  <CaseStudyAccordion title="機器人理財 (Robo-advisor) vs DIY 投資：隱藏的複利殺手" icon="🤖" theme="rose">
+                    <p className="mb-2">近年來主打「演算法自動配置」的機器人理財非常流行，但你需要注意它每年收取的「管理費」：</p>
+                    <ul className="list-disc pl-5 space-y-2 mb-2">
+                      <li><strong>DIY 買 ETF (自己動手)：</strong> 買入 0050 或 VOO，每年內扣費用約 0.03% ~ 0.04%。</li>
+                      <li><strong>使用機器人理財：</strong> 平台每年額外向你收取 1% 的帳戶管理費。總費用變成 1.04%。</li>
+                    </ul>
+                    <p className="mt-2"><strong>試算 30 年的複利慘劇：</strong></p>
+                    <p className="mb-2">假設你單筆投入 100 萬，市場年化報酬率為 8%：</p>
+                    <ul className="list-disc pl-5 space-y-2 mb-2">
+                      <li>DIY 投資 (實拿 7.96%)：30 年後會變成約 <strong className="text-emerald-400">995 萬</strong>。</li>
+                      <li>機器人理財 (實拿 6.96%)：30 年後只剩下約 <strong className="text-rose-400">753 萬</strong>。</li>
+                    </ul>
+                    <p className="mt-2 text-rose-400 font-bold">💡 實戰結論：</p>
+                    <p>那區區 1% 的管理費差距，在 30 年的複利發酵下，竟然<strong>吃掉了你超過 240 萬的獲利</strong>！對於長期投資來說，費用越低，你的勝率與最終財富就越高。</p>
                   </CaseStudyAccordion>
                 </div>
 

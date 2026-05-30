@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PositionSizeCalculator from '@/components/education/PositionSizeCalculator';
+import KellyCalculator from '@/components/education/KellyCalculator';
 import CaseStudyAccordion from '@/components/education/CaseStudyAccordion';
 
 export default function Level4Advanced() {
@@ -84,6 +85,7 @@ export default function Level4Advanced() {
             </div>
 
             <PositionSizeCalculator />
+            <KellyCalculator />
           </section>
 
           {/* 行為財務學 */}

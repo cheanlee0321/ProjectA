@@ -101,6 +101,19 @@ export default function Level5Pro() {
                   </div>
                 </li>
               </ul>
+              <div className="mt-6">
+                <CaseStudyAccordion title="量化神話：年化報酬 66% 的大獎章基金 (Medallion Fund)" icon="🏆" theme="slate">
+                  <p className="mb-2">提到量化交易，就不能不提文藝復興科技公司 (Renaissance Technologies) 旗下最神秘的「大獎章基金」。這是華爾街史上最賺錢的印鈔機：</p>
+                  <ul className="list-disc pl-5 space-y-2 mb-2">
+                    <li><strong>創辦人是數學家：</strong> 創辦人吉姆·西蒙斯 (Jim Simons) 不是金融出身，而是世界級的幾何學家、前國防部密碼破譯員。他的團隊裡全是天文學家、物理學家和統計學家，幾乎不招募華爾街的金融人員。</li>
+                    <li><strong>瘋狂的績效：</strong> 在 1988 年至 2018 年的 30 年間，大獎章基金的平均<strong>年化報酬率高達 66%</strong>（扣除高昂管理費後仍有 39%），徹底碾壓巴菲特與索羅斯。</li>
+                    <li><strong>策略黑盒子：</strong> 他們的演算法從不公開，完全不看公司財報或基本面。而是透過抓取海量數據（連天氣、推特發文都能當作參數），在幾千種資產中尋找肉眼無法察覺的微小數學相關性，進行極高頻的套利。</li>
+                    <li><strong>不對外開放：</strong> 這個基金只對公司內部員工開放，外部投資人就算有幾百億美金也買不到。</li>
+                  </ul>
+                  <p className="mt-2 text-slate-300 font-bold">💡 實戰結論：</p>
+                  <p>「別跟機器人拼刺刀。」當你在螢幕前猶豫要不要停損時，華爾街的超級電腦已經在 0.001 秒內完成了上萬次交易。散戶要贏，靠的不是比速度或比聰明，而是利用機器人不具備的優勢：<strong>「長期的耐心與不需面臨贖回壓力的時間」</strong>。</p>
+                </CaseStudyAccordion>
+              </div>
             </div>
           </section>
 

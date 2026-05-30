@@ -2,6 +2,7 @@ import Link from 'next/link';
 import RiskQuiz from './RiskQuiz';
 import CaseStudyAccordion from '@/components/education/CaseStudyAccordion';
 import Rule72Calculator from '@/components/education/Rule72Calculator';
+import BudgetCalculator from '@/components/education/BudgetCalculator';
 
 export default function Level1Beginner() {
   return (
@@ -106,18 +107,22 @@ export default function Level1Beginner() {
                 {/* 記帳習慣 */}
                 <div className="bg-foreground/5 p-5 rounded-2xl border border-foreground/10">
                   <h3 className="text-xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    <span className="text-2xl">📝</span> 1. 記帳習慣：看清資金的流向
+                    <span className="text-2xl">📝</span> 1. 記帳習慣與 50/30/20 預算分配
                   </h3>
                   <p className="mb-3 text-sm">
-                    <strong>為什麼需要？</strong> 就像企業需要損益表一樣，如果你不知道每個月賺的錢花去哪裡，就無法找出現金流的漏洞（例如每天一杯星巴克、無意識的訂閱服務），更不可能擠出多餘的本金來投資。
+                    <strong>為什麼需要？</strong> 就像企業需要損益表一樣，如果你不知道每個月賺的錢花去哪裡，就無法找出現金流的漏洞。理財的黃金守則第一條，就是「先支付自己 (Pay yourself first)」。
                   </p>
-                  <div className="bg-background/50 p-4 rounded-xl">
-                    <p className="text-sm font-semibold mb-2 text-emerald-400">💡 如何執行：</p>
+                  <div className="bg-background/50 p-4 rounded-xl mb-4">
+                    <p className="text-sm font-semibold mb-2 text-emerald-400">💡 經典的 50/30/20 法則：</p>
                     <ul className="list-disc pl-5 text-sm space-y-2">
-                      <li><strong>輕量級：</strong> 先嘗試記帳 3 個月，掌握自己每個月的「固定支出」與「變動支出」大約是多少。</li>
-                      <li><strong>進階法：</strong> 採用「先支付自己」法則（如 532 法則）。領到薪水第一天，立刻把 20% 自動轉入投資/儲蓄帳戶，剩下的 80% 才作為生活花費。</li>
+                      <li>領到薪水的第一天，立刻將資金分成三份。</li>
+                      <li><strong>20% 儲蓄與投資：</strong>立刻轉入一個「無法輕易動用」的帳戶。這是買回自由的救命錢。</li>
+                      <li><strong>50% 生活必需：</strong>房租、水電、交通、基本伙食。如果超過 50%，代表你可能需要搬家或換工作了。</li>
+                      <li><strong>30% 彈性想要：</strong>聚餐、娛樂、購物。花這筆錢時請心安理得，不要有罪惡感。</li>
                     </ul>
                   </div>
+                  
+                  <BudgetCalculator />
                 </div>
 
                 {/* 緊急預備金 */}

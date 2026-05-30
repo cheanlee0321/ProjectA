@@ -122,6 +122,27 @@ export default function Level6Endgame() {
                   超級富豪的終極配置。當家族財富達到億萬美元級別，他們會直接雇傭專屬的投資專家、律師、會計師團隊，像經營一間跨國企業一樣來專門管理「家族的財富」，實現真正的基業長青與財富永續。
                 </p>
               </div>
+            </div>            <div className="mt-6">
+              <CaseStudyAccordion title="信託防護網的威力：洛克斐勒 vs 范德堡家族" icon="🛡️" theme="yellow">
+                <p className="mb-2">歷史上兩個同樣富可敵國的美國家族，卻因為「傳承機制」的不同，走向了截然不同的結局：</p>
+                <ul className="list-disc pl-5 space-y-3 mb-3">
+                  <li>
+                    <strong>反面教材 - 范德堡家族 (Vanderbilt)：</strong> 
+                    19世紀的鐵路大王，曾是美國首富。他過世時將龐大遺產「直接」分給了子孫。結果子孫們為了爭奪財產互相提告，拿到錢後開始揮霍無度，建造極度奢華的豪宅。短短不到 50 年（第三代），龐大的帝國土崩瓦解，甚至有後代死於貧困。
+                  </li>
+                  <li>
+                    <strong>正面教材 - 洛克斐勒家族 (Rockefeller)：</strong> 
+                    石油大王洛克斐勒深知人性的弱點，他沒有把錢直接交給後代，而是設立了一系列極度嚴密的「家族信託」。
+                    <ul className="list-disc pl-5 mt-2 space-y-1 text-foreground/70">
+                      <li>後代只有「受益權」沒有「所有權」，這意味著即使子孫經商失敗破產，債權人也無法動用信託裡的資產。</li>
+                      <li>信託由專業委員會管理，確保資產持續投資增值。</li>
+                      <li>如今傳承到第七代，家族依然繁盛，甚至經常捐出大筆資金做慈善。</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p className="mt-2 text-yellow-500 font-bold">💡 實戰結論：</p>
+                <p>創造財富靠的是運氣與實力，但保留財富靠的是「制度」。沒有機制的保護，再多的財富也抵不過人性的揮霍與意外的打擊。</p>
+              </CaseStudyAccordion>
             </div>
           </section>
 

@@ -47,6 +47,18 @@ export default function Level3Chips() {
                   <p className="text-sm text-foreground/80">證券公司自己的投資部。操作極度短線，追求絕對利潤，通常不具備長線趨勢參考價值（俗稱隔日沖大本營）。</p>
                 </div>
               </div>
+              <div className="mt-4">
+                <CaseStudyAccordion title="實戰解析：投信季底「作帳」變「結帳」的殘酷遊戲" icon="🎭" theme="rose">
+                  <p className="mb-2">每逢 3、6、9、12 月底，財經新聞總會大肆報導「投信季底作帳行情啟動」，吸引散戶進場。但這其實是一把雙面刃：</p>
+                  <ul className="list-disc pl-5 space-y-2 mb-2">
+                    <li><strong>什麼是作帳？</strong> 基金經理人為了在季末交出漂亮的成績單（這攸關他們的年終獎金），會集中火力拉抬他們手中已經重倉的股票。這段期間跟著投信買，往往能嚐到甜頭。</li>
+                    <li><strong>何時變結帳？</strong> 當時間逼近季底最後幾天（如 25 號以後），如果該股票已經漲幅巨大，經理人為了「保住戰果」並預留現金應付贖回，會開始瘋狂倒貨。此時如果你才剛看新聞進場，就會立刻成為接盤俠。</li>
+                    <li><strong>互砍悲劇：</strong> 如果一檔股票同時被 A、B 兩家投信重倉，只要 A 投信決定先跑，股價就會下跌，B 投信的績效就會受到威脅。這會引發「囚徒困境」，導致投信間互相踩踏瘋狂拋售，股價在短短幾天內可能暴跌 20% 以上。</li>
+                  </ul>
+                  <p className="mt-2 text-rose-400 font-bold">💡 實戰策略：</p>
+                  <p>「吃魚吃中段」。要在季初或季中（投信剛開始連續買超 3-5 天時）就跟上。一旦進入季底最後兩週，且股價已經大漲過，千萬不要再去碰投信高持股（持股比例 &gt; 10%）的標的，以免被無情結帳。</p>
+                </CaseStudyAccordion>
+              </div>
             </div>
           </section>
 

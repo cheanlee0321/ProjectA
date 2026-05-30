@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CaseStudyAccordion from '@/components/education/CaseStudyAccordion';
+import PECalculator from '@/components/education/PECalculator';
 
 export default function Level3Fundamental() {
   return (
@@ -332,6 +333,8 @@ export default function Level3Fundamental() {
                 </div>
 
               </div>
+
+              <PECalculator />
             </div>
           </section>
 

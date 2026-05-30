@@ -307,6 +307,19 @@ export default function Level3Technical() {
                   </div>
                 </div>
 
+
+                <div className="col-span-1 md:col-span-2 mt-4">
+                  <CaseStudyAccordion title="進階實戰：風報比 (Risk/Reward Ratio) 的數學魔法" icon="⚖️" theme="emerald">
+                    <p className="mb-2">技術分析最大的價值，不是預測未來，而是幫你找到<strong>「停損空間極小，獲利空間極大」</strong>的進場點。這就是「風報比」。</p>
+                    <ul className="list-disc pl-5 space-y-2 mb-2">
+                      <li><strong>計算公式：</strong> 風報比 = (預期停利空間) ÷ (預期停損空間)</li>
+                      <li><strong>完美進場點：</strong> 當股價拉回測試「長期支撐線」且沒有跌破時進場。此時你的停損點只需設在支撐線下方一點點（風險極低），但如果上漲，獲利空間卻很大。</li>
+                      <li><strong>範例：</strong> 買在 100 元，跌破 95 元停損（賠 5 元），上看壓力區 120 元停利（賺 20 元）。風報比為 4 (20÷5)。</li>
+                    </ul>
+                    <p className="mt-2 text-emerald-400 font-bold">💡 實戰結論：</p>
+                    <p>只要你堅持只做「風報比 &gt; 3」的交易，就算你的勝率只有 30%（十次錯七次），你長期下來依然是賺錢的！這就是技術分析能幫助你賺錢的唯一數學真相。</p>
+                  </CaseStudyAccordion>
+                </div>
               </div>
             </div>
           </section>
