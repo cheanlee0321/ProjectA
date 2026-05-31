@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import tocData from '@/data/howard_marks_toc.json';
+import fs from 'fs';
+import path from 'path';
+import ReactMarkdown from 'react-markdown';
 
 // Flatten the TOC for easy lookup
 const allMemos = tocData.flatMap(yearGroup => yearGroup.memos);
 
-export async function generateStaticParams() {
-  return allMemos.map((memo) => ({
-    id: memo.id,
-  }));
-}
+type Props = { params: Promise<{ id: string }> | { id: string } };
 
-export default function MemoChapterPage({ params }: { params: { id: string } }) {
-  const currentIndex = allMemos.findIndex(m => m.id === params.id);
+export default async function MemoChapterPage({ params }: Props) {
+  const resolvedParams = await params;
+  const currentIndex = allMemos.findIndex(m => m.id === resolvedParams.id);
   
   if (currentIndex === -1) {
     notFound();
@@ -22,6 +22,54 @@ export default function MemoChapterPage({ params }: { params: { id: string } }) 
   const prevMemo = currentIndex > 0 ? allMemos[currentIndex - 1] : null;
   const nextMemo = currentIndex < allMemos.length - 1 ? allMemos[currentIndex + 1] : null;
 
+  let content = '';
+  let isMarkdown = false;
+  try {
+    const mdPath = path.join(process.cwd(), 'src', 'data', 'memos', `${memo.year}_${memo.id}.md`);
+    content = await fs.promises.readFile(mdPath, 'utf-8');
+    isMarkdown = true;
+  } catch (err) {
+    try {
+      const txtPath = path.join(process.cwd(), 'src', 'data', 'memos', `${memo.year}_${memo.id}.txt`);
+      const rawContent = await fs.promises.readFile(txtPath, 'utf-8');
+      
+      const lines = rawContent.split(/\r?\n/);
+    const processedLines: string[] = [];
+    let currentParagraph = '';
+
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i].trim();
+      
+      if (!line) {
+        if (currentParagraph) {
+          processedLines.push(currentParagraph);
+          currentParagraph = '';
+        }
+        continue;
+      }
+
+      if (currentParagraph) {
+        const lastChar = currentParagraph.slice(-1);
+        if (lastChar === '-') {
+          currentParagraph = currentParagraph.slice(0, -1) + line;
+        } else {
+          currentParagraph += ' ' + line;
+        }
+      } else {
+        currentParagraph = line;
+      }
+    }
+      if (currentParagraph) {
+        processedLines.push(currentParagraph);
+      }
+      
+      content = processedLines.join('\n\n');
+    } catch (txtErr) {
+      content = '無法載入文章內容。';
+      console.error('Error reading memo:', txtErr);
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-amber-50/90 py-12 px-6 md:px-12 lg:px-24 relative font-serif">
       {/* Background Ambience */}
@@ -30,7 +78,7 @@ export default function MemoChapterPage({ params }: { params: { id: string } }) 
       <div className="relative z-10 w-full max-w-3xl mx-auto">
         {/* Top Navigation */}
         <div className="mb-16 flex items-center justify-between border-b border-amber-900/30 pb-6">
-          <Link href="/education/howard-marks-memos" className="inline-flex items-center text-amber-500/70 hover:text-amber-400 transition-colors font-sans text-sm tracking-widest uppercase">
+          <Link href={`/education/howard-marks-memos/year/${memo.year}`} className="inline-flex items-center text-amber-500/70 hover:text-amber-400 transition-colors font-sans text-sm tracking-widest uppercase">
             <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -48,20 +96,15 @@ export default function MemoChapterPage({ params }: { params: { id: string } }) 
             <p className="text-amber-500/50 uppercase tracking-[0.2em] text-sm">Howard Marks</p>
           </header>
 
-          {/* Placeholder Content */}
-          <div className="prose prose-invert prose-amber max-w-none">
-            <div className="p-8 md:p-12 rounded-2xl bg-amber-950/20 border border-amber-900/30 text-center backdrop-blur-sm">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-900/30 mb-6">
-                <svg className="w-8 h-8 text-amber-500/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-bold text-amber-100 mb-4 font-sans">中文翻譯內容建置中</h2>
-              <p className="text-amber-100/60 leading-relaxed font-sans font-light max-w-lg mx-auto">
-                我們正在努力將這篇經典備忘錄翻譯為中文。<br />
-                未來您將能在這裡以最舒適的排版閱讀大師的完整見解，敬請期待。
-              </p>
-            </div>
+          {/* Memo Content */}
+          <div className="prose prose-invert prose-amber max-w-none font-sans font-light text-amber-100/90 leading-relaxed text-lg tracking-wide">
+            {isMarkdown ? (
+              <ReactMarkdown>{content}</ReactMarkdown>
+            ) : (
+              content.split('\n\n').map((paragraph, idx) => (
+                <p key={idx} className="mb-6">{paragraph}</p>
+              ))
+            )}
           </div>
         </article>
 

@@ -1,0 +1,113 @@
+**Memo to:** Oaktree Clients
+
+**From:** Howard Marks
+
+**Re:** The Complete Collection
+
+This anthology represents the collation of all my public memos, from the first one in 1990 to the latest as of the date of publication.  It’s the sole (official) collection of my memos in a single volume.  As a body of work, the memos chart the themes I consider to be truly indispensable to understanding the investment world:
+
+> •Cycles are inevitable, and understanding and mastering them is of great importance.
+
+> •Patterns in investor behavior rhyme from cycle to cycle, creating profound opportunities at the extremes.
+
+> •Emotion drives investors to do the wrong thing at the wrong time and must be resisted.
+
+> •Contrarianism at pivotal moments is much more effective than following the herd, but much more difficult.
+
+> •Price matters.  There’s no such thing as a good investment if the relationship between price and underlying value is unreasonable.
+
+> •You can’t excel in investing without a knowledge advantage, which is found not in merely possessing data, but in drawing superior inferences and applying “second-level thinking.”
+
+•Macro predictions are unlikely to give you an edge.
+
+•Certainty has no place in investing, and intellectual humility is essential.
+
+•Other investors – and thus the markets – aren’t easy to beat; merely trying harder won’t do it.
+
+•Because others are intelligent too, you’re unlikely to come across return windfalls or sure things.
+
+•Randomness is ever-present, and it can produce just about any outcome in the short run.  That means you mustn’t expect a well-reasoned process to work in anything other than the long term.
+
+•Risk is an indispensable aspect of investing; it must be controlled but can’t be eliminated.
+
+•Skilled investors achieve “asymmetry,” enjoying returns that are disproportionate to their risk.
+
+•One plausible route to asymmetry is via the minimization of losses.
+
+I hope this serves as a useful resource for you.
+
+October 12, 2025
+
+1990 1991 1994 1995 1996 1997 1998 1999 2000 Table of Contents The Route to Performance Random Thoughts on the Identification of Investment Opportunities Risk in Today's Markets Risk in Today's Markets Revisited How Does an Inefficient Market Get That Way?
+
+First Quarter Performance 1992 Microeconomics 101: Supply, Demand and Convertibles 1993 The Value of Predictions, or Where’d All This Rain Come From?
+
+How the Game Should Be Played The Value of Predictions II (or “Give That Man a Cigar”) Will It Be Different This Time?
+
+Are You An Investor or a Speculator?
+
+Who Knew?
+
+Genius Isn’t Enough (and Other Lessons from Long-Term Capital Management) How’s the Market?
+
+bubble.com Irrational Exuberance Investment Miscellany We’re Not In 1999 Anymore, Toto 2001 Safety First . . . But Where?
+
+What’s It All About, Alpha?
+
+Notes from New York What Lies Ahead?
+
+You Can’t Predict. You Can Prepare.
+
+2002 Learning From Enron The Realist’s Creed Quo Vadis?
+
+Etorre’s Wisdom Returns and How They Get That Way 2003 Whad’Ya Know?
+
+What’s Going On?
+
+The Most Important Thing What’s Your Game Plan?
+
+The Feeling’s Mutual 2004 Hey, Steward!!
+
+Us and Them The Happy Medium Hedge Funds: A Case for Caution Risk and Return Today 2005 Oaktree at Ten There They Go Again A Case in Point Hindsight First, Please (or, What Were They Thinking?) 2006 Risk It Is What It Is Returns, Absolute Returns and Risk You Can’t Eat IRR Dare to Be Great The New Paradigm Pigweed Table of Contents (continued)
+
+The Race to the Bottom Everyone Knows It’s All Good It’s All Good . . . Really?
+
+Now It’s All Bad?
+
+No Different This Time – The Lessons of ‘07 2007 Now What?
+
+Whodunit The Tide Goes Out The Aviary Doesn’t Make Sense What Worries Me Nobody Knows Plan B The Limits to Negativism Volatility + Leverage = Dynamite 2008 The Long View Will It Work?
+
+So Much That’s False and Nutty Touchstones 2009 Tell Me I’m Wrong I’d Rather Be Wrong Warning Flags It’s Greek to Me Hemlines Open and Shut All That Glitters 2010 Table of Contents (continued)
+
+On Regulation How Quickly They Forget Down to the Wire What's Behind the Downturn?
+
+It's All Very Taxing 2011 What Can We Do For You?
+
+Assessing Performance Records A Case Study Déjà Vu All Over Again It's All A Big Mistake On Uncertain Ground A Fresh Start (Hopefully) 2012 Ditto High Yield Bonds Today The Outlook For Equities The Role of Confidence The Race Is On 2013 Getting Lucky Dare to Be Great II Risk Revisited The Lessons of Oil 2014 Liquidity Risk Revisited Again It’s not Easy Inspiration from the World of Sports 2015 Table of Contents (continued)
+
+Expert Opinion Lines in the Sand There They Go Again... Again Yet Again?
+
+2017 Latest Thinking Investing Without People The Seven Worst Words in the World 2018 Political Reality Meets Economic Reality Growing the Pie This Time It's Different On the Other Hand Mysterious 2019 You Bet!
+
+Nobody Knows II Latest Update Which Way Now?
+
+Calibrating Knowledge of the Future Uncertainty Uncertainty II Not Enough The Anatomy of a Rally Time for Thinking Coming into Focus 2020 On the Couch What Does the Market Know?
+
+Economic Reality Political Reality Implications of the Election Go Figure!
+
+2016 Table of Contents (continued)
+
+Selling Out The Pendulum in International Affairs Bull Market Rhymes Conversation at Panmure House I Beg to Differ The Illusion of Knowledge What Really Matters?
+
+Sea Change 2022 Lessons from Silicon Valley Bank Taking the Temperature Fewer Losers, or More Winners?
+
+Further Thoughts on Sea Change 2023 Easy Money The Indispensability of Risk The Impact of Debt The Folly of Certainty Mr. Market Miscalculates Shall We Repeal the Laws of Economics?
+
+Ruminating on Asset Allocation 2024 On Bubble Watch Gimme Credit Nobody Knows (Yet Again) More on Repealing the Laws of Economics Calculus of Value A Look Under the Hood Cockroaches in the Coal Mine Is It a Bubble?
+
+2025 Something of Value 2020 in Review Thinking About Macro The Winds of Change 2021 Table of Contents (continued)
+
+Addendum to Third Quarter Client Letter
+
+**From:** Howard S. Marks

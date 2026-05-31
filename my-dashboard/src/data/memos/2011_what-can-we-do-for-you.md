@@ -1,0 +1,215 @@
+**Memo to:** 
+
+Oaktree Clients
+
+**From:** Howard Marks
+
+**Re:** What Can We Do For You?
+
+We’d love to be able to “do it all” for our clients and give them everything they hope for.  It would be great if we could predict what economies and markets will do, move in and out with perfect timing, foresee which industries and companies will fare best, and hold only the securities with the highest returns.  But to paraphrase John Kenneth Galbraith on forecasters, I feel there are two kinds of investment managers: those who can’t do these things and those who don’t know they can’t do these things.
+
+At Oaktree we’ve always emphasized being brutally honest – with ourselves and with our clients – about what we can and cannot do.  Some managers claim to be able to do it all.  Either they really think they can, or they think to be successful they have to pretend they can.  The late Amos Tversky of Stanford University made it quite clear which is preferable:
+
+> It’s frightening to think that you might not know something, but more frightening to think that, by and large, the world is run by people who have faith that they know exactly what’s going on.
+
+> In any endeavor involving uncertainty, not knowing what lies ahead isn’t nearly as bad as thinking you know if you don’t.  If you’re setting out for a drive and recognize that you don’t know the way, you’re likely to check a map, follow your GPS, ask directions and drive slowly, watching for indications you’ve gone off course.  But if you’re sure you know the way, you’re more likely to skip these things, and if it turns out you didn’t know, that’ll make it much harder to reach your destination.
+
+> Rather than commit the error of overconfidence, at Oaktree we consider it essential to acknowledge the limits of our capabilities and act accordingly.
+
+> What Can’t We Do?
+
+> The main thing we can’t do is see the future, and particularly the macro future.  That simple statement has serious ramifications.  It means a lot that we’d love to know is beyond us:
+
+> we can’t know what the economies of the world will do, we can’t know whether markets will go up or down, and by how much and when, we can’t know which market or sub-market will do best, and we can’t know which securities in a given market will be the top performers.
+
+> And what does the fact that we can’t know these things mean for our portfolio management?
+
+> Simple: it means we mustn’t act as if we can.
+
+> If you could know these things, the path to success would be clear:  Stick to markets that will do well and avoid the rest.  Concentrate on the individual securities that will be the best performers.
+
+> Load up when the market’s about to rise and get out at the top.  And use maximum leverage when the return will exceed the cost of capital and none when it won’t.
+
+But what if you can’t?  You should acknowledge your limitations, enroll in the “I don’t know”
+
+school of thought, and accommodate your behavior to reality (see “Us and Them,” May 7, 2004).
+
+The more you acknowledge you don’t know what the future holds:
+
+> the more you should diversify, spreading your bets to make sure you don’t miss the winners or, more importantly, overload on the losers, the less you should attempt to augment performance through adroit short-term market timing, and the less you should employ leverage.
+
+> The difference in behavior between those who think they can know the future and those who don’t is potentially enormous.  It’s essential to be on the right side of this choice because, as Mark Twain said, “It ain’t what you don’t know that gets you into trouble.  It’s what you know for sure that just ain’t so.”  That’s an essential component of the formula for investment survival.
+
+> What Can We Do?
+
+> Investing consists almost entirely of making preparations for the future, and I just stated that the future is largely unknowable.  Does this mean that there’s nothing we managers can do for our clients?  No, quite the contrary.  Investors who understand reality can restrict their efforts to areas in which they can make a difference and avoid wasting their time (or – even worse – taking unjustified risks) where they can’t.  In fact, there’s a long list of things we can do for our clients despite our lack of prescience:
+
+> We can highlight potentially fruitful asset classes, strategies and approaches.
+
+> Clients generally have no choice but to know a little bit about a great many things.  But because specialist managers are supposed to know a lot about a few things, they should be able to identify superior opportunities and the best way to access them.
+
+> We can help inform the capital allocation decision by describing the attractiveness of our asset classes.  We should know more than others about our markets’ fundamental strengths and weaknesses, technical conditions and price attractiveness.  This doesn’t mean just speaking up when our markets are cheap; it also means admitting when they aren’t.  It can’t always be “the greatest time” for any asset class.
+
+> We can strive to know more than others about companies, industries and securities.
+
+> A knowledge advantage is a clear prerequisite for consistently superior investment
+
+> performance.  While we can’t know these things with certainty, specialized expertise can help us do a better job of assessing prospects and estimating intrinsic value.
+
+> We can try to find bargains and avoid overpriced securities.  By applying a disciplined approach to security selection, a manager should be able to judge the relationship between the price of each security and its intrinsic value.  This can’t be done flawlessly, of course, and at any rate the impact of this relationship on performance is often outweighed in the short run by trends in investor psychology and perception.
+
+Thus, like everything else, this won’t work every time.  But on balance the superior manager should be able to assemble portfolios whose holdings have a higher collective probability of moving in the right direction.
+
+We can limit risk.  The risk in investing increases along with the degree to which the future is unknowable.  Recognizing this, managers who acknowledge the limits on their foresight tend to incorporate a good measure of risk control in their portfolios.  They try to make fewer investments whose success is heavily dependent on knowing what the future holds, thereby creating an increased margin of safety.  This approach to investing shouldn’t be expected to maximize return – especially in good times – but rather to maximize risk-adjusted return.  This is a mission-critical part of the investment manager’s job.
+
+We can control our egos and emotions.  The biggest errors are made when the investing herd is driven by emotion: to buy at the top by greed and excitement, and to sell at the bottom by fear and despondency.  These errors are compounded when investors – even professionals – surrender to their egos and overestimate the degree to which their judgments are correct.  Superior managers can help their clients by refusing to mirror these flaws.
+
+We can act as contrarians.  Given the way the emotion-led consensus is wrong at the extremes as described above, there’s money to be made by doing the opposite.
+
+Objectivity, insight and ego control are all you need.  But it’s far from easy.  The successful contrarian has to have a sense for what the herd is doing, understand what’s wrong with its behavior, resist the emotions driving it and do the opposite – all of this despite being “only human” and thus not immune to the forces driving others.
+
+We can behave counter-cyclically.  The cycles in economies and markets conspire to cause investment mistakes.  For example, in advanced up-cycles:
+
+> othe economic indicators show gains, ocompanies report earnings increases, oassets appreciate, oinvestors enjoy good returns, oriskier approaches outperform, oleverage adds to gains, and othe capital markets eagerly provide financing.
+
+> Developments like these encourage investors to behave aggressively.  However, the right time to do so isn’t when things have been going well, but after economies and markets have declined.  But then, conditions make doing them much more difficult.  Akin to contrarians, counter-cyclical investors can produce good performance with low attendant risk by doing the right thing at the right time.  This, too, isn’t easy.  But anyone can do things that are easy . . . which don’t add any value.  Superior managers are supposed to do the things that are hard.  I consider behaving counter-cyclically to be one of a manager’s most important responsibilities.
+
+So there’s quite a list of things that should be within managers’ capabilities.  Superior managers should be able to keep very busy and make a significant contribution to their clients’
+
+performance . . . even though they can’t know the future.
+
+Oaktree on Market Timing
+
+This memo provides an ideal opportunity for me to discuss Oaktree’s position on these matters and address some potential inconsistencies.
+
+In the weeks before Oaktree opened its doors in April 1995, my partners and I spent a great deal of time turning the ideas that had guided our actions over the preceding years into the explicit investment philosophy that would govern our new company.  We wrote out the six tenets of our philosophy, and we haven’t changed a word since.  The first two concern the values that we hope we’re best known for: risk control and consistency.  But questions sometimes arise about numbers five and six, in which we disavow macro-forecasting and market timing.  Certainly these disavowals are consistent with what I’ve said managers can and can’t do.  But do we adhere to them?
+
+It’s plain to see that our tactical approach to our markets varies over time:
+
+> In marketable securities, we open and close for new capital; raise and lower the defensiveness of our holdings; stay fully invested or allow cash to increase modestly; and adjust our allocation to cyclical companies.
+
+> In private partnerships, we raise larger and smaller funds; occasionally organize follow- on “b” funds before their predecessors are fully invested; raise and lower the percentage invested in senior securities; and invest at a rapid pace sometimes and gradually at others.
+
+So it’s appropriate to ask whether our behavior is consistent with our philosophy.  Can our actions be reconciled with our professed non-reliance on foreknowledge?  Or   are we really secret forecasters or  closet market timers?  The questions are s imp  le, but the answer is not.
+
+First, we don’t undertake the tactical actions described above in response to what we or some economists think the future holds, but rather on the basis of what we see going on in the marketplace at the time.  What kind of things do we react to?
+
+The simplest signs surround valuation.  What’s the yield spread between high yield bonds and Treasurys?  And between single-B and triple-C?  Where are the yields and premiums on convertibles?  Are distressed senior loans selling at 60 cents on the dollar or 90?  Is the S&P 500 selling at 30 times earnings or 12?  These things tell us whether markets – and investor ardor – are overheated or ice cold.
+
+We find nothing as terrifying as the ability to easily do dumb deals (see “The Race to the Bottom,” February 14, 2007).  When large numbers of transactions occur that leave us shaking our heads, it’s a strong signal that the market is lacking in the risk aversion and skepticism that are needed to keep it safe and sane.
+
+Equally worrisome is the presence of investor ebullience.  When results are good and everyone’s certain that more of the same must lie ahead, the pendulum of investor psychology invariably swings to extremes of greed, optimism, confidence and credulousness – the raw material for bubbles and subsequent crashes.  I constantly go back to Warren Buffett’s formulation: “The less prudence with which others conduct their affairs, the greater the prudence with which we should conduct our own affairs.”
+
+It’s also troubling if aggressive investment vehicles are popular and over-subscribed.  For the value-conscious investor, the seven scariest words in the world are “too much money chasing too few deals.”  But that’s likely to be the case when everyone’s certain that each new issue, fund and black box represents the chance of a lifetime.
+
+The key lies in the fact that our strongest actions are undertaken in response to currently observable phenomena like these, not predictions.  The way I put it, “we may never know where we’re going, but we’d better know where we are.”
+
+Second, I confess: I think about the future.  So do my colleagues.  If someone who’s spent decades investing doesn’t have opinions about what lies ahead, there’s something wrong.  I believe our clients want us to apply the benefit of our experience in gauging and reacting to the opportunities and risks that lie ahead.
+
+But I have a mantra on this subject, too: “It’s one thing to have an opinion; it’s something very different to assume it’s right and act on that assumption.”  We have views on the future.  And they can cause us to “lean” toward offense or defense.  Just never so much that for the results to be good, our views have to be right.
+
+Here’s the full text of the tenets in question.  I think you’ll see that we’re true to the limitations expressed above, albeit perhaps not slavishly.
+
+Macro-forecasting not critical to investing – We believe consistently excellent performance can only be achieved through superior knowledge of companies and their securities, not through attempts at predicting what is in store for the economy, interest rates or the securities markets.  Therefore, our investment process is entirely bottom-up, based upon proprietary, company-specific research.
+
+We use overall portfolio structuring as a defensive tool to help us avoid dangerous
+
+concentration, rather than as an aggressive weapon expected to enable us to hold more of the things that do best.
+
+Disavowal of market timing – Because we do not believe in the predictive ability required to correctly time markets, we keep portfolios fully invested whenever attractively priced assets can be bought.  Concern about the market climate may cause us to tilt toward more defensive investments, increase selectivity or act more deliberately, but we never move to raise cash.  Clients hire us to invest in specific market niches, and we must never fail to do our job.  Holding investments that decline in price is unpleasant, but missing out on returns because we failed to buy what we were hired to buy is inexcusable.
+
+You’ll occasionally see modest increases in the cash levels in our portfolios.  However, they occur largely because w e’re  finding more things to sell than buy, not because we’re predicting a market decline.  Most of our actions along these lines are micro-driven.
+
+Likewise, we never say, “It’s cheap today, but it’ll be cheaper tomorrow, so we’ll wait.”  If it’s cheap today, we buy it.  If it gets cheaper, we’ll bu y more.  Waiting to buy until it gets cheaper could help us avoid a decline, but if we’re right about the asset’s merit,    that decline will prove temporary.  On the other hand, if the decline never ma terializes, waiting will k eep us from making a good investment . . . that is, from doing what our clients pay us to do.
+
+So the bottom line is that we walk a fine line between not trying to be forecasters or market timers, but also not being so oblivious to what’s going on around us that we miss o pportunities to avoid dangerous markets or take advantage of bargains.
+
+Thoughts on Portfolio Positioning I’m   going to use the context of this memo to set out a way of thinking about portfolio structuring that I’ve developed recently, and to show how I would apply it today.   I’m not saying it’s an unerring thought process, or the only way to think, but I hope you’ll find it potentially useful.
+
+I’m  sure I’ll have more to suggest in the future.  But I’ve been thinking and talking about these things in recent mo nths, and I want to share them here.
+
+The thought process centers on three questions I think an asset allocator should ask each day upon coming to the office:
+
+> First, do you expect prosperity or not?  Why do I ask?  Didn’t I say above that investors  can’t know the future?  Yes, I think the economic future is unknowable – that is, that few among us are able to know more than the consensus about what the economy’s going to do.  And that’s especially true at inflection points, when it’s   im portant to stop extrapolating recent trends.
+
+But we cannot escape the responsibility for deciding whether to position our portfolios aggressively or defensively, and thus to decide what asset classes and tactics to emphasize.
+
+Doing so requires us to make some gross assumptions about the economic outlook.  Again, h owever, we shouldn’t act boldly out of conviction that our assump tions are right.
+
+If the economic environment will reflect prosperity, we might want to put more into growth stocks, cyclical companies, risky assets and levered strategies.  If it won’t, it might be better to favor value stocks, “real” assets, safer companies and unlevered strategies.  Unless we’re willing to flatly say we don’t know an ything about the future and always hold a fixed or “policy”
+
+portfolio, we have to try to assess the outlook and adjust accordingly.
+
+Second, which of the two main risks with which investors have to contend should you worry about more: the risk of losing money or the risk of missing opportunities?  A skilled investor can eliminate one or the other of these risks, but nobody can eliminate them both.  How, then, should one behave?
+
+You can put all your efforts into avoiding one risk or the other, but that’s imprudent.  Or you can maintain a fixed balance between the two, but that seems to excessively ignore variation in the outlook for upside potential and downside risk.  Instead, I think the r ight  approach is to adjust your stance as the environment changes.
+
+To me, th e answer to this question lies primarily in the degree of cheapness prevailing in the markets.  When asset prices are high, there’s more risk to be aware of and less opportunity to worry about mi  ssing.  On the other hand, when prices are low, it’s appropriate to worry less about the risk of loss and more about missing out on the opportunities created by those low prices.
+
+Third, wh at are the right investing attributes for today?  Three years ago, at the depths of the post-Lehman crisis, you only needed two things to achieve big gains: money and the nerve to spend it.  With prices so low, you didn’t need cautio n, prudence, conservatism, risk control, patience or selectivity.  In fact, the more of those things you had, the more you were held back and the less money you made.  In that crisis climate, “money and nerve” was enough.
+
+Does that mean money and nerve is always a surefire formula for success?
+
+Absolutely not.
+
+Think about 2005-07: money and nerve was a recipe for disaster.  Then you needed caution, prudence, conservatism, risk control, patience and selectivity.  Only if you had a good dose of those things might you avoid the full brunt of the financial crisis that lay ahead.
+
+The form  ula for success in investing chan ges,    based largely on the conditions in the environment.  What are the right attributes for today?  Money and nerve, or risk control and selectivity?
+
+These three questions are interrelated and overlapping, and in sum they come down primarily to the choice between offense and defense.  Unless you insist on maintaining a constant position in this regard, determining your stance is one of the most important investment decisions.
+
+Portfolio Structuring Today As I’ve written in recent years, I don’t see a quick return to the prosperity of the past.  In the 1990s, for example, we experienced the best of all worlds:
+
+> the economy did well, although incomes grew slowly, the growing use of credit buttressed consumers’ ability to spend, there were great strides in technology and productivity, companies reported rising earnings, stocks appreciated every year, not by their “normal” 10%, but by 20% on average, the wealth effect from growing 401k’s added to consumers’ willingness to spend, interest rates declined continually, capital was readily available, inflation remained under control, faith ran high in the ability of the Fed to keep the economy on a steady path, and there was peace in the world.
+
+> Now that’s good times!
+
+> Today, the U.S. economy is doing fairly well, and it should continue to recover in the years ahead.  In fact, I think the main immediate risk to recovery stems from uncertainty connected to the European crisis.  Will Europe experience a recession (or is it in one already)?  Will a European recession cut into America’s growth?  Will Europe’s political leaders prove unable to arrive at and implement the required solutions?  Will countries exit the euro and/or reschedule debt?  Will uncertainty surrounding Europe’s financial institutions impact the U.S. economy and its own institutions?
+
+> I’d say “maybe” to all these things.  And maybe not.  But to me the bottom line is that, regardless of these specifics, the outlook isn’t positive enough to call for prosperity or anything approaching the good feelings of the 1990s.
+
+> After spending more than they made for a good while, American consumers should realize the attraction of owing less and having some money in the bank.  So maybe for a while they’ll spend less than they make.  And credit may be harder to come by than it was in the past, similarly limiting credit-fueled consumption.  While good for individual balance sheets, these trends will constrain aggregate economic growth.
+
+> The U.S. has its own deficits and debt to worry about.  We have to consider the impact on growth of reduced government spending and increased taxes, the same austerity the rest of the world is experiencing.  Even without any action on the part of government, significant, already-mandated tax increases and spending cuts have the capacity to impede GDP growth.
+
+> A few months ago there was talk of a double-dip recession in the U.S.  We don’t hear much about it today, but that doesn’t mean it’s off the table.
+
+> Nobody can prove that the U.S. won’t fall into a slow-growth malaise similar to what Japan has been experiencing, although I believe it will avoid doing so thanks to the spirit of creativity and optimism that remains in force.
+
+> Taking all of these things together, I think the probabilities favor slow growth at best, making it unlikely that this is the time for aggressive investment behavior.
+
+> On the other hand – and there definitely is an “other hand” – there are significant factors arguing against extreme risk aversion.  They relate primarily to market conditions.
+
+> First, in many cases valuations are quite reasonable.  U.S. stocks, for example, are much cheaper than usual, selling at low absolute p/e ratios.  The S&P 500 has failed to appreciate over the last twelve years, while corporate earnings have grown substantially.  Thus its p/e ratio has tumbled.
+
+> The average p/e in the postwar era was 15 or 16, and in 1999 it reached 30.  Today it’s about 12.
+
+> Of course there are caveats:
+
+> While equity valuations are down, it can be argued that they’re not down enough to reflect all of the deterioration in the secular outlook.  Conversely, it’s impossible to prove that they are.
+
+> In addition, it’s always possible that earnings estimates are too high, meaning stocks aren’t as cheap as their p/e ratios suggest.
+
+> The one thing I know for sure, however, is that U.S. stocks are cheap versus historic norms.
+
+> Another example of cheapness can be seen in high yield bonds.  In the 33 years since I organized Citibank’s first high yield bond fund, the normal yield spread between the high yield indices and comparable-duration Treasurys has been 300 to 550 basis points.  Today the spread is closer to 700 b.p.
+
+> History shows that if you invest in the high yield bond indices when spreads go above 550 b.p., you usually outperform Treasurys by a wide ma rgin over the next few years.  Thus it’s clear that with spreads at 700 b.p., they’re priced to outperform.  High yield bonds – like stocks – could turn o ut not to have been cheap enough, but there’s no arguing with the fact that they (and senior leveraged loans) are relatively very cheap.  (Of course you can’t eat relative performance, and the current attractiveness of high yield bonds is very much a function of how low Treasury yields are.
+
+> Nevertheless, after staring at 2% yields on Treasurys for a few years, 8% seems like a lot.) So we have valuation on our side in today’s markets.  Wh  at else?  The other positive, in my v iew, relates to the “temperature” of the market.  I’ve often wr itten that the key to understanding what might lie ahead is a sense for what’s going on in the investment environment.
+
+> The riskiest things are investor eagerness, a high level of risk tolerance, and a belief that risk is low.  That’s a pretty good description of 2005-07.
+
+> In contrast, we can take heart when investors are discouraged, risk aversion is running high, and economic difficulty is all over the headlines . . . like today.
+
+> Twelve years ago, equity returns were ending one of their best decades ever; p/e ratios were way above the norms; investors were participating in a love affair with stocks; equity allocations had been built up; and no one could think of a reason why the performance of stocks might flag.
+
+> Now stocks have produced no gain for years, and no one’s excited about them, even though they’re v ast ly cheaper.  In 1999, sky-high valuations and investor ardor positioned stocks for a “lost decade.”  Today, low valuations and investor indifference just might mean they’re poised to surprise on the upside.
+
+> Unlike the pre-crisis days, virtually no one is oblivious to the macro risks.  Most investors hold modest expectations for the developed economies and for the markets.  I think this is quite favorable.  To put it succinctly, the potential for investm ent  gains is above average when expectations don’t fully an ticipate the eventual reality.  This    potential comes not from a future that will be positive, but from a future – whether positive or not – that is underestimated.
+
+> Underestimation creates the possibility of favorable surprises and, in general, when things turn out better than expected, ma rkets rise.
+
+> At t he risk of oversimplifying, I see a long list of macro risks on one side of the scale, and low valuations and joyless investors on the other.  Prices are neither so high that we must be hyper-cautious nor so low as to call for aggressiveness.  Thus I think it’s time to balance defense and offense, and to move forward, albeit with caution.  That’s what we plan on doing in the coming months, while attempting to execute on m y  list of the things a manager can do for you.
+
+> January 10, 2012

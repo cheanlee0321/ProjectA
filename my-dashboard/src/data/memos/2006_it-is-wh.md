@@ -1,0 +1,369 @@
+**Memo to:** Oaktree Clients
+
+**From:** Howard Marks
+
+**Re:** It Is Wh
+
+at It Is My first exposure to the phrase that serves as the title for this memo came in 1995, a few days before Oaktree opened its doors.  My partners and I wracked our brains over whether we’d covered every base.  We asked our attorney, Peter Ostroff of Sidley & Austin, if he thought we’d missed anything.  Peter’s answer was succinct and on target as usual: “It is what it is.”
+
+In the March 5 edition of The New York Tim es, William Safire devoted the Sunday Magazine’s “On Language” column to “it is what it is.”  He mentioned that the first use he could find had been in 1949, and that the phrase had been adopted for movie and song titles in the last few years.  I was shocked when I checked Google and found 4.2 million references!
+
+According to Safire, the re is no one definitive meaning for the phrase.  It can serve as the equivalent of the politician’s “no comment.”  It can be used to express “philosophical resignation over a disappointment.”  Or it can be “a mild put-down, as if to say, ‘That’s all you can expect.’”
+
+Safire concluded his column with another possible meaning: “que sera sera” (what will be will be), which was the title of a hit song by Doris Day when I was ten.  But that interpretation suggests a fatalism and inability to affect the outcome that I don’t associate with the phrase.
+
+I took Peter’s use of the phrase in 1995 – and I’m using it in this mem o – to mean something very different: recognition and acceptance of today’s givens . . . but not necessarily of the end result.  What’s past is past and can’t be undone.  It has led to the circumstances we now face.  All we can do is recognize our circumstances for what they are and make the best decisions we can “given the givens.”
+
+URoots in Philosophy In the mid-’60s, W harton students had to have a non-business minor, and I satisfied the requirement by taking five courses in Japanese studies.  These surprised me by becoming the highlight of my college career and contributing to my investment philosophy in a major way.
+
+Among the values prized in early Japanese culture was mujo.  Mujo was defined classically for me as recognition of  “the turning of the wheel of the law,” implying acceptance of the inevitability of change, of rise and fall.
+
+This sense of accepting and “going with” the envir onment and the changes that take place there – rather than insisting that it stay the same and attempting to impose our will on it – was captured for me in a quotation from Lao-Tzu (I found it in the March letter from Rimrock Capital, which Paul Westhead left Oaktree in 2004 to head):
+
+> To be strong you have to be like water: if there are no obstacles, it flows; if there is an obstacle, it stops; if a dam is broken, then it flows further; if a vessel is square, then it has a square form; if a vessel is round, then it has a round form;
+
+> because it is so soft and flexible, it is the most necessary and the strongest thing.
+
+In other words, mujo means cycles will ris e and fall, things will come and go, and our environment will change in ways beyond our control.  Thus we must recognize, accept, cope and respond.  Isn’t that the essence of investing?
+
+UCoping With Cycles In the world of investing, (as you’ve heard me say many times) nothing is as dependable as cycles.  Fundamentals, psychology, prices and returns will rise and fall, presenting opportunities to make mistakes or to profit from the mistakes of others.  They are the givens.
+
+We cannot know how far a trend will go, w hen it will turn, what will make it turn, or how far things will then go in the opposite direction.  But I’m confident that every trend will stop sooner or later.  Nothing goes on forever.  Trees don’t grow to the sky, and neither do many things go to zero and stay there.  Success carries within itself the seeds of failure, and failure the seeds of success.
+
+So what can we do about cycles?  If we can’t kn ow in advance how and when the turns will occur, how can we cope?  On this, I am dogmatic:  We may never know where we’re going, but we’d better have a good idea where we are.  That is, even if we can’t predict the timing and extent of cyclical fluctuations, it’s essential that we strive to ascertain where we stand in cyclical terms and act accordingly.
+
+UWhat Can We Know, and How?
+
+Even without knowing where we’re going and when, we can deduce lots of valuable information about our investment environment.
+
+First, where do w e stand in the economic cycle?  Is the economy several years into a recovery that may be due for a rest?  Has it leveled out and begun to weaken?  Or has it been weak enough long enough that we can reasonably expect recession to give way to recovery?
+
+Second, how have the markets been performing?  Have they been weak for years, possibly pushing prices to bargain basement levels?  Or have they been so strong that we should suspect (1) the positives have been fully discounted, (2) several years of potential gains have been accelerated into the returns to date, and (3) assets today are “priced for perfection”?
+
+Finally, and often most important, how are people around us behaving?  If they’re chastened by losses and afraid of the future, there’s reason for us to be optim istic.  If they’re unworried and complacent, that’s something we should worry about.  In the words of my favorite Buffettism,
+
+“The less prudence with which others conduct their affairs, the greater the prudence with which we should conduct our own affairs.”
+
+Imagine we ran into a visitor from Mars who observed, “I see your economy and markets have been doing well for years.  Everyone’s making a ton of money.  No one’s expressing worry or a desire to avoid risk.  P/E ratios, buyout prices and private equity leverage ratios are all high.
+
+Stock buybacks and dividend recaps are adding to leverage and reducing creditworthiness.
+
+Conferences on hedge funds and private equity are sold out.  Top-performing funds are closed to newcomers and new ones start up every day, fully subscribed.  The Greenwich Ferrari dealer has a waiting list a year long.”
+
+Nothing in our favorite Martian’s statements sounds like a prediction.  I n fact, he hasn’t said one word about the future.  But there’s a lot of helpful information there.  My guess is valuable inferences could be made about what’s likely to happen next.  If he can see it, so should we.
+
+And having seen it, we should take appropriately cautious action.
+
+And the reverse can also be true (although it’s not something I dwell on most of the tim e or at what I think is today’s point in the cycle).  If that Martian came down and saw nothing but weak recent returns, widespread disillusionment, disinterest in investing and people waiting for the smoke to clear before they’ll commit, we’d probably conclude it’s time for us to step on the gas.
+
+0BUWhat to Do There are few fields in which decisions as to strategies and tactics aren’t influenced by what we see in the environment.  Our pressure on the gas pedal varies depending on whether the road is empty or crowded.  The golfer’s choice of club depends on the wind.  Our decision regarding outerwear certainly varies with the weather.  Shouldn’t our investment actions be equally affected by the investing climate?
+
+Most people strive to adjust their portfolios based on what they think lies ahead.  At the same time, however, most people would admit forward visibility just isn’t that great.
+
+That’s why I make the case for responding to the current realities and their implications, as opposed to expecting the future to be made clear.
+
+In November 2004 I wrote a memo entitled “Risk and Return Today.”  Its thesis was that in most asset classes, prospective returns were low and risk premiums were skinny.  On that basis, I urged investors to act accordingly, hold reasonable expectations and – especially – decline to stretch for higher returns by taking on more risk.  The conclusions are just as clear today:
+
+> When high returns are not in prospect, we shouldn’t invest as if they are.
+
+> When safe investments appear unlikely to provide the returns we need, we shouldn’t rush to riskier investments to get them.
+
+> This is especially true when the reward for taking incremental risk is skimpy.
+
+> It’s as simple as that.  W e can’t expect high returns when the market doesn’t offer them.
+
+> Prices won’t fall to levels from which high returns can be expected if most investors are
+
+> willing to settle for less.  To quote Peter Bernstein, “The market’s no t a very accommodating machine; it won’t provide high returns just because you need them.”
+
+My bottom line, as they might say in the self-help books: Listen to your inner Martian.
+
+What’s going on usually isn’t that big a mystery.  An overheated environment doesn’t mean the market’s going down tomorrow, just as an excess of risk aversion doesn’t signal it’s the absolute bottom.  But the circumstances should inform our behavior.  Simply observing what’s going on around you and acting accordingly should improve your investment results.
+
+And the distinctions needn’t be cut too fine.  There can be lots of room for argument between “undervalued” and “fairly valued,” or between “fairly valued” and “overvalued” – that’s where most of the uncertainty lies.  But it’s unlikely that disciplined investors wi ll find it hard to choose between overvalued and undervalued.  In my opinion, if you’re wracking your brain trying to figure out whether something’s overvalued or fairly valued – that is, whether you should sell or continue to hold – it’s usually pretty clear that it’s not a buy.
+
+1BUWhat Is Going On Around Us Today?
+
+No one I know thinks investors today are acting out of an excess of caution, and I agree.
+
+Investors have forgotten the losses in stocks, corporate bonds and venture capital earlier this decade and consider this a low-risk world (or at least one where risk is clearly worth taking).
+
+Mark Cutis of Shinsei Bank sent m e his memo entitled, “Market of no fear!”  I think that’s an apt description.
+
+There’s no reason to think today’
+
+s environment implies high future returns.  Whether it’s high P/E ratios, high transaction multiples in buyouts, low bond yields or low capitalization rates on real estate (and certainly all of these are interrelated), few markets appear to offer bargains.
+
+People are reporting big gains from private equity and real estate assets they bought cheap in the past, levered up in accommodating capital markets and sold at very high prices (read: low prospective returns).  But fewer people can claim to be buying in on the cheap today.
+
+A great deal of what’s happening is related to a glut of capital for investme nt in non-mainstream asset classes.  With no one interested in buying more high grade bonds at yields near 5% or U.S.
+
+stocks with consensus expected returns of 5-7% or so, capital is bypassing those big markets – or perhaps exiting them – and flocking to the smaller alternative markets, raising prices.  I understand why people who need 8% or more are looking there for help, but that doesn’t do much for the likelihood they’ll get what they’re after.  (More on this later.) The skinniness of today’s risk premiums can be observed most clearly in the high yield bond m arket, where prospective returns can be calculated with precision and yield spreads are in the vicinity of historic lows, and in certain real estate markets, where actual cash returns are similarly low.  But the difficulty of quantifying prospective returns in public and private equity doesn’t mean the offerings there are any less paltry.  And, as Alan Greenspan said, “. . . history has not dealt kindly with the aftermath of protracted periods of low risk premiums.”
+
+This is a time for caution, not aggressiveness.  For reaping more than sowing.  I said it 16 and 34 months ago, and returns in m any US markets have been paltry since.  Some alternative investment returns have been quite good, but high realized returns must never be confused with great opportunities to invest more.  High past returns don’t imply high future returns;
+
+more likely, they’ve borrowed from the future.
+
+2BUThe Poor Man’s Guide to Market Assessment Here’s a simple exercise:  I have listed below a number of market characteristics.  For each pair, check off the one you think is most descriptive of today.  And if you find that most of your checkmarks are in the left-hand column, as I do, hold on to your wallet.
+
+Economy:            Vibrant            Sluggish Outlook:            Positive            Negative
+
+Lenders: Eager Reticent Capital markets:  Loose Tight Capital:            Plentiful            Scarce Terms: Easy Restrictive Interest Rates:  Low High Spreads:            Narrow            Wide Investors:            Optimistic                        Pessimistic Sanguine            Distressed Eager            to            buy            Uninterested            in            buying Asset owners:  Happy to hold  Rushing for the exits Sellers: Few Many Markets:            Crowded            Starved            for            attention Funds: Hard to gain entry Open to anyone New ones daily            Only the best can raise money GPs hold the cards on terms   LPs have bargaining power Recent performance:            Strong            Weak Asset prices: High Low Prospective returns:  Low High Risk: High Low Popular qualities:                        Aggressiveness Caution            and            discipline Broad            reach            Selectivity The right qualities:                        Caution            and            discipline            Aggressiveness Selectivity            Broad            reach Available mistakes: Buying too much Buying too little Paying            up            Walking            away Taking            too            much            risk                        Taking            too            little            risk
+
+3BUAn Inefficient Market in Investment Advice Bruce Karsh and I recently had an opportunity to sit down to lunch with Charlie Munger.  As usual, our conversation was most enjoyable, straying over a large number of topics.  I think a few of them – plus some comments from Warren Buffett’s latest annual report – can be woven into something of relevance to this memo and of interest to you.
+
+Bruce started off by observing that with practically everyone able to start up a billion dollar hedge fund, and with the leading private equity managers able to raise funds of $10 to $15 billion, jobs in those fields are in great demand as the way to get rich quick.  It occurred to me that if large numbers of people are convinced that a given field is sure to give them instant wealth, something must be wrong.  That’s a “bubble expectation.”  Getting rich – if it can be accomplished at all – is supposed to come from some combination of proven skill, hard work, risk bearing and luck.  No one should be able to count on it, and especially not in the short run.
+
+And given the operation of market forces, such an opportunity shouldn’t last long.
+
+Then I remembered that for decades I’ve argued that exceptional risk-adjusted returns can only be achieved in inefficient markets, and even then not all the time or by everyone.  And by “inefficient markets,” I’ve always meant markets where mistakes are being made.  So if large numbers of alternative investment managers and would-be managers are planning on getting rich quick, the investment management market must be inefficient: they and/or someone else must be making a mistake.  Who else could it be?  Maybe it’s their clients.
+
+Today, as everyone knows, funds can be raised easily and at sizes no one imagined just three years ago.  But assets are no longer as cheap as they used to be, interest rates are no longer as low, and the economic recovery isn’t as young.  I recently heard a speech in which a top buyout manager said his fund’s goal (per my memory) is to buy companies at fair prices and make them worth more.  In the past, he might’ve said they tried to buy companies cheap.
+
+On the plus side of the ledger for private equity, managers think more like owners than do many public company boards; are substantially incentivized to see the funds’ assets appreciate; and have the potential to improve their previously undermanaged companies.  On the negative side, however, the three of us noted that clients are currently entrusting record amounts of money to these managers, along with management fees big enough to allow the managers to get rich without making successful investments, as well as a share in transaction fees that have the potential to put the interests of fund managers and their clients in conflict.
+
+I believe the investors in these funds feel they’ll be happy if they can earn net returns in the very low double digits.  The modest nature of their aspirations stems from the juxtaposition of (a) the perceived inadequacy (mentioned earlier) of the prospective returns on mainstream stocks and bonds, (b) the large sums some institutions have to invest, and (c) the 8%-or-better returns that pension funds and endowments must achieve if they are to continue business as usual.  This combination makes it imperative that they commit to alternative investments and hedge funds, and thus tilts the balance of bargaining power over fees to the fund managers.  This, in turn, decreases the likelihood that terms will be designed to maximize the clients’ interests.  It also can give the managers amounts of capital that pose a problem.
+
+In his letter discussing Berkshire Hathaway’s 2005 performance, Warren Buffett tells the priceless story of the Gotrocks family, which owns all the co rporations in America and earns all the profits.  Over time, individual family members are approached by broker-Helpers, manager- Helpers and consultant-Helpers, who promise to help them make money (for a fee) by buying certain pieces of the empire from their relatives and selling them others.  Eventually they also hook up with hyper-Helpers, wearing uniforms saying “Private Equity” and “Hedge Fund,” who levy success fees on top of their other charges.  It’s clear that the collective efforts of all the Helpers in shuffling assets among Gotrocks family members are unlikely to increase the family’s overall wealth (just as is true when companies are sold from one private equity fund to another).
+
+At the same time, whether they’re successful or not, the costs involved in trying will cause a substantial transfer of wealth from the Gotrocks to their “Helpers.”  But that’s the way it is.
+
+In April 1998 I observed in “Views on Alternative Investments” that some good performing managers might choose to “appropriate for themselves a bigger portion of their funds’ superior returns.”  This is natural and happens in all businesses where the product is in strong demand.
+
+But that doesn’t mean buyers should ignore it when it occurs.
+
+I’m not saying alternative investme nts and hedge funds won’t provide the returns clients need, or that people shouldn’t invest in them.  But realistically assessing the demand for these funds, the amounts of money going into them, the market conditions for the underlying asset classes and the deals the managers are able to cut for themselves might cause would-be investors to conclude the silver bullet still hasn’t been invented.  Participate in alternative investments if you want – in fact, Oaktree hopes you’ll keep doing so – but do it with your eyes open.
+
+Charlie ended the lunch by urging us to create reasonable expectations among our clients and treat them well.  We promised to try.
+
+*     *     * None of us can individually influence economic or market conditions.  Neither, I think, can we accurately see what lies ahead.  But it’s possible to derive inferences from the recent past and the present that improve our judgments and actions regarding the future.  It’s simply essential that we be aware of what’s going on around us.  After all, who can argue with the statement “it is what it is”?
+
+Facing up to reality is what Warren Buffett’s doing when he says “W e used to find it easy to buy dollars for fifty cents.  Today we’re trying hard to find dollars we can buy for eighty cents.”  (He also told me he has an 800 number for anyone who knows where 80-cent dollars can be found.) Recognizing and accepting these things when they’re true isn’t pleasant, but there is no prudent alternative.
+
+Oaktree tries hard to take note of prevailing market conditions, communicate what’s going on and behave as contrarians.  We try to raise bigger funds and buy more aggressively when we think others are leaving bargains on the table and do the opposite when they’re not.  It doesn’t always work, but it usually beats the alternative.
+
+March 27, 2006
+
+**Memo to:** Oaktree Clients
+
+**From:** Howard Marks
+
+**Re:** 
+
+Returns, Absolute Returns and Risk UWhat’s In a Name?
+
+My memos often touch on the subject of investors’ foibles, one of the worst of which consists of their tendency to pay too much attention to labels (and too little to substance).
+
+Enthusiasm for “growth stock investing” carried investors to the ridiculous conclusion that for the stocks of the fastest-growing companies, no price is too high.  That was just before the “nifty-fifty” stocks of America’s best companies lost up to 90% of their value in 1973-74.
+
+“Portfolio insurance” assured investors they could participate fully in stock market gains with protection against declines if they would simply commit to automatically enter sell orders pursuant to an algorithm.  But in the crash of October 1987, investors found themselves unable to make those sales, and the ineffectiveness of the “insurance” (combined with the outsized positions it had encouraged) cost them dearly.  And at any rate, portfolio insurance, like any mechanical risk-limiting device, should have been expected to limit long-term return as well as risk.  After all, there rarely is a free lunch.
+
+“Market neutral” funds were supposed to be insensitive to market fluctuations, but the so- described Granite Fund of mortgage-backed securities melted down in just a few weeks when it turned out not to be insulated from the rapid rise of interest rates in 1994.
+
+“High yield bonds” drew people in, just as “junk bonds” had scared them away.  One of my favorites was the mutual fund investor who said in 1990, “I thought it was a high yield bond fund; I never would have invested if I’d known it was a junk bond fund.”
+
+“Gonna change the world” is what people be lieved about e-commerce and the Internet.  A few of the companies did, as had pioneers in radio and airlines.  However, “change the world” proved once again to be far from synonymous with “make money for investors.”
+
+Today, of course, almost everyone wants to invest in “hedge funds” . . . even though almost nobody can define them.  In 2005, the average returns for the best and worst performing hedge fund categories were 17.4% and -2.6%.  Clearly, then, the term “hedge fund” cannot be much help in the selection of investment vehicles.  Economist Brad Setser was quoted in The Wall Street Journal of May 31 as posing and answering his own question: “I thought hedge funds were supposed to be hedged.  I fully realize . . . that in many ways the name ‘hedge fund’ doesn’t tell you much about what a fund does.”
+
+The bottom line is that, in the world of investing, words mean almost nothing.  All that matters is what you’re buying, the price you’re paying for it, and the risk that it will fail to deliver all you expect.   No weight should be attached to what something’s called, as labels alone have little significance with regard to risk and return.
+
+UAsset Class Returns Importantly in this connection, I continue to insist that no asset class and no investment technique possesses a natural or embedded rate of return.  Fixed income comes closest, with its promise of interest and the repayment of principal.  But for the holder of a 20-year bond, most of the total return over its lifetime will come from “interest on interest” – the interest that is earned on interest payments that have been received – and this will vary with rates.  Thus, even in fixed income instruments (other than zero-coupon bonds), the return is far from intrinsic.
+
+And from there, the connection between an asset class label and a prospective rate of return grows more and more tenuous.  What’s the return on S&P 500 stocks?  If you had asked 100 institutional investors and consultants in 1999, virtually all of them would have said 9-11%.  Ask them today and they’re likely to say 5-7%.  What changed?  Not the asset class itself, but opinions surrounding it.  Obviously, meanings ascribed to words alone often fail to hold up.
+
+For a final example, what about the asset-class return on private equity?  This strikes me as an even more unreliable concept.  The return on a private equity investment will come from the combination of (a) the potential of the underlying company and (b) the ability of the manager to identify the opportunity, buy the company at a good price, make it a better company, and sell it at higher valuation parameters than it was bought for.  Certainly all of the elements included in “b” are highly dependent on the manager’s skill and have little or nothing to do with the fact that the investment belongs to a given asset class.
+
+UAbsolute-Return Investing My memos are often sparked by something I stumble on, and this one is no exception.  The prompt ca me from “The Myth of the Absolute-Return Investor” by M. Barton Waring and Laurence B. Siegel (Financial Analysts Journal, March/April 2006).
+
+Many people talk today about absolute-return investing and say they want to put money with absolute-return funds and managers.  But as W aring and Siegel indicate, there’s no broad agreement on what that means.  They start their article by citing a few popular definitions for absolute-return investments, which seem to be distillable to investments possessing the potential for positive returns regardless of general market conditions.
+
+In my opinion, if you’re interested in absolute return investing, you should be looking for a steady outcome rather than responsiveness to ma rket conditions.  In this context, I tend to think of  “absolute” along the lines suggested by one of the many definitions in Webster’s Dictionary:
+
+> “free of external references or relationships.”
+
+When one of the investment committees I’m on decided to increase the portfolio’s commit ment to “absolute-return hedge funds” several years ago, the general consensus was that we wanted funds that would reliably deliver 9-10% or so.  We wouldn’t expect to do much worse regardless of how badly the markets performed, and we wouldn’t be surprised if we failed to do much better when the markets rose.  In other words: a steady, healthy return (implying good relative performance in bad times), but consequently with the likelihood of lagging the markets when they do well.  Raise your hand if you agree.
+
+But problems arise.  Most hedge funds do better in good years than bad, implying that they’re not really insensitive to market developments.  Most hedge fund managers would acknowledge that their returns are derived from a combination of beta and alpha (that is, from market return plus the skill they bring to the investment process).  And as long as beta plays a meaningful part, an investment’s return can’t really be described as “absolute.”
+
+Waring and Siegel argue that there’s no such thing as absolute investing, in that the alpha it aims to capture arises from relative decisions that are the basis for all active management.  By this they mean that active management consists of trying to overweight (in relative terms) the things in a benchmark or market that will do better and underweight the things that will do worse, and by having more exposure to the benchmark or market in good times and less in bad times.
+
+These, they argue, are relative investing decisions.
+
+No wonder we could not sensibly define absolute-return investing: There is no such thing.  The term is intended to capture investor attention by offering an intuitively appealing alternative to the disciplines required by relative-return investing, but at the end of the day it delivers beta returns plus or minus relative (alpha) returns . . .   It may appear to be a distinct type of investing, but if there is a distinction, it is a distinction without a difference.
+
+I think Waring and Siegel go too far, and some of this feels like wordplay.  You can call trying to buy the good and avoid the bad “relative investing,” because the decisions are made relative to the makeup of a market or benchmark.  And it’s true, as Sid Cottle (of Graham, Dodd and Cottle) put it to me thirty years ago, that “investment is the discipline of relative selection.”  But “relative” is just a word.  The quest for better portfolios doesn’t necessarily make all active investors “relative investors” in the index-centric sense of the term.
+
+Waring and Siegel insist “the notion that every return has a beta component and an alpha component applies to any portfolio.”  And as they describe Bill Sharpe as saying, “The return on any, repeat any, portfolio consists of a market part and a nonmarket part.”  However, there are investors and funds whose goal it is to buy the good and avoid the bad and, Uat the same timeU, to minimize the effect of general market fluctuations on their returns.  They want to bring that beta term as close as possible to zero, and some are able to pull it off – more or less.
+
+So I think “absolute return” is a relative term, not – pardon me – an absolute one.  But it’s still potentially useful.  To me absolute-return investing means – perhaps stating the same thing a few different ways – that (a) the contribution to return from alpha should be visibly more pronounced than from beta, (b) the return should be significantly steadier than that of the
+
+market, and (c) there should be a relatively low correlation between the fund’s return and the relevant market returns.  We just shouldn’t expect the correlation to be zero.
+
+UHedge Fund = Absolute Return = Market Neutral?
+
+Are hedge funds absolute return vehicles?  According to the article that inspired this memo, “Today, the term ‘absolute return’ seems to be used most often to describe what wealthy individual investors have always called hedge funds.”  I do hear a lot of people use the terms somewhat interchangeably.  For that reason, I’d like to spend a few paragraphs exploring just how “absolute” hedge fund returns really are, with data from Credit Suisse/Tremont.
+
+Here are the average returns on three hedge fund categories:
+
+> UCredit Suisse/Tremont Hedge Fund Index
+
+> Overall                  Equity                  Long/Short (total return in %) UAverage UMkt Neutral  UEquity
+
+> 1994-2005                 10.7%                                  9.9%                                  11.9%
+
+> Certainly these funds satisfied the 9-10% goal expressed above for absolute returns . . . or did they?  A couple of years ago, I had some fun asking how often the annual return on the S&P 500 had fallen within what was then thought to be the “normal” 8-12% range.  Now let’s do the same for hedge funds: in how many of the last twelve years was the average return on these three hedge fund indices between 8% and 12%?  The answer for each index: just once or twice.
+
+> Take the “market neutral” sector.  Its average return, at 9.9%, was square in the desired range, and its annual returns were the least variable of the three hedge fund sectors, as one would expect.  But was it really market neutral?  In the period 1995-2000, the average market neutral fund returned 14.3%, with yearly returns ranging from 11.0% to 15.3%.  In the slower period 2001-05, the average fund returned 7.3%, with yearly returns ranging between 6.1% and 9.3%.
+
+> The annual returns within each sub-period were quite steady despite the market’s fluctuations (and never negative, which was quite an accomplishment).  But certainly the average varied greatly from period to period, and it fell between 8% and 12% only twice in those twelve years.
+
+> Even the relationship that these funds’ returns are supposed to bear to Treasury bill returns (e.g., “T-plus-500”) seems to have been achieved on average but not with consistency.  Bottom line:
+
+> the returns on “market neutral” hedge funds are not immune to external developments.
+
+> Moving from market neutral funds to equity long-short funds and hedge funds in general, the table below shows returns for two pairs of back-to-back years in which the stock market boomed and busted.
+
+> UUp-and-down        UDown-and-up
+
+> (total return %) U1999 U2000  U2002 U2003
+
+> Hedge Fund Average 23.4%4.8%     3.0% 15.4% Long/Short Equity Avg 47.2 2.1  -1.6 17.3
+
+> S&P 500 21.0 -9.1  -22.1 28.7
+
+> Investors were glad to be in these funds rather than the S&P 500, as the returns were much steadier for the hedge funds than for the market and higher overall.  But does the fact that losses were minimized or avoided in the down years mean that hedge funds provide absolute returns?
+
+> That depends on your criteria for “absolute.”  If “insensitive to market movements” or “free of external references or relationships” are among them, they do not meet the standard.
+
+> According to The New Yorker of May 22, 2006, “A recent paper by the economists Burton Malkiel and Atanu Saha . . . showed that the range of performance among hedge-fund managers was much wider than among mutual-fund managers . . .”  And Dow Jones estimates that the average equity long/short hedge fund lost 5% last month.  So not consistent from fund to fund, and not consistent over time.  Finally, research has shown that significant beta exposure is embedded in many hedge funds.  In the spring 2004 Canadian Investment Review, Dominic Clermont of TD Asset Management reported the following findings:
+
+> Over the 1994-2000 period, the aggregate hedge fund index had a market exposure (beta) of 0.37.  Thus, on average, a significant portion of hedge fund managers’ returns came from market exposure.  Some hedge fund strategies, such as emerging market hedge funds, had a much higher beta of 0.74.
+
+> These observations certainly call into question the absoluteness of hedge fund performance.
+
+> UWhat Do Investors Want?
+
+> That’s a trick question, because the answer is usually heavily reliant on investors’ recent experience.  When market performance has been good, they want participation going forward.
+
+But when performance has been bad, they demand protection.
+
+An endowment portfolio that delivered 15% per year in the late 1990s was described as disappointing, because many others made 20%-plus.  But a portfolio that made 2% in the first few years of this decade was lauded, because most lost money.  So people can feel good about 2% and bad about 15%.  That’s human nature for you (and it shows why things other than absolute return matter . . . and perhaps why “common sense” is such an oxymoron).
+
+It also shows how danger creeps into markets.  When everything’s been going swimmingly, investors forget about risk and want a full ride on the bandwagon.  Seldom do they express concern about the fact that good past performance implies elevated asset prices, and maybe low returns and high risk going forward.  By the same token, on the heels of market losses, investors
+
+tend to pull in their horns and opt for safety – even though the best buying opportunities usually grow out of market dislocations.  In this regard, short-term hindsight is worse than no help – it’s a hindrance.  And it’s what makes contrarian investing effective.
+
+Investors d on’t want the same thing at all times, fluctuating in their appetites as they do.
+
+This tells me they won’t always be satisfied with so-called absolute returns, even if they can be achieved.
+
+Maybe they just want it all.  In an old commercial, the multi-talented Deion Sanders was asked “Which would you rather play, baseball or football?” and he’d say “Both.”  “Offense or defense?”  “Both.”  When I ask would-be investors whether they want upside potential or downside protection, they often answer “Both” . . . only half kidding, I think.
+
+UWhat Should Investors Want?
+
+Of course, I think investors should pursue superior risk-adjusted performance.  The goal of many investors – higher highs and higher lows – just isn’t practical.  If you emphasize offense, you’re likely to see higher highs and lower lows.  And if you choose defense, you should get higher lows but also lower highs.  It takes a lot of skill to produce anything else.
+
+The quest for what I think most people mean by absolute investing – decent highs and lows that aren’t low – is not unreasonable.  But I still think (a) delivering that kind of performance requires a lot of skill, (b) most investors can’t do it, and (c) the ones who can won’t be found by picking funds according to their labels, but as a result of a thorough and difficult study of managers and their abilities.
+
+At Oaktree, we constantly tell people the following:
+
+>  In good times, it’s good enough to be average.  At first glance, that seems like a heretical and far-too-modest goal.  But during good times, the average investor makes a lot of money;
+
+> why shouldn’t “average” be good enough?
+
+>  While above average returns are always nice, why would anyone put an emphasis on beating the market when the market does well?  What makes it worth taking the higher risk – and holding the idiosyncratic portfolio – that’s required for outperformance in a rising market?
+
+>  On the contrary, in a rising market, mere participation should be good enough; out- performance seems superfluous.
+
+>  There is a time when it’s essential that we outperform, and that’s in falling markets.
+
+> Our clients don’t want to bear the full brunt of a market decline, and neither do we.
+
+>  In order for outperformance in bad markets to be achieved, a portfolio has to carry so much downside protection that it can render outperformance on the upside hard to achieve.  It would be nice to be able to do both, but it’s challenging.
+
+>  If we can just accomplish these two goals – market performance (or a bit better) in good times and highly superior performance in bad times – we’ll end up with above average performance over full cycles; below average volatility; outperformance in tough times (when it really matters); enough resolve to be able to resist selling out at cyclical lows;
+
+> and a favorable investing experience overall.
+
+> These goals may seem modest at first glance, but few investors have been capable of meeting them for periods spannin g multiple decades.  They’re the goals we’ve set for ourselves, and we’re proud to have reached them thus far.
+
+> UThe Role of Risk Management
+
+> The key to achieving superior returns in bad times (and especially to doing so without stripping a portfolio of its potential to make money in good times) is found in the ability to control risk.  It’s not a matter of finding winners, but of building a portfolio where upside potential is accompanied by downside protection – no mean feat.
+
+> In the investment world, we hear a lot more about achieving returns than we do about controlling risk.  But as you explore the higher reaches of the profession – as you move into the hedge fund world, for example – the latter grows in importance.  Ultimately, the key is to be able to manage risk well enough that upside can be attempted without commensurate exposure to downside.
+
+> The subject of risk control – and, especially, the process of assessing who does it well – is extremely thorny.  When I wrote the memo “Risk” in February, I thought I had hit on something when I observed that risk is not measurable even after the fact.  Now I want to take that thought a little further.
+
+> UDefining “A Good Job”
+
+There are reasons why the headlines each year go to the person who achieved the highest return, not the person who best managed risk.  The first is that people care more about return and are more titillated by it.  But the second is that it can be far from obvious who did the best job of risk management.  Different investors can define investment risk differently, but if it isn’t the same as inter-month or inter-year volatility – and I’m convinced it’s not – then it can’t be easily observed and quantified.  This is especially true in good years, when risk remains invisible.
+
+One portfolio manager makes 10% and another makes 15%.  Who did the better job?  When I attended the University of Chicago in 1967, I was taught that in order to decide how well a portfolio had performed, you have to assess how much return was achieved UandU how much risk was borne.  That still makes sense to me.  How much risk did a manager take?  Which manager’s risk-adjusted return is higher?  It can be hard to judge these things, but investors shouldn’t wait for a down year to attempt an answer.
+
+Modern portfolio theory and the efficient market hypothesis define risk as volatility and tell us that markets price assets so they’ll offer returns that are proportional to their risk, no more and no less.  For this reason, they say, superior risk-adjusted returns cannot be achieved.  The beauty of inefficient markets – to the extent they exist – lies in the belief that this rule need not hold: that you can get more return than is justified by the risk.
+
+In efficient markets, all assets line up so that there’s a fixed relationship between return and risk, with no outliers.  Risk and return are linked, and investors’ results invariably fall along the line.
+
+In inefficient markets, mistak es are made, such that risk and return need not be strictly proportional.  Some investment merit is overrated, and some opportunities are overlooked.  As a result, it becomes possible to achieve superior UandU inferior risk-adjusted returns.
+
+Risk Better Worse Risk Return
+
+Return
+
+Not everyone quite understands this point, but I feel even those who do often fail to appreciate all of the implications.  Most observers think the advantage of inefficient markets lies in the fact that a manager can take the same risk as a benchmark, for example, and earn a superior rate of return.  The following graph presents this idea and depicts the manager’s “alpha,” or value added through skill.
+
+This manager has done a good job, but I think this is only half the story – and for me the uninteresting half.  An ineffici ent market can also offer the ability to achieve the same return as the benchmark while taking less risk, and I think this is a great accomplishment.  It provides the foundation for achieving the performance goals enumerated on page 6.
+
+Portfolio Risk Benchmark Value Added Benchmark Portfolio Value Added Return
+
+Return
+
+Risk
+
+Here the manager’s value added comes not through higher return at a given risk, but through reduced risk at a given return.  This, too, is a good job – maybe even a better one.
+
+Some of this is semantic and depends on how you look at the graphs.  But because I think fundam ental risk reduction can provide the foundation for an extremely successful investing experience, this concept should receive more attention than it does.  How do you enjoy the full gain in up markets while simultaneously being positioned to achieve superior performance in down markets?  By capturing the up-market gain while bearing below-market risk.
+
+The “best investor” profiled by the media each year is usually the one with the highest return.
+
+Risk control is rarely lauded, in part because it’s often invisible.  But that doesn’t mean it’s unimportant.  Most of the investing careers that produce the best records are notable at least as much for the absence of losses and losing years as they are for spectacular gains.  The challenge is that these virtues usually become apparent only in big downdrafts.  But certainly they figure greatly in the long term.
+
+UPortable Alpha
+
+Along with absolute-return investing and hedge funds, “portable alpha” is another big deal today.
+
+It’s often offered up as the next “silver bullet” – a surefire way for investors to achieve their goals without fear of disappointment.  So I want to give you my take on this phenomenon – making clear, as usual, that I’m a mere observer, not an expert.
+
+Portable alpha proposes the following:  Suppose, for example, you want to invest $100 million in mainstream stocks, and you also want alpha, leading to superior risk-adjusted returns.  The problem is that, traditionally, investors wanting to invest in a given asset class have been restricted in their search for alpha to managers operating in that class.  But if you acknowledge that alpha is hard to achieve in mainstream stocks given the high degree of market efficiency, you can use portable alpha to “transport alpha” earned in any other asset class to the portion of your portfolio allocated to mainstream stocks.
+
+So you give up on finding your alpha in the mainstream stock market and pursue it by assembling a “value-added” portfolio of funds run by highly skilled managers in a wide variety of markets – probably in alternative investing fields such as hedge funds, private equity, commodities, etc., and probably not in mainstream stocks.  Then you assess how much market exposure is embedded in the value-added funds and, using derivatives such as futures, swaps and options, you add market exposure until the beta of the total portfolio equals the beta of $100 million of stocks.  In this example, the market exposure implicit in the derivatives plus the funds gives you the return on a $100 million passive portfolio of stocks, and the skillful management of the funds gives you their managers’ value added.  The sum of the two achieves your goal: a $100 million position in stocks with alpha.
+
+Any time Wall Street packages existing elements to produce a surefire solution, my first thought is “alchemy!”  I don’t want to be accused of neophobia – fear of anything new – but I also doubt that sure things come along very often.
+
+Do I believe that over time a combination of derivatives plus hedge funds can outperform the same sum invested with traditional managers? Absolutely . . . but not necessarily for the reason advanced by the advocates.  And that brings me back to the subject of absolute return.
+
+Value-added funds that generate alpha clearly are an essential ingredient if portable alpha is going to work.  Many managers claim the ability to generate alpha based on their skill, experience and access to alpha-generating strateg ies.  But only the best will prove able to accomplish the difficult task of obtaining true alpha, after returns have been adjusted to recognize embedded beta bets.  Thus real alpha may not always be responsible for portable alpha’s contribution.
+
+In my opinion, a more common reason for a portable alpha portfolio to deliver higher returns over time may be that it entails leverage.  Because the value-added funds may not be as “market neutral” or “absolute return” as is thought – and because portable alpha managers may fail to properly adjust for embedded betas – the market exposure delivered by the total portfolio can end up being more than would be entailed in its benchmark (e.g., a traditional long-only stock portfolio).  In that case, the portable alpha portfolio will represent a leveraged position.  (That is, the sum of the beta on the derivatives plus the beta on the funds may exceed the beta of a traditional stock portfolio.)
+
+If that’s true, the portable alpha portfolio should provide higher returns in up markets than the traditional portfolio.  This will be so as long as traditional managers’ alphas aren’t sufficient to offset both the leverage and the value-added fund managers’ alphas (which everyone assumes is out of the question given today’s belief in alternative funds and disrespect for traditional investing).  But the portable alpha portfolio may lose more in down markets unless the value-added fund managers’ alpha exceeds the traditional managers’ alpha by enough to offset the increased losses that can stem from a portable alpha portfolio’s leveraged market exposure.
+
+Now then, if pension funds or endowments aren’t permitted to borrow to achieve leverage and want to increase market exposure this way, I say “have at it.”  But they should call it what it is, rather than insist that they’re combining 2 plus 2 and getting 5.
+
+And remember that even after a portable alpha program has been in place for a period of years and produced results ahead of its benchmarks, it may not be possible to accurately assess whether the advantage came from the skill of the value-added managers, the effectiveness of the portable alpha approach, or leveraged market exposure.  Because risk often is truly invisible, you can’t always tell how much market risk you bore, and thus whether the key was really alpha or beta.
+
+Portable alpha has the potential to improve results – in good markets and generally over time (since markets usually go up).  But it won’t do so in all markets – or do so on a risk-adjusted basis – unless the person given the job of structuring the portable alpha portfolio can (a) identify and access value-added funds that truly are capable of generating alpha, (b) accurately gauge their embedded risk, and (c) properly structure the overall portfolio.
+
+Outstanding managers may be able to satisfy the criteria for success enumerated just above, but that doesn’t mean they’ll do it all the time.  And there’s no assurance that less capable managers will do it even on average.  So, once again, the mere term “portable alpha” doesn’t hold the key to success.   Success will only be found in execution of the concept by managers
+
+possessing rare skill.  To think every would-be purveyor of portable alpha will be able to do it consistently is, like so many other things in my investment experience, too good to be true.  Without great execution, “portable alpha” is just one more seductive label.
+
+*     *     *
+
+No market is entirely efficient and none is entirely inefficient.  It’s all a matter of degree.  In the same way, few if any funds are entirely market neutral, and even those that aim for absolute returns will demonstrate considerable susceptibility to market fluctuations.
+
+A lot depends on your preference for offense (which usually leads investors to non-hedged or non-absolute investing) versus defense (for which managers emphasizing risk control – like some hedge funds – may be best suited).  In the long run, it comes down to identifying managers who employ the style of investing that appeals to you and are capable of living up to your expectations.  Not that complicated, but far from easy.
+
+June 13, 2006

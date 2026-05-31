@@ -1,0 +1,253 @@
+**Memo to:** Oaktree Clients
+
+**From:** Howar
+
+d   Marks
+
+**Re:** Risk and Return Toda
+
+y A single word is enough to describe the overall investment world today: lackluster.  Stock and bond returns thus far in 2004 are quite modest virtually across the board.  Candid managers almost everywhere admit there’s little to buy.  In many areas, especially in non-traditional investments, everyone agrees there’s “too much money chasing too few ideas.”  How can everything be priced to provide low returns?  Where does this excess money come from?  I’ll provide my explanation below.  Pardon me if I start with some rudimentary building blocks.
+
+0BURisk/Return Foundations The most fundamental assumption underlying investment theory and practice today regards the universality of risk aversion.  It is assumed that people dislike risk and prefer safety.  The proof is simple: if a safe investment and risky investment – e.g., a 30-day U.S. Treasury bill and a start-up company’s 30-year bond – both offer a 5% yield, virtually no one will choose the latter.
+
+Thus, if investors are going to bear risk, they must be induced to do so, with the incentive coming in the form of a higher expected return.  In short then, the market must set prices such that investors will expect riskier investments to deliver higher returns.  (I have said many times that those higher returns must not be viewed as dependable; if risky investments could be counted on to produce higher returns, they wouldn’t be risky.  Thus their expected returns must appear to be higher in order to attract capital, but the higher expected return will always be accompanied by a range of possible outcomes that is wider and may include losses.) Because of the assumed correlation between perceived risk and perceived return potential, the following graphic has come into widespread use to depict the market’s basic workings:
+
+> Risk Return 0 Risk Return 0
+
+> As the graphic suggests, there is a low return that can be earned on the riskless asset and, from there, prospective return will rise with prospective risk.  Thus we have a “capital market line”
+
+that, as the academics say, “is upward sloping to the right.”  (The “riskless asset” is generally felt to be the shortest U.S. Treasury bill, with regard to which investors don’t worry about credit risk or the risk that inflation will erode the purchasing power of principal before it’s repaid upon maturity.) 1BUThe Market at Work I’ll use a “typical” market of a few years back to illustrate how this works in real life:  The interest rate on the 30-day T-bill might have been 4%.  So an investor says, “If I’m going to go out five years, I want 5%.  And to buy the 10-year note I have to get 6%.”  He demands a higher rate to extend maturity because he’s concerned about the risk to purchasing power, a risk that is assumed to increase with time to maturity.  That’s why the yield curve, which in reality is a portion of the capital market line, normally slopes upward with the increase in asset life.
+
+Now let’s factor in credit risk.  “If the 10-year Treasury pays 6%, I’m not going to buy a 10- year single-A corporate unless I’m promised 7%.”  This introduces the concept of credit spreads.  Our hypothetical investor wants 100 basis points to go from a “guvvie” to a “corporate.”  If the consensus of investors feels the same, that’s what the spread will be.
+
+What if we depart from investme nt grade bonds?  “I’m not going to touch a high yield bond unless I get 600 over a Treasury note of comparable maturity.”  So high yield bonds are required to yield 12%, for a spread of 6 percent over the Treasury note, if they’re going to attract buyers.
+
+Now let’s leave fixed income altogether.  Things get tougher, because you can’t look anywhere to find the prospective return on investments like stocks (that’s because, simply put, their returns are conjectural, not “fixed”).  But investors have a sense for these things.  “Historically S&P stocks have returned 10%, and I’ll only buy them if I think they’re going to keep doing so.”  So in theory, the common stock investor determines earnings per share, earnings growth rate and dividend payout ratio and inputs them into a valuation model to arrive at the price from which S&P stocks will return 10% (although I’m not sure the process is nearly that methodical in actuality).  “And riskier stocks should return more; I won’t buy on the NASDAQ unless I think I’m going to get 13%.”
+
+From there it’s onward and upward.  “If I can get 10% from stocks, I need 15% to accept the illiquidity and uncertainty associated with real estate.  And 25% if I’m going to invest in buyouts . . . and 30% to induce me to go for venture capital, with its low success ratio.”
+
+That’s the way it’s supposed to work, and in fact I think it generally does (although the requirements aren’
+
+t the same at all times).  The result is a capital market line of the sort that has become familiar to many of us, as shown on the next page.
+
+Ret urn ● ● ● ● ● ● ● ● ● M o n e y
+
+M a r k e t
+
+( 4 % ) 5 - Y e a r
+
+T r e a s u r y
+
+( 5 % ) 1 0 - Y e ar
+
+T r e a s u r y
+
+( 6% ) Hi g h
+
+G r a d e
+
+B on d s
+
+( 7 % ) S & P
+
+S t o c k s
+
+( 1 0 % ) H i g h
+
+Y i e l d
+
+B o nd s
+
+( 1 2 % ) S m a l l
+
+S t oc k s
+
+( 1 3 % ) R e a l
+
+E s t a t e
+
+( 1 5% ) B u y o u t s
+
+( 25 % ) ● V e n t u r e C a p i t a l
+
+( 3 0 % ) Risk 0 Ret urn ● ● ● ● ● ● ● ● ● M o n e y
+
+M a r k e t
+
+( 4 % ) 5 - Y e a r
+
+T r e a s u r y
+
+( 5 % ) 1 0 - Y e ar
+
+T r e a s u r y
+
+( 6% ) Hi g h
+
+G r a d e
+
+B on d s
+
+( 7 % ) S & P
+
+S t o c k s
+
+( 1 0 % ) H i g h
+
+Y i e l d
+
+B o nd s
+
+( 1 2 % ) S m a l l
+
+S t oc k s
+
+( 1 3 % ) R e a l
+
+E s t a t e
+
+( 1 5% ) B u y o u t s
+
+( 25 % ) ● V e n t u r e C a p i t a l
+
+( 3 0 % ) Risk 0 2BUThe Market at Work – 2004 Version A big problem for investment returns today stems from the starting point for th is process:
+
+> The riskless rate isn’t 4%; it’s closer to 1%.  Interest rates reached multi-generational lows in 2004.  The Fed kept short rates low for much of the year, although they’ve been inching up in recent months.  This was done (a) to stimulate an economy that has been quite sluggish since the last recession and (b) to protect the economy against negative effects from exogenous shocks, most prominently the corporate scandals of 2001-02 and the terrorist attacks of 9/11 (and the possibility of more); in fact, the low rates have been described as “emergency rates.”
+
+Our typical investor still wants more return if he’s going to accept time risk, but with the starting point at 1+%, now 4% is the right rate for the 10-year (not 6%).  He won’t go into stocks unless he gets 6-7%.  And junk bonds may not be worth it at yields below 7%.  Real estate has to yield 8% or so.  For buyouts to be attractive they have to appear to promise 15%, and so on.  Thus we now have a capital market line like the one shown below that is (a) at a much lower level and (b) much flatter.
+
+5 -Y r Tre a s .
+
+(3 % ) ● ● ● ● ● ● ● ● ● Risk Return M o n e y
+
+M k t (1 % ) 1 0 -Y r Tre a s .
+
+(4 % ) H i g h
+
+G ra d e s (5 % ) S & P
+
+S t o c k s
+
+(6
+
+- 7 % ) H i g h
+
+Y i e l d (7 % ) S m a l l
+
+S t o c k s
+
+(7 - 8 % ) R e a l
+
+E s t a t e
+
+(8 % ) B u y o u t s
+
+(1 5 % ) ● V e n t u re C a p i t a l
+
+(2 0 % ) ● ● ● ● ● ● ● ● ● ● 0 5 -Y r Tre a s .
+
+(3 % ) ● ● ● ● ● ● ● ● ● Risk Return M o n e y
+
+M k t (1 % ) 1 0 -Y r Tre a s .
+
+(4 % ) H i g h
+
+G ra d e s (5 % ) S & P
+
+S t o c k s
+
+(6
+
+- 7 % ) H i g h
+
+Y i e l d (7 % ) S m a l l
+
+S t o c k s
+
+(7 - 8 % ) R e a l
+
+E s t a t e
+
+(8 % ) B u y o u t s
+
+(1 5 % ) ● V e n t u re C a p i t a l
+
+(2 0 % ) ● ● ● ● ● ● ● ● ● ● 0
+
+The lower level of the line is explained by the low interest rates, the starting point for which is the low riskless rate.  After all, the investment thought process is a chain in which each investment sets the requirement for the next.  Each investment has to compete with others for capital, but this year, due to the low interest rates, the bar for each successively riskier investment has been set lower than at any time in my career.
+
+3BUWhy a Flatter Line?
+
+Not only is the capital market line at a low level today in terms of return, but in addition a number of factors have conspired to flatten it.  First, investors have fallen over themselves in their effort to get away from low-risk, low-return investments.  When you’re especially eager not to make safe investment A, it takes less compensation than usual (in terms of prospective return) to get you to accept risky investment B.  Because people today are so motivated to get away from 1% money market investments and 3-4% Treasury notes, they’ll accept less risk compensation than usual.
+
+Second, risky inves tments have been very rewarding for more than twenty years and did particularly well in 2003.  With only occasional, easily forgotten exceptions, we’ve seen high returns from common stocks, low-quality stocks, emerging market stocks, high yield bonds, distressed debt, private equity . . . the list goes on.  Thus investors are attracted more (or repelled less) by risky investments than perhaps might otherwise be the case and require less risk compensation to move to them.
+
+Third, investors perceive risk as being quite limited today.  Because rising inflation isn’t seen as a significant risk, bond investors don’t require much of a premium to extend maturity.
+
+And because the combination of a recovering economy and an accommodating capital market has brought default rates to record lows, investors are unconcerned about credit risk and thus are willing to accept below-average credit spreads.  Prospective return exists to compensate for perceived risk, and when there isn’t much perceived risk, there isn’t likely to be much prospective return.
+
+In summary, to use the words of the “quants,” risk aversion is down .  In May 2003 we at Oaktree began to worry about investors’ indiscriminate behavior (of course, we’re usually early in worrying about overheated markets).  We were struck by the rapidity with which the terrified investors of less than a year earlier had become confident and aggressive.  “Stressed” bonds that we had bought at yields of 30% to 70% in the summer of 2002 now could be sold at yields of 6% to 9%.  Somehow, in that alchemy unique to investor psychology, “I wouldn’t touch it at any price” had morphed into “looks like a solid investment to me.”  As a result, money was flooding out of low-yielding safe investments and into risky investments that appeared to offer higher returns (although we didn’t think the returns were high enough).
+
+In response, I wrote a piece called “The Cat, the Tree, the Carrot and the Stick” as part of my m emo “What’s Going On?” published on May 6, 2003.  I said I thought the combination of low prospective returns on safe investments and recent high returns on risky investments was pushing many investors to dangerously high branches of the investment tree.  Those branches are subject to cracking under all that weight.  Therefore, until conditions changed, I suggested something closer to the ground.
+
+UMoney, Money Everywhere But how can it be that there’s too much capital trying to access so many markets at once?  We can understand investor capital flowing from one market to another, but isn’t the total amount of investment capital finite?  Where does “more money” come from?
+
+I think the amount of investment capital usually is rather fixed, (although m any corporations are making pension fund contributions to correct under-funding), and in fact I don’t think there’s really “more money everywhere.”  It’s just that no one wants to hold more cash at 1%, high grades at 3-5% or stocks at 6-7% (after stocks treated investors so poorly in 2000-02, that’s what most people think they’re now poised to return).
+
+Thus I think the present situation is as follows:
+
+> There’s a given amount of money looking for a home.
+
+> Relatively little of it is g oing into mainstream stocks and bonds, the two biggest markets.
+
+> The redirection of that capital to the smaller non-tradition al markets has given rise to a deluge capable of overwhelming those markets: driving up prices, lowering prospective returns and rendering attractive investments scarce as hens’ teeth.
+
+So it’s not that there’s that much more money around.  It’s that w ould-be buyers are optimistic, unafraid, undemanding in terms of return, and moving en masse to small asset classes.  Holders of assets, who play a part in setting market prices by deciding where they’ll sell, also are optimistic.  The result is an unappetizing, risk-tolerant, high-priced investment landscape.  It’s for times like this that my favorite Warren Buffett quotation is most appropriate:
+
+> “The less prudence with which others conduct their affairs, the greater the prudence with which we must conduct our own affairs.”
+
+UImplications for Investing One way to improve investment results – which we try hard to apply at Oaktree – is to think about what “today’s mistake” might be and try to avoid it.  There are times in investing when the likely mistake consists of:
+
+> not buying, not buying enough, not making one m ore bid in an auction, holding too much cash, not using enough leverage, or not taking enough risk.
+
+I don’t think that describes today.  I’ve always heard that no one awaiting heart surgery ever complained, “I wish I’d gone to the office m ore.”  Well, likewise I don’t think anyone in the next few years is going to look back and say, “I wish I’d invested more in 2004.”
+
+Rather, I think this year’s mistake is going to turn out to be:
+
+> buying too much, buying too aggressively, making one bid too many, using too much leverage, and taking too much risk in the pursuit of superior returns.
+
+> There are times when the investing errors are of omission: the things you should have done but didn’t.  Today I think the errors are probably of commission: the things you shouldn’t have done but did.  There are times for aggressiveness.  I think this is a time for caution.
+
+> Not every investor has the option of holding a lot of cash.  A pension fund has to pursue its actuarial return, and too many years spent earning m oney market rates can ensure it won’t be achieved.  The same can be true for a foundation that has to spend 5% of its assets each year, and for an individual living on his or her investment income.  But when I look today at the smart people I know who have the ability to hold cash, I see large balances.  As Warren Buffett wrote in his 2003 Annual Report, “Our capital is underutilized now . . . .  It’s a painful condition to be in – but not as painful as doing something stupid.”
+
+There are times when big funds are a good thing – when the m arket power that comes with more money is a help.  I think this is generally a time for moderation in fund raising – a time when the selectivity and agility that come with smallness will prove to be key.  Still, some managers are raising ever-larger funds and extending into new strategies on the back of recent strong results.  That doesn’t mean it’s smart to join the herd of participants.
+
+In my m emo “What’s Your Game Plan” on investing and sports (September 5, 2003), I mentioned the importance of “playing within yourself,” or “not trying to do things you’re not capable of, or things that can’t be accomplished within the environment as it exists.”
+
+We simply c annot create investment opportunities when they’re not there.  In its first year, our newest distressed debt fund produced a 64% net IRR that’s eye- popping . . . and impossible to replicate any time soon.  So what should we do now?  Rather than take profits and distribute the proceeds, should we prolong our holding periods or try to repeat our gains in new positions?  And would it be smart to raise a big new fund?  None of these, if the prospective returns on our holdings are inadequate and new investment opportunities are limited.  The dumbest thing we could do is to insist on perpetuating our high returns – and give back our profits in the process.  If it’s not there, hoping won’t make it so.
+
+All we ever can do is take what they give us.
+
+No one wants to throw in the towel with regard to investment returns.  No one likes to admit that their intelligence and hard work won’t be enough to get them to their target.
+
+But at times when the markets are offering paltry absolute returns and inadequate compensation for bearing risk, it’s the only thing to do.
+
+What’s the alternative?  Deny the facts?  Take on more risk in pursuit of high returns?  Doing so won’t help when prices are high and too much capital is jostling for admittance.  The fact is there are times when you have to stress caution, refuse to stretch for return, moderate your expectations, and keep your head down.  I think this is one of those.
+
+By the way, I’m not saying all investments are priced too high and bound to collapse.  I’m saying most aren’t priced to give high returns or adequate risk compensation.  Whether a strong price correction is coming in a given market depends on the extent and speed with which investors increase their return demands.  Remember, there’s only one way for prospective returns to increase quickly: through a price correction.  On the other hand, a slow and gradual reassertion of prospective return can be accomplished through several years of price stagnation.
+
+Neither prospect, however, argues for aggressive investing today.
+
+As for individual asset classes, The greatest excesses seem to be centered in some of the alternative investments to which people have fled in search of return.  Private equity, distressed debt, hedge funds and others of that ilk are unlikely to prove the “silver bullets” that people are hoping for.
+
+There’s no question that bonds of all stripes are fated to produce low returns – in fact, the lowest long-term bond returns I’ve ever seen.  When you’re talking about a 10% 10- year bond, you can argue about whether the return over the next few years will be 15%, 10%, 5% or zero.  But when you’re talking about a 5% bond, the range by definition has to be significantly lower.
+
+Finally, stocks are well down from their highs; their valuations have been rendered less excessive by today’s generally higher corporate earnings; and they aren’t being borne aloft by capital inflows.  On the other hand, absolute p/e ratios are still high, supported by the low level of interest rates, and there’s the risk of downward valuation when people realize that the long-term return on stocks is likely to be driven by profits growth in mid-single digits.
+
+Taking all of the above into consideration, I feel this is a time when the route to investme nt success may be via the “least bad” course of action.  For over a year I’ve been telling the boards on which I serve that I view the solution as “special niches, special people.”
+
+Because the vast majority of asset classes are high priced and crowded, the key is to find those that are less so.  Similarly, it’s important to choose managers with enough talent and discipline to make the most of the current situation.
+
+None of my observations is sure to be right, as always, but I want to share my thinking about what’s going on in the investment markets today.
+
+October 27, 2004

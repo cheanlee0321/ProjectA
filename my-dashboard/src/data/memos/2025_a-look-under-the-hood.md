@@ -1,0 +1,329 @@
+**Memo to:** Oaktree Clients
+
+**From:** Howard Marks
+
+**Re:** A Look Under the Hood
+
+Over the last 56 years, I’ve spent a lot of time making suggestions to clients regarding their investment processes and portfolios, and I’ve been on the client side as a member of various investment committees.
+
+But seldom have I been able to bridge the two, serving as an active participant in clients’ investment processes.  I had an opportunity to do just that the other day, when I met with the board and senior staff of a   U.S. state pension fund.  I was asked to listen in and provide feedback on the results of a board-member survey their consultant had recently conducted and would be reporting on during the meeting.
+
+The content of the consultant’s session impressed me so much that I decided to write a memo about it.
+
+I’m not disclosing the names of the state and its consultant, for obvious reasons, but I’m very pleased that they agreed to let me use the content of the meeting as raw material for this memo.
+
+In the meeting, the consultant covered many of the things I consider “the most important thing” and often came down on the same side I would (admittedly, that might’ve contributed to why I was so impressed!).
+
+I’m going to sum up below the consultant’s assessment of the board survey and my reaction.  My hope is that this is as informative for you as it was for me.
+
+Attitudes Toward Risk
+
+As you can imagine, I was very glad to see the consultant start with a discussion of how the board members think about risk, and especially do it in a way that was new to me.  They led off with a simple two-by-two matrix that I found thought-provoking and useful, as it put one of the most important decisions into perspective.
+
+On the horizontal axis is the plan’s ability to bear risk.  When I first read that, I thought it referred to the skillfulness of its board and staff in managing risk.  But then it became clear that the reference was to the plan’s financial capacity to accept risk, defined by its financial health and that of its sponsor, the state.
+
+On the vertical axis is the plan’s willingness to bear risk – its attitude toward taking on risk and readiness to withstand the losses that might result.  In other words, is the board relatively risk-tolerant or risk- averse?  Will it assume more risk in pursuit of above average returns, or will it shun risk, knowing that doing so is likely to limit the returns it enjoys?  Importantly, “more risk” and “less risk” are considered relative to the maximum amount of risk that the plan’s “ability” might allow it to bear.
+
+The labeling of the matrix’s four cells is very informative:
+
+• If an investor has a high financial ability to bear risk and a high willingness, it is described as “capitalizing” on, or taking advantage of, its financial strength and risk-tolerance.
+
+• If it has a high ability to bear risk but a low willingness, it is said to be “defensive.”  It could take on more risk than it does, but it has chosen to operate at a lower risk level.
+
+• If it has a low ability to bear risk and a low willingness, it is described as being “protective,”
+
+which seems appropriate given its circumstances.  However, it should be recognized that this is likely to limit returns in the short run, and thus to create a need to shoulder more risk and/or increase contributions in the out years.
+
+• Finally, if it has a low ability to bear risk but a high willingness, it is described as “naive.”  I think that might be a generous description.  What could be more foolish than taking risk that entails potential consequences you might not be able to survive?
+
+The consultant’s survey described the board as having a moderate willingness to accept risk despite the plan’s above average ability to bear it (stemming from the plan’s solid funding status and the state’s strong economic performance).  This suggests returns will be constrained, but also that the plan and its constituencies won’t be exposed to the greater range of outcomes that increased willingness would bring.
+
+I found this an organized way to approach risk bearing, in which the most important thing is that it’s done explicitly and intelligently.  It reminded me of the conditions that existed when I was asked to chair the University of Pennsylvania’s investment committee in mid-2000.  Penn’s endowment performance had lagged that of its peers because of its having been severely underweighted in growth, tech, venture capital, and private equity investments in the roaring 1990s, and people were asking whether it should take on increased risk in an effort to narrow the gap.  Penn ranked very low at the time in endowment per student, a crucial metric.
+
+Should Penn turn aggressive to make up the shortfall, or should it remain conservative to safeguard the limited resources it had?  In the spirit of the consultant’s matrix, should it increase its “willingness”
+
+despite the limits on its “ability”?  I convinced the people who mattered that (a) it was too late to start chasing a horse so long after it had left the barn and (b) the risk of continuing to underperform from such an elevated market level paled relative to the risk of participating in a bust after having missed the boom.
+
+The consultant’s matrix might have been of help in that effort.
+
+Moving on from the matrix, the consultant described some other interesting facets of the board’s attitude toward risk:
+
+• 100% of the board members agreed – half “strongly agreed” – that exposure to risk is necessary if the plan wants to meet its objectives.
+
+• The consensus among board members was that they would feel worse about adopting an aggressive strategy and experiencing a market collapse than they would about being conservative and missing out on strong gains.
+
+• The board expressed a strong preference for bearing the “normal” risks stemming from market participation as opposed to the risks associated with an innovative but opaque approach that is projected to deliver returns accompanied by risk below the normal level.
+
+• All board members recognized that having true diversification means there may well be some laggards within the portfolio at all times.
+
+In my opinion, the consultant covered the most important aspects of risk bearing, and the board members’
+
+views were reasonable.  Importantly, they recognize that their conservative bent may lead to under- performance in strong markets, but they explicitly prefer that to a more aggressive posture with its attendant risks.  This is probably the most important real-world consideration under the heading of risk attitudes.  Not everyone can live happily with the performance lags that conservatism can bring, but this board has had the opportunity to see that in action during the last two bullish years, and it seems to be sticking to the plot.
+
+The board members accept that risk isn’t something to be avoided.  They’re not looking for the illusive black box that others say will give them return without risk.  And they understand that caution   limits return potential –    and that the staff shouldn’t be criticized for the presence of underperformers when the board says it wants diversification.  I found this discussion realistic and constructive.
+
+Setting Objectives
+
+The starting point for the consultant’s discussion of objectives was the ranking provided by the board members:
+
+> 1. Determine the correct asset allocation.
+
+> 2. Hire managers that outperform.
+
+> 3. Beat the assumed rate of return.
+
+> 4. Increase risk at the right time.
+
+> 5. Outperform peers.
+
+I was very impressed to see that the members ranked beating peers last among the plan’s possible objectives.  And they strongly disagreed with the idea that it’s okay to lose money when others do as long as you do well when others do.  When I heard this, I wrote down that we have to be careful when we think of investing as being like golf, in which it matters little what your score is –   just whether it’s better than your opponent’s.
+
+Although it’s common practice in the investment world to assess short-term investment performance in terms of how you’ve done relative to your peers and your benchmarks, in the long run (more on this later), the success of an entity like a pension plan isn’t reckoned in terms of whether it did better than others.  Success for a defined benefit pension plan means being able to pay benefits and minimize the cost to the plan sponsor.  Period.  If a plan is unable to pay promised benefits, it’s scant comfort that peer plans can’t either.
+
+It’s the job of the board and staff to consider likely macro environments, establish an investment approach and strategy, and choose tactics and managers to create a portfolio that maximizes the probability of success over a reasonable range of possible scenarios.  There’s not a word there about doing it better than others.  If an unforeseeable macro environment unfolds in a way that renders the plan unable to pay benefits, that failure, even if an understandable one and shared by others, is still a failure.
+
+Finally, I think it’s important to note that if, on the other hand, the plan does end up with enough money to pay benefits, that doesn’t necessarily mean its board and staff did a good job.  Before coming to that conclusion, one would need to gauge how the portfolio would have done if a different environment had unfolded –   that is, to consider “alternative histories” in the way proposed by Nassim Nicholas Taleb in Fooled by Randomness.  If the portfolio wouldn’t have done well under other scenarios, the plan’s ability to pay benefits might be attributed solely to the fact that the one that unfolded did so.  In that case, the plan’s success might be more a matter of luck than skill.  But this isn’t an easy analysis to perform.
+
+On the Subject of Volatility
+
+I was very glad to hear that the board members ranked the Sharpe ratio last among six possible performance metrics and on average considered avoiding volatility in the sponsor’s contributions less of a priority than the ability to pay benefits or attain fully funded status.  Most of the members thought it was important to balance stable contributions and the pursuit of high returns, although some did rank contribution stability higher than the level of return.  Obviously, this is a challenging question for a board concerned with both the need to pay benefits and the desire to limit the cost to the sponsor.
+
+In future memos, I’m likely to harp on my view that investors pay too much attention to volatility.
+
+It’s absolutely essential for investors to think about limiting their risk, but I don’t think volatility is the risk they should be most concerned with.  Regardless, much of the investing community has accepted volatility as the best indicator of risk –   primarily, I think, because it’s the only way to come up with a number for risk –   and that has led to excessive attention being paid to it.
+
+I’ll make a controversial statement here: in pure investment terms, there’s no intrinsic reason for long-term investors to be concerned with volatility (as distinguished from the risk of permanent loss).  Warren Buffett famously says he’d “rather earn a lumpy 15% return than a smooth 12%.”  Why wouldn’t everyone?
+
+In my opinion, the main reasons for concern over fluctuating market prices are situational, institutional, political, career-related, psychological, and emotional.  I call these things “externalities,” and because they’re external to the investment process, a potentially volatile investment can be risky for some investors and not for others.  For example:
+
+• An AI stock can be a risky holding for the manager of a mutual fund that’s priced daily and subject to daily withdrawals – or for an investor who’s likely to panic during a market crash and sell at the bottom – but much less so for a sovereign wealth fund where the money is unlikely to be withdrawn and there’s no requirement to publish financials and satisfy public opinion.
+
+• An investor whose compensation is based on metrics that penalize volatility may consider a publicly traded bond riskier than a private loan from the same issuer that doesn’t mark to market, even though the risk of default is the same for both.
+
+If it’s true that an asset’s volatility can bring risk for some investors but not others, then clearly the risk doesn’t lie in the investment, but in something in the investor’s environment.
+
+While I think the risk of permanent loss is the most important investment risk, I recognize that volatility can be a material real-world risk for some investors.  My experience with the pension fund session reminded me that rapidly fluctuating portfolio values can require fluctuating contributions from pension plan sponsors.  This may be an externality relative to the process of estimating the intrinsic value of potential investments and assessing their potential returns and risks, but it’s a completely legitimate
+
+consideration for people with responsibility for pension plans.  It’s absolutely internal to them and their process.
+
+And, of course, pension funds are but one example of the type of investor who may consider volatility a risk.  University endowments are another example.  Typically, universities rely upon an annual “draw”
+
+from the endowment to fund a material portion of their operating expenses.  Volatility in the value of the endowment can affect the amount of that draw and require unplanned changes to a university’s operations.  We saw this very clearly when the Global Financial Crisis hit in 2008.
+
+Choice of Investment Approach
+
+The consultant did a good job of covering questions regarding strategies and tactics, and the board gave good answers.  Here are a few of the areas they touched on:
+
+• All board members agreed that it’s impossible to foresee the future, and thus that the portfolio should be built to prepare for “all environments” rather than base performance expectations on the ability to time markets.  Of course this is the right attitude, even though it’s impossible to (a) specify “all environments” or (b) build a portfolio that entails the risk inherent in investing but is capable of performing well in all environments.
+
+• A substantial majority of the members said they’re comfortable with using leverage at 15-20% of the plan’s assets.  I think this is reasonable.  A well-funded plan that’s sponsored by a financially strong employer and invested conservatively should be able to withstand the uncertainties associated with this level of leverage.  While most public plans may not use leverage, I think it makes sense for this one.  However, (a) it’s still essential to deal with the risk of the lender pulling the leverage at a bad time in the investment and capital markets and (b) paying interest to borrow makes it even more important that the plan not hold a lot of assets whose only merit is a highly dependable low return (or, in this case, a return below its borrowing cost).
+
+• A slimmer majority backed putting 25% of the portfolio into illiquid assets “assuming all benefit payments and foreseen funding requirements can be met.”  However, a few thought a higher promised return isn’t a good reason for surrendering flexibility.  Clearly, some part of a well- funded plan’s assets can reasonably be illiquid, but getting that percentage right is no simple matter.
+
+• Slightly more members were in favor of focusing exclusively on expected returns net of fees, while a few thought minimization of fees should be a goal in itself.  This is a tough area.  No one wants to pay high fees and not get above average performance.  But when you sign up for a fund with stiff fees, the performance is hoped for while the fees are a sure thing.  All you have to do is figure out which high-fee funds are likely to deliver and which aren’t.  Not an easy task.  It would be interesting to see a study of the correlation between plan portfolios’ average fees paid and their performance, but I never have.
+
+Overall, I think these positions make sense for this plan.
+
+Assessing Performance
+
+The consultant asked the board members which performance standards they think are most important and reported that the board members considered achieving the actuarial assumption the most important thing;
+
+beating the policy benchmark and having managers beat their respective benchmarks were secondary; and
+
+beating peers and popular indices like the S&P 500 were deemed relatively unimportant.  I think they have their priorities right.
+
+When it was my turn to speak, I got more questions on how to assess the performance of the investment operation than anything else.  This is one of the toughest questions in our business.  I’ll summarize below what I said and add a lot that I should have said.
+
+It’s absolutely true that the thing that matters most is whether the plan achieves the rate of return the actuaries accurately project is necessary: that is, for today’s capital and the expected capital contributions to reach the sum needed to pay future benefits.  So, if the plan’s actuarial assumption is 6¼%, what matters most is whether the board and staff can achieve that over the long term.  But the board and staff have to assess whether the investment approach is working over much shorter periods and, in particular, they have to decide on raises, promotions, and personnel retention every year.
+
+The challenge in assessing performance in this regard stems from the fact that making 6¼% may be the only thing that matters in the long run but absolutely irrelevant in the short run.  If the 60/40 balanced portfolio, the policy portfolio, or the peer average is up 20% next year, achieving 6¼% can’t be described as success.  And if those relative benchmarks are down 20% next year, making 6¼% is probably an unreasonable criterion.  In other words, achieving the actuarial assumption in any given year or even over a few years isn’t a useful standard for performance assessment over those periods.
+
+Ironically, the appropriate standard for performance measurement in the short or perhaps the intermediate term has to be a relative one, not absolute.  In the short term, we have no choice other than to assess performance in light of what reasonably could have been accomplished in the environment that unfolded.  The key question is “should we have done better?” and the best way to answer it is probably by looking at how others did who were similarly situated.  So, again ironically, the right standard is likely, “how did our peers do?”  After all, if they’re really our peers, they probably have similar goals, are subject to similar constraints, and were presented with a similar menu of potential investments as we were.  For this reason, their performance may be the best short-term benchmark against which to measure ours.
+
+But this isn’t a perfect standard either.  For example, if our portfolio goes up as much as our peers’
+
+portfolios in a bubblish market, that may merely mean our portfolio was as imprudent as theirs.  Similarly, if everyone else loses a lot in bad times, going down almost as much probably means we screwed up also, and that’s no reason for congratulations and raises.  But if we can beat our peers in bad times and do almost as well or better in good times, that may be the most solid reason for awarding high marks.
+
+Of course, we can use the policy portfolio for these assessments instead of peer performance, but then the people who set the policy portfolio are let off the hook.  The policy portfolio is a possible standard for assessment, but what’s to say it’s a good one?  If the policy portfolio excludes alternatives when they should have been considered for inclusion, as in the Penn endowment example above, you might beat the policy benchmark but fail to keep up with what the environment afforded.  In the end, I think what this discussion proves isn’t that one standard for assessment is better than the others, but that there is no standard that’s free of deficiencies.
+
+And that leads to the question of the proper period for assessing performance.  The trouble with using the actuarial assumption as the criterion is that, in the short run, too many factors are in play for performance versus the assumption to be a clear indicator of whether a portfolio was managed skillfully.  As suggested above, performance in an individual year will be heavily influenced by whether the market was strong or
+
+weak, and especially by whether the investors driving it were mindlessly optimistic or panicked.  Further, the market’s performance might have been dictated by a single unforeseeable event.  Is it reasonable to hold staff responsible for not having foreseen it?  We all know a single year isn’t a reasonable basis for determining investment skill.  But what should the period be?
+
+In asking this question, most people want to be given a number of years: perhaps three, five, eight, or ten.
+
+But the correct answer can’t be a fixed number.  Given the large number of factors that influence performance, the assessment period has to be long enough for these things to even out, long enough for that one freak occurrence to dissipate, and long enough so that the performance of the portfolio in both bullish and bearish environments can be assessed.
+
+If performance is assessed over a period that includes only good times –   like the last 16 years (save for a few relatively short dips) –   the prize for performance is likely to go to those investors with the most risk- prone portfolios.  In such an environment, keeping up with or surpassing the benchmarks may not be a sign of investment skill, but rather extreme risk tolerance.  Likewise, beating the benchmarks or the peers in a declining market may only be a sign of above average risk aversion, not the ability of a portfolio to achieve a superior risk-adjusted return over the long run.
+
+So, the answer is that an appropriate performance assessment period has to include both good times and bad.  In other words, it should cover a full market cycle.  That’s the only way to distinguish investment skill (including the ability to tilt conservative or aggressive at the right times) from a mere bias toward aggressiveness or defensiveness.  On this subject, this is by far the most important thing.
+
+Defining a full cycle can be problematic, particularly as economic cycles seem to have lengthened recently, but it should be possible to have a sense for whether a given period includes both good times and bad.
+
+Finally on the subject of performance assessment, I suggested that the board consider the level of personnel turnover.  It’s not that personnel turnover is always a black mark; some is completely understandable.  For example, no hiring process can be expected to work perfectly, meaning every organization will have to weed out subpar performers.  Further, we know compensation is limited in the public plan arena, so good performers are likely to be given opportunities to move to the private sector; in this way, losing employees can be a sign that the hiring process identified good performers.  But above average personnel turnover may be indicative of a poor hiring process, an unreasonable performance assessment process, or poor management practices.  At minimum, these possibilities must be considered.
+
+The Bottom Line
+
+In general, I very much liked what I heard in the session, and I think these are the most important observations:
+
+• The board members are happy to take less than 100% of the risk the plan’s finances might permit.
+
+• They prefer to forego some return potential in order to avoid the full force of market declines.
+
+• They have little concern for their ranking within their peer group.
+
+• They have relatively little interest in volatility-adjusted performance metrics.
+
+• They’re rightly concerned about how to assess the performance of the investment team and the portfolio they produce.
+
+What these observations tell me is that the board and its consultant are considering the right questions and reaching reasonable conclusions.  The session was very informative for me, and I’m glad I had the opportunity to participate.  I hope this recap was helpful for you, too.
+
+October 28, 2025
+
+**Memo to:** Oaktree Clients
+
+F rom: Howard Marks
+
+**Re:** 
+
+Cockroaches in the Coal Mine Pardon the mixed metaphor, but I couldn’t resist.
+
+Jamie Dimon, Chairman and Chief Executive Officer of JP Morgan Chase, whose comments are always insightful and direct, said the following last month with regard to the bankruptcy filings from First Brands, an auto parts supplier, and Tricolor, a seller of and subprime lender against used cars: “My antenna goes up when things like that happen.  And I probably shouldn’t say this, but when you see one cockroach, there are probably more . . . everyone should be forewarned on this one.”
+
+And we all know that coal miners used to bring along a canary when they entered a mine, since its tiny body would succumb to any gas that was present before the gas could pose a threat to the miners.  Both the cockroach and the canary can be precursors of problems ahead.  We’ve heard both sayings in use in the last month, and we’re likely to hear them more.
+
+One of the most prominent characteristics of the financial markets that I’ ve detected over the years is their tendency to obsess over a single topic at a given point in time.  The topic eventually changes to another, but before it does  , it’  s often the thing people want to discuss to the near exclusion of everything else.
+
+Today it’s the recent string of episodes in sub-investment grade credit.
+
+Current Events Given the suggestion that fraud may have played a role in both the First Brands and Tricolor bankruptcies, and given that both companies had borrowed in the private credit market, people saw a connection.  Is th is the beginning of a problem?
+
+As I mentioned in my memo Gimme Credit in March, the thing people have asked me about most often over the last few years is private credit.  The sector took root around 2011, when banks were limited in making loans following the Global Financial Crisis and money managers stepped in to fill the void, primarily lending to leverage-hungry private equity sponsors.  Because lenders were few, those who would put out money were able to demand high interest rates and a high level of safety.  These loans looked good to investors in the low-rate environment that prevailed.  Thus, private credit was anointed as a magic investment solution, with perhaps $2 trillion flowing in to the sector in the subsequent years.  The arrival of new entrants and a great deal of incremental capital created more competition to lend and inevitably reduced some of t he lenders’ advantages.
+
+When asked about private credit, I answered that the investment environment had been mostly benign over the years since 2011  , meaning – to ec  ho Warren Buffett – the tide had never gone out on private credit (i.e., it hadn’t been tested).  Now, with two high-profile bankruptcies in short order, people thought they might be starting to see cracks.
+
+The tone turned more serious when it became clear that not only were the  re failures, but also there might be something sinister behind them.  There are allegations that First Brands – which had both public and
+
+private debt outstanding – used the same receivables as collateral for multiple loans.  Tricolor turns out to have made loans to buyers lacking credit scores or driver’s licenses and had been previously cited by regulators for practices such as selling cars for which it lacked titles.
+
+A nd then, last month, as Robert Armstrong of the Financial Times noted in his daily online column, “Unhedged” (which is one of my favorites):
+
+> On [October 15], Zions Bancorp disclosed in a regulatory filing that it “recently became aware of . . . apparent misrepresentations and contractual defaults” by two corporate borrowers that did not respond to the bank’s subsequent inquiries, and would take a $50mn writedown on the loans.
+
+> A nd on [October 16] another mid-sized bank, Western Alliance, disclosed that back in August it had initiated a fraud lawsuit against one of its commercial real estate borrowers.
+
+> Most recently, it’s been revealed that two small telecom firms under common control, Broadband Telecom and Bridgevoice, borrowed extensively on the basis of fabricated receivables and have filed for bankruptcy.  If one is an iso lated instance and two hint at a pattern, are six an ominous trend?
+
+> As I pointed out in my memo What Does the Market Know? in 2016, in real life things fluctuate between pretty good and not so hot, but in investors’ minds they go from flawless to hopeless.  We  saw a very strong reaction in this case: notably, the stock p rices of some prominent alternative asset managers were down 5-7% on October 16,  close on the heels of the regional banks’ disclosures.
+
+> The truth is that there are always defaults and not infrequently defalcations (how’s that for a good old- fashioned word?).  Over my 47 years in the high yield bond market, more than 2% of all  bonds by value have defaulted in a typical year  , and many more during crises.  If you apply that percentage to the number of sub-investment grade issuers, which runs in the thousands, it shouldn’t come as a surprise if there are a few dozen defaults in a normal year.
+
+So no, I don’t thi  nk this is necessarily the beginning of a trend.  It’s not an indictment of the whole sub- investment grade debt market, or t he whole private credit market.  Rather, it’s just a reminder that the yield spreads people care about so much are there for a reason: because sub-investment grade debt entails credit risk.
+
+And thus a reminder that credit skills are always a necessity for debt investors . . .
+
+even if the need for those skills isn’t apparent in good times.
+
+The Cycle in Attitudes Toward Risk In 2016, when I first sat down to write my book Mastering the Market Cycle: Getting the Odds on Your Side, I had an idea what topics I would cover – the economic cycle, the profit cycle, the cycle in investor psychology, the credit cycle, the distressed debt cycle, and the real estate cycle.  The chapter I didn’t plan to write – and the one that became the most important chapter in the book and one of the longest – was the one titled “The Cycle in Attitudes Toward Risk.”  S ecurity prices fluctuate much more than do the intrinsic value and prospects of  the underlying companies, and the main reason for this is the extreme volatility in the way people feel about risk.
+
+When the economy is humming, companies are reporting growing earnings, security prices are rising, and profits are piling up, people say things like: “Risk is my friend.  The more ris k I take, the more money I make.  And anyway, I don’t see anything to worry about.”  In good times, ambiguous developments are
+
+interpreted positively,   and negative ones are easily brushed aside.  And when times have been good for a while, the possibility of loss recedes from consciousness.  Rather, missing out on potential gains and falling behind one’s competitors becomes the dominant concern.  Investors’ risk tolerance grows, and they tend to focus less on due diligence and more on bidding aggressively for deals (see my memo The Race to the Bo ttom, February 2007).  In all these ways, the result is a lowering of standards.
+
+Eventually, the economy turns down, corporate profits decline, t he markets slump, and people lose money.  Now, the refrain is, “Bearing risk is just a way to lose money.  I’ll never do it again.  Get me out at any price.”  Now it’s the negatives that are exaggerated and the positives that are ignored.  People regret the due diligence they didn’t perform and the iffy deals they didn’t reject, and they’re reminded that there’s something worse than missing out on gains.  The pendulum has swung in the other direction, and risk aversion takes over from ris k tolerance.  As a result, the standard for investing and lending becomes elevated.
+
+One of the quotations I have the most use for i s said to come from Mark Twain: “History does not  repeat itself, but it does rhyme.”  This is particularly relevant in the world of finance, where certain themes reappear in cycle after cycle.  The recurring roller coaster of psychology and the resulting behavior is the most important of them.
+
+The key observation is that good times lead to complacency, risk tolerance, and carelessness, as people bid aggressively for assets and compete to make loans.  And then, bad times expose the results of  that carelessness, as investments that were entered into without an adequate investigation and margin for error fail to hold up in a hostile environment.
+
+This is nothing new.  As financial historian Edward Chancellor wrote in his 2022 book The Price of Time:
+
+> The Manchester banker John Mills commented perceptively [in 1865] that “as a rule, panics do not destroy capital; they merely revealed the extent to which it has previously been destroyed by its betrayal into hopelessly unproductive works.”
+
+In other words, many flawed decisions, which the economist Friedrich Hayek aptly described as “malinvestment,” are made in booms and exposed in busts.  It will ever be so.  This is su mmed up most concisely in a great banking adage: “The worst of loans are made in the best of times.”
+
+A Good Bezzle Charlie Munger and I used to enjoy talking about the economist John Kenneth Galbraith.  Galbraith was the source of many of my favorite expressions with regard to th e financial markets.  One I haven’t mentioned since my memo The Long View in 2009 is the “bezzle,” a concept Galbraith introduced in his book The Great Crash 1929.
+
+What’s a bezzle?  In short, according to Galbraith, it’s  the wealth financial fraudsters or embezzlers appear to have created, which lifts the spirits of the beneficiaries up until the time they’re found out.
+
+Charlie use  d to say the good times described above, in giving rise to a low level of prudence, create the necessary conditions for “a good bezzle.”  Here’s how economist Michael Pettis described the cyclicality of this phenomenon in his newsletter:
+
+> Certain periods . . . Galbraith further noted, are conducive to the creation of bezzle, and at particular times this inflated sense of value is more likely to be unleashed, giving it a systematic quality:
+
+> This inventory [of fraudulently inflated wealth] . . . varies in size with the business cycle.  In good times, people are relaxed, trusting, and money is plentiful.  But even though money is plentiful, there are always many people who need more.  Under these circumstances, the rate of embezzlement grows, the rate of discovery falls off, and the bezzle increases rapidly.  In depression, all this is reversed.  Money is watched with a narrow, suspicious eye.  The man who handles it is assumed to be dishonest until he proves himself otherwise.
+
+> Audits are penetrating and meticulous.  Commercial morality is enormously improved.  The bezzle shrinks.
+
+> (China Financial Markets, August 23, 2021)
+
+> The overconfidence, incaution, and inattentiveness that lead to unwise investments in good times also present the perfect conditions for fraudulent schemes.  Risk tolerance, FOMO (fear of missing out), inadequate due diligence, and fevered buying provide fertile soil for financial scams.  In heady times, rather than say, “That’s too good to be true,” people are more likely to ask, “How can I get in on that?”
+
+The markets aren’t crooked per se, but they’re full of money, and thus they tend to attract crooks.  And, intelligently, the crooks are most active in times when conducting due diligence is in retreat and loose change becomes more readily accessible.  It shouldn’t come as a surprise in the years ahead if the last sixteen years of largely uninterrupted economic growth, rising markets, and profitable risk taking are shown to have produced a bumper crop of frauds.
+
+Nowadays, I’m often asked whether the issues described above are “systemic.”  In other words, are they “pertaining to the system” or “affecting the system,” as opposed to idiosyncratic occurrences that don’t say anything about the system.  For an example of something systemic, consider the counterparty risk that arose during the Global Financial Crisis.  Because financial institutions had entered into hedging transactions with each other, one bank’s weakness weakened the others, impacting the system overall.  I think “hardwired into the system” is a good way to describe something that’s systemic.
+
+I don’t think today’s issues are systemic in the sense that there’s something wrong with the lending system, or that they will trigger other defaults and lead to a breakdown of the system.  In simpler words, there’s nothing wrong with the plumbing.  But imprudent loans and business frauds often occur in clusters for the simple reason that people who make investments and loans are highly prone to error in good times.
+
+Investors and lenders are supposed to be risk-averse and thus exercise discipline and vigilance, but sometimes they fail in this regard.  This isn’t part of the plumbing of the financial system but rather a regularly recurring behavioral phenomenon.  So, it isn’t ‘‘ systemic,’’ but it is “systematic.”
+
+A Case in Point: First Brands
+
+In September, First Brands, a non-household-name auto parts supplier, rocketed into the news with a bankruptcy filing.  While possibly an isolated instance, this attracted significant attention as the first high- profile bankruptcy involving a borrower in the adolescent private credit market.
+
+The problem at First Brands appears to stem primarily from its borrowings against receivables.  In many fields, it’s normal for manufacturers and wholesalers to ship goods to their retailer customers on credit and, to make efficient use of their capital, sell the resulting receivables to financial institutions at discounts that give those institutions their return.  This process is called “factoring,” and it’s been a very normal practice in various industries for as long as I’ve been in the business world.
+
+In the case of First Brands, however, one part of the practice was different.  Rather than payments being made by retailers directly to the financial institutions that bought the receivables, some went to First Brands for forwarding to the institutions.  This allegedly permitted First Brands to sell receivables more than once and, perhaps, to retain some payments rather than forward them to the factoring firms.
+
+In an analysis we conducted last summer, we found that, i  n addition to these factoring arrangements, the company made aggressive use of other forms of off-balance-sheet financing.  For example, First Brands sold inventory to related special-purpose vehicles, which then used the purchased inventory as borrowing base assets to obtain loans.  In most cases, the inventory was required to be sold back to First Brands, so while this served as a source of temporary liquidity, it left First Brands with layered, complex obligations that ballooned to several billion dollars.
+
+The scale of off-balance-sheet financing was striking;  we’ve learned through bankruptcy filings that First Brands’s total obligations are $11.6 billion (inclusive of $9.3 billion of debt) versus the debt level of $5.9 billion that had been disclosed during a financing process undertaken in July.  The complexity and opaqueness of these factoring and financing arrangements caused a    creditor’s lawyer to say $2.3 billion had “simply vanished.”
+
+Byzantine corporate structures and extensive off-balance-sheet financing have been present in many corporate frauds we’ve witnessed, exemplified by Enron Corporation.  But even in advance of First Brands’s bankruptcy filing in late September, Oaktree’s research turned up the following red flags:
+
+• only six years of operating history but already $5 billion of annual sales
+
+• controlled by an individual with almost no media references or online profile
+
+• a significant litigation history, including allegations of misconduct
+
+• reported profit margins above the industry average
+
+• a large number of M&A transactions creating a web of corporate entities
+
+• other aspects of weak controls
+
+You might wonder how a company as described above could attract financing.  First, private credit often involves companies that don’t file disclosure documents with the SEC.  Thus, initial investment decisions are usually based heavily on information provided by bankers and auditors.
+
+Investors have little choice but to rely on these sources, and usually they can do so safely.  Only after they’ve made an initial commitment and are considering increasing it do most investors gain access to a company’s “data room” and engage in extensive research.
+
+Sec ond, while the truth is often clear after the fact – and especially after a bankruptcy filing – the picture can be more nuanced beforehand.  After all, these are companies that have passed muster with underwriters, auditors, and investors.  If    the negatives surrounding the company were totally evident, either it wouldn’t have been able to obtain financing in the first place, or its  debt would be selling at bankruptcy prices by the time a holder catches on, making it too late to benefit from analysis.
+
+In investment research, conclusions usually aren’t compellingly obvious, but instead built up from inferences and probabilities.  It’s not a matter of one decisive discovery at an “aha moment” but
+
+rather the assembly of individual snippets of information into a “mosaic” that leans toward a conclusion based on what in law is called “a preponderance of the evidence.”
+
+In the case of First Brands, having taken a small position, we dug deeper early last summer.  The red flags listed above weren’t conclusive, especially given that we didn’t have the full picture that became clear through the bankruptcy filing.  Rather, these observations hinted at weaknesses and suggested problems.
+
+Importantly, Oaktree’s span and scale provided multiple points of contact with First Brands through a number of our strategies, helping us to assemble the necessary mosaic.  Further, a thorough job of credit research costs the same whether you’re considering investing $50 million or $500 million.  Greater scale allows an investor to spread the cost of in-depth research over larger holdings.  In investing, size has both pros and cons, but here we’re talking about one of the former.
+
+This is how analysis should be done, and in this case I’m glad to say it was.  Of course, I’m writing about our experience with First Brands because we reached the correct conclusion.  We don’t always do this as well as we did in this case, and I want to say right here that over our 47 years of investing in sub- investment grade debt, we’ve experienced plenty of defaults and even a few frauds.  That’s an inevitable part of life when your business consists of knowingly bearing credit risk for profit.  But these caveats don’t keep the First Brands case from proving a valuable opportunity for learning.
+
+What are the key takeaways?
+
+• Defaults are a normal part of life in sub-investment grade investing.
+
+• However, bullish conditions in good times usually lead to a lowering of lending standards, giving rise to elevated defaults and an occasional fraud.
+
+• It’s absolutely essential to always balance the desire to put money to work with the need for prudence.
+
+• Superior credit analysis is a matter of second-level thinking – thinking that’s different from that of others and better – based on a mosaic of information and inferences.
+
+• In detecting credit defects, the big payoff is for being early.  If you reach a negative conclusion at the same time as everyone else, the price you’ll get for your holdings is likely to be marked down to fully reflect the negatives – that’s market efficiency.
+
+• It’s important to note that whereas private credit has been the rage of late, all else being equal, it’s great to hold public debt that can be exited more readily if you sour on the credit.
+
+We’ve lived through generally good times in the last 16 years.  The coming period is likely to be more “interesting,” as errors that were made in those good times come to light.
+
+On the other hand, the frauds described above have probably chastened lenders and investors, putting them on alert.  Thus, they’re likely to incorporate a re-elevated level of prudence in their decisions in the coming months and perhaps years.  This would be a positive development.
+
+November 6, 2025

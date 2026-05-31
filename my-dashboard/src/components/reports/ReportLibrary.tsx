@@ -119,7 +119,7 @@ export default function ReportLibrary({ initialReports, userEmail, hideHeader, h
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAndSortedReports.map(report => (
-            <Link href={`/reports/${report.id}`} key={report.id} className="group flex flex-col p-5 bg-foreground/5 border border-foreground/10 rounded-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer h-full">
+            <Link prefetch={false} href={`/reports/${report.id}`} key={report.id} className="group flex flex-col p-5 bg-foreground/5 border border-foreground/10 rounded-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer h-full">
               <div className="flex justify-between items-start mb-3">
                 <span className="inline-block px-2.5 py-1 text-xs font-semibold bg-blue-500/10 text-blue-600 rounded-lg">
                   {report.symbol}

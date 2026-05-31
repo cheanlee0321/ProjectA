@@ -38,49 +38,25 @@ export default function HowardMarksMemosIndex() {
         </div>
 
         {/* Chapters Archive */}
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {tocData.map((yearGroup) => (
-            <section key={yearGroup.year} className="relative pl-8 md:pl-0">
-              {/* Year Marker */}
-              <div className="md:absolute md:left-0 md:top-0 md:w-32 md:text-right md:-ml-40 mb-6 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-bold text-amber-500/30 font-sans tracking-tighter">
+            <Link 
+              key={yearGroup.year} 
+              href={`/education/howard-marks-memos/year/${yearGroup.year}`}
+              className="group block h-full"
+            >
+              <div className="relative p-8 rounded-2xl bg-amber-950/20 border border-amber-900/20 backdrop-blur-sm transition-all duration-300 hover:bg-amber-900/40 hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-[0_10px_20px_-10px_rgba(245,158,11,0.2)] h-full flex flex-col justify-center items-center text-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-amber-500/80 font-sans tracking-tighter mb-3 group-hover:text-amber-400 transition-colors">
                   {yearGroup.year}
                 </h2>
+                <p className="text-amber-100/60 text-sm font-sans tracking-widest uppercase flex items-center gap-2">
+                  <svg className="w-4 h-4 text-amber-500/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  {yearGroup.memos.length} 篇備忘錄
+                </p>
               </div>
-              
-              {/* Timeline Line (Mobile) */}
-              <div className="absolute left-0 top-0 bottom-0 w-px bg-amber-900/30 md:hidden"></div>
-
-              {/* Memos List */}
-              <div className="grid grid-cols-1 gap-4">
-                {yearGroup.memos.map((memo, index) => (
-                  <Link 
-                    key={memo.id} 
-                    href={`/education/howard-marks-memos/${memo.id}`}
-                    className="group block"
-                  >
-                    <div className="relative p-6 rounded-xl bg-amber-950/20 border border-amber-900/20 backdrop-blur-sm transition-all duration-300 hover:bg-amber-900/30 hover:border-amber-500/30 hover:-translate-y-1">
-                      {/* Timeline dot (Mobile) */}
-                      <div className="absolute left-[calc(-2rem-1px)] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-amber-700/50 group-hover:bg-amber-400 md:hidden transition-colors"></div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-amber-500/50 text-xs font-sans tracking-wider mb-2 uppercase">Chapter {index + 1}</p>
-                          <h3 className="text-lg md:text-xl font-medium text-amber-100/90 group-hover:text-amber-400 transition-colors">
-                            {memo.title}
-                          </h3>
-                        </div>
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity text-amber-500">
-                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
+            </Link>
           ))}
         </div>
         
