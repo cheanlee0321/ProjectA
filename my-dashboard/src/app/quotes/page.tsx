@@ -101,6 +101,75 @@ export default function QuotesPage() {
           explanation: "技術革命的終極受惠者，往往是廣泛應用新技術來提升效率的整體經濟與傳統產業，而非早期的技術開發者。"
         }
       ]
+    },
+    {
+      title: "長期投資與複利",
+      description: "理解時間的價值，讓複利成為你投資道路上最強大的武器。",
+      quotes: [
+        {
+          author: "Charlie Munger",
+          quote: "複利的首要原則是：除非萬不得已，否則永遠不要打斷它。",
+          explanation: "頻繁交易與稅耗是複利的殺手，找到好公司後就應該堅定持有，讓時間成為你的朋友。"
+        },
+        {
+          author: "Warren Buffett",
+          quote: "如果你不打算持有一檔股票 10 年，那連 10 分鐘都不該持有。",
+          explanation: "拒絕短線投機，買股票就是買企業的一部分，眼光應放在企業長期的現金流創造能力。"
+        },
+        {
+          author: "Philip Fisher",
+          quote: "如果你當初買進優秀公司的理由依然存在，那麼賣出的時機幾乎是『永遠不要』。",
+          explanation: "成長股之父的名言，偉大的公司極其罕見，提早獲利了結往往會錯失十倍甚至百倍的回報。"
+        }
+      ]
+    },
+    {
+      title: "耐心與情緒控制",
+      description: "在市場的喧囂中保持冷靜，等待最佳的擊球時機。",
+      quotes: [
+        {
+          author: "Warren Buffett",
+          quote: "股市是一個將財富從沒耐心的人，轉移到有耐心的人的機制。",
+          explanation: "短期的市場是投票機，充滿情緒與雜訊；長期的市場則是體重計。耐心是獲取超額報酬的入場券。"
+        },
+        {
+          author: "Jesse Livermore",
+          quote: "能為我賺大錢的，從來不是我的思考，而是我的『坐功』。",
+          explanation: "傳奇投機客的體悟。看對行情的人很多，但能抱緊部位不被洗出場的人卻很少，利潤是「等」出來的。"
+        }
+      ]
+    },
+    {
+      title: "能力圈與自我認知",
+      description: "專注於自己真正了解的領域，避免盲目跨界帶來的災難。",
+      quotes: [
+        {
+          author: "Charlie Munger",
+          quote: "知道自己不知道什麼，比聰明更重要。",
+          explanation: "每個人都有盲區，最危險的投資是投資那些你以為你懂，但其實你不懂的東西。守住能力圈是保命的關鍵。"
+        },
+        {
+          author: "Warren Buffett",
+          quote: "風險來自於你不知道自己在做什麼。",
+          explanation: "股票本身的波動不是風險，真正的風險來自無知與盲目跟風。深入研究就是降低風險最好的方式。"
+        }
+      ]
+    },
+    {
+      title: "危機與機會",
+      description: "在極度悲觀中尋找價值，將市場恐慌化為財富重分配的契機。",
+      quotes: [
+        {
+          author: "Winston Churchill",
+          quote: "千萬不要浪費一場好危機。",
+          explanation: "每一次的股災與總體經濟危機，都是極佳的財富重分配機會，好的資產會在這個時候出現罕見的跳樓大拍賣。"
+        },
+        {
+          author: "Baron Rothschild",
+          quote: "當街頭喋血時，就是買進的時機，就算那也是你自己的血。",
+          explanation: "極端的市場恐慌通常伴隨著極致的悲觀，這往往是長期投資人進場承接優質資產的最佳時刻。"
+        }
+      ]
     }
   ];
 
