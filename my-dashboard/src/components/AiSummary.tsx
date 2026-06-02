@@ -5,7 +5,17 @@ import RegenerateButton from "./RegenerateButton";
 
 export default async function AiSummary() {
   const keys = await getUserApiKeys();
-  const { text: summary, date } = await getCachedMarketSummary(keys.gemini, keys.finmind);
+  const { text: summary, date, isLoading } = await getCachedMarketSummary(keys.gemini, keys.finmind);
+
+  if (isLoading) {
+    return (
+      <div className="bg-foreground/5 border border-foreground/10 rounded-3xl p-8 mb-12 relative z-10 backdrop-blur-md shadow-2xl flex flex-col items-center justify-center min-h-[300px] animate-pulse">
+        <div className="text-4xl mb-4 animate-bounce">✨</div>
+        <h2 className="text-2xl font-bold text-foreground mb-2">等待資料中...</h2>
+        <p className="text-foreground/60 text-sm">請稍候，正在取得所有最新資料以供 AI 分析</p>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-foreground/5 border border-foreground/10 rounded-3xl p-8 mb-12 relative z-10 backdrop-blur-md shadow-2xl">

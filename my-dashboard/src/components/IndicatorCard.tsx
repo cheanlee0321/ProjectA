@@ -44,6 +44,7 @@ export default function IndicatorCard({
       case 'yellow': return 'bg-warning shadow-[0_0_15px_rgba(255,215,64,0.6)]';
       case 'green': return 'bg-safe shadow-[0_0_15px_rgba(0,230,118,0.5)]';
       case 'neutral': return 'bg-gray-400 shadow-[0_0_15px_rgba(156,163,175,0.5)]';
+      case 'loading': return 'bg-blue-500 animate-pulse shadow-[0_0_15px_rgba(59,130,246,0.5)]';
       default: return 'bg-gray-500';
     }
   };
@@ -54,6 +55,7 @@ export default function IndicatorCard({
       case 'yellow': return 'text-warning';
       case 'green': return 'text-safe';
       case 'neutral': return 'text-gray-400';
+      case 'loading': return 'text-blue-500 animate-pulse';
       default: return 'text-gray-400';
     }
   };
@@ -64,6 +66,7 @@ export default function IndicatorCard({
       case 'yellow': return '#FFD740';
       case 'green': return '#00E676';
       case 'neutral': return '#9CA3AF';
+      case 'loading': return '#3B82F6';
       default: return '#9CA3AF';
     }
   };

@@ -6,6 +6,7 @@ import { getUserApiKeys } from "@/lib/keys";
 
 import AiSummary from "@/components/AiSummary";
 import { Suspense } from "react";
+import AutoRefresh from "@/components/AutoRefresh";
 
 export default async function DashboardPage() {
   const keys = await getUserApiKeys();
@@ -13,6 +14,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center py-10 px-4 sm:px-6 relative overflow-hidden">
+      <AutoRefresh shouldRefresh={data.isDataLoading} />
       
       {/* Background Decor */}
       <div className="absolute top-0 -left-1/4 w-3/4 h-[600px] bg-rose-500/10 rounded-full blur-[150px] -z-10 animate-pulse-slow"></div>
@@ -29,9 +31,6 @@ export default async function DashboardPage() {
           </p>
         </div>
         <div className="flex gap-4">
-          <Link href="/watchlist" className="px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 bg-foreground/5 hover:bg-foreground/10 text-foreground border border-foreground/10 flex items-center">
-            ⭐ 追蹤清單
-          </Link>
           <Link href="/" className="px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-rose-500/25 bg-rose-500/10 text-rose-400 hover:bg-rose-500/20 border border-rose-500/20 flex items-center">
             ← 返回首頁
           </Link>

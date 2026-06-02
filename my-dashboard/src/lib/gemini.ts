@@ -147,8 +147,15 @@ export async function getCachedMarketSummary(geminiApiKey: string, finmindToken:
   ) {
     return {
       text: globalCache.geminiSummaryCache[cacheKey].text,
-      date: globalCache.geminiSummaryCache[cacheKey].date
+      date: globalCache.geminiSummaryCache[cacheKey].date,
+      isLoading: false
     };
+  }
+
+  // Check if data is fully loaded before generating summary
+  const data = await fetchMarketData(finmindToken);
+  if (data.isDataLoading) {
+    return { text: "等待資料中...", date: "", isLoading: true };
   }
 
   // Fallback to unstable_cache (for production / Vercel Data Cache)
@@ -163,6 +170,6 @@ export async function getCachedMarketSummary(geminiApiKey: string, finmindToken:
     };
   }
 
-  return result;
+  return { ...result, isLoading: false };
 }
 

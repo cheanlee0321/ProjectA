@@ -5,12 +5,13 @@ const yahooFinance = new YahooFinance();
 
 export interface IndicatorData {
   value: number | string;
-  status: 'red' | 'yellow' | 'green' | 'loading';
+  status: 'red' | 'yellow' | 'green' | 'loading' | 'neutral';
   text: string;
   history?: { date: string; value: number }[];
 }
 
 export interface MarketData {
+  isDataLoading: boolean;
   // 市場估值與結構
   cape: IndicatorData;
   breadth: IndicatorData;
@@ -57,46 +58,84 @@ export interface MarketData {
   twii: { history: { date: string; value: number }[] };
 }
 
-const globalFred = globalThis as unknown as { fredCache?: Record<string, any> };
+const globalFred = globalThis as unknown as { 
+  fredCache?: Record<string, {data: any, timestamp: number}>,
+  fredQueue?: { seriesId: string, units: string, resolve: (val: any) => void }[],
+  isFredProcessing?: boolean
+};
 if (!globalFred.fredCache) globalFred.fredCache = {};
+if (!globalFred.fredQueue) globalFred.fredQueue = [];
+if (typeof globalFred.isFredProcessing === 'undefined') globalFred.isFredProcessing = false;
 
 const FRED_API_KEY = process.env.FRED_API_KEY || '';
-async function fetchFredSeries(seriesId: string, units: string = 'lin', retries: number = 5, delay: number = 1000): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
-  const cacheKey = `${seriesId}-${units}`;
-  if (globalFred.fredCache![cacheKey]) {
-    return globalFred.fredCache![cacheKey];
-  }
+
+async function doFetchFredSeries(seriesId: string, units: string = 'lin', retries: number = 5, delay: number = 1000): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
-    // 不再限制過去十年，抓取 FRED 提供的所有歷史資料
     const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&units=${units}`, { next: { revalidate: 86400 } });
     
     if (res.status === 429 && retries > 0) {
       console.warn(`FRED API 429 Too Many Requests for ${seriesId}. Retrying in ${delay}ms...`);
       await new Promise(r => setTimeout(r, delay));
-      return fetchFredSeries(seriesId, units, retries - 1, delay * 2);
+      return doFetchFredSeries(seriesId, units, retries - 1, delay * 2);
     }
 
     const contentType = res.headers.get('content-type');
     if (!res.ok || (contentType && contentType.includes('text/html'))) {
-      const errText = await res.text();
-      console.error(`FRED API error for ${seriesId}: ${res.status} ${res.statusText}`, errText.slice(0, 200));
       return { current: null, history: [], isError: true };
     }
     const data = await res.json();
     const history = [];
     if (data.observations && data.observations.length > 0) {
       const current = parseFloat(data.observations[0].value);
-      // FRED 預設是降序(desc)，我們需要升序給圖表繪製
       for(let obs of [...data.observations].reverse()) {
         const val = parseFloat(obs.value);
         if(!isNaN(val)) history.push({ date: obs.date, value: val });
       }
-      const result = { current: isNaN(current) ? null : current, history, isError: false };
-      globalFred.fredCache![cacheKey] = result;
-      return result;
+      return { current: isNaN(current) ? null : current, history, isError: false };
     }
   } catch (e) { console.error(`FRED error ${seriesId}:`, e); }
   return { current: null, history: [], isError: true };
+}
+
+async function processFredQueue() {
+  if (globalFred.isFredProcessing) return;
+  globalFred.isFredProcessing = true;
+  
+  while (globalFred.fredQueue!.length > 0) {
+    const task = globalFred.fredQueue!.shift();
+    if (task) {
+      const res = await doFetchFredSeries(task.seriesId, task.units);
+      const cacheKey = `${task.seriesId}-${task.units}`;
+      globalFred.fredCache![cacheKey] = { data: res, timestamp: Date.now() };
+      task.resolve(res);
+      
+      if (globalFred.fredQueue!.length > 0) {
+        await new Promise(r => setTimeout(r, 3000));
+      }
+    }
+  }
+  globalFred.isFredProcessing = false;
+}
+
+async function fetchFredSeries(seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> {
+  const cacheKey = `${seriesId}-${units}`;
+  const now = Date.now();
+  const cached = globalFred.fredCache![cacheKey];
+  
+  if (cached && (now - cached.timestamp < 86400000)) {
+    return cached.data;
+  }
+  
+  if (!globalFred.fredQueue!.some(q => q.seriesId === seriesId && q.units === units)) {
+    globalFred.fredQueue!.push({ 
+      seriesId, 
+      units, 
+      resolve: () => {} 
+    });
+    processFredQueue().catch(console.error);
+  }
+  
+  return { current: null, history: [], isError: false, isLoading: true };
 }
 
 const fetchYahooChart = unstable_cache(
@@ -504,7 +543,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
     let soxText = '半導體多頭';
     let soxHistory: {date: string, value: number}[] = [];
     let soxCurrent: number | null = null;
-    if (!soxIndex.isError && soxIndex.history.length > 52) {
+    if (soxIndex.history && soxIndex.history.length > 52) {
       for (let i = 52; i < soxIndex.history.length; i++) {
         const val = ((soxIndex.history[i].value - soxIndex.history[i-52].value) / soxIndex.history[i-52].value) * 100;
         soxHistory.push({ date: soxIndex.history[i].date, value: val });
@@ -643,49 +682,59 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
        else if (drcc.current > 3) { drccStatus = 'yellow'; drccText = '違約升溫'; }
     }
 
+    const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, margin, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro];
+    const isDataLoading = fredIndicators.some(x => x.isLoading);
+
+    function formatFred(result: any, fallbackValue: string, fallbackStatus: string, fallbackText: string): { value: string, status: 'red' | 'yellow' | 'green' | 'loading' | 'neutral', text: string } {
+      if (result.isLoading) return { value: '取得資料中', status: 'loading', text: '取得資料中' };
+      if (result.isError) return { value: 'N/A', status: 'red', text: 'FRED API Error' };
+      return { value: fallbackValue, status: fallbackStatus as 'red' | 'yellow' | 'green' | 'loading' | 'neutral', text: fallbackText };
+    }
+
     return {
+      isDataLoading,
       cape: { value: cape.current ?? 'N/A', status: (cape.current ?? 0) > 35 ? 'red' : ((cape.current ?? 0) > 25 ? 'yellow' : 'green'), text: (cape.current ?? 0) > 35 ? '嚴重透支未來' : '估值合理', history: cape.history },
       breadth: { value: breadthNumber > 0 ? `+${breadthNumber.toFixed(2)}%` : `${breadthNumber.toFixed(2)}%`, status: bStatus, text: bText, history: breadthHistory },
-      buffett: { value: (wilshire.isError || gdp.isError) ? 'N/A' : (buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A'), status: buffettStatus, text: buffettText, history: buffettHistory },
-      sahm: { value: sahm.isError ? 'N/A' : (sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A'), status: sahm.isError ? 'red' : ((sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green')), text: sahm.isError ? 'FRED API Error' : ((sahm.current ?? 0) > 0.5 ? '實質衰退' : ((sahm.current ?? 0) > 0.3 ? '衰退疑慮' : '無衰退跡象')), history: sahm.history },
+      buffett: { ...formatFred(wilshire.isError || gdp.isError ? {isError:true} : {isLoading: wilshire.isLoading || gdp.isLoading}, buffettRatio ? buffettRatio.toFixed(1)+'%' : 'N/A', buffettStatus, buffettText), history: buffettHistory },
+      sahm: { ...formatFred(sahm, sahm.current ? sahm.current.toFixed(2)+'%' : 'N/A', (sahm.current ?? 0) > 0.5 ? 'red' : ((sahm.current ?? 0) > 0.3 ? 'yellow' : 'green'), (sahm.current ?? 0) > 0.5 ? '實質衰退' : ((sahm.current ?? 0) > 0.3 ? '衰退疑慮' : '無衰退跡象')), history: sahm.history },
       copperGold: { value: cgNumber, status: cgStatus, text: cgText, history: cgHistory },
-      sloos: { value: sloos.isError ? 'N/A' : (sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A'), status: sloos.isError ? 'red' : ((sloos.current ?? 0) > 40 ? 'red' : ((sloos.current ?? 0) > 20 ? 'yellow' : 'green')), text: sloos.isError ? 'FRED API Error' : ((sloos.current ?? 0) > 40 ? '流動性枯竭' : '資金寬鬆'), history: sloos.history },
-      yieldCurve: { value: yieldCurve.isError ? 'N/A' : (yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A'), status: yieldCurve.isError ? 'red' : ((yieldCurve.current ?? 0) < 0 ? 'red' : ((yieldCurve.current ?? 0) < 0.5 ? 'yellow' : 'green')), text: yieldCurve.isError ? 'FRED API Error' : ((yieldCurve.current ?? 0) < 0 ? '曲線倒掛' : ((yieldCurve.current ?? 0) < 0.5 ? '剛解除倒掛' : '正常')), history: yieldCurve.history },
-      m2: { value: m2.isError ? 'N/A' : m2YoyNumber.toFixed(2)+'%', status: m2Status, text: m2Text, history: m2History },
+      sloos: { ...formatFred(sloos, sloos.current ? sloos.current.toFixed(1)+'%' : 'N/A', (sloos.current ?? 0) > 40 ? 'red' : ((sloos.current ?? 0) > 20 ? 'yellow' : 'green'), (sloos.current ?? 0) > 40 ? '流動性枯竭' : '資金寬鬆'), history: sloos.history },
+      yieldCurve: { ...formatFred(yieldCurve, yieldCurve.current ? yieldCurve.current.toFixed(2)+'%' : 'N/A', (yieldCurve.current ?? 0) < 0 ? 'red' : ((yieldCurve.current ?? 0) < 0.5 ? 'yellow' : 'green'), (yieldCurve.current ?? 0) < 0 ? '曲線倒掛' : ((yieldCurve.current ?? 0) < 0.5 ? '剛解除倒掛' : '正常')), history: yieldCurve.history },
+      m2: { ...formatFred(m2, m2YoyNumber.toFixed(2)+'%', m2Status, m2Text), history: m2History },
       dxy: { value: dxyValue.toFixed(2), status: dxyStatus, text: dxyText, history: dxy.history },
       vix: { value: vix.current ? vix.current.toFixed(2) : 'N/A', status: (vix.current ?? 0) > 30 ? 'red' : ((vix.current ?? 0) > 20 ? 'yellow' : 'green'), text: (vix.current ?? 0) > 30 ? '恐慌拋售' : ((vix.current ?? 0) > 20 ? '波動升溫' : '平穩安全'), history: vix.history },
       skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: (skew.current ?? 0) > 140 ? 'red' : ((skew.current ?? 0) > 130 ? 'yellow' : 'green'), text: (skew.current ?? 0) > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
-      creditSpreads: { value: spread.isError ? 'N/A' : (spread.current ? spread.current.toFixed(2)+'%' : 'N/A'), status: spread.isError ? 'red' : ((spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green')), text: spread.isError ? 'FRED API Error' : ((spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕'), history: spread.history },
+      creditSpreads: { ...formatFred(spread, spread.current ? spread.current.toFixed(2)+'%' : 'N/A', (spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green'), (spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕'), history: spread.history },
       fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
-      marginDebt: { value: margin.isError ? 'N/A' : (margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A'), status: margin.isError ? 'red' : ((margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green')), text: margin.isError ? 'FRED API Error' : ((margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
-      nfci: { value: nfci.isError ? 'N/A' : nfciValue.toFixed(2), status: nfciStatus, text: nfciText, history: nfci.history },
+      marginDebt: { ...formatFred(margin, margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
+      nfci: { ...formatFred(nfci, nfciValue.toFixed(2), nfciStatus, nfciText), history: nfci.history },
       taiwanBusinessIndicator: { value: 'N/A', status: 'loading', text: '', history: [] },
       taiwanForeignBuy: { value: twForeignBuy.isError ? 'N/A' : twFBValueStr, status: twFBStatus, text: twForeignBuy.isError ? 'API Error' : twFBText, history: twForeignBuy.history },
       taiwanMargin: { value: twMValueStr, status: twMStatus, text: twMText, history: twMargin.history },
       taiwanM1BM2: { value: m1bm2.isError ? 'N/A' : (m1bm2.current ? m1bm2.current.toFixed(2)+'%' : 'N/A'), status: m1bm2Status as any, text: m1bm2Text, history: m1bm2.history },
-      taiwanExport: { value: twExport.isError ? 'N/A' : (twExport.current ? twExport.current.toFixed(2)+'%' : 'N/A'), status: twExportStatus as any, text: twExportText, history: twExport.history },
+      taiwanExport: { ...formatFred(twExport, twExport.current ? twExport.current.toFixed(2)+'%' : 'N/A', twExportStatus as any, twExportText), history: twExport.history },
       usdTwd: { value: usdTwd.current ? usdTwd.current.toFixed(2) : 'N/A', status: usdTwdStatus as any, text: usdTwdText, history: usdTwd.history },
       sox: { value: soxCurrent === null ? 'N/A' : soxCurrent.toFixed(2)+'%', status: soxStatus, text: soxCurrent === null ? 'Error' : soxText, history: soxHistory },
-      ismProxy: { value: ismCurrent === null ? 'N/A' : ismCurrent.toFixed(2)+'%', status: ismStatus, text: indpro.isError ? 'FRED API Error' : ismText, history: indpro.history },
+      ismProxy: { ...formatFred(indpro, ismCurrent === null ? 'N/A' : ismCurrent.toFixed(2)+'%', ismStatus, ismText), history: indpro.history },
       cryptoFng: { value: cryptoFng.isError ? 'N/A' : (cryptoFng.current ? cryptoFng.current.toString() : 'N/A'), status: cryptoFngStatus as any, text: cryptoFngText, history: cryptoFng.history },
       bitcoin: { value: btcValueStr, status: btcStatus as any, text: btcText, history: btc.history },
-      walcl: { value: walcl.isError ? 'N/A' : walclValueStr, status: walclStatus, text: walcl.isError ? 'FRED API Error' : walclText, history: walcl.history.map(h => ({date: h.date, value: h.value / 1000000})) },
-      rrpontsyd: { value: rrp.isError ? 'N/A' : (rrp.current ? `$${rrp.current.toFixed(0)}B` : 'N/A'), status: rrpStatus, text: rrp.isError ? 'FRED API Error' : rrpText, history: rrp.history },
-      fedfunds: { value: fedfunds.isError ? 'N/A' : (fedfunds.current ? fedfunds.current.toFixed(2)+'%' : 'N/A'), status: fedStatus, text: fedfunds.isError ? 'FRED API Error' : fedText, history: fedfunds.history },
-      icsa: { value: icsa.isError ? 'N/A' : icsaValueStr, status: icsaStatus, text: icsa.isError ? 'FRED API Error' : icsaText, history: icsa.history.map(h => ({date: h.date, value: h.value / 1000})) },
-      jtsjol: { value: jtsjol.isError ? 'N/A' : jtsjolValueStr, status: jtsjolStatus, text: jtsjol.isError ? 'FRED API Error' : jtsjolText, history: jtsjol.history.map(h => ({date: h.date, value: h.value / 1000})) },
-      houst: { value: houst.isError ? 'N/A' : houstValueStr, status: houstStatus, text: houst.isError ? 'FRED API Error' : houstText, history: houst.history.map(h => ({date: h.date, value: h.value / 1000})) },
-      mortgage30us: { value: mort.isError ? 'N/A' : (mort.current ? mort.current.toFixed(2)+'%' : 'N/A'), status: mortStatus, text: mort.isError ? 'FRED API Error' : mortText, history: mort.history },
-      t10yie: { value: t10yie.isError ? 'N/A' : (t10yie.current ? t10yie.current.toFixed(2)+'%' : 'N/A'), status: t10Status, text: t10yie.isError ? 'FRED API Error' : t10Text, history: t10yie.history },
-      pcepilfe: { value: pce.isError ? 'N/A' : (pce.current ? pce.current.toFixed(2)+'%' : 'N/A'), status: pceStatus, text: pce.isError ? 'FRED API Error' : pceText, history: pce.history },
-      drcc: { value: drcc.isError ? 'N/A' : (drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A'), status: drccStatus, text: drcc.isError ? 'FRED API Error' : drccText, history: drcc.history },
+      walcl: { ...formatFred(walcl, walclValueStr, walclStatus, walclText), history: walcl.history.map(h => ({date: h.date, value: h.value / 1000000})) },
+      rrpontsyd: { ...formatFred(rrp, rrp.current ? `$${rrp.current.toFixed(0)}B` : 'N/A', rrpStatus, rrpText), history: rrp.history },
+      fedfunds: { ...formatFred(fedfunds, fedfunds.current ? fedfunds.current.toFixed(2)+'%' : 'N/A', fedStatus, fedText), history: fedfunds.history },
+      icsa: { ...formatFred(icsa, icsaValueStr, icsaStatus, icsaText), history: icsa.history.map(h => ({date: h.date, value: h.value / 1000})) },
+      jtsjol: { ...formatFred(jtsjol, jtsjolValueStr, jtsjolStatus, jtsjolText), history: jtsjol.history.map(h => ({date: h.date, value: h.value / 1000})) },
+      houst: { ...formatFred(houst, houstValueStr, houstStatus, houstText), history: houst.history.map(h => ({date: h.date, value: h.value / 1000})) },
+      mortgage30us: { ...formatFred(mort, mort.current ? mort.current.toFixed(2)+'%' : 'N/A', mortStatus, mortText), history: mort.history },
+      t10yie: { ...formatFred(t10yie, t10yie.current ? t10yie.current.toFixed(2)+'%' : 'N/A', t10Status, t10Text), history: t10yie.history },
+      pcepilfe: { ...formatFred(pce, pce.current ? pce.current.toFixed(2)+'%' : 'N/A', pceStatus, pceText), history: pce.history },
+      drcc: { ...formatFred(drcc, drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A', drccStatus, drccText), history: drcc.history },
       spy: { history: spy.history },
       twii: { history: twii.history }
     };
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, spy: { history: [] }, twii: { history: [] } };
+    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, spy: { history: [] }, twii: { history: [] } };
   }
 });
 
