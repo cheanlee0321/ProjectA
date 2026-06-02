@@ -13,6 +13,7 @@ interface IndicatorCardProps {
   status: LightStatus;
   history?: { date: string; value: number }[];
   spyHistory?: { date: string; value: number }[];
+  twiiHistory?: { date: string; value: number }[];
   criteria?: {
     red: string;
     yellow: string;
@@ -28,12 +29,14 @@ export default function IndicatorCard({
   status,
   history,
   spyHistory,
+  twiiHistory,
   criteria
 }: IndicatorCardProps) {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [timeRange, setTimeRange] = useState<'1Y' | '3Y' | '5Y' | '10Y' | '20Y' | '50Y' | 'MAX'>('MAX');
   const [showSpy, setShowSpy] = useState(false);
+  const [showTwii, setShowTwii] = useState(false);
 
   const getStatusColor = () => {
     switch (status) {
@@ -87,16 +90,17 @@ export default function IndicatorCard({
 
   const mergedData: any[] = useMemo(() => {
     if (!filteredHistory || filteredHistory.length === 0) return [];
-    if (!showSpy || !spyHistory) return filteredHistory.map(h => ({ ...h, indicatorValue: h.value }));
+    if (!showSpy && !showTwii) return filteredHistory.map(h => ({ ...h, indicatorValue: h.value }));
     
     const spyMap = new Map();
-    spyHistory.forEach(s => spyMap.set(s.date, s.value));
+    if (spyHistory) spyHistory.forEach(s => spyMap.set(s.date, s.value));
+    const twiiMap = new Map();
+    if (twiiHistory) twiiHistory.forEach(s => twiiMap.set(s.date, s.value));
     
     return filteredHistory.map(h => {
+      const hTime = new Date(h.date).getTime();
       let sv = spyMap.get(h.date);
-      if (sv === undefined) {
-         // find closest within 7 days
-         const hTime = new Date(h.date).getTime();
+      if (showSpy && sv === undefined && spyHistory) {
          let closestDay = null;
          let minDiff = Infinity;
          for (const [sDate, sVal] of spyMap.entries()) {
@@ -108,13 +112,29 @@ export default function IndicatorCard({
          }
          sv = closestDay !== null ? closestDay : null;
       }
+      
+      let tv = twiiMap.get(h.date);
+      if (showTwii && tv === undefined && twiiHistory) {
+         let closestDay = null;
+         let minDiff = Infinity;
+         for (const [sDate, sVal] of twiiMap.entries()) {
+           const diff = Math.abs(new Date(sDate).getTime() - hTime);
+           if (diff < minDiff && diff <= 7 * 24 * 60 * 60 * 1000) {
+              minDiff = diff;
+              closestDay = sVal;
+           }
+         }
+         tv = closestDay !== null ? closestDay : null;
+      }
+
       return {
         date: h.date,
         indicatorValue: h.value,
-        spyValue: sv
+        spyValue: showSpy ? sv : undefined,
+        twiiValue: showTwii ? tv : undefined
       };
     });
-  }, [filteredHistory, showSpy, spyHistory]);
+  }, [filteredHistory, showSpy, spyHistory, showTwii, twiiHistory]);
 
   const modalMinVal = mergedData.length > 0 ? Math.min(...mergedData.map(d => d.indicatorValue)) : 0;
   const modalMaxVal = mergedData.length > 0 ? Math.max(...mergedData.map(d => d.indicatorValue)) : 0;
@@ -123,6 +143,10 @@ export default function IndicatorCard({
   const spyMinVal = (showSpy && mergedData.length > 0) ? Math.min(...mergedData.map(d => (d as any).spyValue || Infinity)) : 0;
   const spyMaxVal = (showSpy && mergedData.length > 0) ? Math.max(...mergedData.map(d => (d as any).spyValue || -Infinity)) : 0;
   const spyPadding = (spyMaxVal - spyMinVal) * 0.1;
+
+  const twiiMinVal = (showTwii && mergedData.length > 0) ? Math.min(...mergedData.map(d => (d as any).twiiValue || Infinity)) : 0;
+  const twiiMaxVal = (showTwii && mergedData.length > 0) ? Math.max(...mergedData.map(d => (d as any).twiiValue || -Infinity)) : 0;
+  const twiiPadding = (twiiMaxVal - twiiMinVal) * 0.1;
 
   return (
     <>
@@ -260,6 +284,15 @@ export default function IndicatorCard({
                   疊加 S&P 500 (SPY) 對比
                 </button>
               )}
+              {twiiHistory && twiiHistory.length > 0 && (
+                <button
+                  onClick={() => setShowTwii(!showTwii)}
+                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold transition-all border ${showTwii ? 'border-sky-500/50 bg-sky-500/10 text-sky-500 shadow-lg shadow-sky-500/20' : 'border-foreground/10 bg-foreground/5 text-foreground/60 hover:bg-foreground/10'}`}
+                >
+                  <div className={`w-3 h-3 rounded-full ${showTwii ? 'bg-sky-500' : 'bg-foreground/30'}`}></div>
+                  疊加台灣加權指數
+                </button>
+              )}
             </div>
 
             {/* Modal Chart */}
@@ -285,12 +318,23 @@ export default function IndicatorCard({
                     />
                     {showSpy && (
                       <YAxis 
-                        yAxisId="right" 
+                        yAxisId="rightSpy" 
                         orientation="right" 
                         domain={[spyMinVal - spyPadding, spyMaxVal + spyPadding]} 
                         stroke="rgba(245,158,11,0.5)" 
                         tick={{ fill: 'rgba(245,158,11,0.8)', fontSize: 12 }}
                         tickFormatter={(val) => `$${val.toFixed(0)}`}
+                        width={60}
+                      />
+                    )}
+                    {showTwii && (
+                      <YAxis 
+                        yAxisId="rightTwii" 
+                        orientation="right" 
+                        domain={[twiiMinVal - twiiPadding, twiiMaxVal + twiiPadding]} 
+                        stroke="rgba(14,165,233,0.5)" 
+                        tick={{ fill: 'rgba(14,165,233,0.8)', fontSize: 12 }}
+                        tickFormatter={(val) => `${val.toFixed(0)}`}
                         width={60}
                       />
                     )}
@@ -323,7 +367,7 @@ export default function IndicatorCard({
                     />
                     {showSpy && (
                       <Line 
-                        yAxisId="right"
+                        yAxisId="rightSpy"
                         name="S&P 500 (SPY)"
                         type="monotone" 
                         dataKey="spyValue" 
@@ -332,6 +376,23 @@ export default function IndicatorCard({
                         strokeDasharray="5 5"
                         dot={false}
                         activeDot={{ r: 4, fill: '#F59E0B', stroke: '#fff', strokeWidth: 2 }}
+                        connectNulls={true}
+                        isAnimationActive={true}
+                        animationDuration={500}
+                        animationEasing="ease-out"
+                      />
+                    )}
+                    {showTwii && (
+                      <Line 
+                        yAxisId="rightTwii"
+                        name="台灣加權指數"
+                        type="monotone" 
+                        dataKey="twiiValue" 
+                        stroke="#0EA5E9" 
+                        strokeWidth={2} 
+                        strokeDasharray="5 5"
+                        dot={false}
+                        activeDot={{ r: 4, fill: '#0EA5E9', stroke: '#fff', strokeWidth: 2 }}
                         connectNulls={true}
                         isAnimationActive={true}
                         animationDuration={500}
