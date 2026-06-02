@@ -1,6 +1,9 @@
 import YahooFinance from 'yahoo-finance2';
 import { unstable_cache } from 'next/cache';
 import { cache } from 'react';
+import fs from 'fs';
+import path from 'path';
+import * as xlsx from 'xlsx';
 const yahooFinance = new YahooFinance();
 
 export interface IndicatorData {
@@ -54,6 +57,8 @@ export interface MarketData {
   ismProxy: IndicatorData; // 美國工業生產 YoY (ISM 替代)
   cryptoFng: IndicatorData;
   bitcoin: IndicatorData;
+  finraToCurrency: IndicatorData;
+  spyToCurrency: { history: { date: string; value: number }[] };
   spy: { history: { date: string; value: number }[] };
   twii: { history: { date: string; value: number }[] };
 }
@@ -209,6 +214,39 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
   return { current: null, history: [] };
 }
 
+async function fetchTrueFinraMargin(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> {
+  try {
+    const filePath = path.join(process.cwd(), '../Data/margin-statistics.xlsx');
+    if (!fs.existsSync(filePath)) {
+      console.warn('Local FINRA margin data not found:', filePath);
+      return { current: null, history: [], isError: true };
+    }
+    const fileBuffer = fs.readFileSync(filePath);
+    const workbook = xlsx.read(fileBuffer, { type: 'buffer' });
+    const sheetName = workbook.SheetNames[0];
+    const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
+    
+    const history = [];
+    for (let i = 1; i < data.length; i++) {
+      const row = data[i] as any[];
+      if (row && row.length >= 2) {
+        const dateStr = row[0];
+        const val = parseFloat(row[1]);
+        if (dateStr && typeof dateStr === 'string' && !isNaN(val)) {
+          history.push({ date: `${dateStr}-01`, value: val });
+        }
+      }
+    }
+    
+    history.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const current = history.length > 0 ? history[history.length - 1].value : null;
+    return { current, history, isError: false };
+  } catch(e) {
+    console.error('Local FINRA Margin error:', e);
+    return { current: null, history: [], isError: true };
+  }
+}
+
 async function fetchCryptoFearGreed(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
     const res = await fetch('https://api.alternative.me/fng/?limit=0', { next: { revalidate: 86400 } });
@@ -332,7 +370,7 @@ async function fetchTaiwanM1BM2(): Promise<{current: number | null, history: {da
 
 export const fetchMarketData = cache(async (finmindToken: string): Promise<MarketData> => {
   try {
-    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin, m1bm2, twExport, usdTwd, cryptoFng, btc, twii, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, twForeignBuy, soxIndex, indpro] = await Promise.all([
+    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin, m1bm2, twExport, usdTwd, cryptoFng, btc, twii, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, twForeignBuy, soxIndex, indpro, currcir] = await Promise.all([
       fetchYahooChart('^VIX', '1wk'),
       fetchYahooChart('^SKEW', '1wk'),
       fetchYahooChart('SPY', '1wk'),
@@ -348,7 +386,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       fetchFredSeries('GDP'),
       fetchCapeRatio(),
       fetchFearAndGreed(),
-      fetchFredSeries('BOGZ1FL663067003Q'),
+      fetchTrueFinraMargin(),
       fetchFredSeries('M2SL'),
       fetchFredSeries('NFCI'),
       fetchTaiwanMargin(finmindToken),
@@ -370,7 +408,8 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       fetchFredSeries('DRCCLACBS'),
       fetchTaiwanForeignBuy(finmindToken),
       fetchYahooChart('^SOX', '1wk'),
-      fetchFredSeries('INDPRO', 'pc1')
+      fetchFredSeries('INDPRO', 'pc1'),
+      fetchFredSeries('MBCURRCIR')
     ]);
 
     // 計算市場廣度歷史 (RSP YoY - SPY YoY 績效差)
@@ -682,8 +721,58 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
        else if (drcc.current > 3) { drccStatus = 'yellow'; drccText = '違約升溫'; }
     }
 
-    const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, margin, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro];
-    const isDataLoading = fredIndicators.some(x => x.isLoading);
+    const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro, currcir];
+    const isDataLoading = fredIndicators.some(x => x.isLoading) || margin.isLoading;
+
+    // FINRA / Currency in Circulation
+    let finraToCurrencyStatus: 'red'|'yellow'|'green' = 'green';
+    let finraToCurrencyText = '常規水準';
+    let finraToCurrencyHistory: {date: string, value: number}[] = [];
+    let finraToCurrencyValueStr = 'N/A';
+    if (!margin.isError && !currcir.isError) {
+       let lastMarginVal = null;
+       let mIndex = 0;
+       for (const c of currcir.history) {
+          while (mIndex < margin.history.length && margin.history[mIndex].date <= c.date) {
+            lastMarginVal = margin.history[mIndex].value;
+            mIndex++;
+          }
+          if (lastMarginVal !== null && c.value > 0) {
+             finraToCurrencyHistory.push({
+               date: c.date,
+               value: parseFloat((lastMarginVal / (c.value * 1000)).toFixed(4))
+             });
+          }
+       }
+       if (finraToCurrencyHistory.length > 0) {
+         const currentRatio = finraToCurrencyHistory[finraToCurrencyHistory.length - 1].value;
+         finraToCurrencyValueStr = currentRatio.toFixed(4);
+         if (currentRatio > 0.40) { finraToCurrencyStatus = 'red'; finraToCurrencyText = '極限槓桿 (風險高)'; }
+         else if (currentRatio > 0.30) { finraToCurrencyStatus = 'yellow'; finraToCurrencyText = '槓桿偏高'; }
+         else { finraToCurrencyStatus = 'green'; finraToCurrencyText = '常規水準'; }
+       }
+    }
+
+    // SP500 / Currency in Circulation
+    let spyToCurrencyHistory: {date: string, value: number}[] = [];
+    if (!currcir.isError && spy.history.length > 0) {
+       let lastSpyVal = null;
+       let sIndex = 0;
+       for (const c of currcir.history) {
+          while (sIndex < spy.history.length && spy.history[sIndex].date <= c.date) {
+            lastSpyVal = spy.history[sIndex].value;
+            sIndex++;
+          }
+          if (lastSpyVal !== null && c.value > 0) {
+             spyToCurrencyHistory.push({
+               date: c.date,
+               // currcir is in Billions. We can just do SPY / (currcir/1000) for a readable scale
+               // or simply SPY / currcir. 
+               value: parseFloat((lastSpyVal / c.value).toFixed(4))
+             });
+          }
+       }
+    }
 
     function formatFred(result: any, fallbackValue: string, fallbackStatus: string, fallbackText: string): { value: string, status: 'red' | 'yellow' | 'green' | 'loading' | 'neutral', text: string } {
       if (result.isLoading) return { value: '取得資料中', status: 'loading', text: '取得資料中' };
@@ -706,7 +795,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: (skew.current ?? 0) > 140 ? 'red' : ((skew.current ?? 0) > 130 ? 'yellow' : 'green'), text: (skew.current ?? 0) > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
       creditSpreads: { ...formatFred(spread, spread.current ? spread.current.toFixed(2)+'%' : 'N/A', (spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green'), (spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕'), history: spread.history },
       fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
-      marginDebt: { ...formatFred(margin, margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', (margin.current ?? 0)/1000 > 800 ? 'red' : ((margin.current ?? 0)/1000 > 650 ? 'yellow' : 'green'), (margin.current ?? 0)/1000 > 800 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
+      marginDebt: { ...formatFred(margin.isError ? {isError:true} : {isLoading: margin.isLoading}, margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', (margin.current ?? 0)/1000 > 1000 ? 'red' : ((margin.current ?? 0)/1000 > 800 ? 'yellow' : 'green'), (margin.current ?? 0)/1000 > 1000 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { ...formatFred(nfci, nfciValue.toFixed(2), nfciStatus, nfciText), history: nfci.history },
       taiwanBusinessIndicator: { value: 'N/A', status: 'loading', text: '', history: [] },
       taiwanForeignBuy: { value: twForeignBuy.isError ? 'N/A' : twFBValueStr, status: twFBStatus, text: twForeignBuy.isError ? 'API Error' : twFBText, history: twForeignBuy.history },
@@ -728,13 +817,15 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       t10yie: { ...formatFred(t10yie, t10yie.current ? t10yie.current.toFixed(2)+'%' : 'N/A', t10Status, t10Text), history: t10yie.history },
       pcepilfe: { ...formatFred(pce, pce.current ? pce.current.toFixed(2)+'%' : 'N/A', pceStatus, pceText), history: pce.history },
       drcc: { ...formatFred(drcc, drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A', drccStatus, drccText), history: drcc.history },
+      finraToCurrency: { ...formatFred(margin.isError || currcir.isError ? {isError:true} : {isLoading: margin.isLoading || currcir.isLoading}, finraToCurrencyValueStr, finraToCurrencyStatus, finraToCurrencyText), history: finraToCurrencyHistory },
+      spyToCurrency: { history: spyToCurrencyHistory },
       spy: { history: spy.history },
       twii: { history: twii.history }
     };
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, spy: { history: [] }, twii: { history: [] } };
+    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, finraToCurrency: errObj, spyToCurrency: { history: [] }, spy: { history: [] }, twii: { history: [] } };
   }
 });
 

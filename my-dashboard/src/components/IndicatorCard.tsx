@@ -13,6 +13,7 @@ interface IndicatorCardProps {
   status: LightStatus;
   history?: { date: string; value: number }[];
   spyHistory?: { date: string; value: number }[];
+  spyLabel?: string;
   twiiHistory?: { date: string; value: number }[];
   criteria?: {
     red: string;
@@ -29,6 +30,7 @@ export default function IndicatorCard({
   status,
   history,
   spyHistory,
+  spyLabel,
   twiiHistory,
   criteria
 }: IndicatorCardProps) {
@@ -284,7 +286,7 @@ export default function IndicatorCard({
                   className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold transition-all border ${showSpy ? 'border-amber-500/50 bg-amber-500/10 text-amber-500 shadow-lg shadow-amber-500/20' : 'border-foreground/10 bg-foreground/5 text-foreground/60 hover:bg-foreground/10'}`}
                 >
                   <div className={`w-3 h-3 rounded-full ${showSpy ? 'bg-amber-500' : 'bg-foreground/30'}`}></div>
-                  疊加 S&P 500 (SPY) 對比
+                  疊加 {spyLabel || "S&P 500 (SPY)"} 對比
                 </button>
               )}
               {twiiHistory && twiiHistory.length > 0 && (
@@ -326,7 +328,7 @@ export default function IndicatorCard({
                         domain={[spyMinVal - spyPadding, spyMaxVal + spyPadding]} 
                         stroke="rgba(245,158,11,0.5)" 
                         tick={{ fill: 'rgba(245,158,11,0.8)', fontSize: 12 }}
-                        tickFormatter={(val) => `$${val.toFixed(0)}`}
+                        tickFormatter={(val) => spyMaxVal < 10 ? val.toFixed(2) : `$${val.toFixed(0)}`}
                         width={60}
                       />
                     )}
@@ -347,8 +349,6 @@ export default function IndicatorCard({
                       labelStyle={{ color: 'rgba(255,255,255,0.6)', marginBottom: '8px', fontSize: '13px' }}
                       formatter={(value: any, name: any) => {
                         if (typeof value === 'number') {
-                          // 台股融資餘額通常是很大的數字（例如億），小數點後兩位
-                          // 如果是 S&P 500 (SPY)，通常是百位數，保留小數點後兩位
                           return [value.toFixed(2), name];
                         }
                         return [value, name];
@@ -371,7 +371,7 @@ export default function IndicatorCard({
                     {showSpy && (
                       <Line 
                         yAxisId="rightSpy"
-                        name="S&P 500 (SPY)"
+                        name={spyLabel || "S&P 500 (SPY)"}
                         type="monotone" 
                         dataKey="spyValue" 
                         stroke="#F59E0B" 

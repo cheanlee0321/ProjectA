@@ -90,7 +90,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Section 3 */}
-          <SectionHeader title="信用風險與情緒" emoji="🚨" statuses={[data.nfci.status, data.vix.status, data.skew.status, data.creditSpreads.status, data.fearGreed.status, data.marginDebt.status]} />
+          <SectionHeader title="信用風險與情緒" emoji="🚨" statuses={[data.nfci.status, data.vix.status, data.skew.status, data.creditSpreads.status, data.fearGreed.status, data.marginDebt.status, data.finraToCurrency.status]} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <IndicatorCard spyHistory={data.spy.history} title="金融條件指數 (NFCI)" value={data.nfci.value} status={data.nfci.status} statusText={data.nfci.text} history={data.nfci.history} 
               description="芝加哥聯儲統整的 105 項金融指標。大於 0 表示金融環境異常緊縮。"
@@ -110,6 +110,9 @@ export default async function DashboardPage() {
             <IndicatorCard spyHistory={data.spy.history} title="FINRA 融資餘額" value={data.marginDebt.value} status={data.marginDebt.status} statusText={data.marginDebt.text} history={data.marginDebt.history} 
               description="衡量投資人「借錢買股」的槓桿程度。若從歷史高點回落 >10% 易引發斷頭踩踏。"
               criteria={{ red: '> 800B', yellow: '650-800B', green: '< 650B' }} />
+            <IndicatorCard spyHistory={data.spyToCurrency.history} spyLabel="S&P 500 / 流通貨幣" title="FINRA / 流通貨幣" value={data.finraToCurrency.value} status={data.finraToCurrency.status} statusText={data.finraToCurrency.text} history={data.finraToCurrency.history} 
+              description="FINRA融資餘額除以實體流通貨幣(M0)。反映股市槓桿相對於實體貨幣的透支程度。>0.40代表極限槓桿。"
+              criteria={{ red: '> 0.40', yellow: '0.30-0.40', green: '< 0.30' }} />
           </div>
 
           {/* Section: 流動性與政策 */}
