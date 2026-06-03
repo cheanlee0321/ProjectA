@@ -103,45 +103,14 @@ async function doFetchFredSeries(seriesId: string, units: string = 'lin', retrie
   return { current: null, history: [], isError: true };
 }
 
-async function processFredQueue() {
-  if (globalFred.isFredProcessing) return;
-  globalFred.isFredProcessing = true;
-  
-  while (globalFred.fredQueue!.length > 0) {
-    const task = globalFred.fredQueue!.shift();
-    if (task) {
-      const res = await doFetchFredSeries(task.seriesId, task.units);
-      const cacheKey = `${task.seriesId}-${task.units}`;
-      globalFred.fredCache![cacheKey] = { data: res, timestamp: Date.now() };
-      task.resolve(res);
-      
-      if (globalFred.fredQueue!.length > 0) {
-        await new Promise(r => setTimeout(r, 3000));
-      }
-    }
-  }
-  globalFred.isFredProcessing = false;
-}
-
-async function fetchFredSeries(seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> {
-  const cacheKey = `${seriesId}-${units}`;
-  const now = Date.now();
-  const cached = globalFred.fredCache![cacheKey];
-  
-  if (cached && (now - cached.timestamp < 86400000)) {
-    return cached.data;
-  }
-  
-  if (!globalFred.fredQueue!.some(q => q.seriesId === seriesId && q.units === units)) {
-    globalFred.fredQueue!.push({ 
-      seriesId, 
-      units, 
-      resolve: () => {} 
-    });
-    processFredQueue().catch(console.error);
-  }
-  
-  return { current: null, history: [], isError: false, isLoading: true };
+const fetchFredSeries = async (seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> => {
+  return unstable_cache(
+    async () => {
+      return await doFetchFredSeries(seriesId, units);
+    },
+    ['fred', seriesId, units],
+    { revalidate: 86400 }
+  )();
 }
 
 const fetchYahooChart = unstable_cache(
@@ -215,38 +184,43 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
   return { current: null, history: [] };
 }
 
-async function fetchTrueFinraMargin(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> {
-  try {
-    const filePath = path.join(process.cwd(), '../Data/margin-statistics.xlsx');
-    if (!fs.existsSync(filePath)) {
-      console.warn('Local FINRA margin data not found:', filePath);
-      return { current: null, history: [], isError: true };
-    }
-    const fileBuffer = fs.readFileSync(filePath);
-    const workbook = xlsx.read(fileBuffer, { type: 'buffer' });
-    const sheetName = workbook.SheetNames[0];
-    const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
-    
-    const history = [];
-    for (let i = 1; i < data.length; i++) {
-      const row = data[i] as any[];
-      if (row && row.length >= 2) {
-        const dateStr = row[0];
-        const val = parseFloat(row[1]);
-        if (dateStr && typeof dateStr === 'string' && !isNaN(val)) {
-          history.push({ date: `${dateStr}-01`, value: val });
+
+const fetchTrueFinraMargin = unstable_cache(
+  async (): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> => {
+    try {
+      const filePath = path.join(process.cwd(), '../Data/margin-statistics.xlsx');
+      if (!fs.existsSync(filePath)) {
+        console.warn('Local FINRA margin data not found:', filePath);
+        return { current: null, history: [], isError: true };
+      }
+      const fileBuffer = fs.readFileSync(filePath);
+      const workbook = xlsx.read(fileBuffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
+      
+      const history = [];
+      for (let i = 1; i < data.length; i++) {
+        const row = data[i] as any[];
+        if (row && row.length >= 2) {
+          const dateStr = row[0];
+          const val = parseFloat(row[1]);
+          if (dateStr && typeof dateStr === 'string' && !isNaN(val)) {
+            history.push({ date: `${dateStr}-01`, value: val });
+          }
         }
       }
+      
+      history.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      const current = history.length > 0 ? history[history.length - 1].value : null;
+      return { current, history, isError: false };
+    } catch(e) {
+      console.error('Local FINRA Margin error:', e);
+      return { current: null, history: [], isError: true };
     }
-    
-    history.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-    const current = history.length > 0 ? history[history.length - 1].value : null;
-    return { current, history, isError: false };
-  } catch(e) {
-    console.error('Local FINRA Margin error:', e);
-    return { current: null, history: [], isError: true };
-  }
-}
+  },
+  ['finra-margin-excel'],
+  { revalidate: 86400 }
+);
 
 async function fetchCryptoFearGreed(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
