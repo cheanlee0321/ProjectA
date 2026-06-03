@@ -80,8 +80,10 @@ async function doFetchFredSeries(seriesId: string, units: string = 'lin', retrie
     const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=${FRED_API_KEY}&file_type=json&sort_order=desc&units=${units}`, { next: { revalidate: 86400 } });
     
     if (res.status === 429 && retries > 0) {
-      console.warn(`FRED API 429 Too Many Requests for ${seriesId}. Retrying in ${delay}ms...`);
-      await new Promise(r => setTimeout(r, delay));
+      const jitter = Math.floor(Math.random() * 1000);
+      const totalDelay = delay + jitter;
+      console.warn(`FRED API 429 Too Many Requests for ${seriesId}. Retrying in ${totalDelay}ms...`);
+      await new Promise(r => setTimeout(r, totalDelay));
       return doFetchFredSeries(seriesId, units, retries - 1, delay * 2);
     }
 
@@ -103,14 +105,19 @@ async function doFetchFredSeries(seriesId: string, units: string = 'lin', retrie
   return { current: null, history: [], isError: true };
 }
 
+let lastFredRequestTime = 0;
+const FRED_DELAY_MS = 400; // 0.4 seconds gap
+
 const fetchFredSeries = async (seriesId: string, units: string = 'lin'): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> => {
-  return unstable_cache(
-    async () => {
-      return await doFetchFredSeries(seriesId, units);
-    },
-    ['fred', seriesId, units],
-    { revalidate: 86400 }
-  )();
+  const now = Date.now();
+  const timeToWait = Math.max(0, lastFredRequestTime + FRED_DELAY_MS - now);
+  lastFredRequestTime = now + timeToWait;
+  
+  if (timeToWait > 0) {
+    await new Promise(r => setTimeout(r, timeToWait));
+  }
+  
+  return await doFetchFredSeries(seriesId, units);
 }
 
 const fetchYahooChart = unstable_cache(
