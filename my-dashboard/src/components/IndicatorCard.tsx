@@ -20,6 +20,11 @@ interface IndicatorCardProps {
     yellow: string;
     green: string;
   };
+  valueThresholds?: {
+    red: number;
+    yellow: number;
+    invert?: boolean;
+  };
 }
 
 export default function IndicatorCard({
@@ -32,7 +37,8 @@ export default function IndicatorCard({
   spyHistory,
   spyLabel,
   twiiHistory,
-  criteria
+  criteria,
+  valueThresholds
 }: IndicatorCardProps) {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -153,6 +159,48 @@ export default function IndicatorCard({
   const twiiMaxVal = (showTwii && mergedData.length > 0) ? Math.max(...mergedData.map(d => (d as any).twiiValue || -Infinity)) : 0;
   const twiiPadding = (twiiMaxVal - twiiMinVal) * 0.1;
 
+  const renderGradient = () => {
+    if (!valueThresholds) return null;
+    const max = modalMaxVal + modalPadding;
+    const min = modalMinVal - modalPadding;
+    const range = max - min;
+    if (range <= 0) return null;
+
+    const getOffset = (val: number) => Math.max(0, Math.min(1, (max - val) / range));
+    const redOffset = getOffset(valueThresholds.red) * 100;
+    const yellowOffset = getOffset(valueThresholds.yellow) * 100;
+
+    const redColor = '#FF4081';
+    const yellowColor = '#FFD740';
+    const greenColor = '#00E676';
+
+    const safeTitle = title.replace(/\W/g, '');
+
+    if (valueThresholds.invert) {
+      return (
+        <linearGradient id={`colorUv-${safeTitle}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={greenColor} />
+          <stop offset={`${yellowOffset}%`} stopColor={greenColor} />
+          <stop offset={`${yellowOffset}%`} stopColor={yellowColor} />
+          <stop offset={`${redOffset}%`} stopColor={yellowColor} />
+          <stop offset={`${redOffset}%`} stopColor={redColor} />
+          <stop offset="100%" stopColor={redColor} />
+        </linearGradient>
+      );
+    } else {
+      return (
+        <linearGradient id={`colorUv-${safeTitle}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={redColor} />
+          <stop offset={`${redOffset}%`} stopColor={redColor} />
+          <stop offset={`${redOffset}%`} stopColor={yellowColor} />
+          <stop offset={`${yellowOffset}%`} stopColor={yellowColor} />
+          <stop offset={`${yellowOffset}%`} stopColor={greenColor} />
+          <stop offset="100%" stopColor={greenColor} />
+        </linearGradient>
+      );
+    }
+  };
+
   return (
     <>
       <div 
@@ -194,7 +242,14 @@ export default function IndicatorCard({
                   contentStyle={{ backgroundColor: 'rgba(0,0,0,0.8)', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '12px' }}
                   itemStyle={{ color: getLineColor(), fontWeight: 'bold' }}
                   labelStyle={{ color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}
-                  formatter={(value: any) => [typeof value === 'number' ? value.toFixed(2) : value, '數值']}
+                  formatter={(value: any) => {
+                     if (typeof value === 'number') {
+                        if (maxVal < 0.1) return [value.toFixed(4), '數值'];
+                        if (maxVal < 10) return [value.toFixed(3), '數值'];
+                        return [value.toFixed(2), '數值'];
+                     }
+                     return [value, '數值'];
+                  }}
                   labelFormatter={(label: any) => {
                     if (!label) return '日期: 未知';
                     const parts = label.split('-');
@@ -305,6 +360,9 @@ export default function IndicatorCard({
               {mergedData.length > 0 ? (
                 <ResponsiveContainer width="100%" height="100%">
                   <ComposedChart data={mergedData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                    <defs>
+                      {renderGradient()}
+                    </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                     <XAxis 
                       dataKey="date" 
@@ -318,7 +376,12 @@ export default function IndicatorCard({
                       domain={[modalMinVal - modalPadding, modalMaxVal + modalPadding]} 
                       stroke="rgba(255,255,255,0.2)" 
                       tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 12 }} 
-                      tickFormatter={(val) => val.toFixed(1)}
+                      tickFormatter={(val) => {
+                        if (modalMaxVal < 0.1) return val.toFixed(4);
+                        if (modalMaxVal < 10) return val.toFixed(2);
+                        if (modalMaxVal > 1000) return val.toFixed(0);
+                        return val.toFixed(1);
+                      }}
                       width={60}
                     />
                     {showSpy && (
@@ -349,6 +412,8 @@ export default function IndicatorCard({
                       labelStyle={{ color: 'rgba(255,255,255,0.6)', marginBottom: '8px', fontSize: '13px' }}
                       formatter={(value: any, name: any) => {
                         if (typeof value === 'number') {
+                          if (modalMaxVal < 0.1) return [value.toFixed(4), name];
+                          if (modalMaxVal < 10) return [value.toFixed(3), name];
                           return [value.toFixed(2), name];
                         }
                         return [value, name];
@@ -360,7 +425,7 @@ export default function IndicatorCard({
                       name={title}
                       type="monotone" 
                       dataKey="indicatorValue" 
-                      stroke={getLineColor()} 
+                      stroke={valueThresholds ? `url(#colorUv-${title.replace(/\W/g, '')})` : getLineColor()} 
                       strokeWidth={3} 
                       dot={false}
                       activeDot={{ r: 6, fill: getLineColor(), stroke: '#fff', strokeWidth: 2 }}

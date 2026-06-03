@@ -59,6 +59,7 @@ export interface MarketData {
   bitcoin: IndicatorData;
   finraToCurrency: IndicatorData;
   spyToCurrency: { history: { date: string; value: number }[] };
+  spyToM2: IndicatorData;
   spy: { history: { date: string; value: number }[] };
   twii: { history: { date: string; value: number }[] };
 }
@@ -774,6 +775,36 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
        }
     }
 
+    // SP500 / M2 Ratio
+    let spyToM2Status: 'red'|'yellow'|'green' = 'green';
+    let spyToM2Text = '常規水準';
+    let spyToM2History: {date: string, value: number}[] = [];
+    let spyToM2ValueStr = 'N/A';
+    if (!m2.isError && spy.history.length > 0) {
+       let lastSpyVal = null;
+       let sIndex = 0;
+       for (const m of m2.history) {
+          while (sIndex < spy.history.length && spy.history[sIndex].date <= m.date) {
+            lastSpyVal = spy.history[sIndex].value;
+            sIndex++;
+          }
+          if (lastSpyVal !== null && m.value > 0) {
+             spyToM2History.push({
+               date: m.date,
+               value: parseFloat((lastSpyVal / (m.value)).toFixed(4)) // M2 is in Billions, SPY is in absolute price
+             });
+          }
+       }
+       if (spyToM2History.length > 0) {
+         const currentRatio = spyToM2History[spyToM2History.length - 1].value;
+         spyToM2ValueStr = currentRatio.toFixed(4);
+         // SPY / M2 ratio thresholds
+         if (currentRatio > 0.027) { spyToM2Status = 'red'; spyToM2Text = '資金動能耗竭 (高估)'; }
+         else if (currentRatio > 0.017) { spyToM2Status = 'yellow'; spyToM2Text = '估值偏高'; }
+         else { spyToM2Status = 'green'; spyToM2Text = '流動性充裕'; }
+       }
+    }
+
     function formatFred(result: any, fallbackValue: string, fallbackStatus: string, fallbackText: string): { value: string, status: 'red' | 'yellow' | 'green' | 'loading' | 'neutral', text: string } {
       if (result.isLoading) return { value: '取得資料中', status: 'loading', text: '取得資料中' };
       if (result.isError) return { value: 'N/A', status: 'red', text: 'FRED API Error' };
@@ -818,6 +849,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       pcepilfe: { ...formatFred(pce, pce.current ? pce.current.toFixed(2)+'%' : 'N/A', pceStatus, pceText), history: pce.history },
       drcc: { ...formatFred(drcc, drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A', drccStatus, drccText), history: drcc.history },
       finraToCurrency: { ...formatFred(margin.isError || currcir.isError ? {isError:true} : {isLoading: margin.isLoading || currcir.isLoading}, finraToCurrencyValueStr, finraToCurrencyStatus, finraToCurrencyText), history: finraToCurrencyHistory },
+      spyToM2: { ...formatFred(m2.isError ? {isError:true} : {isLoading: m2.isLoading}, spyToM2ValueStr, spyToM2Status, spyToM2Text), history: spyToM2History },
       spyToCurrency: { history: spyToCurrencyHistory },
       spy: { history: spy.history },
       twii: { history: twii.history }
@@ -825,7 +857,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, finraToCurrency: errObj, spyToCurrency: { history: [] }, spy: { history: [] }, twii: { history: [] } };
+    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, finraToCurrency: errObj, spyToM2: errObj, spyToCurrency: { history: [] }, spy: { history: [] }, twii: { history: [] } };
   }
 });
 

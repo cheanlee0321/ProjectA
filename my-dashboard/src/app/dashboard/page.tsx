@@ -112,7 +112,12 @@ export default async function DashboardPage() {
               criteria={{ red: '> 800B', yellow: '650-800B', green: '< 650B' }} />
             <IndicatorCard spyHistory={data.spyToCurrency.history} spyLabel="S&P 500 / 流通貨幣" title="FINRA / 流通貨幣" value={data.finraToCurrency.value} status={data.finraToCurrency.status} statusText={data.finraToCurrency.text} history={data.finraToCurrency.history} 
               description="FINRA融資餘額除以實體流通貨幣(M0)。反映股市槓桿相對於實體貨幣的透支程度。>0.40代表極限槓桿。"
-              criteria={{ red: '> 0.40', yellow: '0.30-0.40', green: '< 0.30' }} />
+              criteria={{ red: '> 0.40', yellow: '0.30-0.40', green: '< 0.30' }}
+              valueThresholds={{ red: 0.40, yellow: 0.30 }} />
+            <IndicatorCard spyHistory={data.spy.history} title="S&P 500 / M2" value={data.spyToM2.value} status={data.spyToM2.status} statusText={data.spyToM2.text} history={data.spyToM2.history} 
+              description="標普 500 指數除以美國 M2 貨幣供給量。反映股市估值相對於市場真實流動資金的膨脹程度。"
+              criteria={{ red: '> 0.027', yellow: '0.017-0.027', green: '< 0.017' }}
+              valueThresholds={{ red: 0.027, yellow: 0.017 }} />
           </div>
 
           {/* Section: 流動性與政策 */}
