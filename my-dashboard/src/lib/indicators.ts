@@ -723,7 +723,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
     }
 
     const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro, currcir];
-    const isDataLoading = fredIndicators.some(x => x.isLoading) || margin.isLoading;
+    const isDataLoading = Boolean(fredIndicators.some(x => x.isLoading) || margin.isLoading);
 
     // FINRA / Currency in Circulation
     let finraToCurrencyStatus: 'red'|'yellow'|'green' = 'green';
