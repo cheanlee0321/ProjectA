@@ -309,19 +309,7 @@ export default function EducationPortalPage() {
               </div>
             </Link>
 
-            {/* Howard Marks Memos */}
-            <Link href="/education/howard-marks-memos" className="group sm:col-span-2 lg:col-span-3">
-              <div className="h-full relative p-6 rounded-2xl bg-amber-900/10 backdrop-blur-lg border border-amber-500/20 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-amber-900/20 hover:shadow-[0_10px_30px_-10px_rgba(245,158,11,0.3)]">
-                <div className="absolute top-0 right-0 p-4 opacity-10 font-serif text-8xl pointer-events-none">H</div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-600/20 flex items-center justify-center mr-4 border border-amber-600/30 group-hover:scale-110 transition-transform">
-                    <span className="text-2xl">📜</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-amber-500">跟著 Howard Marks 走過歷史: The Memo</h3>
-                </div>
-                <p className="text-foreground/60 text-sm leading-relaxed max-w-3xl">收錄橡樹資本創辦人霍華．馬克斯從 1990 年至今的經典備忘錄。如同線上小說般，一頁一頁走過大師的思維歷程，學習洞察市場週期與投資心理學。</p>
-              </div>
-            </Link>
+
 
           </div>
         </section>
