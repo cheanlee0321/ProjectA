@@ -120,23 +120,25 @@ const fetchFredSeries = async (seriesId: string, units: string = 'lin'): Promise
   return await doFetchFredSeries(seriesId, units);
 }
 
-const fetchYahooChart = unstable_cache(
-  async (symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') => {
-    try {
-      // 設定一個夠早的日期以抓取所有歷史資料
-      const d = new Date('1970-01-01');
-      const chart = await yahooFinance.chart(symbol, { period1: d, interval });
-      const history = chart.quotes.map(q => ({
-        date: q.date.toISOString().split('T')[0],
-        value: q.close ?? 0
-      })).filter(q => q.value !== 0);
-      const current = history.length > 0 ? history[history.length - 1].value : null;
-      return { current, history };
-    } catch(e) { return { current: null, history: [] }; }
-  },
-  ['yahoo-finance-chart'],
-  { revalidate: 86400 }
-);
+const fetchYahooChart = async (symbol: string, interval: '1d' | '1wk' | '1mo' = '1wk') => {
+  return unstable_cache(
+    async () => {
+      try {
+        // 設定一個夠早的日期以抓取所有歷史資料
+        const d = new Date('1970-01-01');
+        const chart = await yahooFinance.chart(symbol, { period1: d, interval });
+        const history = chart.quotes.map(q => ({
+          date: q.date.toISOString().split('T')[0],
+          value: q.close ?? 0
+        })).filter(q => q.value !== 0);
+        const current = history.length > 0 ? history[history.length - 1].value : null;
+        return { current, history };
+      } catch(e) { return { current: null, history: [] }; }
+    },
+    ['yahoo-finance-chart', symbol, interval],
+    { revalidate: 86400, tags: ['yahoo-finance-chart', symbol] }
+  )();
+};
 
 async function fetchCapeRatio(): Promise<{current: number | null, history: {date: string, value: number}[]}> {
   try {

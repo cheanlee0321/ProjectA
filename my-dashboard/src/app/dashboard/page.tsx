@@ -8,9 +8,7 @@ import AiSummary from "@/components/AiSummary";
 import { Suspense } from "react";
 import AutoRefresh from "@/components/AutoRefresh";
 
-export default async function DashboardPage() {
-  const keys = await getUserApiKeys();
-
+export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center py-10 px-4 sm:px-6 relative overflow-hidden">
       
@@ -46,7 +44,7 @@ export default async function DashboardPage() {
 
         {/* Indicators Grid */}
         <Suspense fallback={<GridSkeleton />}>
-          <DashboardDataGrid finmindKey={keys.finmind} />
+          <DashboardDataGridWrapper />
         </Suspense>
 
       </div>
@@ -82,6 +80,11 @@ function GridSkeleton() {
       </div>
     </div>
   );
+}
+
+async function DashboardDataGridWrapper() {
+  const keys = await getUserApiKeys();
+  return <DashboardDataGrid finmindKey={keys.finmind} />;
 }
 
 async function DashboardDataGrid({ finmindKey }: { finmindKey: string }) {

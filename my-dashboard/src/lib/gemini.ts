@@ -5,7 +5,7 @@ import { fetchMarketData } from './indicators';
 
 export async function generateMarketSummary(data: MarketData, apiKey: string) {
   if (!apiKey) {
-    return "錯誤：未設定 GEMINI_API_KEY，請先至設定頁面填寫。";
+    return { text: "錯誤：未設定 GEMINI_API_KEY，請先至設定頁面填寫。", promptText: "" };
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
@@ -74,13 +74,13 @@ export async function generateMarketSummary(data: MarketData, apiKey: string) {
   try {
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    return response.text();
+    return { text: response.text(), promptText: prompt };
   } catch (error: any) {
     console.error("Gemini AI Error:", error);
     if (error.message && error.message.includes("API key not valid")) {
-      return "AI 生成失敗：您提供的 Gemini API Key 無效，請檢查設定。";
+      return { text: "AI 生成失敗：您提供的 Gemini API Key 無效，請檢查設定。", promptText: prompt };
     }
-    return "AI 生成失敗，請稍後再試。";
+    return { text: "AI 生成失敗，請稍後再試。", promptText: prompt };
   }
 }
 
@@ -89,6 +89,7 @@ const globalCache = globalThis as unknown as {
   geminiSummaryCache?: {
     [key: string]: {
       text: string;
+      promptText: string;
       date: string;
       timestamp: number;
     }
@@ -110,11 +111,11 @@ export function clearSummaryCache() {
 const generateAndCacheSummary = unstable_cache(
   async (geminiApiKey: string, finmindToken: string) => {
     if (!geminiApiKey) {
-      return { text: "請先至設定頁面填寫您的 Google Gemini API Key 以解鎖 AI 市場解讀功能。", date: "" };
+      return { text: "請先至設定頁面填寫您的 Google Gemini API Key 以解鎖 AI 市場解讀功能。", promptText: "", date: "" };
     }
 
     const data = await fetchMarketData(finmindToken);
-    const text = await generateMarketSummary(data, geminiApiKey);
+    const { text, promptText } = await generateMarketSummary(data, geminiApiKey);
     
     const date = new Date().toLocaleString('zh-TW', { 
       timeZone: 'Asia/Taipei',
@@ -125,7 +126,7 @@ const generateAndCacheSummary = unstable_cache(
       minute: '2-digit'
     });
     
-    return { text, date };
+    return { text, promptText, date };
   },
   ['gemini-market-summary-daily-dynamic'],
   { 
@@ -147,6 +148,7 @@ export async function getCachedMarketSummary(geminiApiKey: string, finmindToken:
   ) {
     return {
       text: globalCache.geminiSummaryCache[cacheKey].text,
+      promptText: globalCache.geminiSummaryCache[cacheKey].promptText,
       date: globalCache.geminiSummaryCache[cacheKey].date,
       isLoading: false
     };
@@ -155,7 +157,7 @@ export async function getCachedMarketSummary(geminiApiKey: string, finmindToken:
   // Check if data is fully loaded before generating summary
   const data = await fetchMarketData(finmindToken);
   if (data.isDataLoading) {
-    return { text: "等待資料中...", date: "", isLoading: true };
+    return { text: "等待資料中...", promptText: "", date: "", isLoading: true };
   }
 
   // Fallback to unstable_cache (for production / Vercel Data Cache)
@@ -165,6 +167,7 @@ export async function getCachedMarketSummary(geminiApiKey: string, finmindToken:
   if (globalCache.geminiSummaryCache) {
     globalCache.geminiSummaryCache[cacheKey] = {
       text: result.text,
+      promptText: result.promptText,
       date: result.date,
       timestamp: now
     };
