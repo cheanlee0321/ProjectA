@@ -128,6 +128,32 @@ function parseCSV(content) {
         console.error("Failed to fetch DFII10", e);
     }
 
+    // 4.6 Fetch Net Liquidity Components
+    async function fetchFredSeries(seriesId) {
+        console.log(`Fetching ${seriesId} from FRED API...`);
+        const map = {};
+        try {
+            const res = await fetch(`https://api.stlouisfed.org/fred/series/observations?series_id=${seriesId}&api_key=72f7e7aac93ea6642b1709247b3f96be&file_type=json`);
+            const data = await res.json();
+            if (data.observations) {
+                for (const row of data.observations) {
+                    if (!row.date) continue;
+                    const yyyy_mm = row.date.substring(0, 7);
+                    const val = parseFloat(row.value);
+                    if (!isNaN(val)) {
+                        map[yyyy_mm] = val;
+                    }
+                }
+            }
+        } catch (e) {
+            console.error(`Failed to fetch ${seriesId}`, e);
+        }
+        return map;
+    }
+    const walclMap = await fetchFredSeries('WALCL');
+    const wtregenMap = await fetchFredSeries('WTREGEN');
+    const rrpMap = await fetchFredSeries('RRPONTSYD');
+
     // 5. Combine
     const allMonths = new Set([
         ...Object.keys(m0Map),
@@ -137,10 +163,14 @@ function parseCSV(content) {
         ...Object.keys(tqqqMap),
         ...Object.keys(uproMap),
         ...Object.keys(capeMap),
-        ...Object.keys(tipsMap)
+        ...Object.keys(tipsMap),
+        ...Object.keys(walclMap)
     ]);
 
     const combined = [];
+    const finraHistory = [];
+    const finraM0History10y = [];
+    const finraNetLiqHistory = [];
     for (const month of Array.from(allMonths).sort()) {
         const currency = m0Map[month]; // in Billions
         if (!currency) continue;
@@ -150,6 +180,31 @@ function parseCSV(content) {
         const finra = finraMap[month];
         if (finra !== undefined) {
             obj.finraToM0 = finra / (currency * 1000);
+
+            finraHistory.push(obj.finraToM0);
+            if (finraHistory.length > 60) {
+                finraHistory.shift();
+            }
+            if (finraHistory.length === 60) {
+                const mean = finraHistory.reduce((a, b) => a + b, 0) / 60;
+                const variance = finraHistory.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / 60;
+                const std = Math.sqrt(variance);
+                if (std > 0) {
+                    obj.finraToM0_zScore = (obj.finraToM0 - mean) / std;
+                    obj.finraToM0_upperBand = mean + 1.5 * std;
+                    obj.finraToM0_lowerBand = mean - 1.5 * std;
+                }
+            }
+
+            finraM0History10y.push(obj.finraToM0);
+            if (finraM0History10y.length > 120) {
+                finraM0History10y.shift();
+            }
+            if (finraM0History10y.length === 120) {
+                const sorted = [...finraM0History10y].sort((a, b) => a - b);
+                obj.finraToM0_p95_10y = sorted[Math.floor(120 * 0.95)];
+                obj.finraToM0_p05_10y = sorted[Math.floor(120 * 0.05)];
+            }
         }
 
         const sp500 = sp500Map[month];
@@ -170,7 +225,38 @@ function parseCSV(content) {
         const tips = tipsMap[month];
         if (tips !== undefined) obj.tips = tips;
 
-        if (obj.finraToM0 || obj.sp500ToM0 || obj.qqqToM0 || obj.tqqqToM0 || obj.uproToM0 || obj.cape || obj.tips !== undefined) {
+        // Calculate Net Liquidity (Billions)
+        const walcl = walclMap[month];
+        const wtregen = wtregenMap[month] || 0;
+        const rrp = rrpMap[month] || 0;
+        let netLiqBillions = null;
+        if (walcl !== undefined) {
+            // WALCL is millions, WTREGEN is millions, RRPONTSYD is billions
+            netLiqBillions = (walcl / 1000) - (wtregen / 1000) - rrp;
+        }
+
+        if (finra !== undefined && netLiqBillions !== null && netLiqBillions > 0) {
+            obj.finraToNetLiq = finra / (netLiqBillions * 1000);
+
+            finraNetLiqHistory.push(obj.finraToNetLiq);
+            if (finraNetLiqHistory.length > 60) {
+                finraNetLiqHistory.shift();
+            }
+            if (finraNetLiqHistory.length === 60) {
+                const mean = finraNetLiqHistory.reduce((a, b) => a + b, 0) / 60;
+                const variance = finraNetLiqHistory.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / 60;
+                const std = Math.sqrt(variance);
+                if (std > 0) {
+                    obj.finraToNetLiq_upperBand = mean + 1.5 * std;
+                    obj.finraToNetLiq_lowerBand = mean - 1.5 * std;
+                }
+            }
+        }
+        if (sp500 !== undefined && netLiqBillions !== null && netLiqBillions > 0) {
+            obj.sp500ToNetLiq = sp500 / netLiqBillions;
+        }
+
+        if (obj.finraToM0 || obj.sp500ToM0 || obj.qqqToM0 || obj.tqqqToM0 || obj.uproToM0 || obj.cape || obj.tips !== undefined || obj.finraToNetLiq || obj.sp500ToNetLiq) {
             combined.push(obj);
         }
     }
