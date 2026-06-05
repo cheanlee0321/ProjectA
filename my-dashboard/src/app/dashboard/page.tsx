@@ -103,7 +103,7 @@ async function DashboardDataGrid({ finmindKey }: { finmindKey: string }) {
       </div>
 
       {/* Section 2 */}
-      <SectionHeader title="總體經濟與資金" emoji="🌍" statuses={[data.m2.status, data.dxy.status, data.sahm.status, data.copperGold.status, data.sloos.status, data.yieldCurve.status]} />
+      <SectionHeader title="總體經濟與資金" emoji="🌍" statuses={[data.m2.status, data.dxy.status, data.copperGold.status, data.sloos.status, data.yieldCurve.status]} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <IndicatorCard spyHistory={data.spy.history} title="M2 貨幣供給 (YoY)" value={data.m2.value} status={data.m2.status} statusText={data.m2.text} history={data.m2.history} 
           description="美國廣義貨幣供給年增率。當資金急縮 (負值)，極易戳破股市泡沫。"
@@ -111,9 +111,7 @@ async function DashboardDataGrid({ finmindKey }: { finmindKey: string }) {
         <IndicatorCard spyHistory={data.spy.history} title="美元指數 (DXY)" value={data.dxy.value} status={data.dxy.status} statusText={data.dxy.text} history={data.dxy.history} 
           description="衡量美元對一籃子貨幣的強弱。強勢美元 (>105) 往往會抽乾全球新興市場風險資金。"
           criteria={{ red: '> 105', yellow: '100-105', green: '< 100' }} />
-        <IndicatorCard spyHistory={data.spy.history} title="薩姆規則 (Sahm Rule)" value={data.sahm.value} status={data.sahm.status} statusText={data.sahm.text} history={data.sahm.history} 
-          description="近 3 個月失業率移動平均值，較低點上升 0.5% 時，代表經濟已實質進入衰退。"
-          criteria={{ red: '> 0.5%', yellow: '0.3-0.5%', green: '< 0.3%' }} />
+
         <IndicatorCard spyHistory={data.spy.history} title="銅金比 (Copper/Gold)" value={data.copperGold.value} status={data.copperGold.status} statusText={data.copperGold.text} history={data.copperGold.history} 
           description="銅代表實體工業需求，黃金代表避險情緒。下滑代表需求疲軟且避險升溫。"
           criteria={{ red: '< 0.12', yellow: '0.12-0.16', green: '> 0.16' }} />

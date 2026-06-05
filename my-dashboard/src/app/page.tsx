@@ -124,6 +124,32 @@ export default function PortalPage() {
             </div>
           </Link>
 
+          {/* Investment Strategy Card */}
+          <Link href="/strategy" className="group">
+            <div className="h-full relative p-8 md:p-12 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-foreground/10 hover:border-foreground/20 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.3)]">
+              {/* Inner Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div className="w-16 h-16 rounded-2xl bg-violet-500/20 flex items-center justify-center mb-8 border border-violet-500/30 group-hover:scale-110 transition-transform duration-500">
+                    <span className="text-3xl">🎯</span>
+                  </div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">投資策略</h2>
+                  <p className="text-foreground/60 text-lg leading-relaxed">
+                    深入剖析各類投資策略與資產配置邏輯，打造專屬您的穩健獲利方程式。
+                  </p>
+                </div>
+                <div className="mt-8 flex items-center text-violet-500 font-medium group-hover:text-violet-400 transition-colors">
+                  <span>查看策略</span>
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </Link>
+
           {/* Fundamental Analysis Card */}
           <Link href="/fundamental" className="group">
             <div className="h-full relative p-8 md:p-12 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-foreground/10 hover:border-foreground/20 hover:shadow-[0_20px_40px_-15px_rgba(225,29,72,0.3)]">
