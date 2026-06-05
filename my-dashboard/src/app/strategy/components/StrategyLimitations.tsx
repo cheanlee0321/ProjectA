@@ -10,8 +10,14 @@ export function StrategyLimitations() {
         </p>
 
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
-          <h4 className="text-lg font-bold text-amber-300 mb-2">1. 投機工具轉移 (影子槓桿與衍生品)</h4>
-          <p>FINRA 僅統計「傳統券商的保證金借款 (Margin Debt)」。但在現代金融市場，最瘋狂的投機往往發生在統計之外：散戶大量轉向 <strong>0DTE (末日選擇權)</strong> 或加密貨幣高倍數合約；而機構則使用投行提供的<strong>總收益交換 (Total Return Swaps，如 Archegos 爆倉事件)</strong>。這些自帶極高槓桿的工具完全不會計入 FINRA 數據。這可能導致市場已處於巨大泡沫邊緣，但 FINRA 比值看起來卻依然健康 (綠燈)，產生「假安全」的錯覺。</p>
+          <h4 className="text-lg font-bold text-amber-300 mb-2">1. 投機工具轉移 (0DTE 的隱形超級槓桿)</h4>
+          <div className="space-y-3">
+            <p>FINRA 僅統計「傳統券商的保證金借款 (Margin Debt)」。但在現代金融市場，最瘋狂的投機往往發生在統計之外：散戶大量轉向 <strong>0DTE (末日選擇權)</strong> 或加密貨幣高倍數合約；而機構則使用投行提供的<strong>總收益交換 (Total Return Swaps，如 Archegos 爆倉事件)</strong>。這會對指標產生兩種極端的盲區：</p>
+            <ul className="list-disc pl-5 space-y-1 text-amber-100/80">
+              <li><strong className="text-rose-400">當 FINRA 亮紅燈時 (雙重風險)：</strong>代表傳統現貨槓桿已極度擁擠，若再加上 0DTE 隱藏在表外的衍生性曝險，系統總槓桿將遠超歷史紀錄。一旦選擇權造市商被迫拋售避險 (Gamma Unwind)，將引發「選擇權踩踏現貨，現貨引爆融資斷頭」的死亡螺旋，下跌會比過去更為暴烈。</li>
+              <li><strong className="text-emerald-400">當 FINRA 亮綠燈時 (最大隱患)：</strong>若投機資金完全棄用傳統融資，全面轉向 0DTE，可能導致 FINRA 數據長期處於低檔 (假綠燈)。這時指標將無法防禦由選擇權引爆的流動性危機，產生「假安全」的錯覺。</li>
+            </ul>
+          </div>
         </div>
 
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
@@ -27,6 +33,11 @@ export function StrategyLimitations() {
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
           <h4 className="text-lg font-bold text-amber-300 mb-2">4. 資金成本侵蝕：槓桿 ETF 的內建吸血鬼</h4>
           <p>3 倍槓桿 ETF (如 TQQQ) 是向銀行借入 2 份資金來操作。當無風險利率來到 5% 時，TQQQ 每年光是「付利息」就會內扣約 10% ~ 12% 的淨值！如果未來大盤只溫和上漲 4%，TQQQ 反而會因為利息與波動耗損而虧錢，導致策略效率大減。</p>
+        </div>
+
+        <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
+          <h4 className="text-lg font-bold text-amber-300 mb-2">5. 被動投資泡沫 (ETF Bubble) 與流動性黑洞</h4>
+          <p>正如電影《大賣空》主角 Michael Burry 所警告的，現代大眾的資金已經極度向被動式 ETF 集中。這破壞了市場的「價格發現」機制（Price Discovery）。當資金湧入時，ETF 被迫無腦買入成分股，推升指數；但當趨勢反轉（例如 FINRA 亮紅燈後的拋售潮），ETF 的結構會強迫進行無差別的成分股拋售。這將在未來導致市場瞬間失去流動性，引發比過去（如 2000 年或 2008 年）更快速、更無量跌停的「被動式踩踏死亡螺旋」。</p>
         </div>
 
         <div className="mt-8 pt-6 border-t border-amber-500/20">

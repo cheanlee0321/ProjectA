@@ -136,11 +136,11 @@ export default function StrategyPage() {
             <div className="mb-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
               <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                以下為未完成的實驗性圖表
+                以下為未完成的實驗性圖表, 未納入策略主軸.
               </h3>
               <div className="text-slate-300 space-y-4 text-sm md:text-base leading-relaxed">
                 <div>
-                  <strong className="text-rose-300">為什麼原版 5 年滾動 Z-Score 會「失真」？</strong>
+                  <strong className="text-rose-300">為什麼 5 年滾動 Z-Score 會「失真」？</strong>
                   <ul className="list-disc pl-5 mt-2 space-y-1 text-slate-400">
                     <li><span className="text-slate-200">均值追趕 (Mean-Chasing)：</span>長期的慢牛會拉高 5 年平均值，使得真正的末升段泡沫反而無法突破 Z-Score 警示帶。</li>
                     <li><span className="text-slate-200">波動率污染：</span>過去的單次極端暴雷會大幅撐大標準差，使得近期的指標變動被壓縮而遲鈍。</li>
