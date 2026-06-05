@@ -81,6 +81,7 @@ function parseCSV(content) {
     const sp500Map = await fetchStock('SPY');
     const qqqMap = await fetchStock('QQQ');
     const tqqqMap = await fetchStock('TQQQ');
+    const uproMap = await fetchStock('UPRO');
 
     // 4. Read CAPE Data from multpl.com
     console.log("Fetching CAPE from multpl.com...");
@@ -107,6 +108,26 @@ function parseCSV(content) {
         console.error("Failed to fetch/parse CAPE data from multpl", e);
     }
 
+    // 4.5 Fetch TIPS Yield (DFII10)
+    console.log("Fetching DFII10 (TIPS Yield) data from FRED API...");
+    const tipsMap = {};
+    try {
+        const res = await fetch('https://api.stlouisfed.org/fred/series/observations?series_id=DFII10&api_key=72f7e7aac93ea6642b1709247b3f96be&file_type=json');
+        const data = await res.json();
+        if (data.observations) {
+            for (const row of data.observations) {
+                if (!row.date) continue;
+                const yyyy_mm = row.date.substring(0, 7);
+                const val = parseFloat(row.value);
+                if (!isNaN(val)) {
+                    tipsMap[yyyy_mm] = val;
+                }
+            }
+        }
+    } catch (e) {
+        console.error("Failed to fetch DFII10", e);
+    }
+
     // 5. Combine
     const allMonths = new Set([
         ...Object.keys(m0Map),
@@ -114,7 +135,9 @@ function parseCSV(content) {
         ...Object.keys(sp500Map),
         ...Object.keys(qqqMap),
         ...Object.keys(tqqqMap),
-        ...Object.keys(capeMap)
+        ...Object.keys(uproMap),
+        ...Object.keys(capeMap),
+        ...Object.keys(tipsMap)
     ]);
 
     const combined = [];
@@ -138,10 +161,16 @@ function parseCSV(content) {
         const tqqq = tqqqMap[month];
         if (tqqq !== undefined) obj.tqqqToM0 = tqqq / currency;
 
+        const upro = uproMap[month];
+        if (upro !== undefined) obj.uproToM0 = upro / currency;
+
         const cape = capeMap[month];
         if (cape !== undefined) obj.cape = cape;
 
-        if (obj.finraToM0 || obj.sp500ToM0 || obj.qqqToM0 || obj.tqqqToM0 || obj.cape) {
+        const tips = tipsMap[month];
+        if (tips !== undefined) obj.tips = tips;
+
+        if (obj.finraToM0 || obj.sp500ToM0 || obj.qqqToM0 || obj.tqqqToM0 || obj.uproToM0 || obj.cape || obj.tips !== undefined) {
             combined.push(obj);
         }
     }
