@@ -137,7 +137,7 @@ export default function StrategyPage() {
         {!loading && !error && (
           <div id="advanced" className="mt-20 pt-10 border-t border-white/10 scroll-mt-24">
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-indigo-100">
-              <span className="text-3xl">🔬</span> 進階圖表
+              <span className="text-3xl">🔬</span> 進階策略 (探討中, 未完成)
             </h2>
             <div className="mb-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
               <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
