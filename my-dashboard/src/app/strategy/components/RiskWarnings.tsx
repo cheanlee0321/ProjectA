@@ -23,7 +23,7 @@ export function RiskWarnings() {
         </div>
       </div>
       <p className="mt-6 text-center text-rose-200 font-medium bg-rose-950/40 py-3 px-4 rounded-xl border border-rose-500/20 shadow-inner">
-        💡 鐵則：TQQQ 是「順風局的王者」，一旦進入上述四種逆風局的任何一種，寧可空手也絕對不要妄想抄底或凹單！這也是紅燈時強制撤除槓桿的原因。
+        💡 鐵則：TQQQ 和 UPRO 是「順風局的王者」，一旦進入上述四種逆風局的任何一種，寧可空手也絕對不要妄想抄底或凹單！這也是紅燈時強制撤除槓桿的原因。
       </p>
     </div>
   );

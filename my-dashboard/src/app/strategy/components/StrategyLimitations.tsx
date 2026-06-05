@@ -45,7 +45,7 @@ export function StrategyLimitations() {
             <span className="mr-2">💡</span> 面對未來盲區的「策略進化建議」
           </h4>
           <ul className="list-decimal list-inside space-y-3 text-sm">
-            <li><strong>多重指標交叉驗證：</strong>不要單靠 FINRA 指標。請隨時搭配 Dashboard 上的 <strong>薩姆規則 (Sahm Rule)</strong> 確認實體衰退，並監控 <strong>VIX 與 NFCI (金融條件指數)</strong> 以防範突發的流動性枯竭。</li>
+            <li><strong>多重指標交叉驗證：</strong>不要單靠 FINRA 指標。請隨時搭配 <strong>薩姆規則 (Sahm Rule)</strong> 確認實體衰退，並監控 <strong>VIX 與 NFCI (金融條件指數)</strong> 以防範突發的流動性枯竭。</li>
             <li><strong>加入「實質利率」作為雙重濾網：</strong>將 <strong>10 年期公債實質利率 (TIPS Yield)</strong> 納入考量。若實質利率突破 2% (資金極度昂貴)，即使 FINRA 仍是綠燈，也不該重壓 3 倍槓桿。</li>
             <li><strong>降檔位 (降低槓桿倍數)：</strong>在高利率環境下，不要執著於 3 倍的 TQQQ 或 UPRO，改用 <strong>2 倍槓桿</strong> 的 QLD 或 SSO。2 倍槓桿內部借貸成本只有 1 份，耗損大幅減少，長期績效往往反超 3 倍槓桿。</li>
             <li><strong>從「長抱」轉為「波段操作」：</strong>低利率時代您可以「綠燈買入後安心抱 3 年」；但在高利率時代市場容錯率極低，應縮短操作週期。只要獲利達到設定的滿足點，就主動將槓桿 ETF 降轉回 1 倍的原型指數鎖住利潤。</li>

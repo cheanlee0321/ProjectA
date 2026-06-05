@@ -51,7 +51,12 @@ export function StrategyGuide() {
             <li><strong className="text-violet-200 text-base">無腦 All-in (基準)：</strong>不看指標，買了就睡的對照組。用來驗證策略到底有沒有贏過單純抱住大盤。</li>
             <li><strong className="text-violet-200 text-base">無腦 All-in 槓桿：</strong>不看指標，買槓桿承受毀滅性風險的對照組。證明如果不搭配避險策略，槓桿 ETF 在 2022 等股災中有多危險。</li>
             <li><strong className="text-violet-200 text-base">策略指標 (100% 原型)：</strong>在涵蓋 2000 年與 2008 年崩盤的 27 年長週期中，策略成功避開了致命深淵，反而大幅勝出 Buy & Hold (QQQ: 4819% vs 1428%)。但在 2010~2026 的純牛市子區間中，頻繁進出場會造成現金拖累。此對照組用於展示長短週期的差異。</li>
-            <li><strong className="text-violet-200 text-base">策略指標 (50% 混搭)：</strong>最安全、高 CP 值的核心策略。用趨近大盤的風險，換取數倍的報酬率。</li>
+            <li>
+              <strong className="text-violet-200 text-base">策略指標 (50% 混搭)：</strong>最安全、高 CP 值的核心策略。用趨近大盤的風險，換取數倍的報酬率。
+              <div className="mt-2 mb-1 p-3 bg-violet-900/20 border border-violet-500/20 rounded-lg text-sm text-violet-200/80 leading-relaxed ml-5">
+                <span className="mr-1">💡</span> <strong>實務操作技巧：</strong>50% 的 1 倍 ETF 加上 50% 的 3 倍 ETF，總和恰好等於 2 倍曝險。實務上，您可以直接買入 <strong>100% QLD</strong> (對應 QQQ+TQQQ) 或 <strong>100% SSO</strong> (對應 SPY+UPRO) 來達到相同的曝險效果。直接持有 2 倍槓桿 ETF 不僅省去自行調配比例的麻煩，更能有效降低 3 倍槓桿內部昂貴的摩擦耗損與借貸成本。
+              </div>
+            </li>
             <li><strong className="text-violet-200 text-base">策略指標 (100% 槓桿)：</strong>高風險偏好者的純血爆發策略。在承受合理波動的前提下，將資產極大化。</li>
           </ul>
 

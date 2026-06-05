@@ -47,10 +47,16 @@ export default function StrategyPage() {
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 flex items-center">
             <span className="text-4xl mr-3">🎯</span> 投資策略
           </h1>
-          <p className="text-foreground/60 text-lg max-w-3xl">
-            此頁面統整了融資餘額與各大指數相對於實體流通貨幣的比值。
-            透過與流通貨幣的對比，我們能評估資產價格是否由市場流動性擴張所推動，或是反映了真實的價值增長。
-          </p>
+          <div className="text-foreground/70 text-lg max-w-4xl space-y-4 leading-relaxed">
+            <p>
+              本策略的核心邏輯是將「FINRA 融資餘額」以「實體流通貨幣（或淨流動性）」進行標準化，藉此作為市場狂熱程度的客觀參考指標。
+              透過與底層流動性的對比，我們能評估資產價格究竟是反映了真實的價值增長，還是由過度的借貸擴張所推動。
+            </p>
+            <p>
+              策略的基礎假設在於：當投機風氣狂熱、槓桿水位過高時，市場蘊含的崩潰風險最大；反之，當投機風氣低迷時，長期佈局的風險則相對較低。
+              我們依據此燈號指標進行擇時操作，在相對安全時買入並持有槓桿部位，並透過「1 倍原型 ETF」與「3 倍槓桿 ETF」的資金比例調配，打造符合自身風險承受度與報酬期望的最佳投資組合。
+            </p>
+          </div>
         </div>
 
         {/* Navigation */}
