@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import HypeCycle from '@/components/HypeCycle';
+import DunningKruger from '@/components/DunningKruger';
 
 export default function QuotesPage() {
   const quoteCategories = [
@@ -232,6 +233,10 @@ export default function QuotesPage() {
 
       <div className="mt-20">
         <HypeCycle />
+      </div>
+
+      <div className="mt-20">
+        <DunningKruger />
       </div>
     </div>
   );
