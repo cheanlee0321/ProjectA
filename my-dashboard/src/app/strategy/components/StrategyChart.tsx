@@ -26,6 +26,21 @@ interface StrategyChartProps {
 
 const rangeOptions: (number | 'Max')[] = [1, 3, 5, 10, 20, 50, 'Max'];
 
+const StatusChip = ({ status, text }: { status: FinraStatus; text: string }) => {
+  const styles = {
+    red: { bg: 'bg-rose-500/10 border-rose-500/20', dot: 'bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse', txt: 'text-rose-400' },
+    yellow: { bg: 'bg-yellow-400/10 border-yellow-400/20', dot: 'bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)]', txt: 'text-yellow-400' },
+    green: { bg: 'bg-emerald-500/10 border-emerald-500/20', dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]', txt: 'text-emerald-500' },
+  };
+  const s = styles[status] ?? styles.green;
+  return (
+    <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full border ${s.bg}`}>
+      <span className={`w-2.5 h-2.5 rounded-full ${s.dot}`}></span>
+      <span className={`${s.txt} font-bold text-sm leading-none`}>{text}</span>
+    </div>
+  );
+};
+
 export function StrategyChart({
   chartDef,
   config,
@@ -72,21 +87,6 @@ export function StrategyChart({
   const tYellow = chartDef.thresholdYellow || 0.30;
   const tRed = chartDef.thresholdRed || 0.40;
 
-  const StatusChip = ({ status, text }: { status: FinraStatus; text: string }) => {
-    const styles = {
-      red: { bg: 'bg-rose-500/10 border-rose-500/20', dot: 'bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse', txt: 'text-rose-400' },
-      yellow: { bg: 'bg-yellow-400/10 border-yellow-400/20', dot: 'bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)]', txt: 'text-yellow-400' },
-      green: { bg: 'bg-emerald-500/10 border-emerald-500/20', dot: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]', txt: 'text-emerald-500' },
-    };
-    const s = styles[status] ?? styles.green;
-    return (
-      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full border ${s.bg}`}>
-        <span className={`w-2.5 h-2.5 rounded-full ${s.dot}`}></span>
-        <span className={`${s.txt} font-bold text-sm leading-none`}>{text}</span>
-      </div>
-    );
-  };
-
   return (
     <div className="p-6 md:p-10 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 shadow-2xl hover:border-foreground/20 transition-all duration-300">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
@@ -96,7 +96,10 @@ export function StrategyChart({
           </div>
           <StatusChip status={finraStatus} text={finraStatusText} />
         </h2>
-        <div className="flex bg-foreground/5 p-1 rounded-full border border-foreground/10 overflow-x-auto hide-scrollbar w-fit ml-auto">
+        
+        {/* Buttons wrapper with mask for mobile scroll hint */}
+        <div className="relative w-full md:w-auto mt-2 md:mt-0 [mask-image:linear-gradient(to_right,white_85%,transparent)] md:[mask-image:none]">
+          <div className="flex bg-foreground/5 p-1 rounded-full border border-foreground/10 overflow-x-auto hide-scrollbar w-max md:w-fit md:ml-auto">
           {rangeOptions.map(range => (
             <button
               key={range}
@@ -109,9 +112,17 @@ export function StrategyChart({
               {range === 'Max' ? 'Max' : `${range}年`}
             </button>
           ))}
+          </div>
         </div>
       </div>
-      <div className="h-[400px] w-full">
+      
+      {chartDef.description && (
+        <p className="text-foreground/70 text-sm mb-6 max-w-4xl leading-relaxed">
+          {chartDef.description}
+        </p>
+      )}
+
+      <div className="h-[280px] md:h-[400px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={config.filteredData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
             <defs>

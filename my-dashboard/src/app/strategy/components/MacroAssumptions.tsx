@@ -6,7 +6,7 @@ export function MacroAssumptions() {
       </h3>
       <div className="space-y-6 text-foreground/80 text-sm">
         <p className="text-base font-medium text-orange-200">
-          這個策略能在過去十幾年取得如此驚人的回測成績，是建立在特定的總體經濟與金融市場結構之上。若要讓這套紅綠燈策略在未來繼續大放異彩，市場必須持續滿足以下 5 個核心假設。若假設被打破，策略即面臨失效風險：
+          這個策略能在過去近 27 年的回測中取得如此驚人的成績，是建立在特定的總體經濟與金融市場結構之上。若要讓這套紅綠燈策略在未來繼續大放異彩，市場必須持續滿足以下 5 個核心假設。若假設被打破，策略即面臨失效風險：
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -38,7 +38,7 @@ export function MacroAssumptions() {
 
         <div className="mt-6 p-4 rounded-xl bg-orange-950/40 border border-orange-500/20 text-center">
           <p className="text-orange-100 font-medium">
-            <strong>✨ 總結：</strong>這個策略完美駕馭了「過去 15 年的央行放水牛市」。只要未來美國維持霸權地位、金融創新不脫離現有框架、且聯準會依然扮演世界資金的總水龍頭，這套策略就能繼續有效。身為理性的量化投資人，我們必須永遠對這 5 個底層假設抱持著敬畏之心。
+            <strong>✨ 總結：</strong>這個策略在過去 27 年的回測中成功駕馭了「科技泡沫崩潰 + 金融海嘲 + 央行放水牛市」的完整循環。只要未來美國維持霸權地位、金融創新不脫離現有框架、且聯準會依然扮演世界資金的總水龍頭，這套策略就能繼續有效。身為理性的量化投資人，我們必須永遠對這 5 個底層假設抱持著敬畏之心。
           </p>
         </div>
       </div>

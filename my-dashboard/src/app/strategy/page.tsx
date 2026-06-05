@@ -11,7 +11,7 @@ import { StrategyLimitations } from './components/StrategyLimitations';
 import { MacroAssumptions } from './components/MacroAssumptions';
 import { DelayedSimulation } from './components/DelayedSimulation';
 import { UnsuitableEtfWarning } from './components/UnsuitableEtfWarning';
-import { qqqBacktestData, spyBacktestData } from './data/staticData';
+import { qqqBacktestData, spyBacktestData, qqqBacktestData2010, spyBacktestData2010 } from './data/staticData';
 import { chartDefs } from './data/chartDefs';
 
 export default function StrategyPage() {
@@ -53,6 +53,16 @@ export default function StrategyPage() {
           </p>
         </div>
 
+        {/* Navigation */}
+        <div className="sticky top-0 z-50 mb-10 py-3 bg-background/90 backdrop-blur-xl border-b border-white/5 flex overflow-x-auto hide-scrollbar gap-6 md:gap-8 -mx-6 px-6 md:mx-0 md:px-0">
+          <a href="#summary" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">📊 信號總覽</a>
+          <a href="#charts" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">📈 圖表分析</a>
+          <a href="#guide-rules" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">💡 操作指南</a>
+          <a href="#backtests" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">🧪 歷史回測</a>
+          <a href="#risks" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">⚠️ 風險與假設</a>
+          <a href="#advanced" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">🔬 進階實驗</a>
+        </div>
+
         {error && (
           <div className="mb-10 p-6 rounded-3xl bg-rose-500/10 border border-rose-500/20 shadow-lg text-center">
             <p className="text-rose-400 font-semibold mb-2">發生錯誤，無法載入策略數據</p>
@@ -61,16 +71,18 @@ export default function StrategyPage() {
         )}
 
         {/* SUMMARY CARD */}
-        {!loading && !error && latestFinraValue !== null && (
-          <SummaryCard
-            latestFinraValue={latestFinraValue}
-            finraStatus={finraStatus}
-            finraStatusText={finraStatusText}
-            distanceText={distanceText}
-            actionText={actionText}
-            lastUpdateMonth={lastUpdateMonth}
-          />
-        )}
+        <div id="summary" className="scroll-mt-24">
+          {!loading && !error && latestFinraValue !== null && (
+            <SummaryCard
+              latestFinraValue={latestFinraValue}
+              finraStatus={finraStatus}
+              finraStatusText={finraStatusText}
+              distanceText={distanceText}
+              actionText={actionText}
+              lastUpdateMonth={lastUpdateMonth}
+            />
+          )}
+        </div>
 
         {/* CHARTS */}
         {loading ? (
@@ -78,7 +90,7 @@ export default function StrategyPage() {
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-violet-500"></div>
           </div>
         ) : !error && (
-          <div className="w-full flex flex-col gap-12 mb-16">
+          <div id="charts" className="w-full flex flex-col gap-12 mb-16 scroll-mt-24">
             {chartDefs.filter(chart => !['chart8', 'chart9', 'chart10'].includes(chart.id)).map((chart) => {
               const config = chartConfigs[chart.id];
               if (!config) return null;
@@ -100,18 +112,24 @@ export default function StrategyPage() {
         {/* STATIC CONTENT BLOCKS */}
         <StrategyGuide />
 
-        <BacktestTable data={qqqBacktestData} />
-        <BacktestTable data={spyBacktestData} />
+        <div id="backtests" className="scroll-mt-24">
+          <BacktestTable data={qqqBacktestData} />
+          <BacktestTable data={spyBacktestData} />
+          <BacktestTable data={qqqBacktestData2010} />
+          <BacktestTable data={spyBacktestData2010} />
+        </div>
 
-        <RiskWarnings />
-        <StrategyLimitations />
-        <DelayedSimulation />
-        <UnsuitableEtfWarning />
-        <MacroAssumptions />
+        <div id="risks" className="scroll-mt-24">
+          <RiskWarnings />
+          <StrategyLimitations />
+          <DelayedSimulation />
+          <UnsuitableEtfWarning />
+          <MacroAssumptions />
+        </div>
 
         {/* ADVANCED CHARTS */}
         {!loading && !error && (
-          <div className="mt-20 pt-10 border-t border-white/10">
+          <div id="advanced" className="mt-20 pt-10 border-t border-white/10 scroll-mt-24">
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-indigo-100">
               <span className="text-3xl">🔬</span> 進階圖表
             </h2>

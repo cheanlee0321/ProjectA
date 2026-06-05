@@ -12,6 +12,7 @@ export function BacktestTable({ data }: BacktestTableProps) {
       </h3>
       <div className="overflow-x-auto">
         <table className="w-full text-left text-foreground/80 border-collapse whitespace-nowrap">
+          <caption className="sr-only">{data.title}</caption>
           <thead>
             <tr className={`border-b ${data.borderColor}`}>
               <th className={`py-3 px-4 font-semibold ${data.titleColor}`}>策略情境</th>
@@ -24,8 +25,13 @@ export function BacktestTable({ data }: BacktestTableProps) {
           </thead>
           <tbody>
             {data.rows.map((row, idx) => (
-              <tr key={idx} className="border-b border-foreground/5 hover:bg-foreground/5 transition-colors">
-                <td className="py-3 px-4 font-medium">{row.scenario}</td>
+              <tr key={idx} className={`border-b transition-colors ${
+                row.isRecommended ? 'bg-amber-500/10 border-amber-500/30 shadow-[inset_0_0_12px_rgba(245,158,11,0.1)]' : 'border-foreground/5 hover:bg-foreground/5'
+              }`}>
+                <td className="py-3 px-4 font-medium flex items-center gap-2">
+                  {row.scenario}
+                  {row.isRecommended && <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">⭐ 推薦</span>}
+                </td>
                 <td className="py-3 px-4">{row.initial}</td>
                 <td className={`py-3 px-4 ${row.finalColor ?? ''}`}>{row.final}</td>
                 <td className={`py-3 px-4 ${row.totalReturnColor} ${row.totalReturnBold ? 'font-bold' : ''}`}>{row.totalReturn}</td>
@@ -39,6 +45,13 @@ export function BacktestTable({ data }: BacktestTableProps) {
       <p className="mt-4 text-sm text-foreground/60 leading-relaxed">
         {data.note}
       </p>
+      {data.conclusion && (
+        <div className="mt-6 p-4 rounded-xl bg-background/40 border border-foreground/10 text-center shadow-sm">
+          <p className="text-base font-bold text-foreground/90">
+            {data.conclusion}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

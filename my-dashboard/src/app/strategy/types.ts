@@ -30,6 +30,7 @@ export interface ChartDefinition {
   id: string;
   title: string;
   titleColor: string;
+  description?: string;
   leftKey?: keyof StrategyData;
   leftName?: string;
   rightKey: keyof StrategyData;
@@ -48,6 +49,7 @@ export interface ChartDefinition {
 
 export interface BacktestRow {
   scenario: string;
+  isRecommended?: boolean;
   initial: string;
   final: string;
   finalColor?: string;
@@ -70,4 +72,43 @@ export interface BacktestTableData {
   borderColor: string;
   rows: BacktestRow[];
   note: string;
+  conclusion?: string;
+}
+
+export interface DelayedSimulationRow {
+  scenario: string;
+  isItalic?: boolean;
+  delay0: {
+    totalReturn: string;
+    maxDrawdown: string;
+    totalReturnColor?: string;
+    maxDrawdownColor?: string;
+    isBold?: boolean;
+  };
+  delay1: {
+    totalReturn: string;
+    maxDrawdown: string;
+    totalReturnColor?: string;
+    maxDrawdownColor?: string;
+    isBold?: boolean;
+  };
+  delay2: {
+    totalReturn: string;
+    maxDrawdown: string;
+    totalReturnColor?: string;
+    maxDrawdownColor?: string;
+    isBold?: boolean;
+  };
+}
+
+export interface DelayedSimulationData {
+  title: string;
+  titleColor: string;
+  titleIcon: string;
+  bgColor: string;
+  borderColor: string;
+  description: string;
+  rows: DelayedSimulationRow[];
+  conclusionTitle: string;
+  conclusionItems: string[];
 }
