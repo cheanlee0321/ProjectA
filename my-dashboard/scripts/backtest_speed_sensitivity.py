@@ -69,10 +69,10 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, buy_shift=0.10, sell_
     w_lev = 0.0
     w_base = 0.0
     w_cash = 1.0
-    
     current_month = None
     threshold_yellow = 0.30
     threshold_red = 0.40
+    trend_state = 'GREEN'
     
     for i, row in df.iterrows():
         n_lev = nav * w_lev * (1 + row[lev_ticker])
@@ -91,6 +91,7 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, buy_shift=0.10, sell_
             signal = row['finraToM0']
             
             if signal > threshold_red: # RED -> SELL
+                trend_state = 'RED'
                 w_eq = w_lev + w_base
                 if w_eq > 0:
                     trade_amt = min(w_eq, sell_shift)
@@ -100,6 +101,7 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, buy_shift=0.10, sell_
                     w_base -= trade_amt * ratio_base
                     w_cash += trade_amt
             elif signal < threshold_yellow: # GREEN -> BUY
+                trend_state = 'GREEN'
                 if w_cash > 0:
                     trade_amt = min(w_cash, buy_shift)
                     w_cash -= trade_amt
@@ -111,10 +113,13 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, buy_shift=0.10, sell_
                     elif mode == "qqq_100":
                         w_base += trade_amt
             else: # YELLOW -> BUY BASE
-                if w_cash > 0:
-                    trade_amt = min(w_cash, buy_shift)
-                    w_cash -= trade_amt
-                    w_base += trade_amt
+                if trend_state == 'GREEN':
+                    if w_cash > 0:
+                        trade_amt = min(w_cash, buy_shift)
+                        w_cash -= trade_amt
+                        w_base += trade_amt
+                else:
+                    pass
                     
         nav_series.append(nav)
         

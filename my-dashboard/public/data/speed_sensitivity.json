@@ -12,22 +12,22 @@
       "buy_shift": 1.0,
       "sell_shift": 1.0,
       "qqq_100": {
-        "cagr": 0.141,
-        "maxDD": -0.6995,
-        "totalReturn": 3462.83,
-        "calmar": 0.2016
+        "cagr": 0.1245,
+        "maxDD": -0.6071,
+        "totalReturn": 2299.98,
+        "calmar": 0.2051
       },
       "mix_50_50": {
-        "cagr": 0.141,
-        "maxDD": -0.6995,
-        "totalReturn": 3462.83,
-        "calmar": 0.2016
+        "cagr": 0.2048,
+        "maxDD": -0.7975,
+        "totalReturn": 15453.79,
+        "calmar": 0.2568
       },
       "tqqq_100": {
-        "cagr": 0.141,
-        "maxDD": -0.6995,
-        "totalReturn": 3462.83,
-        "calmar": 0.2016
+        "cagr": 0.2224,
+        "maxDD": -0.9722,
+        "totalReturn": 22920.17,
+        "calmar": 0.2287
       }
     },
     {
@@ -36,22 +36,22 @@
       "buy_shift": 1.0,
       "sell_shift": 0.5,
       "qqq_100": {
-        "cagr": 0.1405,
-        "maxDD": -0.6921,
-        "totalReturn": 3416.84,
-        "calmar": 0.203
+        "cagr": 0.1325,
+        "maxDD": -0.6071,
+        "totalReturn": 2811.32,
+        "calmar": 0.2183
       },
       "mix_50_50": {
-        "cagr": 0.1405,
-        "maxDD": -0.6921,
-        "totalReturn": 3416.84,
-        "calmar": 0.203
+        "cagr": 0.2226,
+        "maxDD": -0.7975,
+        "totalReturn": 23021.04,
+        "calmar": 0.2791
       },
       "tqqq_100": {
-        "cagr": 0.1405,
-        "maxDD": -0.6921,
-        "totalReturn": 3416.84,
-        "calmar": 0.203
+        "cagr": 0.2425,
+        "maxDD": -0.9722,
+        "totalReturn": 35691.2,
+        "calmar": 0.2494
       }
     },
     {
@@ -60,694 +60,694 @@
       "buy_shift": 1.0,
       "sell_shift": 0.3333,
       "qqq_100": {
-        "cagr": 0.1395,
-        "maxDD": -0.7026,
-        "totalReturn": 3339.77,
-        "calmar": 0.1986
-      },
-      "mix_50_50": {
-        "cagr": 0.1395,
-        "maxDD": -0.7026,
-        "totalReturn": 3339.77,
-        "calmar": 0.1986
-      },
-      "tqqq_100": {
-        "cagr": 0.1395,
-        "maxDD": -0.7026,
-        "totalReturn": 3339.77,
-        "calmar": 0.1986
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 4,
-      "buy_shift": 1.0,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1394,
-        "maxDD": -0.7142,
-        "totalReturn": 3329.04,
-        "calmar": 0.1952
-      },
-      "mix_50_50": {
-        "cagr": 0.1394,
-        "maxDD": -0.7142,
-        "totalReturn": 3329.04,
-        "calmar": 0.1952
-      },
-      "tqqq_100": {
-        "cagr": 0.1394,
-        "maxDD": -0.7142,
-        "totalReturn": 3329.04,
-        "calmar": 0.1952
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 6,
-      "buy_shift": 1.0,
-      "sell_shift": 0.1667,
-      "qqq_100": {
         "cagr": 0.1373,
-        "maxDD": -0.7299,
-        "totalReturn": 3162.43,
-        "calmar": 0.1881
-      },
-      "mix_50_50": {
-        "cagr": 0.1373,
-        "maxDD": -0.7299,
-        "totalReturn": 3162.43,
-        "calmar": 0.1881
-      },
-      "tqqq_100": {
-        "cagr": 0.1373,
-        "maxDD": -0.7299,
-        "totalReturn": 3162.43,
-        "calmar": 0.1881
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 8,
-      "buy_shift": 1.0,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.1356,
-        "maxDD": -0.7351,
-        "totalReturn": 3034.76,
-        "calmar": 0.1845
-      },
-      "mix_50_50": {
-        "cagr": 0.1356,
-        "maxDD": -0.7351,
-        "totalReturn": 3034.76,
-        "calmar": 0.1845
-      },
-      "tqqq_100": {
-        "cagr": 0.1356,
-        "maxDD": -0.7351,
-        "totalReturn": 3034.76,
-        "calmar": 0.1845
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 10,
-      "buy_shift": 1.0,
-      "sell_shift": 0.1,
-      "qqq_100": {
-        "cagr": 0.1328,
-        "maxDD": -0.7434,
-        "totalReturn": 2833.06,
-        "calmar": 0.1787
-      },
-      "mix_50_50": {
-        "cagr": 0.1328,
-        "maxDD": -0.7434,
-        "totalReturn": 2833.06,
-        "calmar": 0.1787
-      },
-      "tqqq_100": {
-        "cagr": 0.1328,
-        "maxDD": -0.7434,
-        "totalReturn": 2833.06,
-        "calmar": 0.1787
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 12,
-      "buy_shift": 1.0,
-      "sell_shift": 0.0833,
-      "qqq_100": {
-        "cagr": 0.1301,
-        "maxDD": -0.7582,
-        "totalReturn": 2648.56,
-        "calmar": 0.1716
-      },
-      "mix_50_50": {
-        "cagr": 0.1301,
-        "maxDD": -0.7582,
-        "totalReturn": 2648.56,
-        "calmar": 0.1716
-      },
-      "tqqq_100": {
-        "cagr": 0.1301,
-        "maxDD": -0.7582,
-        "totalReturn": 2648.56,
-        "calmar": 0.1716
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 15,
-      "buy_shift": 1.0,
-      "sell_shift": 0.0667,
-      "qqq_100": {
-        "cagr": 0.1268,
-        "maxDD": -0.7755,
-        "totalReturn": 2436.93,
-        "calmar": 0.1635
-      },
-      "mix_50_50": {
-        "cagr": 0.1268,
-        "maxDD": -0.7755,
-        "totalReturn": 2436.93,
-        "calmar": 0.1635
-      },
-      "tqqq_100": {
-        "cagr": 0.1268,
-        "maxDD": -0.7755,
-        "totalReturn": 2436.93,
-        "calmar": 0.1635
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 18,
-      "buy_shift": 1.0,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1241,
-        "maxDD": -0.7846,
-        "totalReturn": 2277.05,
-        "calmar": 0.1582
-      },
-      "mix_50_50": {
-        "cagr": 0.1241,
-        "maxDD": -0.7846,
-        "totalReturn": 2277.05,
-        "calmar": 0.1582
-      },
-      "tqqq_100": {
-        "cagr": 0.1241,
-        "maxDD": -0.7846,
-        "totalReturn": 2277.05,
-        "calmar": 0.1582
-      }
-    },
-    {
-      "buy_months": 1,
-      "sell_months": 24,
-      "buy_shift": 1.0,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.1199,
-        "maxDD": -0.7959,
-        "totalReturn": 2046.97,
-        "calmar": 0.1506
-      },
-      "mix_50_50": {
-        "cagr": 0.1199,
-        "maxDD": -0.7959,
-        "totalReturn": 2046.97,
-        "calmar": 0.1506
-      },
-      "tqqq_100": {
-        "cagr": 0.1199,
-        "maxDD": -0.7959,
-        "totalReturn": 2046.97,
-        "calmar": 0.1506
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 1,
-      "buy_shift": 0.5,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1447,
-        "maxDD": -0.6411,
-        "totalReturn": 3787.31,
-        "calmar": 0.2257
-      },
-      "mix_50_50": {
-        "cagr": 0.173,
-        "maxDD": -0.6411,
-        "totalReturn": 7437.17,
-        "calmar": 0.2699
-      },
-      "tqqq_100": {
-        "cagr": 0.1902,
-        "maxDD": -0.6411,
-        "totalReturn": 11087.02,
-        "calmar": 0.2968
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 2,
-      "buy_shift": 0.5,
-      "sell_shift": 0.5,
-      "qqq_100": {
-        "cagr": 0.1496,
-        "maxDD": -0.6322,
-        "totalReturn": 4270.01,
-        "calmar": 0.2367
-      },
-      "mix_50_50": {
-        "cagr": 0.1874,
-        "maxDD": -0.6322,
-        "totalReturn": 10397.9,
-        "calmar": 0.2965
-      },
-      "tqqq_100": {
-        "cagr": 0.2078,
-        "maxDD": -0.6322,
-        "totalReturn": 16523.77,
-        "calmar": 0.3286
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 3,
-      "buy_shift": 0.5,
-      "sell_shift": 0.3333,
-      "qqq_100": {
-        "cagr": 0.1504,
-        "maxDD": -0.6448,
-        "totalReturn": 4346.11,
-        "calmar": 0.2332
-      },
-      "mix_50_50": {
-        "cagr": 0.1923,
-        "maxDD": -0.6448,
-        "totalReturn": 11612.74,
-        "calmar": 0.2981
-      },
-      "tqqq_100": {
-        "cagr": 0.2137,
-        "maxDD": -0.6448,
-        "totalReturn": 18875.03,
-        "calmar": 0.3314
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 4,
-      "buy_shift": 0.5,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6587,
-        "totalReturn": 4417.08,
-        "calmar": 0.2293
-      },
-      "mix_50_50": {
-        "cagr": 0.1956,
-        "maxDD": -0.6587,
-        "totalReturn": 12536.59,
-        "calmar": 0.297
-      },
-      "tqqq_100": {
-        "cagr": 0.2177,
-        "maxDD": -0.6587,
-        "totalReturn": 20650.12,
-        "calmar": 0.3305
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 6,
-      "buy_shift": 0.5,
-      "sell_shift": 0.1667,
-      "qqq_100": {
-        "cagr": 0.1499,
-        "maxDD": -0.6773,
-        "totalReturn": 4291.64,
-        "calmar": 0.2212
-      },
-      "mix_50_50": {
-        "cagr": 0.1973,
-        "maxDD": -0.6773,
-        "totalReturn": 13029.83,
-        "calmar": 0.2913
-      },
-      "tqqq_100": {
-        "cagr": 0.22,
-        "maxDD": -0.6773,
-        "totalReturn": 21762.67,
-        "calmar": 0.3249
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 8,
-      "buy_shift": 0.5,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.1489,
-        "maxDD": -0.6836,
-        "totalReturn": 4193.18,
-        "calmar": 0.2178
-      },
-      "mix_50_50": {
-        "cagr": 0.1983,
-        "maxDD": -0.6836,
-        "totalReturn": 13322.71,
-        "calmar": 0.29
-      },
-      "tqqq_100": {
-        "cagr": 0.2214,
-        "maxDD": -0.6836,
-        "totalReturn": 22447.34,
-        "calmar": 0.3239
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 10,
-      "buy_shift": 0.5,
-      "sell_shift": 0.1,
-      "qqq_100": {
-        "cagr": 0.1465,
-        "maxDD": -0.6935,
-        "totalReturn": 3959.63,
-        "calmar": 0.2113
-      },
-      "mix_50_50": {
-        "cagr": 0.1969,
-        "maxDD": -0.6935,
-        "totalReturn": 12912.77,
-        "calmar": 0.2839
-      },
-      "tqqq_100": {
-        "cagr": 0.2203,
-        "maxDD": -0.6935,
-        "totalReturn": 21862.78,
-        "calmar": 0.3176
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 12,
-      "buy_shift": 0.5,
-      "sell_shift": 0.0833,
-      "qqq_100": {
-        "cagr": 0.1439,
-        "maxDD": -0.7112,
-        "totalReturn": 3719.5,
-        "calmar": 0.2024
-      },
-      "mix_50_50": {
-        "cagr": 0.1952,
-        "maxDD": -0.7112,
-        "totalReturn": 12414.55,
-        "calmar": 0.2744
-      },
-      "tqqq_100": {
-        "cagr": 0.2187,
-        "maxDD": -0.7112,
-        "totalReturn": 21107.23,
-        "calmar": 0.3075
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 15,
-      "buy_shift": 0.5,
-      "sell_shift": 0.0667,
-      "qqq_100": {
-        "cagr": 0.1385,
-        "maxDD": -0.7451,
-        "totalReturn": 3260.05,
-        "calmar": 0.1859
-      },
-      "mix_50_50": {
-        "cagr": 0.1904,
-        "maxDD": -0.7451,
-        "totalReturn": 11118.4,
-        "calmar": 0.2555
-      },
-      "tqqq_100": {
-        "cagr": 0.2139,
-        "maxDD": -0.7451,
-        "totalReturn": 18975.19,
-        "calmar": 0.2871
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 18,
-      "buy_shift": 0.5,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1335,
-        "maxDD": -0.7648,
-        "totalReturn": 2879.78,
-        "calmar": 0.1746
-      },
-      "mix_50_50": {
-        "cagr": 0.1654,
-        "maxDD": -0.7648,
-        "totalReturn": 6223.39,
-        "calmar": 0.2163
-      },
-      "tqqq_100": {
-        "cagr": 0.1838,
-        "maxDD": -0.7648,
-        "totalReturn": 9566.47,
-        "calmar": 0.2404
-      }
-    },
-    {
-      "buy_months": 2,
-      "sell_months": 24,
-      "buy_shift": 0.5,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.1242,
-        "maxDD": -0.789,
-        "totalReturn": 2285.94,
-        "calmar": 0.1575
-      },
-      "mix_50_50": {
-        "cagr": 0.1242,
-        "maxDD": -0.789,
-        "totalReturn": 2285.94,
-        "calmar": 0.1575
-      },
-      "tqqq_100": {
-        "cagr": 0.1242,
-        "maxDD": -0.789,
-        "totalReturn": 2285.94,
-        "calmar": 0.1575
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 1,
-      "buy_shift": 0.3333,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1477,
         "maxDD": -0.6071,
-        "totalReturn": 4076.63,
-        "calmar": 0.2433
+        "totalReturn": 3162.01,
+        "calmar": 0.2262
       },
       "mix_50_50": {
-        "cagr": 0.184,
-        "maxDD": -0.6272,
-        "totalReturn": 9596.31,
-        "calmar": 0.2933
-      },
-      "tqqq_100": {
-        "cagr": 0.2025,
-        "maxDD": -0.6471,
-        "totalReturn": 14675.84,
-        "calmar": 0.313
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 2,
-      "buy_shift": 0.3333,
-      "sell_shift": 0.5,
-      "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.6071,
-        "totalReturn": 4837.97,
-        "calmar": 0.2551
-      },
-      "mix_50_50": {
-        "cagr": 0.2016,
-        "maxDD": -0.6272,
-        "totalReturn": 14357.06,
-        "calmar": 0.3214
-      },
-      "tqqq_100": {
-        "cagr": 0.2228,
-        "maxDD": -0.6471,
-        "totalReturn": 23124.71,
-        "calmar": 0.3443
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 3,
-      "buy_shift": 0.3333,
-      "sell_shift": 0.3333,
-      "qqq_100": {
-        "cagr": 0.1572,
-        "maxDD": -0.6071,
-        "totalReturn": 5116.46,
-        "calmar": 0.2589
-      },
-      "mix_50_50": {
-        "cagr": 0.2177,
-        "maxDD": -0.6272,
-        "totalReturn": 20647.08,
-        "calmar": 0.3471
-      },
-      "tqqq_100": {
-        "cagr": 0.2415,
-        "maxDD": -0.6471,
-        "totalReturn": 34950.27,
-        "calmar": 0.3732
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 4,
-      "buy_shift": 0.3333,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1579,
-        "maxDD": -0.6186,
-        "totalReturn": 5203.74,
-        "calmar": 0.2552
-      },
-      "mix_50_50": {
-        "cagr": 0.2268,
-        "maxDD": -0.6364,
-        "totalReturn": 25286.69,
-        "calmar": 0.3564
-      },
-      "tqqq_100": {
-        "cagr": 0.2519,
-        "maxDD": -0.6543,
-        "totalReturn": 43803.5,
-        "calmar": 0.3849
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 6,
-      "buy_shift": 0.3333,
-      "sell_shift": 0.1667,
-      "qqq_100": {
-        "cagr": 0.1559,
-        "maxDD": -0.6394,
-        "totalReturn": 4961.59,
-        "calmar": 0.2438
-      },
-      "mix_50_50": {
-        "cagr": 0.2334,
-        "maxDD": -0.6563,
-        "totalReturn": 29229.74,
-        "calmar": 0.3556
-      },
-      "tqqq_100": {
-        "cagr": 0.2595,
-        "maxDD": -0.6732,
-        "totalReturn": 51653.42,
-        "calmar": 0.3854
-      }
-    },
-    {
-      "buy_months": 3,
-      "sell_months": 8,
-      "buy_shift": 0.3333,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.1539,
-        "maxDD": -0.6464,
-        "totalReturn": 4732.67,
-        "calmar": 0.2381
-      },
-      "mix_50_50": {
-        "cagr": 0.2374,
-        "maxDD": -0.663,
-        "totalReturn": 31961.92,
-        "calmar": 0.3581
+        "cagr": 0.2408,
+        "maxDD": -0.7975,
+        "totalReturn": 34453.63,
+        "calmar": 0.302
       },
       "tqqq_100": {
         "cagr": 0.2642,
-        "maxDD": -0.6795,
-        "totalReturn": 57118.79,
-        "calmar": 0.3887
+        "maxDD": -0.9722,
+        "totalReturn": 57110.71,
+        "calmar": 0.2717
       }
     },
     {
-      "buy_months": 3,
+      "buy_months": 1,
+      "sell_months": 4,
+      "buy_shift": 1.0,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1436,
+        "maxDD": -0.6107,
+        "totalReturn": 3692.5,
+        "calmar": 0.2352
+      },
+      "mix_50_50": {
+        "cagr": 0.2591,
+        "maxDD": -0.7975,
+        "totalReturn": 51263.98,
+        "calmar": 0.3249
+      },
+      "tqqq_100": {
+        "cagr": 0.285,
+        "maxDD": -0.9722,
+        "totalReturn": 88985.18,
+        "calmar": 0.2931
+      }
+    },
+    {
+      "buy_months": 1,
+      "sell_months": 6,
+      "buy_shift": 1.0,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.1504,
+        "maxDD": -0.6319,
+        "totalReturn": 4349.94,
+        "calmar": 0.238
+      },
+      "mix_50_50": {
+        "cagr": 0.2822,
+        "maxDD": -0.8018,
+        "totalReturn": 83912.77,
+        "calmar": 0.352
+      },
+      "tqqq_100": {
+        "cagr": 0.3054,
+        "maxDD": -0.9722,
+        "totalReturn": 136368.78,
+        "calmar": 0.3141
+      }
+    },
+    {
+      "buy_months": 1,
+      "sell_months": 8,
+      "buy_shift": 1.0,
+      "sell_shift": 0.125,
+      "qqq_100": {
+        "cagr": 0.1518,
+        "maxDD": -0.6391,
+        "totalReturn": 4496.99,
+        "calmar": 0.2375
+      },
+      "mix_50_50": {
+        "cagr": 0.2858,
+        "maxDD": -0.8056,
+        "totalReturn": 90427.22,
+        "calmar": 0.3547
+      },
+      "tqqq_100": {
+        "cagr": 0.3035,
+        "maxDD": -0.9722,
+        "totalReturn": 131023.21,
+        "calmar": 0.3121
+      }
+    },
+    {
+      "buy_months": 1,
       "sell_months": 10,
-      "buy_shift": 0.3333,
+      "buy_shift": 1.0,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1515,
-        "maxDD": -0.6575,
-        "totalReturn": 4464.85,
-        "calmar": 0.2304
+        "cagr": 0.1506,
+        "maxDD": -0.6504,
+        "totalReturn": 4366.89,
+        "calmar": 0.2315
       },
       "mix_50_50": {
-        "cagr": 0.239,
-        "maxDD": -0.6736,
-        "totalReturn": 33088.97,
-        "calmar": 0.3548
+        "cagr": 0.2848,
+        "maxDD": -0.8117,
+        "totalReturn": 88679.1,
+        "calmar": 0.3509
       },
       "tqqq_100": {
-        "cagr": 0.2661,
-        "maxDD": -0.6896,
-        "totalReturn": 59496.47,
-        "calmar": 0.3858
+        "cagr": 0.2978,
+        "maxDD": -0.973,
+        "totalReturn": 116407.77,
+        "calmar": 0.306
       }
     },
     {
-      "buy_months": 3,
+      "buy_months": 1,
       "sell_months": 12,
-      "buy_shift": 0.3333,
+      "buy_shift": 1.0,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.149,
-        "maxDD": -0.6772,
-        "totalReturn": 4205.28,
-        "calmar": 0.22
+        "cagr": 0.1488,
+        "maxDD": -0.6706,
+        "totalReturn": 4182.64,
+        "calmar": 0.2219
       },
       "mix_50_50": {
-        "cagr": 0.2396,
-        "maxDD": -0.6924,
-        "totalReturn": 33556.05,
-        "calmar": 0.3461
+        "cagr": 0.2834,
+        "maxDD": -0.8226,
+        "totalReturn": 86007.75,
+        "calmar": 0.3445
       },
       "tqqq_100": {
-        "cagr": 0.2669,
-        "maxDD": -0.7075,
-        "totalReturn": 60608.88,
-        "calmar": 0.3773
+        "cagr": 0.2926,
+        "maxDD": -0.9746,
+        "totalReturn": 104341.85,
+        "calmar": 0.3002
       }
     },
     {
-      "buy_months": 3,
+      "buy_months": 1,
       "sell_months": 15,
-      "buy_shift": 0.3333,
+      "buy_shift": 1.0,
       "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1446,
-        "maxDD": -0.7094,
-        "totalReturn": 3778.65,
-        "calmar": 0.2038
+        "cagr": 0.1452,
+        "maxDD": -0.7021,
+        "totalReturn": 3831.46,
+        "calmar": 0.2068
       },
       "mix_50_50": {
-        "cagr": 0.2398,
-        "maxDD": -0.7127,
-        "totalReturn": 33642.29,
-        "calmar": 0.3364
+        "cagr": 0.2817,
+        "maxDD": -0.8294,
+        "totalReturn": 82955.49,
+        "calmar": 0.3396
+      },
+      "tqqq_100": {
+        "cagr": 0.2951,
+        "maxDD": -0.9567,
+        "totalReturn": 110145.31,
+        "calmar": 0.3085
+      }
+    },
+    {
+      "buy_months": 1,
+      "sell_months": 18,
+      "buy_shift": 1.0,
+      "sell_shift": 0.0556,
+      "qqq_100": {
+        "cagr": 0.1409,
+        "maxDD": -0.7243,
+        "totalReturn": 3456.63,
+        "calmar": 0.1946
+      },
+      "mix_50_50": {
+        "cagr": 0.2795,
+        "maxDD": -0.8289,
+        "totalReturn": 79301.97,
+        "calmar": 0.3372
+      },
+      "tqqq_100": {
+        "cagr": 0.2984,
+        "maxDD": -0.9336,
+        "totalReturn": 117838.42,
+        "calmar": 0.3196
+      }
+    },
+    {
+      "buy_months": 1,
+      "sell_months": 24,
+      "buy_shift": 1.0,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1335,
+        "maxDD": -0.7515,
+        "totalReturn": 2876.76,
+        "calmar": 0.1776
+      },
+      "mix_50_50": {
+        "cagr": 0.2662,
+        "maxDD": -0.8286,
+        "totalReturn": 59658.83,
+        "calmar": 0.3212
+      },
+      "tqqq_100": {
+        "cagr": 0.2912,
+        "maxDD": -0.9058,
+        "totalReturn": 101414.82,
+        "calmar": 0.3215
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 1,
+      "buy_shift": 0.5,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.1226,
+        "maxDD": -0.5878,
+        "totalReturn": 2192.2,
+        "calmar": 0.2085
+      },
+      "mix_50_50": {
+        "cagr": 0.2032,
+        "maxDD": -0.7756,
+        "totalReturn": 14908.89,
+        "calmar": 0.262
+      },
+      "tqqq_100": {
+        "cagr": 0.2268,
+        "maxDD": -0.9506,
+        "totalReturn": 25299.56,
+        "calmar": 0.2386
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 2,
+      "buy_shift": 0.5,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.1306,
+        "maxDD": -0.5878,
+        "totalReturn": 2680.58,
+        "calmar": 0.2222
+      },
+      "mix_50_50": {
+        "cagr": 0.2211,
+        "maxDD": -0.7756,
+        "totalReturn": 22266.2,
+        "calmar": 0.285
+      },
+      "tqqq_100": {
+        "cagr": 0.2469,
+        "maxDD": -0.9506,
+        "totalReturn": 39329.11,
+        "calmar": 0.2597
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 3,
+      "buy_shift": 0.5,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1354,
+        "maxDD": -0.5878,
+        "totalReturn": 3015.52,
+        "calmar": 0.2303
+      },
+      "mix_50_50": {
+        "cagr": 0.2394,
+        "maxDD": -0.7756,
+        "totalReturn": 33373.22,
+        "calmar": 0.3086
       },
       "tqqq_100": {
         "cagr": 0.2687,
-        "maxDD": -0.7159,
-        "totalReturn": 62957.49,
-        "calmar": 0.3753
+        "maxDD": -0.9506,
+        "totalReturn": 62922.45,
+        "calmar": 0.2826
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 4,
+      "buy_shift": 0.5,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1417,
+        "maxDD": -0.6018,
+        "totalReturn": 3522.19,
+        "calmar": 0.2355
+      },
+      "mix_50_50": {
+        "cagr": 0.2577,
+        "maxDD": -0.7791,
+        "totalReturn": 49686.58,
+        "calmar": 0.3307
+      },
+      "tqqq_100": {
+        "cagr": 0.2895,
+        "maxDD": -0.9506,
+        "totalReturn": 97780.19,
+        "calmar": 0.3045
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 6,
+      "buy_shift": 0.5,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.1491,
+        "maxDD": -0.6236,
+        "totalReturn": 4210.57,
+        "calmar": 0.239
+      },
+      "mix_50_50": {
+        "cagr": 0.2844,
+        "maxDD": -0.7912,
+        "totalReturn": 87898.48,
+        "calmar": 0.3595
+      },
+      "tqqq_100": {
+        "cagr": 0.314,
+        "maxDD": -0.953,
+        "totalReturn": 163008.63,
+        "calmar": 0.3295
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 8,
+      "buy_shift": 0.5,
+      "sell_shift": 0.125,
+      "qqq_100": {
+        "cagr": 0.152,
+        "maxDD": -0.6308,
+        "totalReturn": 4514.51,
+        "calmar": 0.2409
+      },
+      "mix_50_50": {
+        "cagr": 0.2902,
+        "maxDD": -0.7952,
+        "totalReturn": 99303.43,
+        "calmar": 0.3649
+      },
+      "tqqq_100": {
+        "cagr": 0.3147,
+        "maxDD": -0.9539,
+        "totalReturn": 165463.78,
+        "calmar": 0.3299
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 10,
+      "buy_shift": 0.5,
+      "sell_shift": 0.1,
+      "qqq_100": {
+        "cagr": 0.1514,
+        "maxDD": -0.6425,
+        "totalReturn": 4459.53,
+        "calmar": 0.2357
+      },
+      "mix_50_50": {
+        "cagr": 0.2898,
+        "maxDD": -0.8017,
+        "totalReturn": 98533.8,
+        "calmar": 0.3615
+      },
+      "tqqq_100": {
+        "cagr": 0.3098,
+        "maxDD": -0.9553,
+        "totalReturn": 149592.66,
+        "calmar": 0.3243
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 12,
+      "buy_shift": 0.5,
+      "sell_shift": 0.0833,
+      "qqq_100": {
+        "cagr": 0.1499,
+        "maxDD": -0.6631,
+        "totalReturn": 4297.03,
+        "calmar": 0.2261
+      },
+      "mix_50_50": {
+        "cagr": 0.2888,
+        "maxDD": -0.8131,
+        "totalReturn": 96440.15,
+        "calmar": 0.3552
+      },
+      "tqqq_100": {
+        "cagr": 0.3054,
+        "maxDD": -0.9579,
+        "totalReturn": 136406.53,
+        "calmar": 0.3188
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 15,
+      "buy_shift": 0.5,
+      "sell_shift": 0.0667,
+      "qqq_100": {
+        "cagr": 0.1463,
+        "maxDD": -0.6964,
+        "totalReturn": 3942.61,
+        "calmar": 0.2102
+      },
+      "mix_50_50": {
+        "cagr": 0.2865,
+        "maxDD": -0.8255,
+        "totalReturn": 91870.84,
+        "calmar": 0.3471
+      },
+      "tqqq_100": {
+        "cagr": 0.3019,
+        "maxDD": -0.9547,
+        "totalReturn": 126930.22,
+        "calmar": 0.3163
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 18,
+      "buy_shift": 0.5,
+      "sell_shift": 0.0556,
+      "qqq_100": {
+        "cagr": 0.1418,
+        "maxDD": -0.7203,
+        "totalReturn": 3534.61,
+        "calmar": 0.1969
+      },
+      "mix_50_50": {
+        "cagr": 0.2843,
+        "maxDD": -0.8262,
+        "totalReturn": 87704.26,
+        "calmar": 0.3441
+      },
+      "tqqq_100": {
+        "cagr": 0.3043,
+        "maxDD": -0.9321,
+        "totalReturn": 133325.68,
+        "calmar": 0.3265
+      }
+    },
+    {
+      "buy_months": 2,
+      "sell_months": 24,
+      "buy_shift": 0.5,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1336,
+        "maxDD": -0.7495,
+        "totalReturn": 2889.8,
+        "calmar": 0.1783
+      },
+      "mix_50_50": {
+        "cagr": 0.2693,
+        "maxDD": -0.8273,
+        "totalReturn": 63831.44,
+        "calmar": 0.3256
+      },
+      "tqqq_100": {
+        "cagr": 0.2949,
+        "maxDD": -0.9051,
+        "totalReturn": 109661.53,
+        "calmar": 0.3259
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 1,
+      "buy_shift": 0.3333,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.1239,
+        "maxDD": -0.5778,
+        "totalReturn": 2267.57,
+        "calmar": 0.2145
+      },
+      "mix_50_50": {
+        "cagr": 0.2152,
+        "maxDD": -0.7059,
+        "totalReturn": 19521.42,
+        "calmar": 0.3048
+      },
+      "tqqq_100": {
+        "cagr": 0.2558,
+        "maxDD": -0.8286,
+        "totalReturn": 47692.41,
+        "calmar": 0.3087
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 2,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.132,
+        "maxDD": -0.5778,
+        "totalReturn": 2772.0,
+        "calmar": 0.2284
+      },
+      "mix_50_50": {
+        "cagr": 0.2333,
+        "maxDD": -0.7059,
+        "totalReturn": 29195.06,
+        "calmar": 0.3305
+      },
+      "tqqq_100": {
+        "cagr": 0.2761,
+        "maxDD": -0.8286,
+        "totalReturn": 73665.68,
+        "calmar": 0.3332
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 3,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1367,
+        "maxDD": -0.5802,
+        "totalReturn": 3117.96,
+        "calmar": 0.2356
+      },
+      "mix_50_50": {
+        "cagr": 0.2519,
+        "maxDD": -0.7059,
+        "totalReturn": 43869.6,
+        "calmar": 0.3569
+      },
+      "tqqq_100": {
+        "cagr": 0.2983,
+        "maxDD": -0.8286,
+        "totalReturn": 117789.46,
+        "calmar": 0.3601
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 4,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1431,
+        "maxDD": -0.5966,
+        "totalReturn": 3641.28,
+        "calmar": 0.2398
+      },
+      "mix_50_50": {
+        "cagr": 0.2704,
+        "maxDD": -0.7155,
+        "totalReturn": 65284.28,
+        "calmar": 0.3779
+      },
+      "tqqq_100": {
+        "cagr": 0.3192,
+        "maxDD": -0.8316,
+        "totalReturn": 181304.17,
+        "calmar": 0.3838
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 6,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.1509,
+        "maxDD": -0.6186,
+        "totalReturn": 4398.5,
+        "calmar": 0.2439
+      },
+      "mix_50_50": {
+        "cagr": 0.2996,
+        "maxDD": -0.731,
+        "totalReturn": 120841.45,
+        "calmar": 0.4098
+      },
+      "tqqq_100": {
+        "cagr": 0.3456,
+        "maxDD": -0.8408,
+        "totalReturn": 310231.84,
+        "calmar": 0.411
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 8,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.125,
+      "qqq_100": {
+        "cagr": 0.1534,
+        "maxDD": -0.626,
+        "totalReturn": 4671.92,
+        "calmar": 0.245
+      },
+      "mix_50_50": {
+        "cagr": 0.3046,
+        "maxDD": -0.7362,
+        "totalReturn": 134211.61,
+        "calmar": 0.4138
+      },
+      "tqqq_100": {
+        "cagr": 0.3461,
+        "maxDD": -0.8439,
+        "totalReturn": 313395.18,
+        "calmar": 0.4101
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 10,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.1,
+      "qqq_100": {
+        "cagr": 0.1525,
+        "maxDD": -0.6378,
+        "totalReturn": 4572.33,
+        "calmar": 0.2391
+      },
+      "mix_50_50": {
+        "cagr": 0.3043,
+        "maxDD": -0.7445,
+        "totalReturn": 133199.72,
+        "calmar": 0.4086
+      },
+      "tqqq_100": {
+        "cagr": 0.3422,
+        "maxDD": -0.8488,
+        "totalReturn": 289806.14,
+        "calmar": 0.4031
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 12,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.0833,
+      "qqq_100": {
+        "cagr": 0.1513,
+        "maxDD": -0.6586,
+        "totalReturn": 4441.16,
+        "calmar": 0.2297
+      },
+      "mix_50_50": {
+        "cagr": 0.3027,
+        "maxDD": -0.7592,
+        "totalReturn": 129060.17,
+        "calmar": 0.3987
+      },
+      "tqqq_100": {
+        "cagr": 0.3379,
+        "maxDD": -0.8575,
+        "totalReturn": 265533.3,
+        "calmar": 0.394
+      }
+    },
+    {
+      "buy_months": 3,
+      "sell_months": 15,
+      "buy_shift": 0.3333,
+      "sell_shift": 0.0667,
+      "qqq_100": {
+        "cagr": 0.1478,
+        "maxDD": -0.6929,
+        "totalReturn": 4088.28,
+        "calmar": 0.2134
+      },
+      "mix_50_50": {
+        "cagr": 0.2985,
+        "maxDD": -0.7841,
+        "totalReturn": 118151.46,
+        "calmar": 0.3807
+      },
+      "tqqq_100": {
+        "cagr": 0.3301,
+        "maxDD": -0.8731,
+        "totalReturn": 226797.34,
+        "calmar": 0.3781
       }
     },
     {
@@ -756,22 +756,22 @@
       "buy_shift": 0.3333,
       "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.1383,
-        "maxDD": -0.7391,
-        "totalReturn": 3240.36,
-        "calmar": 0.1871
+        "cagr": 0.1435,
+        "maxDD": -0.7175,
+        "totalReturn": 3681.79,
+        "calmar": 0.2
       },
       "mix_50_50": {
-        "cagr": 0.2282,
-        "maxDD": -0.7391,
-        "totalReturn": 26083.28,
-        "calmar": 0.3087
+        "cagr": 0.2937,
+        "maxDD": -0.8017,
+        "totalReturn": 106898.8,
+        "calmar": 0.3664
       },
       "tqqq_100": {
-        "cagr": 0.257,
-        "maxDD": -0.7391,
-        "totalReturn": 48917.91,
-        "calmar": 0.3476
+        "cagr": 0.3229,
+        "maxDD": -0.8839,
+        "totalReturn": 195753.96,
+        "calmar": 0.3653
       }
     },
     {
@@ -780,22 +780,22 @@
       "buy_shift": 0.3333,
       "sell_shift": 0.0417,
       "qqq_100": {
-        "cagr": 0.1278,
-        "maxDD": -0.7775,
-        "totalReturn": 2499.23,
-        "calmar": 0.1644
+        "cagr": 0.1348,
+        "maxDD": -0.7476,
+        "totalReturn": 2972.68,
+        "calmar": 0.1803
       },
       "mix_50_50": {
-        "cagr": 0.1925,
-        "maxDD": -0.7775,
-        "totalReturn": 11675.32,
-        "calmar": 0.2476
+        "cagr": 0.2748,
+        "maxDD": -0.8232,
+        "totalReturn": 71748.7,
+        "calmar": 0.3338
       },
       "tqqq_100": {
-        "cagr": 0.2181,
-        "maxDD": -0.7775,
-        "totalReturn": 20850.64,
-        "calmar": 0.2805
+        "cagr": 0.3027,
+        "maxDD": -0.8971,
+        "totalReturn": 128901.32,
+        "calmar": 0.3374
       }
     },
     {
@@ -804,22 +804,22 @@
       "buy_shift": 0.25,
       "sell_shift": 1.0,
       "qqq_100": {
-        "cagr": 0.1503,
-        "maxDD": -0.6046,
-        "totalReturn": 4337.52,
-        "calmar": 0.2486
+        "cagr": 0.1226,
+        "maxDD": -0.5651,
+        "totalReturn": 2191.97,
+        "calmar": 0.2169
       },
       "mix_50_50": {
-        "cagr": 0.1902,
-        "maxDD": -0.6651,
-        "totalReturn": 11067.76,
-        "calmar": 0.2859
+        "cagr": 0.2138,
+        "maxDD": -0.6704,
+        "totalReturn": 18912.0,
+        "calmar": 0.3189
       },
       "tqqq_100": {
-        "cagr": 0.2059,
-        "maxDD": -0.7243,
-        "totalReturn": 15831.66,
-        "calmar": 0.2842
+        "cagr": 0.2575,
+        "maxDD": -0.7843,
+        "totalReturn": 49518.78,
+        "calmar": 0.3284
       }
     },
     {
@@ -828,22 +828,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.5,
       "qqq_100": {
-        "cagr": 0.1559,
-        "maxDD": -0.6046,
-        "totalReturn": 4961.05,
-        "calmar": 0.2578
+        "cagr": 0.1306,
+        "maxDD": -0.5648,
+        "totalReturn": 2680.29,
+        "calmar": 0.2312
       },
       "mix_50_50": {
-        "cagr": 0.2066,
-        "maxDD": -0.6651,
-        "totalReturn": 16080.03,
-        "calmar": 0.3106
+        "cagr": 0.2318,
+        "maxDD": -0.6704,
+        "totalReturn": 28271.55,
+        "calmar": 0.3458
       },
       "tqqq_100": {
-        "cagr": 0.2245,
-        "maxDD": -0.7243,
-        "totalReturn": 24039.81,
-        "calmar": 0.31
+        "cagr": 0.2778,
+        "maxDD": -0.7843,
+        "totalReturn": 76451.12,
+        "calmar": 0.3542
       }
     },
     {
@@ -852,22 +852,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.3333,
       "qqq_100": {
-        "cagr": 0.1601,
-        "maxDD": -0.6046,
-        "totalReturn": 5484.13,
-        "calmar": 0.2648
+        "cagr": 0.1354,
+        "maxDD": -0.5696,
+        "totalReturn": 3015.2,
+        "calmar": 0.2376
       },
       "mix_50_50": {
-        "cagr": 0.2254,
-        "maxDD": -0.6651,
-        "totalReturn": 24533.77,
-        "calmar": 0.3389
+        "cagr": 0.2504,
+        "maxDD": -0.6711,
+        "totalReturn": 42430.32,
+        "calmar": 0.3731
       },
       "tqqq_100": {
-        "cagr": 0.2456,
-        "maxDD": -0.7243,
-        "totalReturn": 38265.73,
-        "calmar": 0.3391
+        "cagr": 0.3001,
+        "maxDD": -0.7843,
+        "totalReturn": 122240.28,
+        "calmar": 0.3827
       }
     },
     {
@@ -876,22 +876,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.25,
       "qqq_100": {
-        "cagr": 0.1616,
-        "maxDD": -0.6142,
-        "totalReturn": 5684.95,
-        "calmar": 0.2631
+        "cagr": 0.1417,
+        "maxDD": -0.5864,
+        "totalReturn": 3521.82,
+        "calmar": 0.2416
       },
       "mix_50_50": {
-        "cagr": 0.2391,
-        "maxDD": -0.6695,
-        "totalReturn": 33162.91,
-        "calmar": 0.3571
+        "cagr": 0.2688,
+        "maxDD": -0.6839,
+        "totalReturn": 63084.6,
+        "calmar": 0.393
       },
       "tqqq_100": {
-        "cagr": 0.2608,
-        "maxDD": -0.7249,
-        "totalReturn": 53097.07,
-        "calmar": 0.3597
+        "cagr": 0.3209,
+        "maxDD": -0.7907,
+        "totalReturn": 188024.03,
+        "calmar": 0.4059
       }
     },
     {
@@ -900,22 +900,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.1667,
       "qqq_100": {
-        "cagr": 0.1592,
-        "maxDD": -0.6352,
-        "totalReturn": 5373.79,
-        "calmar": 0.2507
+        "cagr": 0.15,
+        "maxDD": -0.609,
+        "totalReturn": 4302.16,
+        "calmar": 0.2462
       },
       "mix_50_50": {
-        "cagr": 0.2488,
-        "maxDD": -0.6876,
-        "totalReturn": 40973.84,
-        "calmar": 0.3618
+        "cagr": 0.2998,
+        "maxDD": -0.7012,
+        "totalReturn": 121420.66,
+        "calmar": 0.4276
       },
       "tqqq_100": {
-        "cagr": 0.2722,
-        "maxDD": -0.7399,
-        "totalReturn": 67784.25,
-        "calmar": 0.3678
+        "cagr": 0.3496,
+        "maxDD": -0.8021,
+        "totalReturn": 336142.67,
+        "calmar": 0.4358
       }
     },
     {
@@ -924,22 +924,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.125,
       "qqq_100": {
-        "cagr": 0.1569,
-        "maxDD": -0.6423,
-        "totalReturn": 5078.53,
-        "calmar": 0.2442
+        "cagr": 0.154,
+        "maxDD": -0.6166,
+        "totalReturn": 4736.29,
+        "calmar": 0.2497
       },
       "mix_50_50": {
-        "cagr": 0.2532,
-        "maxDD": -0.6936,
-        "totalReturn": 45085.36,
-        "calmar": 0.365
+        "cagr": 0.307,
+        "maxDD": -0.707,
+        "totalReturn": 140992.12,
+        "calmar": 0.4342
       },
       "tqqq_100": {
-        "cagr": 0.277,
-        "maxDD": -0.7449,
-        "totalReturn": 75210.59,
-        "calmar": 0.3719
+        "cagr": 0.3522,
+        "maxDD": -0.806,
+        "totalReturn": 354107.02,
+        "calmar": 0.437
       }
     },
     {
@@ -948,22 +948,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1537,
-        "maxDD": -0.6536,
-        "totalReturn": 4703.85,
-        "calmar": 0.2351
+        "cagr": 0.1535,
+        "maxDD": -0.6287,
+        "totalReturn": 4689.86,
+        "calmar": 0.2442
       },
       "mix_50_50": {
-        "cagr": 0.2545,
-        "maxDD": -0.7033,
-        "totalReturn": 46346.9,
-        "calmar": 0.3618
+        "cagr": 0.3079,
+        "maxDD": -0.7162,
+        "totalReturn": 143546.9,
+        "calmar": 0.4299
       },
       "tqqq_100": {
-        "cagr": 0.2785,
-        "maxDD": -0.753,
-        "totalReturn": 77502.48,
-        "calmar": 0.3698
+        "cagr": 0.3498,
+        "maxDD": -0.8121,
+        "totalReturn": 337572.2,
+        "calmar": 0.4307
       }
     },
     {
@@ -972,22 +972,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6735,
-        "totalReturn": 4414.08,
-        "calmar": 0.2242
+        "cagr": 0.1519,
+        "maxDD": -0.65,
+        "totalReturn": 4509.58,
+        "calmar": 0.2337
       },
       "mix_50_50": {
-        "cagr": 0.2551,
-        "maxDD": -0.7203,
-        "totalReturn": 46956.85,
-        "calmar": 0.3541
+        "cagr": 0.3076,
+        "maxDD": -0.7325,
+        "totalReturn": 142722.09,
+        "calmar": 0.4199
       },
       "tqqq_100": {
-        "cagr": 0.2792,
-        "maxDD": -0.7672,
-        "totalReturn": 78649.22,
-        "calmar": 0.3639
+        "cagr": 0.3472,
+        "maxDD": -0.8229,
+        "totalReturn": 320760.43,
+        "calmar": 0.422
       }
     },
     {
@@ -996,22 +996,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1465,
-        "maxDD": -0.7065,
-        "totalReturn": 3954.38,
-        "calmar": 0.2073
+        "cagr": 0.148,
+        "maxDD": -0.6877,
+        "totalReturn": 4102.99,
+        "calmar": 0.2152
       },
       "mix_50_50": {
-        "cagr": 0.2554,
-        "maxDD": -0.7382,
-        "totalReturn": 47324.45,
-        "calmar": 0.346
+        "cagr": 0.3035,
+        "maxDD": -0.7562,
+        "totalReturn": 131237.45,
+        "calmar": 0.4014
       },
       "tqqq_100": {
-        "cagr": 0.2814,
-        "maxDD": -0.7699,
-        "totalReturn": 82560.6,
-        "calmar": 0.3656
+        "cagr": 0.3422,
+        "maxDD": -0.8237,
+        "totalReturn": 290034.05,
+        "calmar": 0.4155
       }
     },
     {
@@ -1020,22 +1020,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.141,
-        "maxDD": -0.7296,
-        "totalReturn": 3464.11,
-        "calmar": 0.1933
+        "cagr": 0.1436,
+        "maxDD": -0.7143,
+        "totalReturn": 3689.98,
+        "calmar": 0.201
       },
       "mix_50_50": {
-        "cagr": 0.2476,
-        "maxDD": -0.7454,
-        "totalReturn": 39910.49,
-        "calmar": 0.3321
+        "cagr": 0.2976,
+        "maxDD": -0.7776,
+        "totalReturn": 115977.21,
+        "calmar": 0.3827
       },
       "tqqq_100": {
-        "cagr": 0.2758,
-        "maxDD": -0.7612,
-        "totalReturn": 73194.81,
-        "calmar": 0.3623
+        "cagr": 0.3337,
+        "maxDD": -0.8398,
+        "totalReturn": 244183.41,
+        "calmar": 0.3974
       }
     },
     {
@@ -1044,22 +1044,22 @@
       "buy_shift": 0.25,
       "sell_shift": 0.0417,
       "qqq_100": {
-        "cagr": 0.1319,
-        "maxDD": -0.7599,
-        "totalReturn": 2765.3,
-        "calmar": 0.1735
+        "cagr": 0.1357,
+        "maxDD": -0.746,
+        "totalReturn": 3037.3,
+        "calmar": 0.1818
       },
       "mix_50_50": {
-        "cagr": 0.2228,
-        "maxDD": -0.7599,
-        "totalReturn": 23134.46,
-        "calmar": 0.2932
+        "cagr": 0.2797,
+        "maxDD": -0.803,
+        "totalReturn": 79631.75,
+        "calmar": 0.3484
       },
       "tqqq_100": {
-        "cagr": 0.2515,
-        "maxDD": -0.7599,
-        "totalReturn": 43498.77,
-        "calmar": 0.331
+        "cagr": 0.312,
+        "maxDD": -0.859,
+        "totalReturn": 156430.55,
+        "calmar": 0.3632
       }
     },
     {
@@ -1068,22 +1068,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 1.0,
       "qqq_100": {
-        "cagr": 0.1506,
-        "maxDD": -0.5899,
-        "totalReturn": 4366.39,
-        "calmar": 0.2552
+        "cagr": 0.1208,
+        "maxDD": -0.5325,
+        "totalReturn": 2096.57,
+        "calmar": 0.2269
       },
       "mix_50_50": {
-        "cagr": 0.1916,
-        "maxDD": -0.6539,
-        "totalReturn": 11428.82,
-        "calmar": 0.2929
+        "cagr": 0.2049,
+        "maxDD": -0.6901,
+        "totalReturn": 15472.47,
+        "calmar": 0.2968
       },
       "tqqq_100": {
-        "cagr": 0.2075,
-        "maxDD": -0.7163,
-        "totalReturn": 16440.02,
-        "calmar": 0.2898
+        "cagr": 0.2474,
+        "maxDD": -0.833,
+        "totalReturn": 39754.54,
+        "calmar": 0.297
       }
     },
     {
@@ -1092,22 +1092,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.5,
       "qqq_100": {
-        "cagr": 0.1557,
-        "maxDD": -0.5899,
-        "totalReturn": 4937.37,
-        "calmar": 0.2639
+        "cagr": 0.1288,
+        "maxDD": -0.5325,
+        "totalReturn": 2564.56,
+        "calmar": 0.2419
       },
       "mix_50_50": {
-        "cagr": 0.2071,
-        "maxDD": -0.6539,
-        "totalReturn": 16287.79,
-        "calmar": 0.3167
+        "cagr": 0.2229,
+        "maxDD": -0.6901,
+        "totalReturn": 23166.5,
+        "calmar": 0.3229
       },
       "tqqq_100": {
-        "cagr": 0.2252,
-        "maxDD": -0.7163,
-        "totalReturn": 24426.49,
-        "calmar": 0.3145
+        "cagr": 0.2678,
+        "maxDD": -0.833,
+        "totalReturn": 61701.4,
+        "calmar": 0.3214
       }
     },
     {
@@ -1116,22 +1116,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.3333,
       "qqq_100": {
-        "cagr": 0.1582,
-        "maxDD": -0.5899,
-        "totalReturn": 5237.35,
-        "calmar": 0.2681
+        "cagr": 0.1336,
+        "maxDD": -0.5325,
+        "totalReturn": 2885.53,
+        "calmar": 0.2509
       },
       "mix_50_50": {
-        "cagr": 0.2241,
-        "maxDD": -0.6539,
-        "totalReturn": 23810.81,
-        "calmar": 0.3427
+        "cagr": 0.2409,
+        "maxDD": -0.6901,
+        "totalReturn": 34503.74,
+        "calmar": 0.3491
       },
       "tqqq_100": {
-        "cagr": 0.2444,
-        "maxDD": -0.7163,
-        "totalReturn": 37212.29,
-        "calmar": 0.3412
+        "cagr": 0.2896,
+        "maxDD": -0.833,
+        "totalReturn": 98159.43,
+        "calmar": 0.3477
       }
     },
     {
@@ -1140,22 +1140,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.25,
       "qqq_100": {
-        "cagr": 0.1609,
-        "maxDD": -0.6043,
-        "totalReturn": 5591.84,
-        "calmar": 0.2663
+        "cagr": 0.1399,
+        "maxDD": -0.5325,
+        "totalReturn": 3371.06,
+        "calmar": 0.2627
       },
       "mix_50_50": {
-        "cagr": 0.2398,
-        "maxDD": -0.6635,
-        "totalReturn": 33645.77,
-        "calmar": 0.3614
+        "cagr": 0.2591,
+        "maxDD": -0.6901,
+        "totalReturn": 51215.55,
+        "calmar": 0.3754
       },
       "tqqq_100": {
-        "cagr": 0.2616,
-        "maxDD": -0.722,
-        "totalReturn": 54022.0,
-        "calmar": 0.3623
+        "cagr": 0.3104,
+        "maxDD": -0.833,
+        "totalReturn": 151330.55,
+        "calmar": 0.3726
       }
     },
     {
@@ -1164,22 +1164,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.1667,
       "qqq_100": {
-        "cagr": 0.1599,
-        "maxDD": -0.6259,
-        "totalReturn": 5460.83,
-        "calmar": 0.2555
+        "cagr": 0.1486,
+        "maxDD": -0.5578,
+        "totalReturn": 4164.56,
+        "calmar": 0.2664
       },
       "mix_50_50": {
-        "cagr": 0.2543,
-        "maxDD": -0.6819,
-        "totalReturn": 46139.93,
-        "calmar": 0.3729
+        "cagr": 0.2957,
+        "maxDD": -0.6901,
+        "totalReturn": 111416.91,
+        "calmar": 0.4285
       },
       "tqqq_100": {
-        "cagr": 0.2776,
-        "maxDD": -0.7372,
-        "totalReturn": 76058.82,
-        "calmar": 0.3765
+        "cagr": 0.3468,
+        "maxDD": -0.833,
+        "totalReturn": 317803.29,
+        "calmar": 0.4163
       }
     },
     {
@@ -1188,22 +1188,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.125,
       "qqq_100": {
-        "cagr": 0.1573,
-        "maxDD": -0.6332,
-        "totalReturn": 5132.03,
-        "calmar": 0.2484
+        "cagr": 0.1541,
+        "maxDD": -0.5664,
+        "totalReturn": 4750.9,
+        "calmar": 0.272
       },
       "mix_50_50": {
-        "cagr": 0.261,
-        "maxDD": -0.688,
-        "totalReturn": 53389.9,
-        "calmar": 0.3794
+        "cagr": 0.3045,
+        "maxDD": -0.696,
+        "totalReturn": 133980.94,
+        "calmar": 0.4375
       },
       "tqqq_100": {
-        "cagr": 0.2849,
-        "maxDD": -0.7423,
-        "totalReturn": 88870.66,
-        "calmar": 0.3839
+        "cagr": 0.3513,
+        "maxDD": -0.833,
+        "totalReturn": 347850.72,
+        "calmar": 0.4217
       }
     },
     {
@@ -1213,21 +1213,21 @@
       "sell_shift": 0.1,
       "qqq_100": {
         "cagr": 0.1542,
-        "maxDD": -0.6447,
-        "totalReturn": 4762.03,
-        "calmar": 0.2391
+        "maxDD": -0.5801,
+        "totalReturn": 4769.68,
+        "calmar": 0.2659
       },
       "mix_50_50": {
-        "cagr": 0.2632,
-        "maxDD": -0.6979,
-        "totalReturn": 55934.75,
-        "calmar": 0.3771
+        "cagr": 0.3057,
+        "maxDD": -0.7056,
+        "totalReturn": 137334.59,
+        "calmar": 0.4333
       },
       "tqqq_100": {
-        "cagr": 0.2872,
-        "maxDD": -0.7504,
-        "totalReturn": 93269.69,
-        "calmar": 0.3828
+        "cagr": 0.3491,
+        "maxDD": -0.8345,
+        "totalReturn": 333234.25,
+        "calmar": 0.4184
       }
     },
     {
@@ -1236,22 +1236,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.1513,
-        "maxDD": -0.6652,
-        "totalReturn": 4445.24,
-        "calmar": 0.2275
+        "cagr": 0.1534,
+        "maxDD": -0.6042,
+        "totalReturn": 4668.54,
+        "calmar": 0.2538
       },
       "mix_50_50": {
-        "cagr": 0.2644,
-        "maxDD": -0.7153,
-        "totalReturn": 57456.1,
-        "calmar": 0.3697
+        "cagr": 0.305,
+        "maxDD": -0.7225,
+        "totalReturn": 135413.78,
+        "calmar": 0.4222
       },
       "tqqq_100": {
-        "cagr": 0.2886,
-        "maxDD": -0.7648,
-        "totalReturn": 95940.64,
-        "calmar": 0.3773
+        "cagr": 0.3458,
+        "maxDD": -0.844,
+        "totalReturn": 311319.29,
+        "calmar": 0.4097
       }
     },
     {
@@ -1260,22 +1260,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1463,
-        "maxDD": -0.6999,
-        "totalReturn": 3941.31,
-        "calmar": 0.2091
+        "cagr": 0.1493,
+        "maxDD": -0.6506,
+        "totalReturn": 4238.27,
+        "calmar": 0.2295
       },
       "mix_50_50": {
-        "cagr": 0.2638,
-        "maxDD": -0.7451,
-        "totalReturn": 56624.13,
-        "calmar": 0.354
+        "cagr": 0.3015,
+        "maxDD": -0.7457,
+        "totalReturn": 125864.32,
+        "calmar": 0.4044
       },
       "tqqq_100": {
-        "cagr": 0.2879,
-        "maxDD": -0.7898,
-        "totalReturn": 94599.69,
-        "calmar": 0.3645
+        "cagr": 0.3406,
+        "maxDD": -0.8432,
+        "totalReturn": 280725.93,
+        "calmar": 0.404
       }
     },
     {
@@ -1284,22 +1284,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.1414,
-        "maxDD": -0.7248,
-        "totalReturn": 3493.82,
-        "calmar": 0.1951
+        "cagr": 0.1429,
+        "maxDD": -0.6938,
+        "totalReturn": 3627.21,
+        "calmar": 0.206
       },
       "mix_50_50": {
-        "cagr": 0.2586,
-        "maxDD": -0.7664,
-        "totalReturn": 50687.2,
-        "calmar": 0.3374
+        "cagr": 0.2957,
+        "maxDD": -0.7627,
+        "totalReturn": 111495.34,
+        "calmar": 0.3877
       },
       "tqqq_100": {
-        "cagr": 0.2827,
-        "maxDD": -0.8075,
-        "totalReturn": 84843.4,
-        "calmar": 0.3501
+        "cagr": 0.3346,
+        "maxDD": -0.8352,
+        "totalReturn": 248370.24,
+        "calmar": 0.4006
       }
     },
     {
@@ -1308,22 +1308,22 @@
       "buy_shift": 0.1667,
       "sell_shift": 0.0417,
       "qqq_100": {
-        "cagr": 0.133,
-        "maxDD": -0.7547,
-        "totalReturn": 2841.13,
-        "calmar": 0.1762
+        "cagr": 0.134,
+        "maxDD": -0.7401,
+        "totalReturn": 2916.27,
+        "calmar": 0.1811
       },
       "mix_50_50": {
-        "cagr": 0.2443,
-        "maxDD": -0.7768,
-        "totalReturn": 37125.08,
-        "calmar": 0.3144
+        "cagr": 0.2798,
+        "maxDD": -0.7829,
+        "totalReturn": 79807.07,
+        "calmar": 0.3574
       },
       "tqqq_100": {
-        "cagr": 0.2709,
-        "maxDD": -0.7988,
-        "totalReturn": 65939.18,
-        "calmar": 0.3391
+        "cagr": 0.3162,
+        "maxDD": -0.8283,
+        "totalReturn": 170552.61,
+        "calmar": 0.3817
       }
     },
     {
@@ -1332,22 +1332,22 @@
       "buy_shift": 0.125,
       "sell_shift": 1.0,
       "qqq_100": {
-        "cagr": 0.1516,
-        "maxDD": -0.5537,
-        "totalReturn": 4479.27,
-        "calmar": 0.2738
+        "cagr": 0.1164,
+        "maxDD": -0.5307,
+        "totalReturn": 1875.68,
+        "calmar": 0.2194
       },
       "mix_50_50": {
-        "cagr": 0.1942,
-        "maxDD": -0.6387,
-        "totalReturn": 12136.91,
-        "calmar": 0.3041
+        "cagr": 0.1932,
+        "maxDD": -0.7039,
+        "totalReturn": 11864.95,
+        "calmar": 0.2745
       },
       "tqqq_100": {
-        "cagr": 0.2123,
-        "maxDD": -0.7266,
-        "totalReturn": 18304.03,
-        "calmar": 0.2922
+        "cagr": 0.2321,
+        "maxDD": -0.8567,
+        "totalReturn": 28426.19,
+        "calmar": 0.2709
       }
     },
     {
@@ -1356,22 +1356,22 @@
       "buy_shift": 0.125,
       "sell_shift": 0.5,
       "qqq_100": {
-        "cagr": 0.1577,
-        "maxDD": -0.5537,
-        "totalReturn": 5184.21,
-        "calmar": 0.2849
+        "cagr": 0.1244,
+        "maxDD": -0.5307,
+        "totalReturn": 2296.62,
+        "calmar": 0.2345
       },
       "mix_50_50": {
-        "cagr": 0.2105,
-        "maxDD": -0.6387,
-        "totalReturn": 17568.08,
-        "calmar": 0.3296
+        "cagr": 0.211,
+        "maxDD": -0.7039,
+        "totalReturn": 17779.17,
+        "calmar": 0.2998
       },
       "tqqq_100": {
-        "cagr": 0.2309,
-        "maxDD": -0.7266,
-        "totalReturn": 27673.36,
-        "calmar": 0.3178
+        "cagr": 0.2524,
+        "maxDD": -0.8567,
+        "totalReturn": 44274.09,
+        "calmar": 0.2946
       }
     },
     {
@@ -1380,70 +1380,70 @@
       "buy_shift": 0.125,
       "sell_shift": 0.3333,
       "qqq_100": {
-        "cagr": 0.1595,
-        "maxDD": -0.555,
-        "totalReturn": 5407.99,
-        "calmar": 0.2874
+        "cagr": 0.1292,
+        "maxDD": -0.5307,
+        "totalReturn": 2585.32,
+        "calmar": 0.2434
       },
       "mix_50_50": {
-        "cagr": 0.2267,
-        "maxDD": -0.6387,
-        "totalReturn": 25209.12,
-        "calmar": 0.3549
+        "cagr": 0.2286,
+        "maxDD": -0.7039,
+        "totalReturn": 26305.3,
+        "calmar": 0.3247
       },
       "tqqq_100": {
-        "cagr": 0.2494,
-        "maxDD": -0.7266,
-        "totalReturn": 41560.59,
+        "cagr": 0.2737,
+        "maxDD": -0.8567,
+        "totalReturn": 70026.2,
+        "calmar": 0.3195
+      }
+    },
+    {
+      "buy_months": 8,
+      "sell_months": 4,
+      "buy_shift": 0.125,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1355,
+        "maxDD": -0.5307,
+        "totalReturn": 3022.02,
+        "calmar": 0.2553
+      },
+      "mix_50_50": {
+        "cagr": 0.2464,
+        "maxDD": -0.7039,
+        "totalReturn": 38937.8,
+        "calmar": 0.3501
+      },
+      "tqqq_100": {
+        "cagr": 0.2941,
+        "maxDD": -0.8567,
+        "totalReturn": 107786.84,
         "calmar": 0.3433
       }
     },
     {
       "buy_months": 8,
-      "sell_months": 4,
-      "buy_shift": 0.125,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1615,
-        "maxDD": -0.5723,
-        "totalReturn": 5670.94,
-        "calmar": 0.2822
-      },
-      "mix_50_50": {
-        "cagr": 0.2421,
-        "maxDD": -0.6517,
-        "totalReturn": 35405.65,
-        "calmar": 0.3715
-      },
-      "tqqq_100": {
-        "cagr": 0.2667,
-        "maxDD": -0.7349,
-        "totalReturn": 60339.92,
-        "calmar": 0.3629
-      }
-    },
-    {
-      "buy_months": 8,
       "sell_months": 6,
       "buy_shift": 0.125,
       "sell_shift": 0.1667,
       "qqq_100": {
-        "cagr": 0.1612,
-        "maxDD": -0.5957,
-        "totalReturn": 5630.76,
-        "calmar": 0.2706
+        "cagr": 0.1441,
+        "maxDD": -0.5504,
+        "totalReturn": 3733.65,
+        "calmar": 0.2618
       },
       "mix_50_50": {
-        "cagr": 0.2555,
-        "maxDD": -0.6707,
-        "totalReturn": 47439.78,
-        "calmar": 0.381
+        "cagr": 0.2849,
+        "maxDD": -0.7039,
+        "totalReturn": 88746.9,
+        "calmar": 0.4047
       },
       "tqqq_100": {
-        "cagr": 0.2798,
-        "maxDD": -0.7494,
-        "totalReturn": 79764.76,
-        "calmar": 0.3734
+        "cagr": 0.3344,
+        "maxDD": -0.8567,
+        "totalReturn": 247561.27,
+        "calmar": 0.3904
       }
     },
     {
@@ -1452,22 +1452,22 @@
       "buy_shift": 0.125,
       "sell_shift": 0.125,
       "qqq_100": {
-        "cagr": 0.1587,
-        "maxDD": -0.6035,
-        "totalReturn": 5310.54,
-        "calmar": 0.263
+        "cagr": 0.1502,
+        "maxDD": -0.5591,
+        "totalReturn": 4323.73,
+        "calmar": 0.2686
       },
       "mix_50_50": {
-        "cagr": 0.2631,
-        "maxDD": -0.6771,
-        "totalReturn": 55826.25,
-        "calmar": 0.3886
+        "cagr": 0.2958,
+        "maxDD": -0.7042,
+        "totalReturn": 111575.48,
+        "calmar": 0.42
       },
       "tqqq_100": {
-        "cagr": 0.288,
-        "maxDD": -0.7542,
-        "totalReturn": 94782.59,
-        "calmar": 0.3818
+        "cagr": 0.3411,
+        "maxDD": -0.8567,
+        "totalReturn": 283143.51,
+        "calmar": 0.3981
       }
     },
     {
@@ -1476,22 +1476,22 @@
       "buy_shift": 0.125,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1555,
-        "maxDD": -0.616,
-        "totalReturn": 4911.31,
-        "calmar": 0.2524
+        "cagr": 0.1512,
+        "maxDD": -0.573,
+        "totalReturn": 4437.89,
+        "calmar": 0.2639
       },
       "mix_50_50": {
-        "cagr": 0.2661,
-        "maxDD": -0.6873,
-        "totalReturn": 59508.32,
-        "calmar": 0.3871
+        "cagr": 0.2976,
+        "maxDD": -0.7136,
+        "totalReturn": 115854.69,
+        "calmar": 0.417
       },
       "tqqq_100": {
-        "cagr": 0.2909,
-        "maxDD": -0.762,
-        "totalReturn": 100811.26,
-        "calmar": 0.3818
+        "cagr": 0.3394,
+        "maxDD": -0.8567,
+        "totalReturn": 273655.08,
+        "calmar": 0.3961
       }
     },
     {
@@ -1500,22 +1500,22 @@
       "buy_shift": 0.125,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.1524,
-        "maxDD": -0.6381,
-        "totalReturn": 4560.83,
-        "calmar": 0.2388
+        "cagr": 0.1505,
+        "maxDD": -0.5976,
+        "totalReturn": 4361.02,
+        "calmar": 0.2519
       },
       "mix_50_50": {
-        "cagr": 0.267,
-        "maxDD": -0.7053,
-        "totalReturn": 60703.46,
-        "calmar": 0.3786
+        "cagr": 0.2978,
+        "maxDD": -0.73,
+        "totalReturn": 116461.86,
+        "calmar": 0.4079
       },
       "tqqq_100": {
-        "cagr": 0.2918,
-        "maxDD": -0.7757,
-        "totalReturn": 102642.7,
-        "calmar": 0.3761
+        "cagr": 0.3371,
+        "maxDD": -0.8633,
+        "totalReturn": 261391.94,
+        "calmar": 0.3905
       }
     },
     {
@@ -1523,215 +1523,215 @@
       "sell_months": 15,
       "buy_shift": 0.125,
       "sell_shift": 0.0667,
+      "qqq_100": {
+        "cagr": 0.147,
+        "maxDD": -0.6415,
+        "totalReturn": 4010.35,
+        "calmar": 0.2292
+      },
+      "mix_50_50": {
+        "cagr": 0.2956,
+        "maxDD": -0.7502,
+        "totalReturn": 111316.72,
+        "calmar": 0.3941
+      },
+      "tqqq_100": {
+        "cagr": 0.3336,
+        "maxDD": -0.8596,
+        "totalReturn": 243642.48,
+        "calmar": 0.3881
+      }
+    },
+    {
+      "buy_months": 8,
+      "sell_months": 18,
+      "buy_shift": 0.125,
+      "sell_shift": 0.0556,
+      "qqq_100": {
+        "cagr": 0.1424,
+        "maxDD": -0.676,
+        "totalReturn": 3584.78,
+        "calmar": 0.2107
+      },
+      "mix_50_50": {
+        "cagr": 0.2914,
+        "maxDD": -0.7617,
+        "totalReturn": 101941.96,
+        "calmar": 0.3826
+      },
+      "tqqq_100": {
+        "cagr": 0.3291,
+        "maxDD": -0.8483,
+        "totalReturn": 221993.3,
+        "calmar": 0.3879
+      }
+    },
+    {
+      "buy_months": 8,
+      "sell_months": 24,
+      "buy_shift": 0.125,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1346,
+        "maxDD": -0.7212,
+        "totalReturn": 2956.08,
+        "calmar": 0.1866
+      },
+      "mix_50_50": {
+        "cagr": 0.2773,
+        "maxDD": -0.7779,
+        "totalReturn": 75677.06,
+        "calmar": 0.3565
+      },
+      "tqqq_100": {
+        "cagr": 0.3139,
+        "maxDD": -0.8358,
+        "totalReturn": 162531.14,
+        "calmar": 0.3755
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 1,
+      "buy_shift": 0.1,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.111,
+        "maxDD": -0.5202,
+        "totalReturn": 1630.29,
+        "calmar": 0.2133
+      },
+      "mix_50_50": {
+        "cagr": 0.1822,
+        "maxDD": -0.7012,
+        "totalReturn": 9212.1,
+        "calmar": 0.2598
+      },
+      "tqqq_100": {
+        "cagr": 0.219,
+        "maxDD": -0.8635,
+        "totalReturn": 21267.73,
+        "calmar": 0.2536
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 2,
+      "buy_shift": 0.1,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.1189,
+        "maxDD": -0.5202,
+        "totalReturn": 1998.94,
+        "calmar": 0.2286
+      },
+      "mix_50_50": {
+        "cagr": 0.1998,
+        "maxDD": -0.7012,
+        "totalReturn": 13807.31,
+        "calmar": 0.285
+      },
+      "tqqq_100": {
+        "cagr": 0.2392,
+        "maxDD": -0.8635,
+        "totalReturn": 33211.5,
+        "calmar": 0.277
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 3,
+      "buy_shift": 0.1,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1236,
+        "maxDD": -0.5202,
+        "totalReturn": 2251.78,
+        "calmar": 0.2377
+      },
+      "mix_50_50": {
+        "cagr": 0.217,
+        "maxDD": -0.7012,
+        "totalReturn": 20329.3,
+        "calmar": 0.3094
+      },
+      "tqqq_100": {
+        "cagr": 0.2601,
+        "maxDD": -0.8635,
+        "totalReturn": 52328.71,
+        "calmar": 0.3012
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 4,
+      "buy_shift": 0.1,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1299,
+        "maxDD": -0.5202,
+        "totalReturn": 2634.24,
+        "calmar": 0.2497
+      },
+      "mix_50_50": {
+        "cagr": 0.2346,
+        "maxDD": -0.7012,
+        "totalReturn": 30033.49,
+        "calmar": 0.3345
+      },
+      "tqqq_100": {
+        "cagr": 0.2802,
+        "maxDD": -0.8635,
+        "totalReturn": 80478.0,
+        "calmar": 0.3245
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 6,
+      "buy_shift": 0.1,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.1392,
+        "maxDD": -0.5455,
+        "totalReturn": 3309.02,
+        "calmar": 0.2551
+      },
+      "mix_50_50": {
+        "cagr": 0.2739,
+        "maxDD": -0.7012,
+        "totalReturn": 70374.96,
+        "calmar": 0.3906
+      },
+      "tqqq_100": {
+        "cagr": 0.3219,
+        "maxDD": -0.8635,
+        "totalReturn": 191563.95,
+        "calmar": 0.3727
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 8,
+      "buy_shift": 0.1,
+      "sell_shift": 0.125,
       "qqq_100": {
         "cagr": 0.1459,
-        "maxDD": -0.6865,
-        "totalReturn": 3900.12,
-        "calmar": 0.2125
+        "maxDD": -0.5543,
+        "totalReturn": 3898.28,
+        "calmar": 0.2632
       },
       "mix_50_50": {
-        "cagr": 0.2644,
-        "maxDD": -0.7352,
-        "totalReturn": 57452.24,
-        "calmar": 0.3597
+        "cagr": 0.2871,
+        "maxDD": -0.7067,
+        "totalReturn": 93007.76,
+        "calmar": 0.4062
       },
       "tqqq_100": {
-        "cagr": 0.2896,
-        "maxDD": -0.785,
-        "totalReturn": 98138.23,
-        "calmar": 0.369
-      }
-    },
-    {
-      "buy_months": 8,
-      "sell_months": 18,
-      "buy_shift": 0.125,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.7195,
-        "totalReturn": 3369.16,
-        "calmar": 0.1944
-      },
-      "mix_50_50": {
-        "cagr": 0.2596,
-        "maxDD": -0.7509,
-        "totalReturn": 51743.64,
-        "calmar": 0.3457
-      },
-      "tqqq_100": {
-        "cagr": 0.2859,
-        "maxDD": -0.7821,
-        "totalReturn": 90658.51,
-        "calmar": 0.3655
-      }
-    },
-    {
-      "buy_months": 8,
-      "sell_months": 24,
-      "buy_shift": 0.125,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.132,
-        "maxDD": -0.7516,
-        "totalReturn": 2771.26,
-        "calmar": 0.1756
-      },
-      "mix_50_50": {
-        "cagr": 0.2463,
-        "maxDD": -0.7798,
-        "totalReturn": 38838.6,
-        "calmar": 0.3159
-      },
-      "tqqq_100": {
-        "cagr": 0.2721,
-        "maxDD": -0.8077,
-        "totalReturn": 67634.28,
-        "calmar": 0.3368
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 1,
-      "buy_shift": 0.1,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1501,
-        "maxDD": -0.5325,
-        "totalReturn": 4319.08,
-        "calmar": 0.2819
-      },
-      "mix_50_50": {
-        "cagr": 0.1976,
-        "maxDD": -0.6609,
-        "totalReturn": 13119.95,
-        "calmar": 0.299
-      },
-      "tqqq_100": {
-        "cagr": 0.2203,
-        "maxDD": -0.7763,
-        "totalReturn": 21905.51,
-        "calmar": 0.2838
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 2,
-      "buy_shift": 0.1,
-      "sell_shift": 0.5,
-      "qqq_100": {
-        "cagr": 0.1564,
-        "maxDD": -0.5325,
-        "totalReturn": 5018.52,
-        "calmar": 0.2937
-      },
-      "mix_50_50": {
-        "cagr": 0.2141,
-        "maxDD": -0.6609,
-        "totalReturn": 19055.49,
-        "calmar": 0.324
-      },
-      "tqqq_100": {
-        "cagr": 0.2394,
-        "maxDD": -0.7763,
-        "totalReturn": 33373.29,
-        "calmar": 0.3084
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 3,
-      "buy_shift": 0.1,
-      "sell_shift": 0.3333,
-      "qqq_100": {
-        "cagr": 0.1598,
-        "maxDD": -0.5339,
-        "totalReturn": 5444.21,
-        "calmar": 0.2993
-      },
-      "mix_50_50": {
-        "cagr": 0.2322,
-        "maxDD": -0.6609,
-        "totalReturn": 28473.66,
-        "calmar": 0.3513
-      },
-      "tqqq_100": {
-        "cagr": 0.2604,
-        "maxDD": -0.7763,
-        "totalReturn": 52644.74,
-        "calmar": 0.3354
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 4,
-      "buy_shift": 0.1,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1607,
-        "maxDD": -0.552,
-        "totalReturn": 5568.25,
-        "calmar": 0.2912
-      },
-      "mix_50_50": {
-        "cagr": 0.2474,
-        "maxDD": -0.6609,
-        "totalReturn": 39734.54,
-        "calmar": 0.3743
-      },
-      "tqqq_100": {
-        "cagr": 0.2779,
-        "maxDD": -0.7763,
-        "totalReturn": 76620.76,
-        "calmar": 0.358
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 6,
-      "buy_shift": 0.1,
-      "sell_shift": 0.1667,
-      "qqq_100": {
-        "cagr": 0.1608,
-        "maxDD": -0.5765,
-        "totalReturn": 5579.03,
-        "calmar": 0.2789
-      },
-      "mix_50_50": {
-        "cagr": 0.2601,
-        "maxDD": -0.6778,
-        "totalReturn": 52340.8,
-        "calmar": 0.3838
-      },
-      "tqqq_100": {
-        "cagr": 0.2902,
-        "maxDD": -0.7797,
-        "totalReturn": 99363.15,
-        "calmar": 0.3722
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 8,
-      "buy_shift": 0.1,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.1579,
-        "maxDD": -0.5847,
-        "totalReturn": 5205.17,
-        "calmar": 0.27
-      },
-      "mix_50_50": {
-        "cagr": 0.2601,
-        "maxDD": -0.684,
-        "totalReturn": 52327.73,
-        "calmar": 0.3802
-      },
-      "tqqq_100": {
-        "cagr": 0.284,
-        "maxDD": -0.784,
-        "totalReturn": 87205.02,
-        "calmar": 0.3623
+        "cagr": 0.3317,
+        "maxDD": -0.8635,
+        "totalReturn": 234136.39,
+        "calmar": 0.3841
       }
     },
     {
@@ -1740,22 +1740,22 @@
       "buy_shift": 0.1,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1547,
-        "maxDD": -0.5978,
-        "totalReturn": 4819.12,
-        "calmar": 0.2587
+        "cagr": 0.1475,
+        "maxDD": -0.5683,
+        "totalReturn": 4054.8,
+        "calmar": 0.2595
       },
       "mix_50_50": {
-        "cagr": 0.2628,
-        "maxDD": -0.694,
-        "totalReturn": 55514.87,
-        "calmar": 0.3787
+        "cagr": 0.29,
+        "maxDD": -0.716,
+        "totalReturn": 98913.64,
+        "calmar": 0.4051
       },
       "tqqq_100": {
-        "cagr": 0.2866,
-        "maxDD": -0.7908,
-        "totalReturn": 92050.65,
-        "calmar": 0.3624
+        "cagr": 0.3313,
+        "maxDD": -0.8645,
+        "totalReturn": 232438.0,
+        "calmar": 0.3833
       }
     },
     {
@@ -1763,455 +1763,455 @@
       "sell_months": 12,
       "buy_shift": 0.1,
       "sell_shift": 0.0833,
-      "qqq_100": {
-        "cagr": 0.1517,
-        "maxDD": -0.621,
-        "totalReturn": 4485.96,
-        "calmar": 0.2443
-      },
-      "mix_50_50": {
-        "cagr": 0.2645,
-        "maxDD": -0.7116,
-        "totalReturn": 57517.81,
-        "calmar": 0.3717
-      },
-      "tqqq_100": {
-        "cagr": 0.2881,
-        "maxDD": -0.8028,
-        "totalReturn": 94919.43,
-        "calmar": 0.3588
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 15,
-      "buy_shift": 0.1,
-      "sell_shift": 0.0667,
-      "qqq_100": {
-        "cagr": 0.1461,
-        "maxDD": -0.6636,
-        "totalReturn": 3915.02,
-        "calmar": 0.2201
-      },
-      "mix_50_50": {
-        "cagr": 0.264,
-        "maxDD": -0.734,
-        "totalReturn": 56919.48,
-        "calmar": 0.3597
-      },
-      "tqqq_100": {
-        "cagr": 0.2886,
-        "maxDD": -0.8051,
-        "totalReturn": 96065.32,
-        "calmar": 0.3585
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 18,
-      "buy_shift": 0.1,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1401,
-        "maxDD": -0.6995,
-        "totalReturn": 3388.79,
-        "calmar": 0.2003
-      },
-      "mix_50_50": {
-        "cagr": 0.2596,
-        "maxDD": -0.7487,
-        "totalReturn": 51772.3,
-        "calmar": 0.3467
-      },
-      "tqqq_100": {
-        "cagr": 0.2857,
-        "maxDD": -0.7988,
-        "totalReturn": 90343.68,
-        "calmar": 0.3577
-      }
-    },
-    {
-      "buy_months": 10,
-      "sell_months": 24,
-      "buy_shift": 0.1,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.1302,
-        "maxDD": -0.7482,
-        "totalReturn": 2650.4,
-        "calmar": 0.174
-      },
-      "mix_50_50": {
-        "cagr": 0.2456,
-        "maxDD": -0.7709,
-        "totalReturn": 38212.03,
-        "calmar": 0.3186
-      },
-      "tqqq_100": {
-        "cagr": 0.2724,
-        "maxDD": -0.7943,
-        "totalReturn": 68121.71,
-        "calmar": 0.3429
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 1,
-      "buy_shift": 0.0833,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1463,
-        "maxDD": -0.5261,
-        "totalReturn": 3937.59,
-        "calmar": 0.2781
-      },
-      "mix_50_50": {
-        "cagr": 0.196,
-        "maxDD": -0.6679,
-        "totalReturn": 12637.59,
-        "calmar": 0.2934
-      },
-      "tqqq_100": {
-        "cagr": 0.2206,
-        "maxDD": -0.797,
-        "totalReturn": 22023.88,
-        "calmar": 0.2768
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 2,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.5,
-      "qqq_100": {
-        "cagr": 0.1531,
-        "maxDD": -0.5261,
-        "totalReturn": 4641.86,
-        "calmar": 0.291
-      },
-      "mix_50_50": {
-        "cagr": 0.2129,
-        "maxDD": -0.6679,
-        "totalReturn": 18565.24,
-        "calmar": 0.3188
-      },
-      "tqqq_100": {
-        "cagr": 0.2402,
-        "maxDD": -0.797,
-        "totalReturn": 33997.27,
-        "calmar": 0.3014
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 3,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.3333,
-      "qqq_100": {
-        "cagr": 0.1567,
-        "maxDD": -0.5269,
-        "totalReturn": 5061.94,
-        "calmar": 0.2975
-      },
-      "mix_50_50": {
-        "cagr": 0.2312,
-        "maxDD": -0.6679,
-        "totalReturn": 27846.4,
-        "calmar": 0.3461
-      },
-      "tqqq_100": {
-        "cagr": 0.2615,
-        "maxDD": -0.797,
-        "totalReturn": 53983.93,
-        "calmar": 0.3281
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 4,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1582,
-        "maxDD": -0.5453,
-        "totalReturn": 5237.34,
-        "calmar": 0.29
-      },
-      "mix_50_50": {
-        "cagr": 0.2471,
-        "maxDD": -0.6679,
-        "totalReturn": 39542.47,
-        "calmar": 0.37
-      },
-      "tqqq_100": {
-        "cagr": 0.2801,
-        "maxDD": -0.797,
-        "totalReturn": 80223.63,
-        "calmar": 0.3514
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 6,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.1667,
-      "qqq_100": {
-        "cagr": 0.1579,
-        "maxDD": -0.5701,
-        "totalReturn": 5200.38,
-        "calmar": 0.2769
-      },
-      "mix_50_50": {
-        "cagr": 0.2613,
-        "maxDD": -0.6854,
-        "totalReturn": 53754.21,
-        "calmar": 0.3813
-      },
-      "tqqq_100": {
-        "cagr": 0.2954,
-        "maxDD": -0.8008,
-        "totalReturn": 110713.11,
-        "calmar": 0.3689
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 8,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.1555,
-        "maxDD": -0.5785,
-        "totalReturn": 4911.12,
-        "calmar": 0.2688
-      },
-      "mix_50_50": {
-        "cagr": 0.2606,
-        "maxDD": -0.6914,
-        "totalReturn": 52910.68,
-        "calmar": 0.3769
-      },
-      "tqqq_100": {
-        "cagr": 0.2892,
-        "maxDD": -0.8046,
-        "totalReturn": 97192.68,
-        "calmar": 0.3594
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 10,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.1,
-      "qqq_100": {
-        "cagr": 0.1517,
-        "maxDD": -0.5917,
-        "totalReturn": 4483.27,
-        "calmar": 0.2563
-      },
-      "mix_50_50": {
-        "cagr": 0.258,
-        "maxDD": -0.7012,
-        "totalReturn": 49975.99,
-        "calmar": 0.3679
-      },
-      "tqqq_100": {
-        "cagr": 0.2812,
-        "maxDD": -0.8108,
-        "totalReturn": 82168.76,
-        "calmar": 0.3468
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 12,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.0833,
-      "qqq_100": {
-        "cagr": 0.1486,
-        "maxDD": -0.6152,
-        "totalReturn": 4168.91,
-        "calmar": 0.2416
-      },
-      "mix_50_50": {
-        "cagr": 0.2593,
-        "maxDD": -0.7184,
-        "totalReturn": 51493.16,
-        "calmar": 0.361
-      },
-      "tqqq_100": {
-        "cagr": 0.2823,
-        "maxDD": -0.8217,
-        "totalReturn": 84081.62,
-        "calmar": 0.3436
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 15,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.0667,
-      "qqq_100": {
-        "cagr": 0.1431,
-        "maxDD": -0.6588,
-        "totalReturn": 3642.3,
-        "calmar": 0.2172
-      },
-      "mix_50_50": {
-        "cagr": 0.2591,
-        "maxDD": -0.7407,
-        "totalReturn": 51203.03,
-        "calmar": 0.3498
-      },
-      "tqqq_100": {
-        "cagr": 0.2827,
-        "maxDD": -0.8229,
-        "totalReturn": 84844.1,
-        "calmar": 0.3436
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 18,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1377,
-        "maxDD": -0.6915,
-        "totalReturn": 3189.55,
-        "calmar": 0.1991
-      },
-      "mix_50_50": {
-        "cagr": 0.2554,
-        "maxDD": -0.7527,
-        "totalReturn": 47290.18,
-        "calmar": 0.3393
-      },
-      "tqqq_100": {
-        "cagr": 0.2804,
-        "maxDD": -0.8143,
-        "totalReturn": 80796.71,
-        "calmar": 0.3444
-      }
-    },
-    {
-      "buy_months": 12,
-      "sell_months": 24,
-      "buy_shift": 0.0833,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.129,
-        "maxDD": -0.7356,
-        "totalReturn": 2573.71,
-        "calmar": 0.1753
-      },
-      "mix_50_50": {
-        "cagr": 0.2441,
-        "maxDD": -0.7698,
-        "totalReturn": 37021.38,
-        "calmar": 0.3171
-      },
-      "tqqq_100": {
-        "cagr": 0.2707,
-        "maxDD": -0.805,
-        "totalReturn": 65649.15,
-        "calmar": 0.3362
-      }
-    },
-    {
-      "buy_months": 15,
-      "sell_months": 1,
-      "buy_shift": 0.0667,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1409,
-        "maxDD": -0.5057,
-        "totalReturn": 3454.24,
-        "calmar": 0.2786
-      },
-      "mix_50_50": {
-        "cagr": 0.1924,
-        "maxDD": -0.6608,
-        "totalReturn": 11639.11,
-        "calmar": 0.2911
-      },
-      "tqqq_100": {
-        "cagr": 0.2218,
-        "maxDD": -0.8011,
-        "totalReturn": 22624.82,
-        "calmar": 0.2768
-      }
-    },
-    {
-      "buy_months": 15,
-      "sell_months": 2,
-      "buy_shift": 0.0667,
-      "sell_shift": 0.5,
       "qqq_100": {
         "cagr": 0.1472,
-        "maxDD": -0.5057,
-        "totalReturn": 4027.82,
-        "calmar": 0.2911
+        "maxDD": -0.5932,
+        "totalReturn": 4021.84,
+        "calmar": 0.2481
       },
       "mix_50_50": {
-        "cagr": 0.2087,
-        "maxDD": -0.6608,
-        "totalReturn": 16879.23,
-        "calmar": 0.3158
+        "cagr": 0.2907,
+        "maxDD": -0.7323,
+        "totalReturn": 100440.09,
+        "calmar": 0.397
       },
       "tqqq_100": {
-        "cagr": 0.241,
-        "maxDD": -0.8011,
-        "totalReturn": 34562.7,
-        "calmar": 0.3008
+        "cagr": 0.3296,
+        "maxDD": -0.8723,
+        "totalReturn": 224371.99,
+        "calmar": 0.3779
       }
     },
     {
-      "buy_months": 15,
-      "sell_months": 3,
-      "buy_shift": 0.0667,
-      "sell_shift": 0.3333,
+      "buy_months": 10,
+      "sell_months": 15,
+      "buy_shift": 0.1,
+      "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1519,
-        "maxDD": -0.5057,
-        "totalReturn": 4510.72,
-        "calmar": 0.3004
+        "cagr": 0.1438,
+        "maxDD": -0.6397,
+        "totalReturn": 3707.96,
+        "calmar": 0.2248
       },
       "mix_50_50": {
-        "cagr": 0.2278,
-        "maxDD": -0.6608,
-        "totalReturn": 25876.01,
-        "calmar": 0.3448
+        "cagr": 0.2882,
+        "maxDD": -0.7544,
+        "totalReturn": 95260.28,
+        "calmar": 0.3821
       },
       "tqqq_100": {
-        "cagr": 0.2634,
-        "maxDD": -0.8011,
-        "totalReturn": 56218.7,
-        "calmar": 0.3288
+        "cagr": 0.3254,
+        "maxDD": -0.8693,
+        "totalReturn": 205938.62,
+        "calmar": 0.3743
       }
     },
     {
-      "buy_months": 15,
-      "sell_months": 4,
-      "buy_shift": 0.0667,
-      "sell_shift": 0.25,
+      "buy_months": 10,
+      "sell_months": 18,
+      "buy_shift": 0.1,
+      "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.1545,
-        "maxDD": -0.5119,
-        "totalReturn": 4793.74,
-        "calmar": 0.3017
+        "cagr": 0.1391,
+        "maxDD": -0.6746,
+        "totalReturn": 3308.33,
+        "calmar": 0.2062
       },
       "mix_50_50": {
-        "cagr": 0.245,
-        "maxDD": -0.6608,
-        "totalReturn": 37765.01,
+        "cagr": 0.2841,
+        "maxDD": -0.7663,
+        "totalReturn": 87405.18,
         "calmar": 0.3708
       },
       "tqqq_100": {
-        "cagr": 0.2835,
-        "maxDD": -0.8011,
-        "totalReturn": 86162.71,
-        "calmar": 0.3538
+        "cagr": 0.3203,
+        "maxDD": -0.8583,
+        "totalReturn": 185546.82,
+        "calmar": 0.3732
+      }
+    },
+    {
+      "buy_months": 10,
+      "sell_months": 24,
+      "buy_shift": 0.1,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1327,
+        "maxDD": -0.716,
+        "totalReturn": 2820.25,
+        "calmar": 0.1853
+      },
+      "mix_50_50": {
+        "cagr": 0.2723,
+        "maxDD": -0.7796,
+        "totalReturn": 67944.01,
+        "calmar": 0.3492
+      },
+      "tqqq_100": {
+        "cagr": 0.3079,
+        "maxDD": -0.8438,
+        "totalReturn": 143813.83,
+        "calmar": 0.365
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 1,
+      "buy_shift": 0.0833,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.1059,
+        "maxDD": -0.5057,
+        "totalReturn": 1426.28,
+        "calmar": 0.2093
+      },
+      "mix_50_50": {
+        "cagr": 0.173,
+        "maxDD": -0.6918,
+        "totalReturn": 7436.75,
+        "calmar": 0.2501
+      },
+      "tqqq_100": {
+        "cagr": 0.2115,
+        "maxDD": -0.8585,
+        "totalReturn": 17980.55,
+        "calmar": 0.2464
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 2,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.1138,
+        "maxDD": -0.5057,
+        "totalReturn": 1751.47,
+        "calmar": 0.225
+      },
+      "mix_50_50": {
+        "cagr": 0.1905,
+        "maxDD": -0.6918,
+        "totalReturn": 11145.76,
+        "calmar": 0.2753
+      },
+      "tqqq_100": {
+        "cagr": 0.2316,
+        "maxDD": -0.8585,
+        "totalReturn": 28136.42,
+        "calmar": 0.2698
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 3,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1185,
+        "maxDD": -0.5057,
+        "totalReturn": 1974.5,
+        "calmar": 0.2342
+      },
+      "mix_50_50": {
+        "cagr": 0.2073,
+        "maxDD": -0.6918,
+        "totalReturn": 16332.92,
+        "calmar": 0.2996
+      },
+      "tqqq_100": {
+        "cagr": 0.2523,
+        "maxDD": -0.8585,
+        "totalReturn": 44207.8,
+        "calmar": 0.2939
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 4,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1247,
+        "maxDD": -0.5087,
+        "totalReturn": 2311.87,
+        "calmar": 0.2451
+      },
+      "mix_50_50": {
+        "cagr": 0.2246,
+        "maxDD": -0.6918,
+        "totalReturn": 24084.58,
+        "calmar": 0.3247
+      },
+      "tqqq_100": {
+        "cagr": 0.2723,
+        "maxDD": -0.8585,
+        "totalReturn": 67964.55,
+        "calmar": 0.3172
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 6,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.1341,
+        "maxDD": -0.5356,
+        "totalReturn": 2924.62,
+        "calmar": 0.2504
+      },
+      "mix_50_50": {
+        "cagr": 0.265,
+        "maxDD": -0.6958,
+        "totalReturn": 58211.73,
+        "calmar": 0.3809
+      },
+      "tqqq_100": {
+        "cagr": 0.3154,
+        "maxDD": -0.8585,
+        "totalReturn": 167731.41,
+        "calmar": 0.3674
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 8,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.125,
+      "qqq_100": {
+        "cagr": 0.1416,
+        "maxDD": -0.5446,
+        "totalReturn": 3516.32,
+        "calmar": 0.2601
+      },
+      "mix_50_50": {
+        "cagr": 0.2795,
+        "maxDD": -0.7016,
+        "totalReturn": 79278.76,
+        "calmar": 0.3984
+      },
+      "tqqq_100": {
+        "cagr": 0.3268,
+        "maxDD": -0.8585,
+        "totalReturn": 212038.68,
+        "calmar": 0.3807
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 10,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.1,
+      "qqq_100": {
+        "cagr": 0.1434,
+        "maxDD": -0.5589,
+        "totalReturn": 3670.3,
+        "calmar": 0.2566
+      },
+      "mix_50_50": {
+        "cagr": 0.2833,
+        "maxDD": -0.711,
+        "totalReturn": 85902.17,
+        "calmar": 0.3985
+      },
+      "tqqq_100": {
+        "cagr": 0.3273,
+        "maxDD": -0.8618,
+        "totalReturn": 214274.36,
+        "calmar": 0.3798
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 12,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.0833,
+      "qqq_100": {
+        "cagr": 0.1435,
+        "maxDD": -0.5843,
+        "totalReturn": 3682.94,
+        "calmar": 0.2457
+      },
+      "mix_50_50": {
+        "cagr": 0.2846,
+        "maxDD": -0.7277,
+        "totalReturn": 88327.62,
+        "calmar": 0.3912
+      },
+      "tqqq_100": {
+        "cagr": 0.3262,
+        "maxDD": -0.8697,
+        "totalReturn": 209290.17,
+        "calmar": 0.375
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 15,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.0667,
+      "qqq_100": {
+        "cagr": 0.1402,
+        "maxDD": -0.6341,
+        "totalReturn": 3392.16,
+        "calmar": 0.221
+      },
+      "mix_50_50": {
+        "cagr": 0.2817,
+        "maxDD": -0.7535,
+        "totalReturn": 83023.42,
+        "calmar": 0.3739
+      },
+      "tqqq_100": {
+        "cagr": 0.3196,
+        "maxDD": -0.8722,
+        "totalReturn": 182751.95,
+        "calmar": 0.3664
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 18,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.0556,
+      "qqq_100": {
+        "cagr": 0.1356,
+        "maxDD": -0.6712,
+        "totalReturn": 3031.31,
+        "calmar": 0.202
+      },
+      "mix_50_50": {
+        "cagr": 0.2776,
+        "maxDD": -0.7669,
+        "totalReturn": 76048.37,
+        "calmar": 0.362
+      },
+      "tqqq_100": {
+        "cagr": 0.3136,
+        "maxDD": -0.863,
+        "totalReturn": 161792.67,
+        "calmar": 0.3634
+      }
+    },
+    {
+      "buy_months": 12,
+      "sell_months": 24,
+      "buy_shift": 0.0833,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1291,
+        "maxDD": -0.7153,
+        "totalReturn": 2578.9,
+        "calmar": 0.1804
+      },
+      "mix_50_50": {
+        "cagr": 0.2653,
+        "maxDD": -0.7825,
+        "totalReturn": 58511.89,
+        "calmar": 0.339
+      },
+      "tqqq_100": {
+        "cagr": 0.3,
+        "maxDD": -0.8499,
+        "totalReturn": 121907.38,
+        "calmar": 0.353
+      }
+    },
+    {
+      "buy_months": 15,
+      "sell_months": 1,
+      "buy_shift": 0.0667,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.1027,
+        "maxDD": -0.4509,
+        "totalReturn": 1313.03,
+        "calmar": 0.2278
+      },
+      "mix_50_50": {
+        "cagr": 0.1744,
+        "maxDD": -0.6232,
+        "totalReturn": 7685.84,
+        "calmar": 0.2799
+      },
+      "tqqq_100": {
+        "cagr": 0.2197,
+        "maxDD": -0.7572,
+        "totalReturn": 21618.16,
+        "calmar": 0.2902
+      }
+    },
+    {
+      "buy_months": 15,
+      "sell_months": 2,
+      "buy_shift": 0.0667,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.1097,
+        "maxDD": -0.4509,
+        "totalReturn": 1577.25,
+        "calmar": 0.2433
+      },
+      "mix_50_50": {
+        "cagr": 0.1909,
+        "maxDD": -0.6232,
+        "totalReturn": 11266.91,
+        "calmar": 0.3064
+      },
+      "tqqq_100": {
+        "cagr": 0.2391,
+        "maxDD": -0.7572,
+        "totalReturn": 33133.55,
+        "calmar": 0.3157
+      }
+    },
+    {
+      "buy_months": 15,
+      "sell_months": 3,
+      "buy_shift": 0.0667,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1147,
+        "maxDD": -0.4509,
+        "totalReturn": 1792.82,
+        "calmar": 0.2543
+      },
+      "mix_50_50": {
+        "cagr": 0.2078,
+        "maxDD": -0.6232,
+        "totalReturn": 16534.69,
+        "calmar": 0.3334
+      },
+      "tqqq_100": {
+        "cagr": 0.2599,
+        "maxDD": -0.7572,
+        "totalReturn": 52126.37,
+        "calmar": 0.3433
+      }
+    },
+    {
+      "buy_months": 15,
+      "sell_months": 4,
+      "buy_shift": 0.0667,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1213,
+        "maxDD": -0.4509,
+        "totalReturn": 2120.71,
+        "calmar": 0.2689
+      },
+      "mix_50_50": {
+        "cagr": 0.2255,
+        "maxDD": -0.6232,
+        "totalReturn": 24593.78,
+        "calmar": 0.3619
+      },
+      "tqqq_100": {
+        "cagr": 0.2804,
+        "maxDD": -0.7572,
+        "totalReturn": 80751.94,
+        "calmar": 0.3703
       }
     },
     {
@@ -2220,22 +2220,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.1667,
       "qqq_100": {
-        "cagr": 0.1543,
-        "maxDD": -0.5385,
-        "totalReturn": 4779.4,
-        "calmar": 0.2866
+        "cagr": 0.131,
+        "maxDD": -0.4732,
+        "totalReturn": 2703.95,
+        "calmar": 0.2768
       },
       "mix_50_50": {
-        "cagr": 0.2609,
-        "maxDD": -0.6708,
-        "totalReturn": 53254.63,
-        "calmar": 0.3889
+        "cagr": 0.2678,
+        "maxDD": -0.6232,
+        "totalReturn": 61760.86,
+        "calmar": 0.4297
       },
       "tqqq_100": {
-        "cagr": 0.3014,
-        "maxDD": -0.8011,
-        "totalReturn": 125596.61,
-        "calmar": 0.3763
+        "cagr": 0.326,
+        "maxDD": -0.7572,
+        "totalReturn": 208573.81,
+        "calmar": 0.4306
       }
     },
     {
@@ -2244,22 +2244,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.125,
       "qqq_100": {
-        "cagr": 0.1523,
-        "maxDD": -0.5496,
-        "totalReturn": 4548.57,
-        "calmar": 0.277
+        "cagr": 0.1387,
+        "maxDD": -0.4859,
+        "totalReturn": 3275.69,
+        "calmar": 0.2855
       },
       "mix_50_50": {
-        "cagr": 0.2627,
-        "maxDD": -0.6788,
-        "totalReturn": 55341.13,
-        "calmar": 0.387
+        "cagr": 0.2812,
+        "maxDD": -0.6319,
+        "totalReturn": 82083.87,
+        "calmar": 0.445
       },
       "tqqq_100": {
-        "cagr": 0.2999,
-        "maxDD": -0.8053,
-        "totalReturn": 121704.99,
-        "calmar": 0.3724
+        "cagr": 0.337,
+        "maxDD": -0.7572,
+        "totalReturn": 260718.6,
+        "calmar": 0.445
       }
     },
     {
@@ -2268,22 +2268,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1499,
-        "maxDD": -0.5536,
-        "totalReturn": 4297.91,
-        "calmar": 0.2708
+        "cagr": 0.1418,
+        "maxDD": -0.4904,
+        "totalReturn": 3527.23,
+        "calmar": 0.2891
       },
       "mix_50_50": {
-        "cagr": 0.2613,
-        "maxDD": -0.6816,
-        "totalReturn": 53701.45,
-        "calmar": 0.3833
+        "cagr": 0.2873,
+        "maxDD": -0.6351,
+        "totalReturn": 93456.89,
+        "calmar": 0.4524
       },
       "tqqq_100": {
-        "cagr": 0.2944,
-        "maxDD": -0.807,
-        "totalReturn": 108497.48,
-        "calmar": 0.3648
+        "cagr": 0.3415,
+        "maxDD": -0.7572,
+        "totalReturn": 285640.05,
+        "calmar": 0.451
       }
     },
     {
@@ -2292,22 +2292,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.1479,
-        "maxDD": -0.5646,
-        "totalReturn": 4095.5,
-        "calmar": 0.262
+        "cagr": 0.1435,
+        "maxDD": -0.503,
+        "totalReturn": 3680.17,
+        "calmar": 0.2853
       },
       "mix_50_50": {
-        "cagr": 0.2603,
-        "maxDD": -0.6895,
-        "totalReturn": 52620.25,
-        "calmar": 0.3776
+        "cagr": 0.2907,
+        "maxDD": -0.6442,
+        "totalReturn": 100376.88,
+        "calmar": 0.4513
       },
       "tqqq_100": {
-        "cagr": 0.2897,
-        "maxDD": -0.8118,
-        "totalReturn": 98170.51,
-        "calmar": 0.3568
+        "cagr": 0.3424,
+        "maxDD": -0.7621,
+        "totalReturn": 290667.02,
+        "calmar": 0.4492
       }
     },
     {
@@ -2316,22 +2316,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1443,
-        "maxDD": -0.5942,
-        "totalReturn": 3754.42,
-        "calmar": 0.2429
+        "cagr": 0.1431,
+        "maxDD": -0.5368,
+        "totalReturn": 3648.43,
+        "calmar": 0.2667
       },
       "mix_50_50": {
-        "cagr": 0.2594,
-        "maxDD": -0.7106,
-        "totalReturn": 51572.32,
-        "calmar": 0.3651
+        "cagr": 0.2915,
+        "maxDD": -0.6683,
+        "totalReturn": 102071.28,
+        "calmar": 0.4362
       },
       "tqqq_100": {
-        "cagr": 0.2863,
-        "maxDD": -0.8246,
-        "totalReturn": 91449.65,
-        "calmar": 0.3472
+        "cagr": 0.3413,
+        "maxDD": -0.7782,
+        "totalReturn": 284456.21,
+        "calmar": 0.4385
       }
     },
     {
@@ -2340,22 +2340,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.1392,
-        "maxDD": -0.6334,
-        "totalReturn": 3315.99,
-        "calmar": 0.2198
+        "cagr": 0.1381,
+        "maxDD": -0.59,
+        "totalReturn": 3223.82,
+        "calmar": 0.234
       },
       "mix_50_50": {
-        "cagr": 0.2547,
-        "maxDD": -0.7312,
-        "totalReturn": 46547.07,
-        "calmar": 0.3483
+        "cagr": 0.2831,
+        "maxDD": -0.7094,
+        "totalReturn": 85542.43,
+        "calmar": 0.3991
       },
       "tqqq_100": {
-        "cagr": 0.2792,
-        "maxDD": -0.8295,
-        "totalReturn": 78645.89,
-        "calmar": 0.3365
+        "cagr": 0.3311,
+        "maxDD": -0.8141,
+        "totalReturn": 231570.73,
+        "calmar": 0.4068
       }
     },
     {
@@ -2364,22 +2364,22 @@
       "buy_shift": 0.0667,
       "sell_shift": 0.0417,
       "qqq_100": {
-        "cagr": 0.1316,
-        "maxDD": -0.6798,
-        "totalReturn": 2745.71,
-        "calmar": 0.1936
+        "cagr": 0.1312,
+        "maxDD": -0.6558,
+        "totalReturn": 2718.4,
+        "calmar": 0.2
       },
       "mix_50_50": {
-        "cagr": 0.2441,
-        "maxDD": -0.7504,
-        "totalReturn": 36963.22,
-        "calmar": 0.3252
+        "cagr": 0.2652,
+        "maxDD": -0.7543,
+        "totalReturn": 58407.23,
+        "calmar": 0.3516
       },
       "tqqq_100": {
-        "cagr": 0.268,
-        "maxDD": -0.8214,
-        "totalReturn": 62053.33,
-        "calmar": 0.3263
+        "cagr": 0.3017,
+        "maxDD": -0.851,
+        "totalReturn": 126374.29,
+        "calmar": 0.3546
       }
     },
     {
@@ -2388,22 +2388,22 @@
       "buy_shift": 0.0556,
       "sell_shift": 1.0,
       "qqq_100": {
-        "cagr": 0.1385,
-        "maxDD": -0.4531,
-        "totalReturn": 3252.85,
-        "calmar": 0.3056
+        "cagr": 0.0991,
+        "maxDD": -0.3847,
+        "totalReturn": 1193.59,
+        "calmar": 0.2576
       },
       "mix_50_50": {
-        "cagr": 0.1964,
-        "maxDD": -0.5972,
-        "totalReturn": 12768.6,
-        "calmar": 0.3289
+        "cagr": 0.1713,
+        "maxDD": -0.5352,
+        "totalReturn": 7147.24,
+        "calmar": 0.3201
       },
       "tqqq_100": {
-        "cagr": 0.2324,
-        "maxDD": -0.7159,
-        "totalReturn": 28615.21,
-        "calmar": 0.3246
+        "cagr": 0.2197,
+        "maxDD": -0.6605,
+        "totalReturn": 21588.23,
+        "calmar": 0.3326
       }
     },
     {
@@ -2412,430 +2412,430 @@
       "buy_shift": 0.0556,
       "sell_shift": 0.5,
       "qqq_100": {
-        "cagr": 0.1444,
-        "maxDD": -0.4531,
-        "totalReturn": 3760.29,
-        "calmar": 0.3187
+        "cagr": 0.1054,
+        "maxDD": -0.3847,
+        "totalReturn": 1410.09,
+        "calmar": 0.274
       },
       "mix_50_50": {
-        "cagr": 0.2124,
-        "maxDD": -0.5972,
-        "totalReturn": 18321.17,
-        "calmar": 0.3556
-      },
-      "tqqq_100": {
-        "cagr": 0.2513,
-        "maxDD": -0.7159,
-        "totalReturn": 43321.1,
-        "calmar": 0.3511
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 3,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.3333,
-      "qqq_100": {
-        "cagr": 0.1503,
-        "maxDD": -0.4531,
-        "totalReturn": 4333.58,
-        "calmar": 0.3316
-      },
-      "mix_50_50": {
-        "cagr": 0.2325,
-        "maxDD": -0.5972,
-        "totalReturn": 28703.68,
-        "calmar": 0.3894
-      },
-      "tqqq_100": {
-        "cagr": 0.2751,
-        "maxDD": -0.7159,
-        "totalReturn": 72137.06,
-        "calmar": 0.3842
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 4,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.25,
-      "qqq_100": {
-        "cagr": 0.1533,
-        "maxDD": -0.4531,
-        "totalReturn": 4661.83,
-        "calmar": 0.3383
-      },
-      "mix_50_50": {
-        "cagr": 0.2507,
-        "maxDD": -0.5972,
-        "totalReturn": 42671.21,
-        "calmar": 0.4197
-      },
-      "tqqq_100": {
-        "cagr": 0.2963,
-        "maxDD": -0.7159,
-        "totalReturn": 112908.39,
-        "calmar": 0.4139
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 6,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.1667,
-      "qqq_100": {
-        "cagr": 0.1546,
-        "maxDD": -0.4738,
-        "totalReturn": 4806.83,
-        "calmar": 0.3262
-      },
-      "mix_50_50": {
-        "cagr": 0.2689,
-        "maxDD": -0.5989,
-        "totalReturn": 63261.11,
-        "calmar": 0.4491
-      },
-      "tqqq_100": {
-        "cagr": 0.3173,
-        "maxDD": -0.7159,
-        "totalReturn": 174310.57,
-        "calmar": 0.4432
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 8,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.125,
-      "qqq_100": {
-        "cagr": 0.153,
-        "maxDD": -0.4871,
-        "totalReturn": 4628.98,
-        "calmar": 0.3141
-      },
-      "mix_50_50": {
-        "cagr": 0.2729,
-        "maxDD": -0.609,
-        "totalReturn": 68902.31,
-        "calmar": 0.4481
-      },
-      "tqqq_100": {
-        "cagr": 0.319,
-        "maxDD": -0.7159,
-        "totalReturn": 180656.35,
-        "calmar": 0.4456
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 10,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.1,
-      "qqq_100": {
-        "cagr": 0.1507,
-        "maxDD": -0.4955,
-        "totalReturn": 4376.75,
-        "calmar": 0.304
-      },
-      "mix_50_50": {
-        "cagr": 0.2726,
-        "maxDD": -0.6154,
-        "totalReturn": 68420.83,
-        "calmar": 0.4429
-      },
-      "tqqq_100": {
-        "cagr": 0.3157,
-        "maxDD": -0.7204,
-        "totalReturn": 168899.42,
-        "calmar": 0.4383
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 12,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.0833,
-      "qqq_100": {
-        "cagr": 0.1496,
-        "maxDD": -0.4999,
-        "totalReturn": 4270.01,
-        "calmar": 0.2993
-      },
-      "mix_50_50": {
-        "cagr": 0.2729,
-        "maxDD": -0.6188,
-        "totalReturn": 68882.43,
-        "calmar": 0.4411
-      },
-      "tqqq_100": {
-        "cagr": 0.313,
-        "maxDD": -0.7228,
-        "totalReturn": 159602.05,
-        "calmar": 0.433
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 15,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.0667,
-      "qqq_100": {
-        "cagr": 0.1471,
-        "maxDD": -0.5186,
-        "totalReturn": 4012.4,
-        "calmar": 0.2836
-      },
-      "mix_50_50": {
-        "cagr": 0.271,
-        "maxDD": -0.633,
-        "totalReturn": 66175.48,
-        "calmar": 0.4282
-      },
-      "tqqq_100": {
-        "cagr": 0.3074,
-        "maxDD": -0.7332,
-        "totalReturn": 142189.07,
-        "calmar": 0.4193
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 18,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.0556,
-      "qqq_100": {
-        "cagr": 0.1438,
-        "maxDD": -0.5441,
-        "totalReturn": 3708.22,
-        "calmar": 0.2643
-      },
-      "mix_50_50": {
-        "cagr": 0.2671,
-        "maxDD": -0.6526,
-        "totalReturn": 60875.01,
-        "calmar": 0.4094
-      },
-      "tqqq_100": {
-        "cagr": 0.3015,
-        "maxDD": -0.7475,
-        "totalReturn": 125688.87,
-        "calmar": 0.4033
-      }
-    },
-    {
-      "buy_months": 18,
-      "sell_months": 24,
-      "buy_shift": 0.0556,
-      "sell_shift": 0.0417,
-      "qqq_100": {
-        "cagr": 0.1347,
-        "maxDD": -0.6202,
-        "totalReturn": 2966.67,
-        "calmar": 0.2172
-      },
-      "mix_50_50": {
-        "cagr": 0.2499,
-        "maxDD": -0.7145,
-        "totalReturn": 41965.77,
-        "calmar": 0.3497
-      },
-      "tqqq_100": {
-        "cagr": 0.281,
-        "maxDD": -0.804,
-        "totalReturn": 81708.8,
+        "cagr": 0.187,
+        "maxDD": -0.5352,
+        "totalReturn": 10290.62,
         "calmar": 0.3494
-      }
-    },
-    {
-      "buy_months": 24,
-      "sell_months": 1,
-      "buy_shift": 0.0417,
-      "sell_shift": 1.0,
-      "qqq_100": {
-        "cagr": 0.1323,
-        "maxDD": -0.3458,
-        "totalReturn": 2792.79,
-        "calmar": 0.3825
-      },
-      "mix_50_50": {
-        "cagr": 0.1939,
-        "maxDD": -0.4651,
-        "totalReturn": 12067.48,
-        "calmar": 0.4169
       },
       "tqqq_100": {
-        "cagr": 0.2346,
-        "maxDD": -0.5693,
-        "totalReturn": 30068.36,
-        "calmar": 0.4122
+        "cagr": 0.2382,
+        "maxDD": -0.6605,
+        "totalReturn": 32541.15,
+        "calmar": 0.3607
       }
     },
     {
-      "buy_months": 24,
-      "sell_months": 2,
-      "buy_shift": 0.0417,
-      "sell_shift": 0.5,
-      "qqq_100": {
-        "cagr": 0.1376,
-        "maxDD": -0.3458,
-        "totalReturn": 3181.82,
-        "calmar": 0.3978
-      },
-      "mix_50_50": {
-        "cagr": 0.2089,
-        "maxDD": -0.4651,
-        "totalReturn": 16949.73,
-        "calmar": 0.4491
-      },
-      "tqqq_100": {
-        "cagr": 0.2528,
-        "maxDD": -0.5693,
-        "totalReturn": 44754.35,
-        "calmar": 0.4441
-      }
-    },
-    {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 3,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.3333,
       "qqq_100": {
-        "cagr": 0.1449,
-        "maxDD": -0.3458,
-        "totalReturn": 3807.76,
-        "calmar": 0.4191
+        "cagr": 0.1103,
+        "maxDD": -0.3847,
+        "totalReturn": 1602.86,
+        "calmar": 0.2868
       },
       "mix_50_50": {
-        "cagr": 0.2279,
-        "maxDD": -0.4651,
-        "totalReturn": 25903.0,
-        "calmar": 0.4899
+        "cagr": 0.2037,
+        "maxDD": -0.5352,
+        "totalReturn": 15068.8,
+        "calmar": 0.3806
       },
       "tqqq_100": {
-        "cagr": 0.2734,
-        "maxDD": -0.5693,
-        "totalReturn": 69651.69,
-        "calmar": 0.4803
+        "cagr": 0.2592,
+        "maxDD": -0.6605,
+        "totalReturn": 51377.3,
+        "calmar": 0.3925
       }
     },
     {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 4,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.25,
       "qqq_100": {
-        "cagr": 0.1498,
-        "maxDD": -0.3458,
-        "totalReturn": 4290.45,
-        "calmar": 0.4333
+        "cagr": 0.1172,
+        "maxDD": -0.3847,
+        "totalReturn": 1913.43,
+        "calmar": 0.3047
       },
       "mix_50_50": {
-        "cagr": 0.2478,
-        "maxDD": -0.4651,
-        "totalReturn": 40114.78,
-        "calmar": 0.5328
+        "cagr": 0.2216,
+        "maxDD": -0.5352,
+        "totalReturn": 22550.89,
+        "calmar": 0.4141
       },
       "tqqq_100": {
-        "cagr": 0.2968,
-        "maxDD": -0.5693,
-        "totalReturn": 114101.81,
-        "calmar": 0.5214
+        "cagr": 0.2801,
+        "maxDD": -0.6605,
+        "totalReturn": 80194.56,
+        "calmar": 0.424
       }
     },
     {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 6,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.1667,
       "qqq_100": {
-        "cagr": 0.1526,
-        "maxDD": -0.347,
-        "totalReturn": 4587.97,
-        "calmar": 0.4399
+        "cagr": 0.128,
+        "maxDD": -0.3948,
+        "totalReturn": 2513.67,
+        "calmar": 0.3243
       },
       "mix_50_50": {
-        "cagr": 0.268,
-        "maxDD": -0.4754,
-        "totalReturn": 62043.11,
-        "calmar": 0.5638
+        "cagr": 0.2658,
+        "maxDD": -0.5352,
+        "totalReturn": 59113.49,
+        "calmar": 0.4966
       },
       "tqqq_100": {
-        "cagr": 0.3201,
-        "maxDD": -0.5693,
-        "totalReturn": 184734.97,
-        "calmar": 0.5622
+        "cagr": 0.3278,
+        "maxDD": -0.6605,
+        "totalReturn": 216356.79,
+        "calmar": 0.4963
       }
     },
     {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 8,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.125,
       "qqq_100": {
-        "cagr": 0.1517,
-        "maxDD": -0.3657,
-        "totalReturn": 4484.04,
-        "calmar": 0.4148
+        "cagr": 0.137,
+        "maxDD": -0.4101,
+        "totalReturn": 3136.21,
+        "calmar": 0.334
       },
       "mix_50_50": {
-        "cagr": 0.273,
-        "maxDD": -0.5263,
-        "totalReturn": 69005.2,
-        "calmar": 0.5188
+        "cagr": 0.2811,
+        "maxDD": -0.5375,
+        "totalReturn": 82013.87,
+        "calmar": 0.523
       },
       "tqqq_100": {
-        "cagr": 0.3235,
-        "maxDD": -0.5693,
-        "totalReturn": 198121.59,
-        "calmar": 0.5682
+        "cagr": 0.3403,
+        "maxDD": -0.6605,
+        "totalReturn": 278800.63,
+        "calmar": 0.5152
       }
     },
     {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 10,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.1,
       "qqq_100": {
-        "cagr": 0.1501,
-        "maxDD": -0.3744,
-        "totalReturn": 4317.88,
-        "calmar": 0.4009
+        "cagr": 0.1399,
+        "maxDD": -0.4198,
+        "totalReturn": 3367.81,
+        "calmar": 0.3332
       },
       "mix_50_50": {
-        "cagr": 0.2749,
-        "maxDD": -0.5574,
-        "totalReturn": 71840.94,
-        "calmar": 0.4932
+        "cagr": 0.2861,
+        "maxDD": -0.5451,
+        "totalReturn": 91043.09,
+        "calmar": 0.5249
       },
       "tqqq_100": {
-        "cagr": 0.3235,
-        "maxDD": -0.5804,
-        "totalReturn": 198030.36,
-        "calmar": 0.5574
+        "cagr": 0.3426,
+        "maxDD": -0.6605,
+        "totalReturn": 292334.34,
+        "calmar": 0.5187
       }
     },
     {
-      "buy_months": 24,
+      "buy_months": 18,
       "sell_months": 12,
-      "buy_shift": 0.0417,
+      "buy_shift": 0.0556,
       "sell_shift": 0.0833,
       "qqq_100": {
-        "cagr": 0.1493,
-        "maxDD": -0.3829,
-        "totalReturn": 4233.98,
-        "calmar": 0.3899
+        "cagr": 0.1423,
+        "maxDD": -0.4248,
+        "totalReturn": 3571.7,
+        "calmar": 0.3349
+      },
+      "mix_50_50": {
+        "cagr": 0.2902,
+        "maxDD": -0.549,
+        "totalReturn": 99211.16,
+        "calmar": 0.5285
+      },
+      "tqqq_100": {
+        "cagr": 0.3449,
+        "maxDD": -0.6605,
+        "totalReturn": 305937.67,
+        "calmar": 0.5221
+      }
+    },
+    {
+      "buy_months": 18,
+      "sell_months": 15,
+      "buy_shift": 0.0556,
+      "sell_shift": 0.0667,
+      "qqq_100": {
+        "cagr": 0.1434,
+        "maxDD": -0.4463,
+        "totalReturn": 3674.41,
+        "calmar": 0.3214
+      },
+      "mix_50_50": {
+        "cagr": 0.2935,
+        "maxDD": -0.5782,
+        "totalReturn": 106332.42,
+        "calmar": 0.5075
+      },
+      "tqqq_100": {
+        "cagr": 0.3469,
+        "maxDD": -0.6723,
+        "totalReturn": 318630.55,
+        "calmar": 0.516
+      }
+    },
+    {
+      "buy_months": 18,
+      "sell_months": 18,
+      "buy_shift": 0.0556,
+      "sell_shift": 0.0556,
+      "qqq_100": {
+        "cagr": 0.1417,
+        "maxDD": -0.4756,
+        "totalReturn": 3521.23,
+        "calmar": 0.2979
+      },
+      "mix_50_50": {
+        "cagr": 0.2915,
+        "maxDD": -0.5974,
+        "totalReturn": 102154.42,
+        "calmar": 0.488
+      },
+      "tqqq_100": {
+        "cagr": 0.3435,
+        "maxDD": -0.6897,
+        "totalReturn": 297422.69,
+        "calmar": 0.498
+      }
+    },
+    {
+      "buy_months": 18,
+      "sell_months": 24,
+      "buy_shift": 0.0556,
+      "sell_shift": 0.0417,
+      "qqq_100": {
+        "cagr": 0.1361,
+        "maxDD": -0.565,
+        "totalReturn": 3069.16,
+        "calmar": 0.2408
       },
       "mix_50_50": {
         "cagr": 0.2767,
-        "maxDD": -0.5769,
-        "totalReturn": 74628.2,
-        "calmar": 0.4796
+        "maxDD": -0.6647,
+        "totalReturn": 74631.33,
+        "calmar": 0.4163
       },
       "tqqq_100": {
-        "cagr": 0.3234,
-        "maxDD": -0.6003,
-        "totalReturn": 197916.91,
-        "calmar": 0.5388
+        "cagr": 0.3224,
+        "maxDD": -0.7531,
+        "totalReturn": 193828.05,
+        "calmar": 0.4281
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 1,
+      "buy_shift": 0.0417,
+      "sell_shift": 1.0,
+      "qqq_100": {
+        "cagr": 0.093,
+        "maxDD": -0.2915,
+        "totalReturn": 1011.46,
+        "calmar": 0.319
+      },
+      "mix_50_50": {
+        "cagr": 0.1592,
+        "maxDD": -0.416,
+        "totalReturn": 5373.12,
+        "calmar": 0.3827
+      },
+      "tqqq_100": {
+        "cagr": 0.2021,
+        "maxDD": -0.5242,
+        "totalReturn": 14538.15,
+        "calmar": 0.3856
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 2,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.5,
+      "qqq_100": {
+        "cagr": 0.0983,
+        "maxDD": -0.2915,
+        "totalReturn": 1169.11,
+        "calmar": 0.3374
+      },
+      "mix_50_50": {
+        "cagr": 0.1735,
+        "maxDD": -0.416,
+        "totalReturn": 7530.98,
+        "calmar": 0.4171
+      },
+      "tqqq_100": {
+        "cagr": 0.2193,
+        "maxDD": -0.5242,
+        "totalReturn": 21385.91,
+        "calmar": 0.4183
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 3,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.3333,
+      "qqq_100": {
+        "cagr": 0.1028,
+        "maxDD": -0.2915,
+        "totalReturn": 1317.54,
+        "calmar": 0.3528
+      },
+      "mix_50_50": {
+        "cagr": 0.1888,
+        "maxDD": -0.416,
+        "totalReturn": 10714.95,
+        "calmar": 0.4537
+      },
+      "tqqq_100": {
+        "cagr": 0.2385,
+        "maxDD": -0.5242,
+        "totalReturn": 32742.1,
+        "calmar": 0.455
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 4,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.25,
+      "qqq_100": {
+        "cagr": 0.1099,
+        "maxDD": -0.2915,
+        "totalReturn": 1583.42,
+        "calmar": 0.3769
+      },
+      "mix_50_50": {
+        "cagr": 0.2064,
+        "maxDD": -0.416,
+        "totalReturn": 16034.51,
+        "calmar": 0.4962
+      },
+      "tqqq_100": {
+        "cagr": 0.259,
+        "maxDD": -0.5242,
+        "totalReturn": 51081.51,
+        "calmar": 0.4941
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 6,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.1667,
+      "qqq_100": {
+        "cagr": 0.122,
+        "maxDD": -0.2915,
+        "totalReturn": 2159.22,
+        "calmar": 0.4185
+      },
+      "mix_50_50": {
+        "cagr": 0.253,
+        "maxDD": -0.4172,
+        "totalReturn": 44864.13,
+        "calmar": 0.6063
+      },
+      "tqqq_100": {
+        "cagr": 0.31,
+        "maxDD": -0.5242,
+        "totalReturn": 149914.52,
+        "calmar": 0.5913
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 8,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.125,
+      "qqq_100": {
+        "cagr": 0.1324,
+        "maxDD": -0.3018,
+        "totalReturn": 2799.96,
+        "calmar": 0.4386
+      },
+      "mix_50_50": {
+        "cagr": 0.2708,
+        "maxDD": -0.4493,
+        "totalReturn": 65831.04,
+        "calmar": 0.6027
+      },
+      "tqqq_100": {
+        "cagr": 0.326,
+        "maxDD": -0.5374,
+        "totalReturn": 208569.33,
+        "calmar": 0.6067
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 10,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.1,
+      "qqq_100": {
+        "cagr": 0.1365,
+        "maxDD": -0.3114,
+        "totalReturn": 3100.03,
+        "calmar": 0.4383
+      },
+      "mix_50_50": {
+        "cagr": 0.2779,
+        "maxDD": -0.5076,
+        "totalReturn": 76521.24,
+        "calmar": 0.5474
+      },
+      "tqqq_100": {
+        "cagr": 0.3313,
+        "maxDD": -0.5519,
+        "totalReturn": 232544.92,
+        "calmar": 0.6004
+      }
+    },
+    {
+      "buy_months": 24,
+      "sell_months": 12,
+      "buy_shift": 0.0417,
+      "sell_shift": 0.0833,
+      "qqq_100": {
+        "cagr": 0.1391,
+        "maxDD": -0.3208,
+        "totalReturn": 3306.44,
+        "calmar": 0.4337
+      },
+      "mix_50_50": {
+        "cagr": 0.2827,
+        "maxDD": -0.5431,
+        "totalReturn": 84834.6,
+        "calmar": 0.5206
+      },
+      "tqqq_100": {
+        "cagr": 0.3344,
+        "maxDD": -0.5675,
+        "totalReturn": 247252.29,
+        "calmar": 0.5891
       }
     },
     {
@@ -2844,22 +2844,22 @@
       "buy_shift": 0.0417,
       "sell_shift": 0.0667,
       "qqq_100": {
-        "cagr": 0.1484,
-        "maxDD": -0.3869,
-        "totalReturn": 4147.16,
-        "calmar": 0.3837
+        "cagr": 0.1415,
+        "maxDD": -0.3251,
+        "totalReturn": 3502.92,
+        "calmar": 0.4351
       },
       "mix_50_50": {
-        "cagr": 0.2782,
-        "maxDD": -0.5956,
-        "totalReturn": 77071.87,
-        "calmar": 0.4671
+        "cagr": 0.2875,
+        "maxDD": -0.5747,
+        "totalReturn": 93905.42,
+        "calmar": 0.5003
       },
       "tqqq_100": {
-        "cagr": 0.3231,
-        "maxDD": -0.6192,
-        "totalReturn": 196539.99,
-        "calmar": 0.5218
+        "cagr": 0.3378,
+        "maxDD": -0.5984,
+        "totalReturn": 264964.6,
+        "calmar": 0.5645
       }
     },
     {
@@ -2868,22 +2868,22 @@
       "buy_shift": 0.0417,
       "sell_shift": 0.0556,
       "qqq_100": {
-        "cagr": 0.1463,
-        "maxDD": -0.3998,
-        "totalReturn": 3938.9,
-        "calmar": 0.3659
+        "cagr": 0.1412,
+        "maxDD": -0.3394,
+        "totalReturn": 3483.18,
+        "calmar": 0.4162
       },
       "mix_50_50": {
-        "cagr": 0.2755,
-        "maxDD": -0.6075,
-        "totalReturn": 72740.79,
-        "calmar": 0.4535
+        "cagr": 0.2871,
+        "maxDD": -0.594,
+        "totalReturn": 92953.01,
+        "calmar": 0.4833
       },
       "tqqq_100": {
-        "cagr": 0.3183,
-        "maxDD": -0.6315,
-        "totalReturn": 178183.5,
-        "calmar": 0.5041
+        "cagr": 0.3358,
+        "maxDD": -0.6172,
+        "totalReturn": 254489.94,
+        "calmar": 0.5441
       }
     },
     {
@@ -2892,22 +2892,22 @@
       "buy_shift": 0.0417,
       "sell_shift": 0.0417,
       "qqq_100": {
-        "cagr": 0.1418,
-        "maxDD": -0.4467,
-        "totalReturn": 3530.18,
-        "calmar": 0.3174
+        "cagr": 0.1396,
+        "maxDD": -0.3901,
+        "totalReturn": 3343.37,
+        "calmar": 0.3578
       },
       "mix_50_50": {
-        "cagr": 0.2664,
-        "maxDD": -0.6414,
-        "totalReturn": 59979.95,
-        "calmar": 0.4154
+        "cagr": 0.2815,
+        "maxDD": -0.6205,
+        "totalReturn": 82711.98,
+        "calmar": 0.4537
       },
       "tqqq_100": {
-        "cagr": 0.3026,
-        "maxDD": -0.6554,
-        "totalReturn": 128576.57,
-        "calmar": 0.4616
+        "cagr": 0.3272,
+        "maxDD": -0.6429,
+        "totalReturn": 213765.71,
+        "calmar": 0.509
       }
     }
   ]

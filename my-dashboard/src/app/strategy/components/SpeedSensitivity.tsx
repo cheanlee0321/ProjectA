@@ -19,7 +19,7 @@ export function SpeedSensitivity() {
   const [showAllLeaderboard, setShowAllLeaderboard] = useState(false);
 
   useEffect(() => {
-    fetch('/data/speed_sensitivity.json')
+    fetch('/data/speed_sensitivity.json?v=' + new Date().getTime())
       .then(res => res.json())
       .then(json => {
         setData(json);
@@ -178,7 +178,7 @@ export function SpeedSensitivity() {
             {/* ZAxis domain sets the bubble size range. */}
             <ZAxis type="number" dataKey="z" range={[400, 400]} />
             
-            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} isAnimationActive={false} />
             
             <Scatter data={scatterData} shape="square">
               {scatterData.map((entry, index) => (
@@ -267,11 +267,11 @@ export function SpeedSensitivity() {
       </div>
 
       <div className="p-5 bg-slate-800/50 rounded-xl border border-slate-700">
-        <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論</h4>
+        <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論 (已套用磁滯效應更新)</h4>
         <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
-          <li><strong>買入節奏的寬容度：</strong> 從熱力圖 Y 軸可看出，無論買入速度是極快 (1-3個月) 或是極慢 (15-24個月)，對最終績效的影響較小，綠色區塊的分佈較廣。</li>
-          <li><strong>賣出節奏的致命性：</strong> 從熱力圖 X 軸可看出，賣出速度過慢 (大於 12 個月) 會有顯著的績效懲罰與回撤加深（顏色偏紅）。在遭遇空頭確認時，拖泥帶水會造成巨大的傷害。</li>
-          <li><strong>最佳化甜蜜點：</strong> 排行榜顯示，最佳的非對稱配置通常落在「賣出較快 (2~6個月) 搭配買入適中 (6~15個月)」，這類組合能以非對稱的風險偏好度過市場牛熊轉換，取得最高的絕對報酬。</li>
+          <li><strong>買入節奏的爆發力：</strong> 加入「紅轉黃不接刀」的磁滯避險邏輯後，一旦燈號確實降回綠燈，代表市場已徹底落底。此時<strong>加快買入速度 (4~6個月)</strong> 反而能取得最高報酬，因為底部確認後的反彈最為猛烈。</li>
+          <li><strong>賣出節奏的從容度：</strong> 由於我們在黃燈區間就已經將現金改買 1 倍大盤（降檔防守），當真正觸發紅燈時，我們已不需要像過去一樣恐慌性拋售。數據顯示，賣出節奏放緩至 8~12 個月，反而能避免被假跌破洗出場。</li>
+          <li><strong>最佳化甜蜜點大反轉：</strong> 避險邏輯升級後，最佳的非對稱配置從過去的「快賣慢買」，完美反轉為<strong>「快買 (4個月) 搭配 慢賣 (10~12個月)」</strong>。這證明了：前端的防禦邏輯越聰明，後端的交易動作就可以越從容！</li>
         </ul>
       </div>
     </div>

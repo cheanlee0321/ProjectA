@@ -125,6 +125,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
     weight_cash = 1.0
     
     current_month = None
+    trend_state = 'GREEN'
     
     for i, row in df.iterrows():
         # Apply daily return
@@ -145,6 +146,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
             signal = row['finraToM0']
             
             if signal > 0.40: # RED
+                trend_state = 'RED'
                 # shift 10% of total portfolio from lev to cash
                 shift = 0.10
                 if weight_lev > 0:
@@ -152,6 +154,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
                     weight_lev -= trade_amt
                     weight_cash += trade_amt
             elif signal < 0.30: # GREEN
+                trend_state = 'GREEN'
                 # shift 10% of total portfolio from cash to lev
                 shift = 0.10
                 if weight_cash > 0:
@@ -174,6 +177,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
     w_cash = 1.0
     
     current_month = None
+    trend_state = 'GREEN'
     for i, row in df.iterrows():
         n_lev = nav * w_lev * (1 + row[lev_ticker])
         n_base = nav * w_base * (1 + row[base_ticker])
@@ -191,6 +195,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
             signal = row['finraToM0']
             
             if signal > 0.40: # RED
+                trend_state = 'RED'
                 # shift 10% of total from equity to cash. Pro-rata from lev and base.
                 shift = 0.10
                 w_eq = w_lev + w_base
@@ -202,6 +207,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
                     w_base -= trade_amt * ratio_base
                     w_cash += trade_amt
             elif signal < 0.30: # GREEN
+                trend_state = 'GREEN'
                 # shift 10% of total from cash to 50/50 equity
                 shift = 0.10
                 if w_cash > 0:
@@ -210,12 +216,16 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
                     w_lev += trade_amt * 0.5
                     w_base += trade_amt * 0.5
             else: # YELLOW
-                # deploy cash to base only
-                shift = 0.10
-                if w_cash > 0:
-                    trade_amt = min(w_cash, shift)
-                    w_cash -= trade_amt
-                    w_base += trade_amt
+                if trend_state == 'GREEN':
+                    # deploy cash to base only
+                    shift = 0.10
+                    if w_cash > 0:
+                        trade_amt = min(w_cash, shift)
+                        w_cash -= trade_amt
+                        w_base += trade_amt
+                else:
+                    # from RED -> YELLOW, do nothing
+                    pass
                     
         nav_s4.append(nav)
     df['S4_Nav'] = nav_s4
@@ -227,6 +237,7 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
     w_cash = 1.0
     
     current_month = None
+    trend_state = 'GREEN'
     for i, row in df.iterrows():
         n_base = nav * w_base * (1 + row[base_ticker])
         n_cash = nav * w_cash * (1 + row[cash_ticker])
@@ -242,23 +253,28 @@ def run_backtest(df, base_ticker, lev_ticker, cash_ticker):
             signal = row['finraToM0']
             
             if signal > 0.40: # RED
+                trend_state = 'RED'
                 shift = 0.10
                 if w_base > 0:
                     trade_amt = min(w_base, shift)
                     w_base -= trade_amt
                     w_cash += trade_amt
             elif signal < 0.30: # GREEN
+                trend_state = 'GREEN'
                 shift = 0.10
                 if w_cash > 0:
                     trade_amt = min(w_cash, shift)
                     w_cash -= trade_amt
                     w_base += trade_amt
             else: # YELLOW
-                shift = 0.10
-                if w_cash > 0:
-                    trade_amt = min(w_cash, shift)
-                    w_cash -= trade_amt
-                    w_base += trade_amt
+                if trend_state == 'GREEN':
+                    shift = 0.10
+                    if w_cash > 0:
+                        trade_amt = min(w_cash, shift)
+                        w_cash -= trade_amt
+                        w_base += trade_amt
+                else:
+                    pass
                     
         nav_s3.append(nav)
     df['S3_Nav'] = nav_s3

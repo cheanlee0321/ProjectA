@@ -21,7 +21,7 @@ export function ThresholdHeatmap() {
   const [metric, setMetric] = useState<MetricType>('cagr');
 
   useEffect(() => {
-    fetch('/data/threshold_sensitivity.json')
+    fetch('/data/threshold_sensitivity.json?v=' + new Date().getTime())
       .then(res => res.json())
       .then(json => {
         setData(json.results);
@@ -181,7 +181,7 @@ export function ThresholdHeatmap() {
             {/* ZAxis domain sets the bubble size range. Since we want a heatmap grid, we set a fixed range */}
             <ZAxis type="number" dataKey="z" range={[400, 400]} />
             
-            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} isAnimationActive={false} />
             
             <Scatter data={scatterData} shape="square">
               {scatterData.map((entry, index) => (
@@ -206,11 +206,11 @@ export function ThresholdHeatmap() {
       </div>
 
       <div className="mt-8 p-5 bg-slate-800/50 rounded-xl border border-slate-700">
-        <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論</h4>
+        <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論 (已套用磁滯效應更新)</h4>
         <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
-          <li><strong>非單一孤島：</strong> 熱力圖顯示，優秀的績效並非只存在於 (0.30, 0.40) 這個單一孤島，而是在一個廣泛的「高原區間」內皆有效。這證明了策略具備良好的<strong>穩健性 (Robustness)</strong>，而非參數過擬合 (Overfitting)。</li>
-          <li><strong>紅燈的極限：</strong> 紅燈設定在 0.38 ~ 0.44 之間都能發揮極佳的避險效果。但若紅燈設得太高 (&gt;0.48)，在某些股災中會太晚警報而遭遇較大回撤。</li>
-          <li><strong>黃燈的容錯：</strong> 黃燈的設定對最終 CAGR 影響較小，其主要功能是作為緩衝區，減少頻繁全倉切換帶來的摩擦成本與心理壓力。</li>
+          <li><strong>紅燈的極限不變：</strong> 紅燈設定在 0.40 ~ 0.45 之間依然能發揮極佳的避險效果。這證明了判斷市場過熱的標準具有長期的有效性。但若紅燈設得太高 (&gt;0.48)，會太晚警報而遭遇較大回撤。</li>
+          <li><strong>黃燈甜蜜點下移：</strong> 加入磁滯效應（前一個是紅燈就不買）後，數據顯示將黃燈閾值適度調低至 0.24 ~ 0.28，能讓「確認落底」的標準變得更嚴格，進一步榨出更高的超額報酬。</li>
+          <li><strong>非單一孤島：</strong> 熱力圖顯示，優秀的績效並非只存在於單一點位，而是在一個廣泛的「高原區間」內皆有效。這證明了策略具備良好的<strong>穩健性 (Robustness)</strong>，而非參數過擬合 (Overfitting)。</li>
         </ul>
       </div>
     </div>

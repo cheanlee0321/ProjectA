@@ -6,7 +6,7 @@ export function StrategyGuide() {
           <span className="mr-2">💡</span> 紅黃綠燈操作規則
         </h3>
         <p className="text-foreground/70 text-sm mb-6 bg-violet-900/20 p-4 rounded-xl border border-violet-500/20">
-          ⚠️ <strong>客製化提醒：</strong>以下定義的紅黃綠燈閾值 (0.30 與 0.40) 以及「分 10 個月買賣」的規則，皆為作者個人的偏好與歷史回測實驗設定，並非絕對真理。您可以根據自身的風險承受度與對當下總經環境的判斷，自行微調這些參數。
+          ⚠️ <strong>客製化提醒：</strong>以下定義的紅黃綠燈閾值 (0.30 與 0.40) 以及「分 10 個月買賣」的規則，皆為作者個人的偏好與歷史回測實驗設定，並非絕對真理。可以根據自身的風險承受度與對當下總經環境的判斷，自行微調這些參數。
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-foreground/80">
           <div>
@@ -15,7 +15,14 @@ export function StrategyGuide() {
           </div>
           <div>
             <h4 className="text-lg font-semibold text-amber-400 mb-2">🟡 黃燈區間 (比值 0.3 - 0.4)</h4>
-            <p><strong>觀望調整：</strong>停止加碼槓桿 ETF (TQQQ/UPRO)，但<strong>持續買入 1 倍指數 (QQQ/SPY)</strong>。市場槓桿升高但尚未極端，此階段應降低風險敞口，用 1 倍指數維持市場曝險即可。已持有的槓桿部位不需急於賣出。</p>
+            <p className="mb-3"><strong>觀望調整：</strong>停止加碼槓桿 ETF (TQQQ/UPRO)，但<strong>持續買入 1 倍指數 (QQQ/SPY)</strong>。市場槓桿升高但尚未極端，此階段應降低風險敞口，用 1 倍指數維持市場曝險即可。已持有的槓桿部位不需急於賣出。</p>
+            <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-500/20 text-xs text-amber-200/90 leading-relaxed space-y-2">
+              <p><span className="mr-1">🔍</span> <strong>回測程式行為解密：</strong></p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>在推薦的「50/50 混搭」：</strong>若處於綠燈，每個月會將手邊閒置現金的 10% 拆成一半（5% 買槓桿、5% 買原型）；一旦進入黃燈，<strong>若前一個燈號是綠燈（市場正在升溫）</strong>，程式會踩剎車降檔，將這 10% 現金全部改為買入 1 倍原型指數。但<strong>若前一個燈號是紅燈（市場剛從崩盤中降溫）</strong>，為了避免過早接到掉下來的刀子，黃燈期間將直接執行 <code>pass</code>（暫停買進），直到燈號降回綠燈才開始重新加碼。</li>
+                <li><strong>在「100% 槓桿 (如純 TQQQ)」：</strong>由於目標配比中沒有 1 倍指數，進入黃燈時程式會直接執行 <code>pass</code>（暫停一切買進），保留手中閒置現金，直到燈號轉為綠燈才繼續加碼，或轉為紅燈才開始拋售。</li>
+              </ul>
+            </div>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-rose-400 mb-2">🔴 紅燈區間 (比值 &gt; 0.4)</h4>
@@ -26,7 +33,7 @@ export function StrategyGuide() {
           <div>
             <h4 className="text-lg font-semibold text-amber-400 mb-2">⚡ 策略優缺點與歷史數據</h4>
             <ul className="list-disc list-inside space-y-2 text-sm">
-              <li><strong>優點：</strong>極佳的下檔保護。27 年回測顯示，無腦持有模擬 TQQQ 會面臨 99.96% 的實質歸零；而推薦的 50% QQQ / 50% TQQQ 混搭策略，將最大回撤控制在 69.40%，同時創造了 55,514% 的驚人報酬。</li>
+              <li><strong>優點：</strong>極佳的下檔保護。27 年回測顯示，無腦持有模擬 TQQQ 會面臨 99.96% 的實質歸零；而推薦的 50% QQQ / 50% TQQQ 混搭策略，將最大回撤控制在 71.60%，同時創造了 98,914% 的驚人報酬。</li>
               <li><strong>缺點：</strong>融資餘額數據具落後性（月底結算），且可能產生假突破導致頻繁切換買賣計畫。</li>
             </ul>
           </div>
@@ -50,7 +57,7 @@ export function StrategyGuide() {
           <ul className="list-decimal list-inside space-y-3 ml-2">
             <li><strong className="text-violet-200 text-base">無腦 All-in (基準)：</strong>不看指標，買了就睡的對照組。用來驗證策略到底有沒有贏過單純抱住大盤。</li>
             <li><strong className="text-violet-200 text-base">無腦 All-in 槓桿：</strong>不看指標，買槓桿承受毀滅性風險的對照組。證明如果不搭配避險策略，槓桿 ETF 在 2022 等股災中有多危險。</li>
-            <li><strong className="text-violet-200 text-base">策略指標 (100% 原型)：</strong>在涵蓋 2000 年與 2008 年崩盤的 27 年長週期中，策略成功避開了致命深淵，反而大幅勝出 Buy & Hold (QQQ: 4819% vs 1428%)。但在 2010~2026 的純牛市子區間中，頻繁進出場會造成現金拖累。此對照組用於展示長短週期的差異。</li>
+            <li><strong className="text-violet-200 text-base">策略指標 (100% 原型)：</strong>在涵蓋 2000 年與 2008 年崩盤的 27 年長週期中，策略成功避開了致命深淵，反而大幅勝出 Buy & Hold (QQQ: 4055% vs 1428%)。但在 2010~2026 的純牛市子區間中，頻繁進出場會造成現金拖累。此對照組用於展示長短週期的差異。</li>
             <li>
               <strong className="text-violet-200 text-base">策略指標 (50% 混搭)：</strong>最安全、高 CP 值的核心策略。用趨近大盤的風險，換取數倍的報酬率。
               <div className="mt-2 mb-1 p-3 bg-violet-900/20 border border-violet-500/20 rounded-lg text-sm text-violet-200/80 leading-relaxed ml-5">
@@ -80,7 +87,7 @@ export function StrategyGuide() {
             </h4>
             <div className="space-y-3">
               <p>
-                <strong className="text-violet-200">S&P 500 (SPY / UPRO)：</strong>代表美國全市場前 500 大企業，產業分散，<strong>波動與風險相對較低</strong>。搭配策略時，推薦的 50% SPY / 50% UPRO 混搭模式最大回撤為 58.56%，與無腦持有 1 倍 SPY 的 55.19% 相近，卻帶來了 110 倍的最終資產。如果您傾向穩健，SPY 家族是好選擇。
+                <strong className="text-violet-200">S&P 500 (SPY / UPRO)：</strong>代表美國全市場前 500 大企業，產業分散，<strong>波動與風險相對較低</strong>。搭配策略時，推薦的 50% SPY / 50% UPRO 混搭模式最大回撤為 49.86%，與無腦持有 1 倍 SPY 的 55.19% 相近甚至更低，卻帶來了 186 倍的最終資產。如果您傾向穩健，SPY 家族是好選擇。
               </p>
               <p>
                 <strong className="text-violet-200">NASDAQ 100 (QQQ / TQQQ)：</strong>高度集中於科技巨頭，<strong>攻擊力極強但波動更大</strong>。在套用相同策略下，TQQQ 的報酬率遠超 UPRO，但也需要承受更劇烈的震盪。這也是為什麼我們特別推薦使用「50% QQQ + 50% TQQQ」的混搭模式來平衡風險。

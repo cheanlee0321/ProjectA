@@ -18,330 +18,330 @@
       "yellow": 0.2,
       "red": 0.25,
       "qqq_100": {
-        "cagr": 0.0405,
-        "maxDD": -0.1192,
-        "totalReturn": 192.86,
-        "calmar": 0.3395
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "mix_50_50": {
-        "cagr": 0.0405,
-        "maxDD": -0.1192,
-        "totalReturn": 192.86,
-        "calmar": 0.3395
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "tqqq_100": {
-        "cagr": 0.0405,
-        "maxDD": -0.1192,
-        "totalReturn": 192.86,
-        "calmar": 0.3395
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       }
     },
     {
       "yellow": 0.2,
       "red": 0.27,
       "qqq_100": {
-        "cagr": 0.0355,
-        "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "mix_50_50": {
-        "cagr": 0.0355,
-        "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "tqqq_100": {
-        "cagr": 0.0355,
-        "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       }
     },
     {
       "yellow": 0.2,
       "red": 0.29,
       "qqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "mix_50_50": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "tqqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       }
     },
     {
       "yellow": 0.2,
       "red": 0.31,
       "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "mix_50_50": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       },
       "tqqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.02,
+        "maxDD": 0.0,
+        "totalReturn": 70.97,
+        "calmar": 0
       }
     },
     {
       "yellow": 0.2,
       "red": 0.33,
       "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       },
       "mix_50_50": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       },
       "tqqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       }
     },
     {
       "yellow": 0.2,
       "red": 0.35,
       "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       },
       "mix_50_50": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       },
       "tqqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0205,
+        "maxDD": -0.0311,
+        "totalReturn": 73.04,
+        "calmar": 0.6586
       }
     },
     {
       "yellow": 0.2,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.0386,
+        "maxDD": -0.2244,
+        "totalReturn": 178.97,
+        "calmar": 0.172
       },
       "mix_50_50": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.0386,
+        "maxDD": -0.2244,
+        "totalReturn": 178.97,
+        "calmar": 0.172
       },
       "tqqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.0386,
+        "maxDD": -0.2244,
+        "totalReturn": 178.97,
+        "calmar": 0.172
       }
     },
     {
       "yellow": 0.2,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.038,
+        "maxDD": -0.2573,
+        "totalReturn": 174.96,
+        "calmar": 0.1478
       },
       "mix_50_50": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.038,
+        "maxDD": -0.2573,
+        "totalReturn": 174.96,
+        "calmar": 0.1478
       },
       "tqqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.038,
+        "maxDD": -0.2573,
+        "totalReturn": 174.96,
+        "calmar": 0.1478
       }
     },
     {
       "yellow": 0.2,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       },
       "mix_50_50": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       },
       "tqqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       }
     },
     {
       "yellow": 0.2,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       },
       "mix_50_50": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       },
       "tqqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.0371,
+        "maxDD": -0.2879,
+        "totalReturn": 168.38,
+        "calmar": 0.1289
       }
     },
     {
       "yellow": 0.2,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.0334,
+        "maxDD": -0.3226,
+        "totalReturn": 143.3,
+        "calmar": 0.1034
       },
       "mix_50_50": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.0334,
+        "maxDD": -0.3226,
+        "totalReturn": 143.3,
+        "calmar": 0.1034
       },
       "tqqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.0334,
+        "maxDD": -0.3226,
+        "totalReturn": 143.3,
+        "calmar": 0.1034
       }
     },
     {
       "yellow": 0.2,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.0484,
+        "maxDD": -0.5662,
+        "totalReturn": 259.56,
+        "calmar": 0.0854
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.0484,
+        "maxDD": -0.5662,
+        "totalReturn": 259.56,
+        "calmar": 0.0854
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.0484,
+        "maxDD": -0.5662,
+        "totalReturn": 259.56,
+        "calmar": 0.0854
       }
     },
     {
       "yellow": 0.2,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.0806,
+        "maxDD": -0.6861,
+        "totalReturn": 716.03,
+        "calmar": 0.1174
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.0806,
+        "maxDD": -0.6861,
+        "totalReturn": 716.03,
+        "calmar": 0.1174
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.0806,
+        "maxDD": -0.6861,
+        "totalReturn": 716.03,
+        "calmar": 0.1174
       }
     },
     {
       "yellow": 0.2,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.0927,
+        "maxDD": -0.7615,
+        "totalReturn": 1004.69,
+        "calmar": 0.1218
       },
       "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.0927,
+        "maxDD": -0.7615,
+        "totalReturn": 1004.69,
+        "calmar": 0.1218
       },
       "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.0927,
+        "maxDD": -0.7615,
+        "totalReturn": 1004.69,
+        "calmar": 0.1218
       }
     },
     {
       "yellow": 0.2,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.0983,
+        "maxDD": -0.7615,
+        "totalReturn": 1166.3,
+        "calmar": 0.129
       },
       "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.0983,
+        "maxDD": -0.7615,
+        "totalReturn": 1166.3,
+        "calmar": 0.129
       },
       "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.0983,
+        "maxDD": -0.7615,
+        "totalReturn": 1166.3,
+        "calmar": 0.129
       }
     },
     {
@@ -370,682 +370,682 @@
       "yellow": 0.22,
       "red": 0.25,
       "qqq_100": {
-        "cagr": 0.0405,
-        "maxDD": -0.1192,
-        "totalReturn": 192.86,
-        "calmar": 0.3395
+        "cagr": 0.0325,
+        "maxDD": -0.076,
+        "totalReturn": 137.86,
+        "calmar": 0.428
       },
       "mix_50_50": {
-        "cagr": 0.0489,
-        "maxDD": -0.2061,
-        "totalReturn": 264.73,
-        "calmar": 0.2374
+        "cagr": 0.0436,
+        "maxDD": -0.169,
+        "totalReturn": 218.03,
+        "calmar": 0.2582
       },
       "tqqq_100": {
-        "cagr": 0.0558,
-        "maxDD": -0.2855,
-        "totalReturn": 335.45,
-        "calmar": 0.1955
+        "cagr": 0.0523,
+        "maxDD": -0.2537,
+        "totalReturn": 297.66,
+        "calmar": 0.2061
       }
     },
     {
       "yellow": 0.22,
       "red": 0.27,
       "qqq_100": {
-        "cagr": 0.0355,
-        "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
+        "cagr": 0.0337,
+        "maxDD": -0.1478,
+        "totalReturn": 145.6,
+        "calmar": 0.2282
       },
       "mix_50_50": {
-        "cagr": 0.0374,
-        "maxDD": -0.3922,
-        "totalReturn": 170.03,
-        "calmar": 0.0952
+        "cagr": 0.0453,
+        "maxDD": -0.3229,
+        "totalReturn": 232.18,
+        "calmar": 0.1403
       },
       "tqqq_100": {
-        "cagr": 0.0391,
-        "maxDD": -0.4004,
-        "totalReturn": 182.49,
-        "calmar": 0.0976
+        "cagr": 0.0542,
+        "maxDD": -0.4128,
+        "totalReturn": 317.74,
+        "calmar": 0.1313
       }
     },
     {
       "yellow": 0.22,
       "red": 0.29,
       "qqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.0345,
+        "maxDD": -0.1586,
+        "totalReturn": 150.86,
+        "calmar": 0.2178
       },
       "mix_50_50": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.0472,
+        "maxDD": -0.3436,
+        "totalReturn": 249.2,
+        "calmar": 0.1375
       },
       "tqqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.0569,
+        "maxDD": -0.4386,
+        "totalReturn": 347.31,
+        "calmar": 0.1297
       }
     },
     {
       "yellow": 0.22,
       "red": 0.31,
       "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.036,
+        "maxDD": -0.1586,
+        "totalReturn": 160.42,
+        "calmar": 0.2268
       },
       "mix_50_50": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.0503,
+        "maxDD": -0.3436,
+        "totalReturn": 277.43,
+        "calmar": 0.1463
       },
       "tqqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.0608,
+        "maxDD": -0.4386,
+        "totalReturn": 394.09,
+        "calmar": 0.1385
       }
     },
     {
       "yellow": 0.22,
       "red": 0.33,
       "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0397,
+        "maxDD": -0.1631,
+        "totalReturn": 186.72,
+        "calmar": 0.2431
       },
       "mix_50_50": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0577,
+        "maxDD": -0.35,
+        "totalReturn": 357.56,
+        "calmar": 0.165
       },
       "tqqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.35,
-      "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
-      },
-      "mix_50_50": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
-      },
-      "tqqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.37,
-      "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
-      },
-      "mix_50_50": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
-      },
-      "tqqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.39,
-      "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
-      },
-      "mix_50_50": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
-      },
-      "tqqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.41,
-      "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
-      },
-      "mix_50_50": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
-      },
-      "tqqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.43,
-      "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
-      },
-      "mix_50_50": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
-      },
-      "tqqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.45,
-      "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      },
-      "mix_50_50": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      },
-      "tqqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.47,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.49,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.51,
-      "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.53,
-      "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      }
-    },
-    {
-      "yellow": 0.22,
-      "red": 0.55,
-      "qqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "mix_50_50": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "tqqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      }
-    },
-    {
-      "yellow": 0.24,
-      "red": 0.25,
-      "qqq_100": {
-        "cagr": 0.0405,
-        "maxDD": -0.1192,
-        "totalReturn": 192.86,
-        "calmar": 0.3395
-      },
-      "mix_50_50": {
-        "cagr": 0.0606,
-        "maxDD": -0.2237,
-        "totalReturn": 392.28,
-        "calmar": 0.2709
-      },
-      "tqqq_100": {
-        "cagr": 0.0768,
-        "maxDD": -0.3164,
-        "totalReturn": 642.49,
-        "calmar": 0.2428
-      }
-    },
-    {
-      "yellow": 0.24,
-      "red": 0.27,
-      "qqq_100": {
-        "cagr": 0.0355,
-        "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
-      },
-      "mix_50_50": {
-        "cagr": 0.0488,
-        "maxDD": -0.4012,
-        "totalReturn": 263.28,
-        "calmar": 0.1216
-      },
-      "tqqq_100": {
-        "cagr": 0.0601,
-        "maxDD": -0.4183,
-        "totalReturn": 385.54,
-        "calmar": 0.1436
-      }
-    },
-    {
-      "yellow": 0.24,
-      "red": 0.29,
-      "qqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
-      },
-      "mix_50_50": {
         "cagr": 0.0702,
-        "maxDD": -0.4726,
-        "totalReturn": 528.15,
-        "calmar": 0.1485
+        "maxDD": -0.4386,
+        "totalReturn": 528.46,
+        "calmar": 0.1601
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.35,
+      "qqq_100": {
+        "cagr": 0.0411,
+        "maxDD": -0.1727,
+        "totalReturn": 197.83,
+        "calmar": 0.2381
+      },
+      "mix_50_50": {
+        "cagr": 0.0614,
+        "maxDD": -0.368,
+        "totalReturn": 401.81,
+        "calmar": 0.1667
       },
       "tqqq_100": {
-        "cagr": 0.0825,
-        "maxDD": -0.4726,
-        "totalReturn": 756.08,
-        "calmar": 0.1746
+        "cagr": 0.0748,
+        "maxDD": -0.4577,
+        "totalReturn": 605.61,
+        "calmar": 0.1634
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.37,
+      "qqq_100": {
+        "cagr": 0.0604,
+        "maxDD": -0.2244,
+        "totalReturn": 389.08,
+        "calmar": 0.2689
+      },
+      "mix_50_50": {
+        "cagr": 0.0815,
+        "maxDD": -0.368,
+        "totalReturn": 735.94,
+        "calmar": 0.2216
+      },
+      "tqqq_100": {
+        "cagr": 0.0954,
+        "maxDD": -0.4577,
+        "totalReturn": 1080.82,
+        "calmar": 0.2085
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.39,
+      "qqq_100": {
+        "cagr": 0.0607,
+        "maxDD": -0.2573,
+        "totalReturn": 393.63,
+        "calmar": 0.2359
+      },
+      "mix_50_50": {
+        "cagr": 0.0826,
+        "maxDD": -0.368,
+        "totalReturn": 758.32,
+        "calmar": 0.2244
+      },
+      "tqqq_100": {
+        "cagr": 0.0967,
+        "maxDD": -0.4577,
+        "totalReturn": 1118.67,
+        "calmar": 0.2113
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.41,
+      "qqq_100": {
+        "cagr": 0.0596,
+        "maxDD": -0.2879,
+        "totalReturn": 380.14,
+        "calmar": 0.2071
+      },
+      "mix_50_50": {
+        "cagr": 0.0813,
+        "maxDD": -0.368,
+        "totalReturn": 731.28,
+        "calmar": 0.221
+      },
+      "tqqq_100": {
+        "cagr": 0.0954,
+        "maxDD": -0.4577,
+        "totalReturn": 1080.55,
+        "calmar": 0.2084
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.43,
+      "qqq_100": {
+        "cagr": 0.0594,
+        "maxDD": -0.2879,
+        "totalReturn": 377.59,
+        "calmar": 0.2064
+      },
+      "mix_50_50": {
+        "cagr": 0.0806,
+        "maxDD": -0.368,
+        "totalReturn": 715.39,
+        "calmar": 0.2189
+      },
+      "tqqq_100": {
+        "cagr": 0.0944,
+        "maxDD": -0.4577,
+        "totalReturn": 1050.03,
+        "calmar": 0.2061
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.45,
+      "qqq_100": {
+        "cagr": 0.1169,
+        "maxDD": -0.3226,
+        "totalReturn": 1897.84,
+        "calmar": 0.3624
+      },
+      "mix_50_50": {
+        "cagr": 0.2328,
+        "maxDD": -0.7624,
+        "totalReturn": 28870.38,
+        "calmar": 0.3053
+      },
+      "tqqq_100": {
+        "cagr": 0.2626,
+        "maxDD": -0.7849,
+        "totalReturn": 55181.71,
+        "calmar": 0.3345
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.47,
+      "qqq_100": {
+        "cagr": 0.1192,
+        "maxDD": -0.5753,
+        "totalReturn": 2011.0,
+        "calmar": 0.2072
+      },
+      "mix_50_50": {
+        "cagr": 0.2299,
+        "maxDD": -0.7683,
+        "totalReturn": 27075.4,
+        "calmar": 0.2992
+      },
+      "tqqq_100": {
+        "cagr": 0.2598,
+        "maxDD": -0.7915,
+        "totalReturn": 51966.84,
+        "calmar": 0.3282
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.49,
+      "qqq_100": {
+        "cagr": 0.1126,
+        "maxDD": -0.6928,
+        "totalReturn": 1700.96,
+        "calmar": 0.1626
+      },
+      "mix_50_50": {
+        "cagr": 0.2084,
+        "maxDD": -0.7529,
+        "totalReturn": 16771.59,
+        "calmar": 0.2768
+      },
+      "tqqq_100": {
+        "cagr": 0.2371,
+        "maxDD": -0.7836,
+        "totalReturn": 31733.78,
+        "calmar": 0.3026
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.51,
+      "qqq_100": {
+        "cagr": 0.1085,
+        "maxDD": -0.7667,
+        "totalReturn": 1526.7,
+        "calmar": 0.1415
+      },
+      "mix_50_50": {
+        "cagr": 0.1892,
+        "maxDD": -0.7715,
+        "totalReturn": 10819.57,
+        "calmar": 0.2452
+      },
+      "tqqq_100": {
+        "cagr": 0.2165,
+        "maxDD": -0.7762,
+        "totalReturn": 20124.37,
+        "calmar": 0.279
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.53,
+      "qqq_100": {
+        "cagr": 0.1132,
+        "maxDD": -0.7667,
+        "totalReturn": 1724.53,
+        "calmar": 0.1476
+      },
+      "mix_50_50": {
+        "cagr": 0.1959,
+        "maxDD": -0.7715,
+        "totalReturn": 12618.0,
+        "calmar": 0.2539
+      },
+      "tqqq_100": {
+        "cagr": 0.2235,
+        "maxDD": -0.7809,
+        "totalReturn": 23525.14,
+        "calmar": 0.2863
+      }
+    },
+    {
+      "yellow": 0.22,
+      "red": 0.55,
+      "qqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "mix_50_50": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "tqqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      }
+    },
+    {
+      "yellow": 0.24,
+      "red": 0.25,
+      "qqq_100": {
+        "cagr": 0.0411,
+        "maxDD": -0.0923,
+        "totalReturn": 197.99,
+        "calmar": 0.4455
+      },
+      "mix_50_50": {
+        "cagr": 0.0633,
+        "maxDD": -0.2016,
+        "totalReturn": 427.8,
+        "calmar": 0.3141
+      },
+      "tqqq_100": {
+        "cagr": 0.0809,
+        "maxDD": -0.2983,
+        "totalReturn": 722.27,
+        "calmar": 0.2712
+      }
+    },
+    {
+      "yellow": 0.24,
+      "red": 0.27,
+      "qqq_100": {
+        "cagr": 0.0442,
+        "maxDD": -0.1478,
+        "totalReturn": 223.06,
+        "calmar": 0.2994
+      },
+      "mix_50_50": {
+        "cagr": 0.0669,
+        "maxDD": -0.3238,
+        "totalReturn": 478.38,
+        "calmar": 0.2067
+      },
+      "tqqq_100": {
+        "cagr": 0.0849,
+        "maxDD": -0.4128,
+        "totalReturn": 809.48,
+        "calmar": 0.2057
+      }
+    },
+    {
+      "yellow": 0.24,
+      "red": 0.29,
+      "qqq_100": {
+        "cagr": 0.0511,
+        "maxDD": -0.1586,
+        "totalReturn": 285.28,
+        "calmar": 0.3219
+      },
+      "mix_50_50": {
+        "cagr": 0.0814,
+        "maxDD": -0.3446,
+        "totalReturn": 732.71,
+        "calmar": 0.2362
+      },
+      "tqqq_100": {
+        "cagr": 0.1043,
+        "maxDD": -0.4386,
+        "totalReturn": 1370.53,
+        "calmar": 0.2379
       }
     },
     {
       "yellow": 0.24,
       "red": 0.31,
       "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.0542,
+        "maxDD": -0.1586,
+        "totalReturn": 317.84,
+        "calmar": 0.3418
       },
       "mix_50_50": {
-        "cagr": 0.087,
-        "maxDD": -0.5202,
-        "totalReturn": 858.84,
-        "calmar": 0.1673
+        "cagr": 0.0876,
+        "maxDD": -0.3446,
+        "totalReturn": 873.28,
+        "calmar": 0.2543
       },
       "tqqq_100": {
-        "cagr": 0.1001,
-        "maxDD": -0.5202,
-        "totalReturn": 1224.95,
-        "calmar": 0.1924
+        "cagr": 0.1122,
+        "maxDD": -0.4386,
+        "totalReturn": 1683.29,
+        "calmar": 0.2559
       }
     },
     {
       "yellow": 0.24,
       "red": 0.33,
       "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0611,
+        "maxDD": -0.1631,
+        "totalReturn": 398.9,
+        "calmar": 0.3748
       },
       "mix_50_50": {
-        "cagr": 0.1119,
-        "maxDD": -0.5202,
-        "totalReturn": 1668.33,
-        "calmar": 0.2151
+        "cagr": 0.1015,
+        "maxDD": -0.3509,
+        "totalReturn": 1270.94,
+        "calmar": 0.2892
       },
       "tqqq_100": {
-        "cagr": 0.1265,
-        "maxDD": -0.5202,
-        "totalReturn": 2420.27,
-        "calmar": 0.2432
+        "cagr": 0.1297,
+        "maxDD": -0.4386,
+        "totalReturn": 2622.17,
+        "calmar": 0.2958
       }
     },
     {
       "yellow": 0.24,
       "red": 0.35,
       "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0722,
+        "maxDD": -0.1727,
+        "totalReturn": 560.82,
+        "calmar": 0.4181
       },
       "mix_50_50": {
-        "cagr": 0.1459,
-        "maxDD": -0.5276,
-        "totalReturn": 3900.73,
-        "calmar": 0.2766
+        "cagr": 0.1294,
+        "maxDD": -0.369,
+        "totalReturn": 2600.45,
+        "calmar": 0.3507
       },
       "tqqq_100": {
-        "cagr": 0.1652,
-        "maxDD": -0.5276,
-        "totalReturn": 6194.35,
-        "calmar": 0.3132
+        "cagr": 0.1648,
+        "maxDD": -0.4577,
+        "totalReturn": 6124.14,
+        "calmar": 0.3599
       }
     },
     {
       "yellow": 0.24,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.0982,
+        "maxDD": -0.2244,
+        "totalReturn": 1164.41,
+        "calmar": 0.4375
       },
       "mix_50_50": {
-        "cagr": 0.1825,
-        "maxDD": -0.5837,
-        "totalReturn": 9273.04,
-        "calmar": 0.3126
+        "cagr": 0.164,
+        "maxDD": -0.369,
+        "totalReturn": 6015.13,
+        "calmar": 0.4445
       },
       "tqqq_100": {
-        "cagr": 0.2043,
-        "maxDD": -0.5837,
-        "totalReturn": 15281.1,
-        "calmar": 0.35
+        "cagr": 0.2022,
+        "maxDD": -0.4577,
+        "totalReturn": 14583.2,
+        "calmar": 0.4418
       }
     },
     {
       "yellow": 0.24,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.1088,
+        "maxDD": -0.2573,
+        "totalReturn": 1541.85,
+        "calmar": 0.4229
       },
       "mix_50_50": {
-        "cagr": 0.2304,
-        "maxDD": -0.5978,
-        "totalReturn": 27383.85,
-        "calmar": 0.3854
+        "cagr": 0.1986,
+        "maxDD": -0.369,
+        "totalReturn": 13410.12,
+        "calmar": 0.5381
       },
       "tqqq_100": {
-        "cagr": 0.2582,
-        "maxDD": -0.5978,
-        "totalReturn": 50287.05,
-        "calmar": 0.432
+        "cagr": 0.2425,
+        "maxDD": -0.4577,
+        "totalReturn": 35751.07,
+        "calmar": 0.5298
       }
     },
     {
       "yellow": 0.24,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.1612,
+        "maxDD": -0.2879,
+        "totalReturn": 5623.38,
+        "calmar": 0.5597
       },
       "mix_50_50": {
-        "cagr": 0.2804,
-        "maxDD": -0.6453,
-        "totalReturn": 80810.68,
-        "calmar": 0.4346
+        "cagr": 0.3248,
+        "maxDD": -0.6421,
+        "totalReturn": 203323.21,
+        "calmar": 0.5058
       },
       "tqqq_100": {
-        "cagr": 0.3126,
-        "maxDD": -0.6651,
-        "totalReturn": 158301.22,
-        "calmar": 0.47
+        "cagr": 0.3777,
+        "maxDD": -0.6625,
+        "totalReturn": 588280.2,
+        "calmar": 0.5702
       }
     },
     {
       "yellow": 0.24,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1718,
+        "maxDD": -0.3512,
+        "totalReturn": 7230.97,
+        "calmar": 0.4892
       },
       "mix_50_50": {
-        "cagr": 0.2401,
-        "maxDD": -0.7481,
-        "totalReturn": 33902.69,
-        "calmar": 0.321
+        "cagr": 0.3439,
+        "maxDD": -0.7886,
+        "totalReturn": 299669.63,
+        "calmar": 0.436
       },
       "tqqq_100": {
-        "cagr": 0.2695,
-        "maxDD": -0.7772,
-        "totalReturn": 64028.83,
-        "calmar": 0.3467
+        "cagr": 0.3974,
+        "maxDD": -0.8012,
+        "totalReturn": 864178.81,
+        "calmar": 0.4961
       }
     },
     {
       "yellow": 0.24,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1625,
+        "maxDD": -0.3512,
+        "totalReturn": 5802.69,
+        "calmar": 0.4626
       },
       "mix_50_50": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.3287,
+        "maxDD": -0.7911,
+        "totalReturn": 220372.58,
+        "calmar": 0.4155
       },
       "tqqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.3759,
+        "maxDD": -0.8022,
+        "totalReturn": 566909.75,
+        "calmar": 0.4685
       }
     },
     {
       "yellow": 0.24,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1401,
+        "maxDD": -0.5806,
+        "totalReturn": 3383.78,
+        "calmar": 0.2412
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.2875,
+        "maxDD": -0.7883,
+        "totalReturn": 93849.99,
+        "calmar": 0.3647
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.3285,
+        "maxDD": -0.8015,
+        "totalReturn": 219261.89,
+        "calmar": 0.4098
       }
     },
     {
       "yellow": 0.24,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1269,
+        "maxDD": -0.6968,
+        "totalReturn": 2444.5,
+        "calmar": 0.1821
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.2598,
+        "maxDD": -0.7824,
+        "totalReturn": 51962.31,
+        "calmar": 0.332
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.2966,
+        "maxDD": -0.7985,
+        "totalReturn": 113628.85,
+        "calmar": 0.3715
       }
     },
     {
       "yellow": 0.24,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.116,
+        "maxDD": -0.7698,
+        "totalReturn": 1853.8,
+        "calmar": 0.1507
       },
       "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.2306,
+        "maxDD": -0.7779,
+        "totalReturn": 27487.18,
+        "calmar": 0.2964
       },
       "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.2653,
+        "maxDD": -0.7917,
+        "totalReturn": 58571.81,
+        "calmar": 0.3351
       }
     },
     {
       "yellow": 0.24,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1136,
+        "maxDD": -0.7698,
+        "totalReturn": 1745.49,
+        "calmar": 0.1476
       },
       "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1982,
+        "maxDD": -0.7779,
+        "totalReturn": 13290.33,
+        "calmar": 0.2548
       },
       "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.2259,
+        "maxDD": -0.7863,
+        "totalReturn": 24802.89,
+        "calmar": 0.2873
       }
     },
     {
@@ -1074,308 +1074,308 @@
       "yellow": 0.26,
       "red": 0.27,
       "qqq_100": {
-        "cagr": 0.0355,
+        "cagr": 0.0345,
         "maxDD": -0.384,
-        "totalReturn": 157.56,
-        "calmar": 0.0926
+        "totalReturn": 150.67,
+        "calmar": 0.0899
       },
       "mix_50_50": {
         "cagr": 0.0455,
         "maxDD": -0.5728,
-        "totalReturn": 234.09,
-        "calmar": 0.0795
+        "totalReturn": 233.46,
+        "calmar": 0.0794
       },
       "tqqq_100": {
-        "cagr": 0.052,
+        "cagr": 0.0528,
         "maxDD": -0.7217,
-        "totalReturn": 295.27,
-        "calmar": 0.0721
+        "totalReturn": 302.67,
+        "calmar": 0.0731
       }
     },
     {
       "yellow": 0.26,
       "red": 0.29,
       "qqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.0407,
+        "maxDD": -0.384,
+        "totalReturn": 195.03,
+        "calmar": 0.1061
       },
       "mix_50_50": {
-        "cagr": 0.0652,
-        "maxDD": -0.6381,
-        "totalReturn": 453.49,
-        "calmar": 0.1022
+        "cagr": 0.0592,
+        "maxDD": -0.5728,
+        "totalReturn": 374.5,
+        "calmar": 0.1033
       },
       "tqqq_100": {
-        "cagr": 0.0724,
-        "maxDD": -0.7883,
-        "totalReturn": 564.73,
-        "calmar": 0.0919
+        "cagr": 0.071,
+        "maxDD": -0.7217,
+        "totalReturn": 541.15,
+        "calmar": 0.0984
       }
     },
     {
       "yellow": 0.26,
       "red": 0.31,
       "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.0439,
+        "maxDD": -0.384,
+        "totalReturn": 219.97,
+        "calmar": 0.1142
       },
       "mix_50_50": {
-        "cagr": 0.0832,
-        "maxDD": -0.6198,
-        "totalReturn": 770.45,
-        "calmar": 0.1342
+        "cagr": 0.0651,
+        "maxDD": -0.5728,
+        "totalReturn": 451.69,
+        "calmar": 0.1136
       },
       "tqqq_100": {
-        "cagr": 0.0905,
-        "maxDD": -0.7134,
-        "totalReturn": 946.17,
-        "calmar": 0.1269
+        "cagr": 0.0788,
+        "maxDD": -0.7217,
+        "totalReturn": 679.91,
+        "calmar": 0.1092
       }
     },
     {
       "yellow": 0.26,
       "red": 0.33,
       "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0507,
+        "maxDD": -0.384,
+        "totalReturn": 282.04,
+        "calmar": 0.1321
       },
       "mix_50_50": {
-        "cagr": 0.1079,
-        "maxDD": -0.6198,
-        "totalReturn": 1503.65,
-        "calmar": 0.174
+        "cagr": 0.0781,
+        "maxDD": -0.5728,
+        "totalReturn": 667.06,
+        "calmar": 0.1364
       },
       "tqqq_100": {
-        "cagr": 0.118,
-        "maxDD": -0.7134,
-        "totalReturn": 1950.96,
-        "calmar": 0.1654
+        "cagr": 0.096,
+        "maxDD": -0.7217,
+        "totalReturn": 1098.68,
+        "calmar": 0.1331
       }
     },
     {
       "yellow": 0.26,
       "red": 0.35,
       "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0617,
+        "maxDD": -0.384,
+        "totalReturn": 406.03,
+        "calmar": 0.1606
       },
       "mix_50_50": {
-        "cagr": 0.143,
-        "maxDD": -0.6053,
-        "totalReturn": 3631.17,
-        "calmar": 0.2362
+        "cagr": 0.1062,
+        "maxDD": -0.5728,
+        "totalReturn": 1441.11,
+        "calmar": 0.1855
       },
       "tqqq_100": {
-        "cagr": 0.159,
-        "maxDD": -0.6784,
-        "totalReturn": 5347.04,
-        "calmar": 0.2344
+        "cagr": 0.131,
+        "maxDD": -0.7217,
+        "totalReturn": 2707.37,
+        "calmar": 0.1815
       }
     },
     {
       "yellow": 0.26,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.0874,
+        "maxDD": -0.443,
+        "totalReturn": 868.23,
+        "calmar": 0.1974
       },
       "mix_50_50": {
-        "cagr": 0.181,
-        "maxDD": -0.6155,
-        "totalReturn": 8955.24,
-        "calmar": 0.294
+        "cagr": 0.1405,
+        "maxDD": -0.6002,
+        "totalReturn": 3417.11,
+        "calmar": 0.234
       },
       "tqqq_100": {
-        "cagr": 0.2012,
-        "maxDD": -0.6473,
-        "totalReturn": 14237.69,
-        "calmar": 0.3108
+        "cagr": 0.1677,
+        "maxDD": -0.7307,
+        "totalReturn": 6563.99,
+        "calmar": 0.2295
       }
     },
     {
       "yellow": 0.26,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.098,
+        "maxDD": -0.4618,
+        "totalReturn": 1157.26,
+        "calmar": 0.2121
       },
       "mix_50_50": {
-        "cagr": 0.2289,
-        "maxDD": -0.6285,
-        "totalReturn": 26499.6,
-        "calmar": 0.3642
+        "cagr": 0.1753,
+        "maxDD": -0.6137,
+        "totalReturn": 7853.71,
+        "calmar": 0.2857
       },
       "tqqq_100": {
-        "cagr": 0.2551,
-        "maxDD": -0.6592,
-        "totalReturn": 47040.54,
-        "calmar": 0.3871
+        "cagr": 0.2075,
+        "maxDD": -0.7398,
+        "totalReturn": 16420.85,
+        "calmar": 0.2805
       }
     },
     {
       "yellow": 0.26,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.1498,
+        "maxDD": -0.486,
+        "totalReturn": 4282.74,
+        "calmar": 0.3081
       },
       "mix_50_50": {
-        "cagr": 0.2789,
-        "maxDD": -0.6453,
-        "totalReturn": 78155.56,
-        "calmar": 0.4321
+        "cagr": 0.3003,
+        "maxDD": -0.6481,
+        "totalReturn": 122786.64,
+        "calmar": 0.4634
       },
       "tqqq_100": {
-        "cagr": 0.3093,
-        "maxDD": -0.6745,
-        "totalReturn": 147900.98,
-        "calmar": 0.4585
+        "cagr": 0.3395,
+        "maxDD": -0.7515,
+        "totalReturn": 274358.2,
+        "calmar": 0.4517
       }
     },
     {
       "yellow": 0.26,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1603,
+        "maxDD": -0.486,
+        "totalReturn": 5513.77,
+        "calmar": 0.3299
       },
       "mix_50_50": {
-        "cagr": 0.2394,
-        "maxDD": -0.7481,
-        "totalReturn": 33372.16,
-        "calmar": 0.32
+        "cagr": 0.3193,
+        "maxDD": -0.7924,
+        "totalReturn": 181721.96,
+        "calmar": 0.4029
       },
       "tqqq_100": {
-        "cagr": 0.268,
-        "maxDD": -0.7772,
-        "totalReturn": 62026.94,
-        "calmar": 0.3448
+        "cagr": 0.3587,
+        "maxDD": -0.8029,
+        "totalReturn": 403254.12,
+        "calmar": 0.4467
       }
     },
     {
       "yellow": 0.26,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1501,
+        "maxDD": -0.5643,
+        "totalReturn": 4322.19,
+        "calmar": 0.2661
       },
       "mix_50_50": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.2947,
+        "maxDD": -0.7902,
+        "totalReturn": 109054.18,
+        "calmar": 0.3729
       },
       "tqqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.3318,
+        "maxDD": -0.8027,
+        "totalReturn": 234564.49,
+        "calmar": 0.4133
       }
     },
     {
       "yellow": 0.26,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1275,
+        "maxDD": -0.7216,
+        "totalReturn": 2479.49,
+        "calmar": 0.1767
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.2437,
+        "maxDD": -0.7925,
+        "totalReturn": 36716.33,
+        "calmar": 0.3076
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.2678,
+        "maxDD": -0.8635,
+        "totalReturn": 61779.27,
+        "calmar": 0.3102
       }
     },
     {
       "yellow": 0.26,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1179,
+        "maxDD": -0.7718,
+        "totalReturn": 1944.66,
+        "calmar": 0.1527
       },
       "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.224,
+        "maxDD": -0.8095,
+        "totalReturn": 23774.51,
+        "calmar": 0.2767
       },
       "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.249,
+        "maxDD": -0.8473,
+        "totalReturn": 41203.98,
+        "calmar": 0.2939
       }
     },
     {
       "yellow": 0.26,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1101,
+        "maxDD": -0.8018,
+        "totalReturn": 1594.29,
+        "calmar": 0.1373
       },
       "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1973,
+        "maxDD": -0.8202,
+        "totalReturn": 13046.12,
+        "calmar": 0.2406
       },
       "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.2243,
+        "maxDD": -0.8385,
+        "totalReturn": 23933.27,
+        "calmar": 0.2675
       }
     },
     {
       "yellow": 0.26,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1078,
+        "maxDD": -0.8018,
+        "totalReturn": 1500.36,
+        "calmar": 0.1344
       },
       "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1354,
+        "maxDD": -0.8202,
+        "totalReturn": 3021.13,
+        "calmar": 0.1651
       },
       "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1522,
+        "maxDD": -0.8385,
+        "totalReturn": 4542.42,
+        "calmar": 0.1815
       }
     },
     {
@@ -1404,836 +1404,836 @@
       "yellow": 0.28,
       "red": 0.29,
       "qqq_100": {
-        "cagr": 0.0538,
-        "maxDD": -0.4726,
-        "totalReturn": 313.03,
-        "calmar": 0.1138
+        "cagr": 0.0501,
+        "maxDD": -0.4371,
+        "totalReturn": 275.76,
+        "calmar": 0.1146
       },
       "mix_50_50": {
-        "cagr": 0.0762,
-        "maxDD": -0.6842,
-        "totalReturn": 630.77,
-        "calmar": 0.1114
+        "cagr": 0.0747,
+        "maxDD": -0.6665,
+        "totalReturn": 603.44,
+        "calmar": 0.112
       },
       "tqqq_100": {
-        "cagr": 0.0903,
-        "maxDD": -0.8598,
-        "totalReturn": 939.39,
-        "calmar": 0.105
+        "cagr": 0.094,
+        "maxDD": -0.8472,
+        "totalReturn": 1039.99,
+        "calmar": 0.111
       }
     },
     {
       "yellow": 0.28,
       "red": 0.31,
       "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
+        "cagr": 0.0593,
+        "maxDD": -0.4371,
+        "totalReturn": 376.57,
+        "calmar": 0.1358
       },
       "mix_50_50": {
-        "cagr": 0.0959,
-        "maxDD": -0.6585,
-        "totalReturn": 1094.56,
-        "calmar": 0.1456
+        "cagr": 0.091,
+        "maxDD": -0.6665,
+        "totalReturn": 958.93,
+        "calmar": 0.1366
       },
       "tqqq_100": {
-        "cagr": 0.1134,
-        "maxDD": -0.776,
-        "totalReturn": 1735.01,
-        "calmar": 0.1461
+        "cagr": 0.1155,
+        "maxDD": -0.8472,
+        "totalReturn": 1832.36,
+        "calmar": 0.1364
       }
     },
     {
       "yellow": 0.28,
       "red": 0.33,
       "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
+        "cagr": 0.0707,
+        "maxDD": -0.4371,
+        "totalReturn": 535.9,
+        "calmar": 0.1617
       },
       "mix_50_50": {
-        "cagr": 0.1224,
-        "maxDD": -0.6585,
-        "totalReturn": 2183.17,
-        "calmar": 0.1859
+        "cagr": 0.1103,
+        "maxDD": -0.6665,
+        "totalReturn": 1601.52,
+        "calmar": 0.1655
       },
       "tqqq_100": {
-        "cagr": 0.144,
-        "maxDD": -0.776,
-        "totalReturn": 3725.13,
-        "calmar": 0.1856
+        "cagr": 0.141,
+        "maxDD": -0.8472,
+        "totalReturn": 3462.97,
+        "calmar": 0.1664
       }
     },
     {
       "yellow": 0.28,
       "red": 0.35,
       "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.0854,
+        "maxDD": -0.4371,
+        "totalReturn": 821.2,
+        "calmar": 0.1955
       },
       "mix_50_50": {
-        "cagr": 0.1522,
-        "maxDD": -0.6429,
-        "totalReturn": 4538.84,
+        "cagr": 0.1451,
+        "maxDD": -0.6665,
+        "totalReturn": 3823.84,
+        "calmar": 0.2177
+      },
+      "tqqq_100": {
+        "cagr": 0.1849,
+        "maxDD": -0.8472,
+        "totalReturn": 9812.41,
+        "calmar": 0.2183
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.37,
+      "qqq_100": {
+        "cagr": 0.1139,
+        "maxDD": -0.4664,
+        "totalReturn": 1757.21,
+        "calmar": 0.2442
+      },
+      "mix_50_50": {
+        "cagr": 0.1842,
+        "maxDD": -0.6665,
+        "totalReturn": 9641.24,
+        "calmar": 0.2763
+      },
+      "tqqq_100": {
+        "cagr": 0.2278,
+        "maxDD": -0.8472,
+        "totalReturn": 25837.91,
+        "calmar": 0.2688
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.39,
+      "qqq_100": {
+        "cagr": 0.1293,
+        "maxDD": -0.4845,
+        "totalReturn": 2595.95,
+        "calmar": 0.2669
+      },
+      "mix_50_50": {
+        "cagr": 0.2282,
+        "maxDD": -0.6665,
+        "totalReturn": 26094.27,
+        "calmar": 0.3424
+      },
+      "tqqq_100": {
+        "cagr": 0.2791,
+        "maxDD": -0.8472,
+        "totalReturn": 78567.41,
+        "calmar": 0.3294
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.41,
+      "qqq_100": {
+        "cagr": 0.1616,
+        "maxDD": -0.5077,
+        "totalReturn": 5689.58,
+        "calmar": 0.3184
+      },
+      "mix_50_50": {
+        "cagr": 0.3184,
+        "maxDD": -0.6784,
+        "totalReturn": 178603.0,
+        "calmar": 0.4694
+      },
+      "tqqq_100": {
+        "cagr": 0.3674,
+        "maxDD": -0.8472,
+        "totalReturn": 479738.65,
+        "calmar": 0.4336
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.43,
+      "qqq_100": {
+        "cagr": 0.1596,
+        "maxDD": -0.5077,
+        "totalReturn": 5416.47,
+        "calmar": 0.3143
+      },
+      "mix_50_50": {
+        "cagr": 0.3125,
+        "maxDD": -0.7927,
+        "totalReturn": 158042.35,
+        "calmar": 0.3942
+      },
+      "tqqq_100": {
+        "cagr": 0.3492,
+        "maxDD": -0.8472,
+        "totalReturn": 333413.28,
+        "calmar": 0.4121
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.45,
+      "qqq_100": {
+        "cagr": 0.1494,
+        "maxDD": -0.5807,
+        "totalReturn": 4243.0,
+        "calmar": 0.2573
+      },
+      "mix_50_50": {
+        "cagr": 0.2872,
+        "maxDD": -0.7898,
+        "totalReturn": 93130.53,
+        "calmar": 0.3636
+      },
+      "tqqq_100": {
+        "cagr": 0.3165,
+        "maxDD": -0.8667,
+        "totalReturn": 171464.31,
+        "calmar": 0.3651
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.47,
+      "qqq_100": {
+        "cagr": 0.1286,
+        "maxDD": -0.7166,
+        "totalReturn": 2549.68,
+        "calmar": 0.1795
+      },
+      "mix_50_50": {
+        "cagr": 0.2462,
+        "maxDD": -0.7894,
+        "totalReturn": 38748.73,
+        "calmar": 0.3119
+      },
+      "tqqq_100": {
+        "cagr": 0.2703,
+        "maxDD": -0.8623,
+        "totalReturn": 65104.02,
+        "calmar": 0.3134
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.49,
+      "qqq_100": {
+        "cagr": 0.1189,
+        "maxDD": -0.7656,
+        "totalReturn": 1997.31,
+        "calmar": 0.1553
+      },
+      "mix_50_50": {
+        "cagr": 0.2258,
+        "maxDD": -0.8047,
+        "totalReturn": 24760.22,
+        "calmar": 0.2807
+      },
+      "tqqq_100": {
+        "cagr": 0.2526,
+        "maxDD": -0.8438,
+        "totalReturn": 44545.51,
+        "calmar": 0.2994
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.51,
+      "qqq_100": {
+        "cagr": 0.1108,
+        "maxDD": -0.7962,
+        "totalReturn": 1621.93,
+        "calmar": 0.1392
+      },
+      "mix_50_50": {
+        "cagr": 0.1924,
+        "maxDD": -0.8157,
+        "totalReturn": 11654.53,
+        "calmar": 0.2359
+      },
+      "tqqq_100": {
+        "cagr": 0.2195,
+        "maxDD": -0.8352,
+        "totalReturn": 21494.54,
+        "calmar": 0.2628
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.53,
+      "qqq_100": {
+        "cagr": 0.1089,
+        "maxDD": -0.7962,
+        "totalReturn": 1546.22,
+        "calmar": 0.1368
+      },
+      "mix_50_50": {
+        "cagr": 0.1441,
+        "maxDD": -0.8157,
+        "totalReturn": 3730.47,
+        "calmar": 0.1766
+      },
+      "tqqq_100": {
+        "cagr": 0.1633,
+        "maxDD": -0.8352,
+        "totalReturn": 5922.29,
+        "calmar": 0.1956
+      }
+    },
+    {
+      "yellow": 0.28,
+      "red": 0.55,
+      "qqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "mix_50_50": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "tqqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.31,
+      "qqq_100": {
+        "cagr": 0.0645,
+        "maxDD": -0.5202,
+        "totalReturn": 443.26,
+        "calmar": 0.1239
+      },
+      "mix_50_50": {
+        "cagr": 0.106,
+        "maxDD": -0.7012,
+        "totalReturn": 1432.32,
+        "calmar": 0.1512
+      },
+      "tqqq_100": {
+        "cagr": 0.1309,
+        "maxDD": -0.8635,
+        "totalReturn": 2699.65,
+        "calmar": 0.1516
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.33,
+      "qqq_100": {
+        "cagr": 0.0745,
+        "maxDD": -0.5202,
+        "totalReturn": 600.47,
+        "calmar": 0.1432
+      },
+      "mix_50_50": {
+        "cagr": 0.1242,
+        "maxDD": -0.7012,
+        "totalReturn": 2285.97,
+        "calmar": 0.1772
+      },
+      "tqqq_100": {
+        "cagr": 0.1549,
+        "maxDD": -0.8635,
+        "totalReturn": 4840.99,
+        "calmar": 0.1793
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.35,
+      "qqq_100": {
+        "cagr": 0.0874,
+        "maxDD": -0.5202,
+        "totalReturn": 867.62,
+        "calmar": 0.168
+      },
+      "mix_50_50": {
+        "cagr": 0.1529,
+        "maxDD": -0.7012,
+        "totalReturn": 4618.33,
+        "calmar": 0.218
+      },
+      "tqqq_100": {
+        "cagr": 0.1893,
+        "maxDD": -0.8635,
+        "totalReturn": 10852.37,
+        "calmar": 0.2192
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.37,
+      "qqq_100": {
+        "cagr": 0.1102,
+        "maxDD": -0.5532,
+        "totalReturn": 1596.03,
+        "calmar": 0.1991
+      },
+      "mix_50_50": {
+        "cagr": 0.1829,
+        "maxDD": -0.706,
+        "totalReturn": 9355.6,
+        "calmar": 0.259
+      },
+      "tqqq_100": {
+        "cagr": 0.2195,
+        "maxDD": -0.8635,
+        "totalReturn": 21490.79,
+        "calmar": 0.2542
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.39,
+      "qqq_100": {
+        "cagr": 0.1256,
+        "maxDD": -0.5683,
+        "totalReturn": 2365.43,
+        "calmar": 0.221
+      },
+      "mix_50_50": {
+        "cagr": 0.2255,
+        "maxDD": -0.716,
+        "totalReturn": 24558.24,
+        "calmar": 0.3149
+      },
+      "tqqq_100": {
+        "cagr": 0.2682,
+        "maxDD": -0.8645,
+        "totalReturn": 62232.38,
+        "calmar": 0.3102
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.41,
+      "qqq_100": {
+        "cagr": 0.1559,
+        "maxDD": -0.5878,
+        "totalReturn": 4958.62,
+        "calmar": 0.2652
+      },
+      "mix_50_50": {
+        "cagr": 0.3058,
+        "maxDD": -0.7288,
+        "totalReturn": 137612.11,
+        "calmar": 0.4196
+      },
+      "tqqq_100": {
+        "cagr": 0.3422,
+        "maxDD": -0.8706,
+        "totalReturn": 289571.36,
+        "calmar": 0.393
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.43,
+      "qqq_100": {
+        "cagr": 0.152,
+        "maxDD": -0.5878,
+        "totalReturn": 4519.04,
+        "calmar": 0.2586
+      },
+      "mix_50_50": {
+        "cagr": 0.2942,
+        "maxDD": -0.7927,
+        "totalReturn": 108008.23,
+        "calmar": 0.3711
+      },
+      "tqqq_100": {
+        "cagr": 0.3162,
+        "maxDD": -0.8706,
+        "totalReturn": 170534.37,
+        "calmar": 0.3632
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.45,
+      "qqq_100": {
+        "cagr": 0.1434,
+        "maxDD": -0.6358,
+        "totalReturn": 3672.35,
+        "calmar": 0.2256
+      },
+      "mix_50_50": {
+        "cagr": 0.2746,
+        "maxDD": -0.7883,
+        "totalReturn": 71425.4,
+        "calmar": 0.3484
+      },
+      "tqqq_100": {
+        "cagr": 0.2958,
+        "maxDD": -0.8615,
+        "totalReturn": 111598.98,
+        "calmar": 0.3433
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.47,
+      "qqq_100": {
+        "cagr": 0.1253,
+        "maxDD": -0.738,
+        "totalReturn": 2349.38,
+        "calmar": 0.1698
+      },
+      "mix_50_50": {
+        "cagr": 0.2406,
+        "maxDD": -0.7856,
+        "totalReturn": 34257.26,
+        "calmar": 0.3062
+      },
+      "tqqq_100": {
+        "cagr": 0.2651,
+        "maxDD": -0.8339,
+        "totalReturn": 58315.73,
+        "calmar": 0.3179
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.49,
+      "qqq_100": {
+        "cagr": 0.1147,
+        "maxDD": -0.7882,
+        "totalReturn": 1794.63,
+        "calmar": 0.1455
+      },
+      "mix_50_50": {
+        "cagr": 0.2167,
+        "maxDD": -0.8073,
+        "totalReturn": 20194.9,
+        "calmar": 0.2684
+      },
+      "tqqq_100": {
+        "cagr": 0.2425,
+        "maxDD": -0.8263,
+        "totalReturn": 35739.57,
+        "calmar": 0.2935
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.51,
+      "qqq_100": {
+        "cagr": 0.1076,
+        "maxDD": -0.8114,
+        "totalReturn": 1493.37,
+        "calmar": 0.1326
+      },
+      "mix_50_50": {
+        "cagr": 0.1815,
+        "maxDD": -0.8276,
+        "totalReturn": 9056.17,
+        "calmar": 0.2193
+      },
+      "tqqq_100": {
+        "cagr": 0.2054,
+        "maxDD": -0.8437,
+        "totalReturn": 15658.87,
+        "calmar": 0.2434
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.53,
+      "qqq_100": {
+        "cagr": 0.1058,
+        "maxDD": -0.8114,
+        "totalReturn": 1423.32,
+        "calmar": 0.1304
+      },
+      "mix_50_50": {
+        "cagr": 0.1168,
+        "maxDD": -0.8276,
+        "totalReturn": 1893.04,
+        "calmar": 0.1411
+      },
+      "tqqq_100": {
+        "cagr": 0.1256,
+        "maxDD": -0.8437,
+        "totalReturn": 2362.77,
+        "calmar": 0.1488
+      }
+    },
+    {
+      "yellow": 0.3,
+      "red": 0.55,
+      "qqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "mix_50_50": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      },
+      "tqqq_100": {
+        "cagr": 0.1016,
+        "maxDD": -0.8296,
+        "totalReturn": 1275.85,
+        "calmar": 0.1225
+      }
+    },
+    {
+      "yellow": 0.32,
+      "red": 0.33,
+      "qqq_100": {
+        "cagr": 0.0869,
+        "maxDD": -0.5202,
+        "totalReturn": 854.68,
+        "calmar": 0.167
+      },
+      "mix_50_50": {
+        "cagr": 0.145,
+        "maxDD": -0.7279,
+        "totalReturn": 3811.78,
+        "calmar": 0.1991
+      },
+      "tqqq_100": {
+        "cagr": 0.1767,
+        "maxDD": -0.924,
+        "totalReturn": 8114.59,
+        "calmar": 0.1913
+      }
+    },
+    {
+      "yellow": 0.32,
+      "red": 0.35,
+      "qqq_100": {
+        "cagr": 0.0987,
+        "maxDD": -0.5202,
+        "totalReturn": 1181.05,
+        "calmar": 0.1898
+      },
+      "mix_50_50": {
+        "cagr": 0.1723,
+        "maxDD": -0.7279,
+        "totalReturn": 7310.19,
         "calmar": 0.2367
       },
       "tqqq_100": {
-        "cagr": 0.1745,
-        "maxDD": -0.7416,
-        "totalReturn": 7706.1,
-        "calmar": 0.2354
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.37,
-      "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
-      },
-      "mix_50_50": {
-        "cagr": 0.1884,
-        "maxDD": -0.6313,
-        "totalReturn": 10623.91,
-        "calmar": 0.2984
-      },
-      "tqqq_100": {
-        "cagr": 0.213,
-        "maxDD": -0.6895,
-        "totalReturn": 18588.33,
-        "calmar": 0.3089
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.39,
-      "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
-      },
-      "mix_50_50": {
-        "cagr": 0.2336,
-        "maxDD": -0.6438,
-        "totalReturn": 29376.85,
-        "calmar": 0.3628
-      },
-      "tqqq_100": {
-        "cagr": 0.2602,
-        "maxDD": -0.6898,
-        "totalReturn": 52447.53,
-        "calmar": 0.3772
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.41,
-      "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
-      },
-      "mix_50_50": {
-        "cagr": 0.2844,
-        "maxDD": -0.6598,
-        "totalReturn": 87873.35,
-        "calmar": 0.431
-      },
-      "tqqq_100": {
-        "cagr": 0.3149,
-        "maxDD": -0.7038,
-        "totalReturn": 166096.34,
-        "calmar": 0.4475
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.43,
-      "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
-      },
-      "mix_50_50": {
-        "cagr": 0.2512,
-        "maxDD": -0.7627,
-        "totalReturn": 43215.39,
-        "calmar": 0.3294
-      },
-      "tqqq_100": {
-        "cagr": 0.2806,
-        "maxDD": -0.7858,
-        "totalReturn": 81054.8,
-        "calmar": 0.3571
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.45,
-      "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      },
-      "mix_50_50": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      },
-      "tqqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.47,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.49,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.51,
-      "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.53,
-      "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      }
-    },
-    {
-      "yellow": 0.28,
-      "red": 0.55,
-      "qqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "mix_50_50": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "tqqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.31,
-      "qqq_100": {
-        "cagr": 0.0693,
-        "maxDD": -0.5202,
-        "totalReturn": 513.36,
-        "calmar": 0.1331
-      },
-      "mix_50_50": {
-        "cagr": 0.1081,
-        "maxDD": -0.7012,
-        "totalReturn": 1513.82,
-        "calmar": 0.1542
-      },
-      "tqqq_100": {
-        "cagr": 0.1314,
-        "maxDD": -0.8635,
-        "totalReturn": 2736.18,
-        "calmar": 0.1522
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.33,
-      "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
-      },
-      "mix_50_50": {
-        "cagr": 0.1331,
-        "maxDD": -0.7012,
-        "totalReturn": 2850.06,
-        "calmar": 0.1898
-      },
-      "tqqq_100": {
-        "cagr": 0.1597,
-        "maxDD": -0.8635,
-        "totalReturn": 5434.77,
-        "calmar": 0.185
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.35,
-      "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
-      },
-      "mix_50_50": {
-        "cagr": 0.1577,
-        "maxDD": -0.6861,
-        "totalReturn": 5179.79,
-        "calmar": 0.2299
-      },
-      "tqqq_100": {
-        "cagr": 0.1811,
-        "maxDD": -0.8286,
-        "totalReturn": 8986.05,
-        "calmar": 0.2186
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.37,
-      "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
-      },
-      "mix_50_50": {
-        "cagr": 0.1947,
-        "maxDD": -0.6832,
-        "totalReturn": 12273.01,
-        "calmar": 0.2849
-      },
-      "tqqq_100": {
-        "cagr": 0.2214,
-        "maxDD": -0.7835,
-        "totalReturn": 22413.95,
-        "calmar": 0.2825
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.39,
-      "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
-      },
-      "mix_50_50": {
-        "cagr": 0.2294,
-        "maxDD": -0.694,
-        "totalReturn": 26768.24,
-        "calmar": 0.3305
-      },
-      "tqqq_100": {
-        "cagr": 0.2505,
-        "maxDD": -0.7908,
-        "totalReturn": 42562.18,
-        "calmar": 0.3168
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.41,
-      "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
-      },
-      "mix_50_50": {
-        "cagr": 0.28,
-        "maxDD": -0.7077,
-        "totalReturn": 80036.29,
-        "calmar": 0.3956
-      },
-      "tqqq_100": {
-        "cagr": 0.3048,
-        "maxDD": -0.8002,
-        "totalReturn": 134666.02,
-        "calmar": 0.3809
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.43,
-      "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
-      },
-      "mix_50_50": {
-        "cagr": 0.2469,
-        "maxDD": -0.7627,
-        "totalReturn": 39347.31,
-        "calmar": 0.3237
-      },
-      "tqqq_100": {
-        "cagr": 0.2709,
-        "maxDD": -0.7858,
-        "totalReturn": 65972.39,
-        "calmar": 0.3448
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.45,
-      "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
-      },
-      "mix_50_50": {
-        "cagr": 0.1316,
-        "maxDD": -0.7336,
-        "totalReturn": 2745.12,
-        "calmar": 0.1793
-      },
-      "tqqq_100": {
-        "cagr": 0.1389,
-        "maxDD": -0.7694,
-        "totalReturn": 3290.47,
-        "calmar": 0.1806
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.47,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.49,
-      "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "mix_50_50": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      },
-      "tqqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.51,
-      "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "mix_50_50": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      },
-      "tqqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.53,
-      "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "mix_50_50": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      },
-      "tqqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
-      }
-    },
-    {
-      "yellow": 0.3,
-      "red": 0.55,
-      "qqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "mix_50_50": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      },
-      "tqqq_100": {
-        "cagr": 0.1016,
-        "maxDD": -0.8296,
-        "totalReturn": 1275.85,
-        "calmar": 0.1225
-      }
-    },
-    {
-      "yellow": 0.32,
-      "red": 0.33,
-      "qqq_100": {
-        "cagr": 0.0897,
-        "maxDD": -0.5202,
-        "totalReturn": 925.84,
-        "calmar": 0.1725
-      },
-      "mix_50_50": {
-        "cagr": 0.1443,
-        "maxDD": -0.7279,
-        "totalReturn": 3751.33,
-        "calmar": 0.1982
-      },
-      "tqqq_100": {
-        "cagr": 0.1745,
+        "cagr": 0.2096,
         "maxDD": -0.924,
-        "totalReturn": 7702.51,
-        "calmar": 0.1889
-      }
-    },
-    {
-      "yellow": 0.32,
-      "red": 0.35,
-      "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
-      },
-      "mix_50_50": {
-        "cagr": 0.16,
-        "maxDD": -0.7131,
-        "totalReturn": 5465.89,
-        "calmar": 0.2243
-      },
-      "tqqq_100": {
-        "cagr": 0.1814,
-        "maxDD": -0.8878,
-        "totalReturn": 9035.5,
-        "calmar": 0.2043
+        "totalReturn": 17228.3,
+        "calmar": 0.2269
       }
     },
     {
       "yellow": 0.32,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.1211,
+        "maxDD": -0.5532,
+        "totalReturn": 2114.33,
+        "calmar": 0.219
       },
       "mix_50_50": {
-        "cagr": 0.2019,
-        "maxDD": -0.7464,
-        "totalReturn": 14475.06,
-        "calmar": 0.2705
+        "cagr": 0.2049,
+        "maxDD": -0.7669,
+        "totalReturn": 15471.11,
+        "calmar": 0.2671
       },
       "tqqq_100": {
-        "cagr": 0.2312,
-        "maxDD": -0.8759,
-        "totalReturn": 27881.01,
-        "calmar": 0.264
+        "cagr": 0.2461,
+        "maxDD": -0.9394,
+        "totalReturn": 38610.67,
+        "calmar": 0.2619
       }
     },
     {
       "yellow": 0.32,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.1355,
+        "maxDD": -0.5683,
+        "totalReturn": 3023.2,
+        "calmar": 0.2384
       },
       "mix_50_50": {
-        "cagr": 0.238,
-        "maxDD": -0.7596,
-        "totalReturn": 32378.95,
-        "calmar": 0.3133
+        "cagr": 0.247,
+        "maxDD": -0.779,
+        "totalReturn": 39449.49,
+        "calmar": 0.3171
       },
       "tqqq_100": {
-        "cagr": 0.2653,
-        "maxDD": -0.8841,
-        "totalReturn": 58498.26,
-        "calmar": 0.3
+        "cagr": 0.294,
+        "maxDD": -0.9435,
+        "totalReturn": 107631.05,
+        "calmar": 0.3117
       }
     },
     {
       "yellow": 0.32,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.1556,
+        "maxDD": -0.5878,
+        "totalReturn": 4924.75,
+        "calmar": 0.2647
       },
       "mix_50_50": {
-        "cagr": 0.2802,
-        "maxDD": -0.7736,
-        "totalReturn": 80402.05,
-        "calmar": 0.3622
+        "cagr": 0.3061,
+        "maxDD": -0.7919,
+        "totalReturn": 138379.04,
+        "calmar": 0.3865
       },
       "tqqq_100": {
-        "cagr": 0.3036,
-        "maxDD": -0.8918,
-        "totalReturn": 131419.34,
-        "calmar": 0.3404
+        "cagr": 0.3406,
+        "maxDD": -0.9472,
+        "totalReturn": 280414.22,
+        "calmar": 0.3595
       }
     },
     {
       "yellow": 0.32,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.152,
+        "maxDD": -0.5878,
+        "totalReturn": 4519.04,
+        "calmar": 0.2586
       },
       "mix_50_50": {
-        "cagr": 0.2471,
-        "maxDD": -0.7696,
-        "totalReturn": 39529.01,
-        "calmar": 0.3211
+        "cagr": 0.2946,
+        "maxDD": -0.7927,
+        "totalReturn": 108949.59,
+        "calmar": 0.3717
       },
       "tqqq_100": {
-        "cagr": 0.2699,
-        "maxDD": -0.8748,
-        "totalReturn": 64647.53,
-        "calmar": 0.3086
+        "cagr": 0.315,
+        "maxDD": -0.9472,
+        "totalReturn": 166267.19,
+        "calmar": 0.3325
       }
     },
     {
       "yellow": 0.32,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1434,
+        "maxDD": -0.6358,
+        "totalReturn": 3672.35,
+        "calmar": 0.2256
       },
       "mix_50_50": {
-        "cagr": 0.1408,
-        "maxDD": -0.7986,
-        "totalReturn": 3445.78,
-        "calmar": 0.1763
+        "cagr": 0.2741,
+        "maxDD": -0.8134,
+        "totalReturn": 70608.72,
+        "calmar": 0.3369
       },
       "tqqq_100": {
-        "cagr": 0.1598,
-        "maxDD": -0.8733,
-        "totalReturn": 5446.88,
-        "calmar": 0.183
+        "cagr": 0.2923,
+        "maxDD": -0.9456,
+        "totalReturn": 103851.92,
+        "calmar": 0.3092
       }
     },
     {
       "yellow": 0.32,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1253,
+        "maxDD": -0.738,
+        "totalReturn": 2349.38,
+        "calmar": 0.1698
       },
       "mix_50_50": {
-        "cagr": 0.1002,
-        "maxDD": -0.8637,
-        "totalReturn": 1228.8,
-        "calmar": 0.116
+        "cagr": 0.2388,
+        "maxDD": -0.8476,
+        "totalReturn": 32947.69,
+        "calmar": 0.2817
       },
       "tqqq_100": {
-        "cagr": 0.0999,
-        "maxDD": -0.8903,
-        "totalReturn": 1218.79,
-        "calmar": 0.1122
+        "cagr": 0.2575,
+        "maxDD": -0.9297,
+        "totalReturn": 49442.41,
+        "calmar": 0.2769
       }
     },
     {
       "yellow": 0.32,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1147,
+        "maxDD": -0.7882,
+        "totalReturn": 1794.63,
+        "calmar": 0.1455
       },
       "mix_50_50": {
-        "cagr": 0.0998,
-        "maxDD": -0.8686,
-        "totalReturn": 1214.28,
-        "calmar": 0.1149
+        "cagr": 0.2145,
+        "maxDD": -0.8642,
+        "totalReturn": 19231.81,
+        "calmar": 0.2482
       },
       "tqqq_100": {
-        "cagr": 0.0991,
-        "maxDD": -0.8969,
-        "totalReturn": 1191.69,
-        "calmar": 0.1104
+        "cagr": 0.2365,
+        "maxDD": -0.9208,
+        "totalReturn": 31291.77,
+        "calmar": 0.2568
       }
     },
     {
       "yellow": 0.32,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1076,
+        "maxDD": -0.8114,
+        "totalReturn": 1493.37,
+        "calmar": 0.1326
       },
       "mix_50_50": {
-        "cagr": 0.0995,
-        "maxDD": -0.874,
-        "totalReturn": 1207.25,
-        "calmar": 0.1139
+        "cagr": 0.1788,
+        "maxDD": -0.8733,
+        "totalReturn": 8515.03,
+        "calmar": 0.2047
       },
       "tqqq_100": {
-        "cagr": 0.098,
-        "maxDD": -0.9048,
-        "totalReturn": 1159.21,
-        "calmar": 0.1083
+        "cagr": 0.1986,
+        "maxDD": -0.9169,
+        "totalReturn": 13415.32,
+        "calmar": 0.2166
       }
     },
     {
       "yellow": 0.32,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1058,
+        "maxDD": -0.8114,
+        "totalReturn": 1423.32,
+        "calmar": 0.1304
       },
       "mix_50_50": {
-        "cagr": 0.1008,
-        "maxDD": -0.874,
-        "totalReturn": 1248.78,
-        "calmar": 0.1154
+        "cagr": 0.1174,
+        "maxDD": -0.8733,
+        "totalReturn": 1924.49,
+        "calmar": 0.1345
       },
       "tqqq_100": {
-        "cagr": 0.0996,
-        "maxDD": -0.9048,
-        "totalReturn": 1209.29,
-        "calmar": 0.1101
+        "cagr": 0.1285,
+        "maxDD": -0.9169,
+        "totalReturn": 2545.29,
+        "calmar": 0.1402
       }
     },
     {
@@ -2262,220 +2262,220 @@
       "yellow": 0.34,
       "red": 0.35,
       "qqq_100": {
-        "cagr": 0.1114,
-        "maxDD": -0.5276,
-        "totalReturn": 1648.58,
-        "calmar": 0.2112
+        "cagr": 0.1092,
+        "maxDD": -0.5202,
+        "totalReturn": 1556.96,
+        "calmar": 0.2099
       },
       "mix_50_50": {
-        "cagr": 0.1834,
-        "maxDD": -0.7131,
-        "totalReturn": 9467.17,
-        "calmar": 0.2572
+        "cagr": 0.1852,
+        "maxDD": -0.7279,
+        "totalReturn": 9864.83,
+        "calmar": 0.2544
       },
       "tqqq_100": {
-        "cagr": 0.2212,
-        "maxDD": -0.8878,
-        "totalReturn": 22317.82,
-        "calmar": 0.2491
+        "cagr": 0.2243,
+        "maxDD": -0.924,
+        "totalReturn": 23948.06,
+        "calmar": 0.2428
       }
     },
     {
       "yellow": 0.34,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.1401,
+        "maxDD": -0.5532,
+        "totalReturn": 3389.02,
+        "calmar": 0.2533
       },
       "mix_50_50": {
-        "cagr": 0.2286,
-        "maxDD": -0.757,
-        "totalReturn": 26318.47,
-        "calmar": 0.302
+        "cagr": 0.2341,
+        "maxDD": -0.7766,
+        "totalReturn": 29731.6,
+        "calmar": 0.3015
       },
       "tqqq_100": {
-        "cagr": 0.2776,
-        "maxDD": -0.8834,
-        "totalReturn": 76072.58,
-        "calmar": 0.3142
+        "cagr": 0.2838,
+        "maxDD": -0.9431,
+        "totalReturn": 86824.01,
+        "calmar": 0.301
       }
     },
     {
       "yellow": 0.34,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.1561,
+        "maxDD": -0.5683,
+        "totalReturn": 4984.57,
+        "calmar": 0.2746
       },
       "mix_50_50": {
-        "cagr": 0.2564,
-        "maxDD": -0.7715,
-        "totalReturn": 48333.43,
-        "calmar": 0.3323
+        "cagr": 0.281,
+        "maxDD": -0.7899,
+        "totalReturn": 81733.92,
+        "calmar": 0.3557
       },
       "tqqq_100": {
-        "cagr": 0.2944,
-        "maxDD": -0.8923,
-        "totalReturn": 108545.78,
-        "calmar": 0.33
+        "cagr": 0.3343,
+        "maxDD": -0.9475,
+        "totalReturn": 246711.45,
+        "calmar": 0.3528
       }
     },
     {
       "yellow": 0.34,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.158,
+        "maxDD": -0.5878,
+        "totalReturn": 5219.38,
+        "calmar": 0.2688
       },
       "mix_50_50": {
-        "cagr": 0.2896,
-        "maxDD": -0.7859,
-        "totalReturn": 98158.65,
-        "calmar": 0.3686
+        "cagr": 0.3136,
+        "maxDD": -0.8031,
+        "totalReturn": 161790.14,
+        "calmar": 0.3905
       },
       "tqqq_100": {
-        "cagr": 0.3153,
-        "maxDD": -0.9007,
-        "totalReturn": 167406.63,
-        "calmar": 0.35
+        "cagr": 0.3511,
+        "maxDD": -0.9516,
+        "totalReturn": 346492.73,
+        "calmar": 0.369
       }
     },
     {
       "yellow": 0.34,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1537,
+        "maxDD": -0.5878,
+        "totalReturn": 4709.78,
+        "calmar": 0.2615
       },
       "mix_50_50": {
-        "cagr": 0.2614,
-        "maxDD": -0.7821,
-        "totalReturn": 53789.84,
-        "calmar": 0.3342
+        "cagr": 0.3012,
+        "maxDD": -0.8031,
+        "totalReturn": 124946.79,
+        "calmar": 0.375
       },
       "tqqq_100": {
-        "cagr": 0.2862,
-        "maxDD": -0.8851,
-        "totalReturn": 91360.46,
-        "calmar": 0.3234
+        "cagr": 0.3233,
+        "maxDD": -0.9516,
+        "totalReturn": 197129.87,
+        "calmar": 0.3397
       }
     },
     {
       "yellow": 0.34,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1446,
+        "maxDD": -0.6358,
+        "totalReturn": 3783.19,
+        "calmar": 0.2275
       },
       "mix_50_50": {
-        "cagr": 0.1434,
-        "maxDD": -0.812,
-        "totalReturn": 3673.57,
-        "calmar": 0.1766
+        "cagr": 0.2795,
+        "maxDD": -0.8264,
+        "totalReturn": 79277.59,
+        "calmar": 0.3383
       },
       "tqqq_100": {
-        "cagr": 0.1647,
-        "maxDD": -0.8876,
-        "totalReturn": 6122.66,
-        "calmar": 0.1856
+        "cagr": 0.2994,
+        "maxDD": -0.9532,
+        "totalReturn": 120381.13,
+        "calmar": 0.3141
       }
     },
     {
       "yellow": 0.34,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1259,
+        "maxDD": -0.738,
+        "totalReturn": 2385.4,
+        "calmar": 0.1706
       },
       "mix_50_50": {
-        "cagr": 0.1001,
-        "maxDD": -0.878,
-        "totalReturn": 1224.55,
-        "calmar": 0.114
+        "cagr": 0.2427,
+        "maxDD": -0.8622,
+        "totalReturn": 35860.67,
+        "calmar": 0.2814
       },
       "tqqq_100": {
-        "cagr": 0.0997,
-        "maxDD": -0.909,
-        "totalReturn": 1211.02,
-        "calmar": 0.1096
+        "cagr": 0.2611,
+        "maxDD": -0.9445,
+        "totalReturn": 53487.47,
+        "calmar": 0.2764
       }
     },
     {
       "yellow": 0.34,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1147,
+        "maxDD": -0.7882,
+        "totalReturn": 1792.66,
+        "calmar": 0.1455
       },
       "mix_50_50": {
-        "cagr": 0.0994,
-        "maxDD": -0.8839,
-        "totalReturn": 1203.86,
-        "calmar": 0.1125
+        "cagr": 0.2137,
+        "maxDD": -0.8789,
+        "totalReturn": 18873.72,
+        "calmar": 0.2431
       },
       "tqqq_100": {
-        "cagr": 0.0984,
-        "maxDD": -0.9169,
-        "totalReturn": 1171.09,
-        "calmar": 0.1073
+        "cagr": 0.24,
+        "maxDD": -0.9379,
+        "totalReturn": 33821.33,
+        "calmar": 0.2559
       }
     },
     {
       "yellow": 0.34,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.108,
+        "maxDD": -0.8114,
+        "totalReturn": 1509.96,
+        "calmar": 0.1331
       },
       "mix_50_50": {
-        "cagr": 0.0988,
-        "maxDD": -0.8906,
-        "totalReturn": 1184.29,
-        "calmar": 0.111
+        "cagr": 0.183,
+        "maxDD": -0.8899,
+        "totalReturn": 9389.37,
+        "calmar": 0.2057
       },
       "tqqq_100": {
-        "cagr": 0.0965,
-        "maxDD": -0.9265,
-        "totalReturn": 1113.34,
-        "calmar": 0.1042
+        "cagr": 0.1999,
+        "maxDD": -0.9377,
+        "totalReturn": 13835.18,
+        "calmar": 0.2132
       }
     },
     {
       "yellow": 0.34,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1058,
+        "maxDD": -0.8114,
+        "totalReturn": 1423.32,
+        "calmar": 0.1304
       },
       "mix_50_50": {
-        "cagr": 0.1002,
-        "maxDD": -0.8906,
-        "totalReturn": 1230.07,
-        "calmar": 0.1126
+        "cagr": 0.1178,
+        "maxDD": -0.8899,
+        "totalReturn": 1942.81,
+        "calmar": 0.1324
       },
       "tqqq_100": {
-        "cagr": 0.0984,
-        "maxDD": -0.9265,
-        "totalReturn": 1171.9,
-        "calmar": 0.1062
+        "cagr": 0.13,
+        "maxDD": -0.9377,
+        "totalReturn": 2641.25,
+        "calmar": 0.1387
       }
     },
     {
@@ -2504,198 +2504,198 @@
       "yellow": 0.36,
       "red": 0.37,
       "qqq_100": {
-        "cagr": 0.1399,
-        "maxDD": -0.5837,
-        "totalReturn": 3368.73,
-        "calmar": 0.2396
+        "cagr": 0.1418,
+        "maxDD": -0.5656,
+        "totalReturn": 3533.61,
+        "calmar": 0.2508
       },
       "mix_50_50": {
-        "cagr": 0.2548,
-        "maxDD": -0.8179,
-        "totalReturn": 46713.16,
-        "calmar": 0.3116
+        "cagr": 0.2563,
+        "maxDD": -0.8183,
+        "totalReturn": 48186.34,
+        "calmar": 0.3132
       },
       "tqqq_100": {
-        "cagr": 0.3153,
-        "maxDD": -0.9504,
-        "totalReturn": 167274.52,
-        "calmar": 0.3317
+        "cagr": 0.3159,
+        "maxDD": -0.962,
+        "totalReturn": 169375.34,
+        "calmar": 0.3283
       }
     },
     {
       "yellow": 0.36,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
-        "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "cagr": 0.157,
+        "maxDD": -0.5803,
+        "totalReturn": 5092.16,
+        "calmar": 0.2705
       },
       "mix_50_50": {
-        "cagr": 0.2742,
-        "maxDD": -0.8337,
-        "totalReturn": 70853.88,
-        "calmar": 0.329
+        "cagr": 0.295,
+        "maxDD": -0.834,
+        "totalReturn": 109747.56,
+        "calmar": 0.3537
       },
       "tqqq_100": {
-        "cagr": 0.3204,
-        "maxDD": -0.9553,
-        "totalReturn": 186112.92,
-        "calmar": 0.3354
+        "cagr": 0.3533,
+        "maxDD": -0.9658,
+        "totalReturn": 362365.46,
+        "calmar": 0.3658
       }
     },
     {
       "yellow": 0.36,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
-        "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "cagr": 0.1557,
+        "maxDD": -0.5992,
+        "totalReturn": 4934.79,
+        "calmar": 0.2598
       },
       "mix_50_50": {
-        "cagr": 0.2959,
-        "maxDD": -0.8481,
-        "totalReturn": 111820.51,
-        "calmar": 0.3489
+        "cagr": 0.3119,
+        "maxDD": -0.8484,
+        "totalReturn": 156124.23,
+        "calmar": 0.3677
       },
       "tqqq_100": {
-        "cagr": 0.3229,
-        "maxDD": -0.96,
-        "totalReturn": 195779.04,
-        "calmar": 0.3364
+        "cagr": 0.3472,
+        "maxDD": -0.9694,
+        "totalReturn": 320217.19,
+        "calmar": 0.3581
       }
     },
     {
       "yellow": 0.36,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1525,
+        "maxDD": -0.5992,
+        "totalReturn": 4576.19,
+        "calmar": 0.2545
       },
       "mix_50_50": {
-        "cagr": 0.2636,
-        "maxDD": -0.8444,
-        "totalReturn": 56468.72,
-        "calmar": 0.3122
+        "cagr": 0.3034,
+        "maxDD": -0.8484,
+        "totalReturn": 130773.81,
+        "calmar": 0.3576
       },
       "tqqq_100": {
-        "cagr": 0.2865,
-        "maxDD": -0.9472,
-        "totalReturn": 91817.06,
-        "calmar": 0.3025
+        "cagr": 0.3252,
+        "maxDD": -0.9694,
+        "totalReturn": 205202.99,
+        "calmar": 0.3355
       }
     },
     {
       "yellow": 0.36,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1437,
+        "maxDD": -0.6438,
+        "totalReturn": 3697.51,
+        "calmar": 0.2232
       },
       "mix_50_50": {
-        "cagr": 0.156,
-        "maxDD": -0.8703,
-        "totalReturn": 4976.19,
-        "calmar": 0.1793
+        "cagr": 0.2802,
+        "maxDD": -0.873,
+        "totalReturn": 80406.69,
+        "calmar": 0.321
       },
       "tqqq_100": {
-        "cagr": 0.1813,
-        "maxDD": -0.9496,
-        "totalReturn": 9015.79,
-        "calmar": 0.1909
+        "cagr": 0.2988,
+        "maxDD": -0.9754,
+        "totalReturn": 118992.22,
+        "calmar": 0.3064
       }
     },
     {
       "yellow": 0.36,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1234,
+        "maxDD": -0.7538,
+        "totalReturn": 2235.19,
+        "calmar": 0.1636
       },
       "mix_50_50": {
-        "cagr": 0.0983,
-        "maxDD": -0.9231,
-        "totalReturn": 1168.55,
-        "calmar": 0.1065
+        "cagr": 0.239,
+        "maxDD": -0.9117,
+        "totalReturn": 33097.16,
+        "calmar": 0.2622
       },
       "tqqq_100": {
-        "cagr": 0.0964,
-        "maxDD": -0.9572,
-        "totalReturn": 1109.6,
-        "calmar": 0.1007
+        "cagr": 0.25,
+        "maxDD": -0.9841,
+        "totalReturn": 42090.18,
+        "calmar": 0.2541
       }
     },
     {
       "yellow": 0.36,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.115,
+        "maxDD": -0.7866,
+        "totalReturn": 1806.91,
+        "calmar": 0.1462
       },
       "mix_50_50": {
-        "cagr": 0.0966,
-        "maxDD": -0.932,
-        "totalReturn": 1116.78,
-        "calmar": 0.1037
+        "cagr": 0.2081,
+        "maxDD": -0.9285,
+        "totalReturn": 16631.41,
+        "calmar": 0.2241
       },
       "tqqq_100": {
-        "cagr": 0.0926,
-        "maxDD": -0.9688,
-        "totalReturn": 1002.07,
-        "calmar": 0.0956
+        "cagr": 0.224,
+        "maxDD": -0.9871,
+        "totalReturn": 23747.61,
+        "calmar": 0.2269
       }
     },
     {
       "yellow": 0.36,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1087,
+        "maxDD": -0.8082,
+        "totalReturn": 1536.94,
+        "calmar": 0.1345
       },
       "mix_50_50": {
-        "cagr": 0.0939,
-        "maxDD": -0.9429,
-        "totalReturn": 1035.74,
-        "calmar": 0.0995
+        "cagr": 0.1737,
+        "maxDD": -0.9418,
+        "totalReturn": 7556.61,
+        "calmar": 0.1844
       },
       "tqqq_100": {
-        "cagr": 0.0854,
-        "maxDD": -0.9831,
-        "totalReturn": 819.39,
-        "calmar": 0.0868
+        "cagr": 0.1717,
+        "maxDD": -0.9914,
+        "totalReturn": 7220.69,
+        "calmar": 0.1732
       }
     },
     {
       "yellow": 0.36,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1065,
+        "maxDD": -0.8082,
+        "totalReturn": 1448.85,
+        "calmar": 0.1317
       },
       "mix_50_50": {
-        "cagr": 0.0961,
-        "maxDD": -0.9429,
-        "totalReturn": 1101.03,
-        "calmar": 0.1019
+        "cagr": 0.1179,
+        "maxDD": -0.9418,
+        "totalReturn": 1946.59,
+        "calmar": 0.1252
       },
       "tqqq_100": {
-        "cagr": 0.0894,
-        "maxDD": -0.9831,
-        "totalReturn": 917.43,
-        "calmar": 0.091
+        "cagr": 0.1403,
+        "maxDD": -0.9914,
+        "totalReturn": 3403.49,
+        "calmar": 0.1415
       }
     },
     {
@@ -2724,176 +2724,176 @@
       "yellow": 0.38,
       "red": 0.39,
       "qqq_100": {
-        "cagr": 0.1548,
+        "cagr": 0.1553,
         "maxDD": -0.5978,
-        "totalReturn": 4836.42,
-        "calmar": 0.259
+        "totalReturn": 4888.64,
+        "calmar": 0.2597
       },
       "mix_50_50": {
-        "cagr": 0.2812,
+        "cagr": 0.2954,
         "maxDD": -0.8462,
-        "totalReturn": 82136.23,
-        "calmar": 0.3323
+        "totalReturn": 110860.11,
+        "calmar": 0.3492
       },
       "tqqq_100": {
-        "cagr": 0.3309,
+        "cagr": 0.353,
         "maxDD": -0.9702,
-        "totalReturn": 230273.33,
-        "calmar": 0.341
+        "totalReturn": 360235.51,
+        "calmar": 0.3639
       }
     },
     {
       "yellow": 0.38,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
+        "cagr": 0.1525,
         "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "totalReturn": 4572.11,
+        "calmar": 0.2476
       },
       "mix_50_50": {
-        "cagr": 0.2975,
+        "cagr": 0.3041,
         "maxDD": -0.86,
-        "totalReturn": 115731.13,
-        "calmar": 0.346
+        "totalReturn": 132916.34,
+        "calmar": 0.3537
       },
       "tqqq_100": {
-        "cagr": 0.3244,
+        "cagr": 0.3347,
         "maxDD": -0.9734,
-        "totalReturn": 201876.14,
-        "calmar": 0.3333
+        "totalReturn": 249181.77,
+        "calmar": 0.3439
       }
     },
     {
       "yellow": 0.38,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1507,
+        "maxDD": -0.6159,
+        "totalReturn": 4381.49,
+        "calmar": 0.2447
       },
       "mix_50_50": {
-        "cagr": 0.2629,
-        "maxDD": -0.8564,
-        "totalReturn": 55647.64,
-        "calmar": 0.307
+        "cagr": 0.3014,
+        "maxDD": -0.86,
+        "totalReturn": 125488.65,
+        "calmar": 0.3505
       },
       "tqqq_100": {
-        "cagr": 0.2831,
-        "maxDD": -0.9615,
-        "totalReturn": 85558.68,
-        "calmar": 0.2945
+        "cagr": 0.3219,
+        "maxDD": -0.9734,
+        "totalReturn": 191575.46,
+        "calmar": 0.3307
       }
     },
     {
       "yellow": 0.38,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1417,
+        "maxDD": -0.6604,
+        "totalReturn": 3520.45,
+        "calmar": 0.2145
       },
       "mix_50_50": {
-        "cagr": 0.1576,
-        "maxDD": -0.881,
-        "totalReturn": 5167.55,
-        "calmar": 0.1789
+        "cagr": 0.2779,
+        "maxDD": -0.8836,
+        "totalReturn": 76632.39,
+        "calmar": 0.3146
       },
       "tqqq_100": {
-        "cagr": 0.1836,
-        "maxDD": -0.9618,
-        "totalReturn": 9520.23,
-        "calmar": 0.1909
+        "cagr": 0.2953,
+        "maxDD": -0.9789,
+        "totalReturn": 110543.75,
+        "calmar": 0.3017
       }
     },
     {
       "yellow": 0.38,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1216,
+        "maxDD": -0.7641,
+        "totalReturn": 2138.09,
+        "calmar": 0.1591
       },
       "mix_50_50": {
-        "cagr": 0.098,
-        "maxDD": -0.9287,
-        "totalReturn": 1157.74,
-        "calmar": 0.1055
+        "cagr": 0.2347,
+        "maxDD": -0.9221,
+        "totalReturn": 30081.65,
+        "calmar": 0.2545
       },
       "tqqq_100": {
-        "cagr": 0.0957,
-        "maxDD": -0.9624,
-        "totalReturn": 1088.91,
-        "calmar": 0.0994
+        "cagr": 0.2435,
+        "maxDD": -0.9892,
+        "totalReturn": 36514.92,
+        "calmar": 0.2462
       }
     },
     {
       "yellow": 0.38,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1135,
+        "maxDD": -0.7944,
+        "totalReturn": 1737.99,
+        "calmar": 0.1428
       },
       "mix_50_50": {
-        "cagr": 0.0961,
-        "maxDD": -0.938,
-        "totalReturn": 1099.97,
-        "calmar": 0.1024
+        "cagr": 0.204,
+        "maxDD": -0.9372,
+        "totalReturn": 15157.09,
+        "calmar": 0.2176
       },
       "tqqq_100": {
-        "cagr": 0.0913,
-        "maxDD": -0.9744,
-        "totalReturn": 965.85,
-        "calmar": 0.0937
+        "cagr": 0.2137,
+        "maxDD": -0.9932,
+        "totalReturn": 18875.35,
+        "calmar": 0.2151
       }
     },
     {
       "yellow": 0.38,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1064,
+        "maxDD": -0.8188,
+        "totalReturn": 1446.96,
+        "calmar": 0.13
       },
       "mix_50_50": {
-        "cagr": 0.0928,
-        "maxDD": -0.9495,
-        "totalReturn": 1007.47,
-        "calmar": 0.0978
+        "cagr": 0.1687,
+        "maxDD": -0.9501,
+        "totalReturn": 6719.58,
+        "calmar": 0.1775
       },
       "tqqq_100": {
-        "cagr": 0.0827,
-        "maxDD": -0.9892,
-        "totalReturn": 761.2,
-        "calmar": 0.0836
+        "cagr": 0.1602,
+        "maxDD": -0.9975,
+        "totalReturn": 5499.35,
+        "calmar": 0.1606
       }
     },
     {
       "yellow": 0.38,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1041,
+        "maxDD": -0.8188,
+        "totalReturn": 1363.71,
+        "calmar": 0.1272
       },
       "mix_50_50": {
-        "cagr": 0.0953,
-        "maxDD": -0.9495,
-        "totalReturn": 1076.34,
-        "calmar": 0.1003
+        "cagr": 0.1117,
+        "maxDD": -0.9501,
+        "totalReturn": 1662.46,
+        "calmar": 0.1176
       },
       "tqqq_100": {
-        "cagr": 0.0874,
-        "maxDD": -0.9892,
-        "totalReturn": 866.65,
-        "calmar": 0.0883
+        "cagr": 0.1375,
+        "maxDD": -0.9982,
+        "totalReturn": 3174.87,
+        "calmar": 0.1377
       }
     },
     {
@@ -2922,154 +2922,154 @@
       "yellow": 0.4,
       "red": 0.41,
       "qqq_100": {
-        "cagr": 0.151,
+        "cagr": 0.1522,
         "maxDD": -0.6159,
-        "totalReturn": 4407.24,
-        "calmar": 0.2451
+        "totalReturn": 4544.91,
+        "calmar": 0.2472
       },
       "mix_50_50": {
-        "cagr": 0.299,
+        "cagr": 0.3033,
         "maxDD": -0.86,
-        "totalReturn": 119482.25,
-        "calmar": 0.3477
+        "totalReturn": 130516.33,
+        "calmar": 0.3527
       },
       "tqqq_100": {
-        "cagr": 0.3272,
+        "cagr": 0.3334,
         "maxDD": -0.9734,
-        "totalReturn": 213821.41,
-        "calmar": 0.3362
+        "totalReturn": 242663.05,
+        "calmar": 0.3426
       }
     },
     {
       "yellow": 0.4,
       "red": 0.43,
       "qqq_100": {
-        "cagr": 0.1434,
-        "maxDD": -0.6286,
-        "totalReturn": 3667.6,
-        "calmar": 0.2281
+        "cagr": 0.1512,
+        "maxDD": -0.6159,
+        "totalReturn": 4428.7,
+        "calmar": 0.2454
       },
       "mix_50_50": {
-        "cagr": 0.2663,
-        "maxDD": -0.8564,
-        "totalReturn": 59784.86,
-        "calmar": 0.3109
+        "cagr": 0.2965,
+        "maxDD": -0.86,
+        "totalReturn": 113281.43,
+        "calmar": 0.3448
       },
       "tqqq_100": {
-        "cagr": 0.2867,
-        "maxDD": -0.9615,
-        "totalReturn": 92171.37,
-        "calmar": 0.2981
+        "cagr": 0.3162,
+        "maxDD": -0.9734,
+        "totalReturn": 170401.16,
+        "calmar": 0.3248
       }
     },
     {
       "yellow": 0.4,
       "red": 0.45,
       "qqq_100": {
-        "cagr": 0.1234,
-        "maxDD": -0.6989,
-        "totalReturn": 2238.1,
-        "calmar": 0.1766
+        "cagr": 0.1414,
+        "maxDD": -0.6604,
+        "totalReturn": 3498.46,
+        "calmar": 0.2142
       },
       "mix_50_50": {
-        "cagr": 0.1576,
-        "maxDD": -0.881,
-        "totalReturn": 5167.55,
-        "calmar": 0.1789
+        "cagr": 0.2708,
+        "maxDD": -0.8836,
+        "totalReturn": 65815.82,
+        "calmar": 0.3065
       },
       "tqqq_100": {
-        "cagr": 0.1836,
-        "maxDD": -0.9618,
-        "totalReturn": 9520.23,
-        "calmar": 0.1909
+        "cagr": 0.2887,
+        "maxDD": -0.9789,
+        "totalReturn": 96173.34,
+        "calmar": 0.2949
       }
     },
     {
       "yellow": 0.4,
       "red": 0.47,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.824,
-        "totalReturn": 1239.42,
-        "calmar": 0.122
+        "cagr": 0.1196,
+        "maxDD": -0.7641,
+        "totalReturn": 2030.75,
+        "calmar": 0.1565
       },
       "mix_50_50": {
-        "cagr": 0.098,
-        "maxDD": -0.9287,
-        "totalReturn": 1157.74,
-        "calmar": 0.1055
+        "cagr": 0.2134,
+        "maxDD": -0.9221,
+        "totalReturn": 18742.89,
+        "calmar": 0.2314
       },
       "tqqq_100": {
-        "cagr": 0.0957,
-        "maxDD": -0.9624,
-        "totalReturn": 1088.91,
-        "calmar": 0.0994
+        "cagr": 0.2362,
+        "maxDD": -0.9892,
+        "totalReturn": 31126.25,
+        "calmar": 0.2388
       }
     },
     {
       "yellow": 0.4,
       "red": 0.49,
       "qqq_100": {
-        "cagr": 0.1005,
-        "maxDD": -0.8264,
-        "totalReturn": 1236.99,
-        "calmar": 0.1216
+        "cagr": 0.1119,
+        "maxDD": -0.7944,
+        "totalReturn": 1669.55,
+        "calmar": 0.1409
       },
       "mix_50_50": {
-        "cagr": 0.0961,
-        "maxDD": -0.938,
-        "totalReturn": 1099.97,
-        "calmar": 0.1024
+        "cagr": 0.1769,
+        "maxDD": -0.9372,
+        "totalReturn": 8146.5,
+        "calmar": 0.1888
       },
       "tqqq_100": {
-        "cagr": 0.0913,
-        "maxDD": -0.9744,
-        "totalReturn": 965.85,
-        "calmar": 0.0937
+        "cagr": 0.2049,
+        "maxDD": -0.9932,
+        "totalReturn": 15491.88,
+        "calmar": 0.2063
       }
     },
     {
       "yellow": 0.4,
       "red": 0.51,
       "qqq_100": {
-        "cagr": 0.101,
-        "maxDD": -0.8281,
-        "totalReturn": 1255.12,
-        "calmar": 0.122
+        "cagr": 0.1048,
+        "maxDD": -0.8188,
+        "totalReturn": 1387.24,
+        "calmar": 0.128
       },
       "mix_50_50": {
-        "cagr": 0.0928,
-        "maxDD": -0.9495,
-        "totalReturn": 1007.47,
-        "calmar": 0.0978
+        "cagr": 0.1311,
+        "maxDD": -0.9501,
+        "totalReturn": 2712.13,
+        "calmar": 0.138
       },
       "tqqq_100": {
-        "cagr": 0.0827,
-        "maxDD": -0.9892,
-        "totalReturn": 761.2,
-        "calmar": 0.0836
+        "cagr": 0.1462,
+        "maxDD": -0.9975,
+        "totalReturn": 3933.6,
+        "calmar": 0.1466
       }
     },
     {
       "yellow": 0.4,
       "red": 0.53,
       "qqq_100": {
-        "cagr": 0.102,
-        "maxDD": -0.8281,
-        "totalReturn": 1288.13,
-        "calmar": 0.1232
+        "cagr": 0.1041,
+        "maxDD": -0.8188,
+        "totalReturn": 1363.71,
+        "calmar": 0.1272
       },
       "mix_50_50": {
-        "cagr": 0.0953,
-        "maxDD": -0.9495,
-        "totalReturn": 1076.34,
-        "calmar": 0.1003
+        "cagr": 0.1117,
+        "maxDD": -0.9501,
+        "totalReturn": 1662.46,
+        "calmar": 0.1176
       },
       "tqqq_100": {
-        "cagr": 0.0874,
-        "maxDD": -0.9892,
-        "totalReturn": 866.65,
-        "calmar": 0.0883
+        "cagr": 0.1375,
+        "maxDD": -0.9982,
+        "totalReturn": 3174.87,
+        "calmar": 0.1377
       }
     },
     {

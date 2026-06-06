@@ -93,6 +93,7 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, threshold_yellow, thr
     w_cash = 1.0
     
     current_month = None
+    trend_state = 'GREEN'
     
     # Target allocations based on mode
     # For 100% QQQ, lev is basically base.
@@ -114,6 +115,7 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, threshold_yellow, thr
             signal = row['finraToM0']
             
             if signal > threshold_red: # RED
+                trend_state = 'RED'
                 # shift from equity to cash
                 w_eq = w_lev + w_base
                 if w_eq > 0:
@@ -124,6 +126,7 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, threshold_yellow, thr
                     w_base -= trade_amt * ratio_base
                     w_cash += trade_amt
             elif signal < threshold_yellow: # GREEN
+                trend_state = 'GREEN'
                 # shift from cash to equity target
                 if w_cash > 0:
                     trade_amt = min(w_cash, shift_amount)
@@ -136,11 +139,14 @@ def run_strategy(df, base_ticker, lev_ticker, cash_ticker, threshold_yellow, thr
                     elif mode == "qqq_100":
                         w_base += trade_amt
             else: # YELLOW
-                # deploy cash to base only
-                if w_cash > 0:
-                    trade_amt = min(w_cash, shift_amount)
-                    w_cash -= trade_amt
-                    w_base += trade_amt
+                if trend_state == 'GREEN':
+                    # deploy cash to base only
+                    if w_cash > 0:
+                        trade_amt = min(w_cash, shift_amount)
+                        w_cash -= trade_amt
+                        w_base += trade_amt
+                else:
+                    pass
                     
         nav_series.append(nav)
         

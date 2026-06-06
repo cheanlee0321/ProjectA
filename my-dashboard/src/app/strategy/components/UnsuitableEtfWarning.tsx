@@ -6,7 +6,7 @@ export function UnsuitableEtfWarning() {
       </h3>
       <div className="space-y-6 text-foreground/80 text-sm">
         <p className="text-base font-medium text-cyan-200">
-          當我們回顧 2010~2026 年的大牛市時，策略套用在 1 倍大盤上會造成嚴重的「現金拖累」，績效遠不如無腦 Buy & Hold。但當我們把時間拉長到涵蓋 2000 年與 2008 年的 27 年完整週期時，策略績效卻反過來輾壓了 Buy & Hold (QQQ 4819% vs 1428%)！這巨大的反差揭示了什麼？
+          當我們回顧 2010~2026 年的大牛市時，策略套用在 1 倍大盤上會造成嚴重的「現金拖累」，績效遠不如無腦 Buy & Hold。但當我們把時間拉長到涵蓋 2000 年與 2008 年的 27 年完整週期時，策略績效卻反過來輾壓了 Buy & Hold (QQQ 4055% vs 1428%)！這巨大的反差揭示了什麼？
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
