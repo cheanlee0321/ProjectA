@@ -23,8 +23,8 @@ export function UnsuitableEtfWarning() {
             <div className="mt-4 p-3 bg-cyan-900/30 rounded-xl border border-cyan-500/20 text-xs text-cyan-200">
               <strong className="block mb-1 text-sm text-cyan-300">📊 2010~2026 太平盛世回測對比：</strong>
               <ul className="space-y-1">
-                <li>• 無腦 Buy & Hold QQQ：總報酬 <span className="text-emerald-400 font-bold">1391%</span></li>
-                <li>• 策略套用 100% QQQ：總報酬僅 <span className="text-rose-400 font-bold">477%</span> (嚴重拖累)</li>
+                <li>• 無腦 Buy & Hold QQQ：總報酬 <span className="text-emerald-400 font-bold">1645%</span></li>
+                <li>• 策略套用 100% QQQ：總報酬降至 <span className="text-rose-400 font-bold">1261%</span> (產生現金拖累)</li>
               </ul>
             </div>
           </div>

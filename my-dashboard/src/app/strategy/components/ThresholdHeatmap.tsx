@@ -207,6 +207,22 @@ export function ThresholdHeatmap() {
 
       <div className="mt-8 p-5 bg-slate-800/50 rounded-xl border border-slate-700">
         <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論 (已套用磁滯效應更新)</h4>
+        
+        <div className="mb-5 p-4 bg-emerald-900/30 border border-emerald-500/30 rounded-lg">
+          <p className="text-sm text-emerald-400 font-bold mb-1 flex items-center">
+            <span className="text-lg mr-2">🏆</span> 綜合最佳化甜蜜點 (考量報酬與風險)：
+          </p>
+          <p className="text-base text-slate-200 mt-2">
+            黃燈閾值 <strong className="text-amber-400 mx-1">0.24</strong> / 紅燈閾值 <strong className="text-amber-400 mx-1">0.41</strong>
+          </p>
+          <p className="text-sm text-slate-400 mt-1">
+            (50/50 組合 CAGR: 32.48%, MaxDD: -64.21%, Calmar: 0.51)
+          </p>
+          <p className="text-xs text-slate-500 mt-2">
+            * 註：追求純最高報酬點為 黃燈 0.24 / 紅燈 0.43 (CAGR 34.39%)，但最大回撤高達 -78.86%，風險過高故不作推薦。
+          </p>
+        </div>
+
         <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
           <li><strong>紅燈的極限不變：</strong> 紅燈設定在 0.40 ~ 0.45 之間依然能發揮極佳的避險效果。這證明了判斷市場過熱的標準具有長期的有效性。但若紅燈設得太高 (&gt;0.48)，會太晚警報而遭遇較大回撤。</li>
           <li><strong>黃燈甜蜜點下移：</strong> 加入磁滯效應（前一個是紅燈就不買）後，數據顯示將黃燈閾值適度調低至 0.24 ~ 0.28，能讓「確認落底」的標準變得更嚴格，進一步榨出更高的超額報酬。</li>

@@ -268,6 +268,19 @@ export function SpeedSensitivity() {
 
       <div className="p-5 bg-slate-800/50 rounded-xl border border-slate-700">
         <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論 (已套用磁滯效應更新)</h4>
+
+        <div className="mb-5 p-4 bg-emerald-900/30 border border-emerald-500/30 rounded-lg">
+          <p className="text-sm text-emerald-400 font-bold mb-1 flex items-center">
+            <span className="text-lg mr-2">🏆</span> 綜合最佳化參數 (以 50/50 組合為例)：
+          </p>
+          <p className="text-base text-slate-200 mt-2">
+            買入速度 <strong className="text-amber-400 mx-1">分 4 個月</strong> / 賣出速度 <strong className="text-amber-400 mx-1">分 10 個月</strong>
+          </p>
+          <p className="text-sm text-slate-400 mt-1">
+            (CAGR: 30.79%, MaxDD: -71.62%, Calmar: 0.43)
+          </p>
+        </div>
+
         <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
           <li><strong>買入節奏的爆發力：</strong> 加入「紅轉黃不接刀」的磁滯避險邏輯後，一旦燈號確實降回綠燈，代表市場已徹底落底。此時<strong>加快買入速度 (4~6個月)</strong> 反而能取得最高報酬，因為底部確認後的反彈最為猛烈。</li>
           <li><strong>賣出節奏的從容度：</strong> 由於我們在黃燈區間就已經將現金改買 1 倍大盤（降檔防守），當真正觸發紅燈時，我們已不需要像過去一樣恐慌性拋售。數據顯示，賣出節奏放緩至 8~12 個月，反而能避免被假跌破洗出場。</li>
