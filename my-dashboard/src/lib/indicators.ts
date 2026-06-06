@@ -1,9 +1,7 @@
 import YahooFinance from 'yahoo-finance2';
 import { unstable_cache } from 'next/cache';
 import { cache } from 'react';
-import fs from 'fs';
-import path from 'path';
-import * as xlsx from 'xlsx';
+
 const yahooFinance = new YahooFinance();
 
 export interface IndicatorData {
@@ -194,42 +192,7 @@ async function fetchFearAndGreed(): Promise<{current: number | null, history: {d
 }
 
 
-const fetchTrueFinraMargin = unstable_cache(
-  async (): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean, isLoading?: boolean}> => {
-    try {
-      const filePath = path.join(process.cwd(), '../Data/margin-statistics.xlsx');
-      if (!fs.existsSync(filePath)) {
-        console.warn('Local FINRA margin data not found:', filePath);
-        return { current: null, history: [], isError: true };
-      }
-      const fileBuffer = fs.readFileSync(filePath);
-      const workbook = xlsx.read(fileBuffer, { type: 'buffer' });
-      const sheetName = workbook.SheetNames[0];
-      const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
-      
-      const history = [];
-      for (let i = 1; i < data.length; i++) {
-        const row = data[i] as any[];
-        if (row && row.length >= 2) {
-          const dateStr = row[0];
-          const val = parseFloat(row[1]);
-          if (dateStr && typeof dateStr === 'string' && !isNaN(val)) {
-            history.push({ date: `${dateStr}-01`, value: val });
-          }
-        }
-      }
-      
-      history.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-      const current = history.length > 0 ? history[history.length - 1].value : null;
-      return { current, history, isError: false };
-    } catch(e) {
-      console.error('Local FINRA Margin error:', e);
-      return { current: null, history: [], isError: true };
-    }
-  },
-  ['finra-margin-excel'],
-  { revalidate: 86400 }
-);
+
 
 async function fetchCryptoFearGreed(): Promise<{current: number | null, history: {date: string, value: number}[], isError: boolean}> {
   try {
@@ -370,7 +333,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       fetchFredSeries('GDP'),
       fetchCapeRatio(),
       fetchFearAndGreed(),
-      fetchTrueFinraMargin(),
+      fetchFredSeries('BOGZ1FL663067003Q'),
       fetchFredSeries('M2SL'),
       fetchFredSeries('NFCI'),
       fetchTaiwanMargin(finmindToken),
