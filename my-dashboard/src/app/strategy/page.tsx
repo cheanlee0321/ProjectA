@@ -170,7 +170,7 @@ export default function StrategyPage() {
                 </div>
                 <div className="h-px bg-slate-700/50 my-4"></div>
                 <div>
-                  <strong className="text-indigo-300">解法 A：改採「淨流動性」</strong>
+                  <strong className="text-indigo-300">解法 A：改採「淨流動性」= 聯準會總資產 - TGA - RRP</strong>
                   <p className="mt-2 text-slate-400 leading-relaxed">
                     在會計恆等式上，<code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">聯準會總資產 - TGA - RRP</code> 其實極度逼近傳統的 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">M0 (基礎貨幣)</code>。我們可以用以下公式來理解它們的關係：
                   </p>
