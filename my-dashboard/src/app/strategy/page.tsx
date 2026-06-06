@@ -12,6 +12,8 @@ import { StrategyLimitations } from './components/StrategyLimitations';
 import { MacroAssumptions } from './components/MacroAssumptions';
 import { DelayedSimulation } from './components/DelayedSimulation';
 import { UnsuitableEtfWarning } from './components/UnsuitableEtfWarning';
+import { ThresholdHeatmap } from './components/ThresholdHeatmap';
+import { SpeedSensitivity } from './components/SpeedSensitivity';
 import { qqqBacktestData, spyBacktestData, qqqBacktestData2010, spyBacktestData2010 } from './data/staticData';
 import { chartDefs } from './data/chartDefs';
 
@@ -145,6 +147,13 @@ export default function StrategyPage() {
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-indigo-100">
               <span className="text-3xl">🔬</span> 進階策略 (探討中, 未完成)
             </h2>
+
+            {/* 實驗 A：閾值敏感度 */}
+            <ThresholdHeatmap />
+
+            {/* 實驗 B：速度敏感度 */}
+            <SpeedSensitivity />
+
             <div className="mb-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
               <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -170,6 +179,7 @@ export default function StrategyPage() {
                 </div>
               </div>
             </div>
+
             <div className="w-full flex flex-col gap-12 mb-16">
               {chartDefs.filter(chart => ['chart8', 'chart9', 'chart10'].includes(chart.id)).map((chart) => {
                 const config = chartConfigs[chart.id];
