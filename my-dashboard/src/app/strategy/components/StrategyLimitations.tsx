@@ -6,7 +6,7 @@ export function StrategyLimitations() {
       </h3>
       <div className="space-y-6 text-foreground/80 text-sm">
         <p className="text-base font-medium text-amber-200 mb-4">
-          雖然底層的「人性貪婪與恐懼循環」不變，但「開槓桿的工具」與「總經環境」正在發生劇變。我們必須認知到：<strong>紅燈代表絕對危險，但綠燈不代表絕對安全。</strong>此策略未來可能會遇到以下 4 大挑戰：
+          雖然底層的「人性貪婪與恐懼循環」不變，但「開槓桿的工具」與「總經環境」正在發生劇變。我們必須認知到：<strong>紅燈代表絕對危險，但綠燈不代表絕對安全。</strong>此策略未來可能會遇到以下 6 大挑戰與限制：
         </p>
 
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
@@ -38,6 +38,11 @@ export function StrategyLimitations() {
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
           <h4 className="text-lg font-bold text-amber-300 mb-2">5. 被動投資泡沫 (ETF Bubble) 與流動性黑洞</h4>
           <p>正如電影《大賣空》主角 Michael Burry 所警告的，現代大眾的資金已經極度向被動式 ETF 集中。這破壞了市場的「價格發現」機制（Price Discovery）。當資金湧入時，ETF 被迫無腦買入成分股，推升指數；但當趨勢反轉（例如 FINRA 亮紅燈後的拋售潮），ETF 的結構會強迫進行無差別的成分股拋售。這將在未來導致市場瞬間失去流動性，引發比過去（如 2000 年或 2008 年）更快速、更無量跌停的「被動式踩踏死亡螺旋」。</p>
+        </div>
+
+        <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
+          <h4 className="text-lg font-bold text-amber-300 mb-2">6. 策略容量極限與觀測者效應 (散戶的專屬特權)</h4>
+          <p>任何量化策略都有其「容量極限」。如果這個紅綠燈策略被華爾街巨頭或數十萬散戶帶著百億資金同時使用，將會產生致命的觀測者效應：大量資金在綠燈時的融資買入本身就會推升 FINRA 數據（讓紅燈提早亮起），而在紅燈時的集體拋售則會引發嚴重的流動性踩踏與滑價，甚至成為引爆崩盤的「自我實現預言」。<strong className="text-emerald-400">但這正是散戶的最大優勢：</strong>因為資金體量小，散戶可以靈活進出，不受流動性與策略容量的限制。這是一個華爾街大鱷無法使用，專屬於靈活散戶的「特權策略」。</p>
         </div>
 
         <div className="mt-8 pt-6 border-t border-amber-500/20">
