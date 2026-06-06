@@ -172,7 +172,15 @@ export default function StrategyPage() {
                 <div>
                   <strong className="text-indigo-300">解法 A：改採「淨流動性」</strong>
                   <p className="mt-2 text-slate-400 leading-relaxed">
-                    在會計恆等式上，<code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">聯準會總資產 - TGA - RRP</code> 其實極度逼近傳統的 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">M0 (基礎貨幣)</code>。既然曲線相似，為何華爾街實戰要捨棄官方 M0，改用此公式拆解？
+                    在會計恆等式上，<code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">聯準會總資產 - TGA - RRP</code> 其實極度逼近傳統的 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">M0 (基礎貨幣)</code>。我們可以用以下公式來理解它們的關係：
+                  </p>
+                  <div className="bg-slate-900/60 p-4 rounded-xl my-4 border border-slate-700 font-mono text-sm shadow-inner text-center">
+                    <span className="text-slate-300">聯準會總資產 = ( 實體鈔票 + 銀行準備金 ) + TGA + RRP</span>
+                    <br />
+                    <span className="text-emerald-400 mt-2 block font-semibold">聯準會總資產 = M0 + TGA + RRP</span>
+                  </div>
+                  <p className="mt-2 text-slate-400 leading-relaxed">
+                    既然數學結果相似，為何華爾街實戰要捨棄官方 M0，改用此公式拆解？
                   </p>
                   <ul className="list-disc pl-5 mt-3 space-y-2 text-slate-400">
                     <li><strong className="text-slate-200">時效性與頻率優勢：</strong>官方 M0 統計發布較慢（雙週或月度）；而總資產、TGA、RRP 來自聯準會每週四發布的 H.4.1 報告，能讓操盤手提早 1~2 週即時預判資金水位。</li>
