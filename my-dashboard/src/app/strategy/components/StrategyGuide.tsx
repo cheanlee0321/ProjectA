@@ -87,6 +87,22 @@ export function StrategyGuide() {
               </p>
             </div>
           </div>
+          <div className="mt-6 p-5 rounded-2xl bg-emerald-950/30 border border-emerald-500/20">
+            <h4 className="text-lg font-bold text-emerald-300 mb-3 flex items-center">
+              <span className="mr-2">🌍</span> 台灣散戶的 IBKR 稅務優勢 (無短期資本利得稅)
+            </h4>
+            <div className="space-y-3">
+              <p>
+                <strong className="text-emerald-200">免除美國資本利得稅：</strong> 作為填寫 W-8BEN 表格的台灣稅務居民（NRA 非居民外籍人士），在 IBKR 上買賣美股所賺取的價差是<strong>完全免除美國資本利得稅</strong>的，且<strong>沒有美國稅法中「短期交易 (Short-Term Capital Gains)」的高額懲罰稅率</strong>。
+              </p>
+              <p>
+                這意味著本策略所建議的「分批買賣」與「波段操作」，在美國端不會產生額外的資本利得稅負擔。這使得台灣散戶在執行此類趨勢擇時策略時，相較於美國當地居民，具備得天獨厚的交易成本優勢。
+              </p>
+              <p className="text-emerald-200/70 text-xs">
+                *註解：雖然美國端免稅，但獲利仍須依法計入台灣的「海外所得最低稅負制」。不過其申報與課稅免稅額門檻（目前為新台幣 750 萬元）相對寬鬆，一般散戶實務上極少會因一般的波段交易而被課到稅。且美股配發的「股息」仍會被預扣 30% 股息稅，但本策略主要獲利來源為價差而非股息。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

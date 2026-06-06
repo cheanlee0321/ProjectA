@@ -16,6 +16,7 @@ export function SpeedSensitivity() {
   const [loading, setLoading] = useState(true);
   const [mode, setMode] = useState<StrategyMode>('mix_50_50');
   const [metric, setMetric] = useState<MetricType>('cagr');
+  const [showAllLeaderboard, setShowAllLeaderboard] = useState(false);
 
   useEffect(() => {
     fetch('/data/speed_sensitivity.json')
@@ -106,8 +107,10 @@ export function SpeedSensitivity() {
     return null;
   };
 
-  // Calculate Top 5 by CAGR
-  const sortedByCAGR = [...data.results].sort((a, b) => b[mode].cagr - a[mode].cagr).slice(0, 5);
+  // Calculate Leaderboard
+  const allSorted = [...data.results].sort((a, b) => b[mode].cagr - a[mode].cagr);
+  const displayCount = showAllLeaderboard ? allSorted.length : 10;
+  const sortedByCAGR = allSorted.slice(0, displayCount);
 
   return (
     <div className="mb-12 p-6 md:p-8 rounded-3xl bg-slate-900/50 border border-slate-700/50 shadow-lg">
@@ -199,8 +202,16 @@ export function SpeedSensitivity() {
         </ResponsiveContainer>
       </div>
 
-      <h4 className="text-lg font-bold text-white mb-4">🏆 最佳參數排行榜 (基於 CAGR)</h4>
-      <div className="overflow-x-auto mb-8">
+      <h4 className="text-lg font-bold text-white mb-4 flex items-center justify-between">
+        <span>🏆 最佳參數排行榜 (基於 CAGR)</span>
+        <button 
+          onClick={() => setShowAllLeaderboard(!showAllLeaderboard)}
+          className="text-sm px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors border border-slate-600 font-medium"
+        >
+          {showAllLeaderboard ? '收起至前 10 名' : '展開全部 121 筆數據'}
+        </button>
+      </h4>
+      <div className="overflow-x-auto mb-8 max-h-[600px] overflow-y-auto custom-scrollbar">
         <table className="w-full text-left border-collapse whitespace-nowrap bg-slate-950/50 rounded-xl overflow-hidden border border-slate-800">
           <thead>
             <tr className="border-b border-slate-700 bg-slate-900">
@@ -233,19 +244,24 @@ export function SpeedSensitivity() {
               );
             })}
             
-            {/* Find the baseline 10/10 if it's not in top 5 */}
-            {!sortedByCAGR.find(r => r.buy_months === 10 && r.sell_months === 10) && data.results.filter(s => s.buy_months === 10 && s.sell_months === 10).map((s, idx) => (
-              <tr key={`sym-baseline`} className="border-t-2 border-slate-700 bg-slate-900/80 text-sm">
-                <td className="py-3 px-4 font-bold text-slate-500">
-                  <span className="ml-2 text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded">未進前 5 名的目前設定</span>
-                </td>
+            {/* Find the baseline 10/10 if it's not in the currently displayed list */}
+            {!sortedByCAGR.find(r => r.buy_months === 10 && r.sell_months === 10) && data.results.filter(s => s.buy_months === 10 && s.sell_months === 10).map((s, idx) => {
+              // Find actual rank of 10/10
+              const baselineRank = allSorted.findIndex(r => r.buy_months === 10 && r.sell_months === 10) + 1;
+              return (
+                <tr key={`sym-baseline`} className="border-t-2 border-slate-700 bg-slate-900/80 text-sm">
+                  <td className="py-3 px-4 font-bold text-slate-500">
+                    <span className="text-slate-400">Top {baselineRank}</span>
+                    <span className="ml-2 text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded">未進前 {displayCount} 名的目前設定</span>
+                  </td>
                 <td className="py-3 px-4 text-center border-l border-slate-800 text-slate-400">分 {s.buy_months} 個月</td>
                 <td className="py-3 px-4 text-center border-l border-slate-800 text-slate-400">分 {s.sell_months} 個月</td>
                 <td className="py-3 px-4 text-right border-l border-slate-800 text-emerald-400/50">{(s[mode].cagr * 100).toFixed(2)}%</td>
                 <td className="py-3 px-4 text-right border-l border-slate-800 text-rose-400/50">{(s[mode].maxDD * 100).toFixed(2)}%</td>
                 <td className="py-3 px-4 text-right border-l border-slate-800 text-blue-400/50">{s[mode].calmar.toFixed(2)}</td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
