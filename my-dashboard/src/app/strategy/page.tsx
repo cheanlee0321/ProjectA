@@ -171,7 +171,14 @@ export default function StrategyPage() {
                 <div className="h-px bg-slate-700/50 my-4"></div>
                 <div>
                   <strong className="text-indigo-300">解法 A：改採「淨流動性」</strong>
-                  <p className="mt-1 text-slate-400">捨棄傳統 M0，改用 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">聯準會總資產 - TGA - RRP</code> 算出真正投入市場的淨流動性，從根本解決底層數據失真的問題。</p>
+                  <p className="mt-2 text-slate-400 leading-relaxed">
+                    在會計恆等式上，<code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">聯準會總資產 - TGA - RRP</code> 其實極度逼近傳統的 <code className="bg-slate-900 px-1.5 py-0.5 rounded text-indigo-200">M0 (基礎貨幣)</code>。既然曲線相似，為何華爾街實戰要捨棄官方 M0，改用此公式拆解？
+                  </p>
+                  <ul className="list-disc pl-5 mt-3 space-y-2 text-slate-400">
+                    <li><strong className="text-slate-200">時效性與頻率優勢：</strong>官方 M0 統計發布較慢（雙週或月度）；而總資產、TGA、RRP 來自聯準會每週四發布的 H.4.1 報告，能讓操盤手提早 1~2 週即時預判資金水位。</li>
+                    <li><strong className="text-slate-200">精準的歸因分析：</strong>M0 下降只是一個結果。拆解公式能看透流動性枯竭的元凶——是 Fed 在縮表（總資產降）？財政部發債吸血（TGA 升）？還是華爾街風險趨避（RRP 升）？</li>
+                    <li><strong className="text-slate-200">剝除實體鈔票的盲區：</strong>M0 包含大眾手上的「實體現金」，但現金不會進入股市買股票。若將公式進一步扣除實體鈔票（即等於純粹的「銀行準備金」），才是真正推升資產價格的狂熱燃料。</li>
+                  </ul>
                 </div>
                 <div>
                   <strong className="text-emerald-300">解法 B：改採「歷史百分位通道」</strong>
