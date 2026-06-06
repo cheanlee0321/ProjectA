@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useStrategyData } from './hooks/useStrategyData';
 import { SummaryCard } from './components/SummaryCard';
 import { StrategyChart } from './components/StrategyChart';
+import { LiquidityExplanation } from './components/LiquidityExplanation';
 import { StrategyGuide } from './components/StrategyGuide';
 import { BacktestTable } from './components/BacktestTable';
 import { RiskWarnings } from './components/RiskWarnings';
@@ -49,7 +50,10 @@ export default function StrategyPage() {
           </h1>
           <div className="text-foreground/70 text-lg max-w-4xl space-y-4 leading-relaxed">
             <p>
-              本策略的核心邏輯是將「FINRA 融資餘額」以「實體流通貨幣（或淨流動性）」進行標準化，藉此作為市場狂熱程度的客觀參考指標。
+              本策略的核心邏輯是將「FINRA 融資餘額」以「實體流通貨幣（或淨流動性）M0」進行標準化。將散戶的投機槓桿，
+              以實體流動性進行標準化，從而消除「印鈔幻覺」，藉此作為市場狂熱程度的客觀參考指標。
+              它本質上是一種流動性調整後的情緒指標 (Liquidity-Adjusted Sentiment Indicator)，
+              類似於機構投資者使用的「信用脈衝」或「淨流動性驅動因子」。
               透過與底層流動性的對比，我們能評估資產價格究竟是反映了真實的價值增長，還是由過度的借貸擴張所推動。
             </p>
             <p>
@@ -63,6 +67,7 @@ export default function StrategyPage() {
         <div className="sticky top-0 z-50 mb-10 py-3 bg-background/90 backdrop-blur-xl border-b border-white/5 flex overflow-x-auto hide-scrollbar gap-6 md:gap-8 -mx-6 px-6 md:mx-0 md:px-0">
           <a href="#summary" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">📊 信號總覽</a>
           <a href="#charts" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">📈 圖表分析</a>
+          <a href="#liquidity-explanation" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">🏦 流動性指標</a>
           <a href="#guide-rules" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">💡 操作指南</a>
           <a href="#backtests" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">🧪 歷史回測</a>
           <a href="#risks" className="text-sm font-bold text-foreground/70 hover:text-white whitespace-nowrap transition-colors">⚠️ 風險與假設</a>
@@ -116,6 +121,7 @@ export default function StrategyPage() {
         )}
 
         {/* STATIC CONTENT BLOCKS */}
+        <LiquidityExplanation />
         <StrategyGuide />
 
         <div id="backtests" className="scroll-mt-24">
