@@ -227,14 +227,14 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
               </div>
               <div className="mt-6 text-sm text-slate-400 leading-relaxed space-y-2">
                 <p>
-                  <strong className="text-emerald-300">結論：</strong> 
+                  <strong className="text-emerald-300">結論：</strong>
                   在避開了 2000 年網路泡沫與 2008 年金融海嘯等毀滅性空頭後，策略能夠完美保護資金。無腦持有 TQQQ 雖然在牛市爆發力驚人，但在 2000 年的回撤深達 -99.96%，幾乎歸零。
                 </p>
                 <p>
                   透過此最佳化參數策略，即便是最激進的「策略 100% TQQQ」方案，其最大回撤也控制在 -66.54%（遠低於無腦 QQQ 的 -82.96%），並創造了高達 41% 的驚人年化報酬率。若想平衡風險，<strong className="text-indigo-300">「策略 50% QQQ / 50% TQQQ」</strong>展現了極佳的性價比，回撤與 100% TQQQ 相近，但心理壓力更小。
                 </p>
               </div>
-              
+
               {/* Institutional Metrics Block */}
               <div className="mt-8 p-6 rounded-xl bg-slate-900/60 border border-indigo-500/20 shadow-inner">
                 <h4 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
@@ -348,7 +348,7 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                   <p className="text-slate-300 mb-5 leading-relaxed">
                     實務上，華爾街常以 <code className="bg-slate-800 px-2 py-1 rounded text-indigo-300 border border-slate-700">聯準會總資產 - TGA - RRP</code> 作為「淨流動性」指標，它在數學上極度逼近 M0。透過聯準會資產負債表的恆等式（總資產 = 總負債 + 資本），我們可以將負債端拆解：
                   </p>
-                  
+
                   <div className="bg-slate-900/80 p-6 rounded-xl font-mono text-sm sm:text-base text-slate-300 mb-6 shadow-inner border border-slate-700/50 space-y-2">
                     <p>總資產 = (現金 + 準備金) + TGA + RRP + 其他微小負債與資本</p>
                     <p className="text-emerald-400 font-semibold">總資產 = M0 + TGA + RRP + 其他微小項</p>
@@ -382,16 +382,38 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
             {/* WFO LABORATORY ENTRY */}
             <div className="mb-16 p-8 rounded-2xl bg-indigo-900/20 border border-indigo-500/30 relative overflow-hidden">
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/10 rounded-full blur-[60px] pointer-events-none"></div>
-              
+
               <h3 className="text-2xl font-bold text-indigo-300 mb-4 flex items-center gap-3 relative z-10">
                 <span className="text-2xl">🧪</span>
                 策略穩健性驗證：樣本外測試與 WFO 實驗室
               </h3>
-              
-              <p className="text-slate-300 leading-relaxed mb-8 relative z-10">
-                為了避免歷史參數的過度擬合 (Overfitting)，我們設計了最嚴苛的<strong>「前進推進最佳化 (Walk-Forward Optimization, WFO)」</strong>實驗。透過滾動時間視窗模擬真實操作，拼湊出長達 15 年、毫無未來函數 (Look-ahead bias) 的純粹盲測資金曲線。想看這套策略在「完全沒看過未來的嚴苛條件下」還能不能活下來嗎？
-              </p>
-              
+
+              <div className="text-slate-300 leading-relaxed mb-6 relative z-10 space-y-4">
+                <p>
+                  為了避免歷史參數的過度擬合 (Overfitting)，我們設計了最嚴苛的<strong>「前進推進最佳化 (Walk-Forward Optimization, WFO)」</strong>與總經消融實驗。透過滾動時間視窗模擬真實操作，拼湊出長達 15 年、毫無未來函數 (Look-ahead bias) 的純粹盲測資金曲線。
+                </p>
+                <div className="bg-slate-900/60 p-5 rounded-xl border border-indigo-500/20 shadow-inner">
+                  <h4 className="text-indigo-300 font-bold mb-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    實驗室終極結論 (Final Verdict)
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sky-400 mt-0.5">1.</span>
+                      <div><strong className="text-sky-300">去除 QE 幻覺的真實面貌：</strong>實驗證明，在 2011-2021 的純牛市中，股市多數漲幅來自 M0 印鈔貶值。在 M0 計價基礎下，策略的真正價值不在於純牛市中超車，而在於深淵前的防禦。</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-indigo-400 mt-0.5">2.</span>
+                      <div><strong className="text-indigo-300">無未來函數的硬核生存力：</strong>在長達 15 年、每 3 年重新自我學習的 WFO 盲測中，FINRA/M0 指標依然能精準閃避 2008 等毀滅性崩盤，證明散戶槓桿的物極必反是跨越週期的真理，絕非參數擬合。</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-400 mt-0.5">3.</span>
+                      <div><strong className="text-emerald-300">總經保險絲的完美防禦：</strong>2022 年的高通膨空頭證實了單一指標的盲區，而引入 CAPE (估值) 與 TIPS (資金成本) 的否決權濾網，成功在 2022 年初強制清倉，化解了結構性空頭的危機。</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <div className="relative z-10">
                 <Link href="/strategy/wfo" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5">
                   👉 進入 WFO 進階實驗室
@@ -403,12 +425,12 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
             {/* FUTURE EVOLUTION */}
             <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/5 rounded-full blur-[80px] pointer-events-none"></div>
-              
+
               <h3 className="text-2xl font-bold text-violet-300 mb-6 flex items-center gap-3">
                 <span className="text-2xl">🌱</span>
                 策略核心哲學與未來演進
               </h3>
-              
+
               <div className="text-slate-300 space-y-6 text-base leading-relaxed relative z-10">
                 <div>
                   <h4 className="text-lg font-semibold text-emerald-300 mb-2">1. 週期擺盪與總經指標</h4>

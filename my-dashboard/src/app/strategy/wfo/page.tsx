@@ -171,7 +171,7 @@ export default function WfoPage() {
               </div>
               
               {/* Exp 2 Conclusion */}
-              <div className="mt-6 p-4 bg-indigo-950/80 rounded border border-indigo-500/30 text-sm text-slate-300 space-y-2">
+              <div className="mt-12 p-4 bg-indigo-950/80 rounded border border-indigo-500/30 text-sm text-slate-300 space-y-2">
                 <strong className="text-indigo-400 block mb-2">💡 實驗二深度解讀：精準閃避深淵的抗跌實力與抗過擬合能力</strong>
                 <p>這是一條<strong>完全沒有未來函數 (No Look-ahead bias)</strong> 的純盲測拼接曲線。引擎被禁止偷看未來，只能透過過去 10 年的局部經驗動態調整閾值，去面對未知的市場。</p>
                 <p>請觀察圖中藍紫色實線（WFO 策略）與灰色虛線（無腦買入持有 QQQ）的纏鬥：由於圖表採用 M0 作為計價單位扣除了印鈔幻覺，在純牛市期間，策略的爬升速度與大盤相仿（因為股市多半隨印鈔機膨脹）。<strong>但策略的真正價值在於空頭防禦！</strong>當遇到毀滅性崩盤時，灰色虛線會出現極深的斷崖式下殺（Max DD 極高），而藍色策略線則能依靠 FINRA/M0 指標準確在泡沫破裂前轉為現金避險，成功保留戰果。這證明了<strong>「散戶融資槓桿的物極必反」具備跨越週期的真實預測能力，絕非參數過度擬合。</strong></p>
