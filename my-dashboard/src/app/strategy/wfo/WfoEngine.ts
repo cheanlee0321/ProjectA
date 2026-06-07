@@ -75,8 +75,8 @@ export function runBacktest(
     const curr = filtered[i];
 
     // Using ratios to M0 as price proxies
-    const qqqRet = prev.qqqToM0 ? (curr.qqqToM0 - prev.qqqToM0) / prev.qqqToM0 : 0;
-    const tqqqRet = prev.tqqqToM0 ? (curr.tqqqToM0 - prev.tqqqToM0) / prev.tqqqToM0 : qqqRet * 3;
+    const qqqRet = (prev.qqqToM0 && curr.qqqToM0) ? (curr.qqqToM0 - prev.qqqToM0) / prev.qqqToM0 : 0;
+    const tqqqRet = (prev.tqqqToM0 && curr.tqqqToM0) ? (curr.tqqqToM0 - prev.tqqqToM0) / prev.tqqqToM0 : qqqRet * 3;
 
     qqqEq *= (1 + qqqRet);
     tqqqEq *= (1 + tqqqRet);
