@@ -25,6 +25,7 @@ interface IndicatorCardProps {
     yellow: number;
     invert?: boolean;
   };
+  badge?: string;
 }
 
 export default function IndicatorCard({
@@ -38,7 +39,8 @@ export default function IndicatorCard({
   spyLabel,
   twiiHistory,
   criteria,
-  valueThresholds
+  valueThresholds,
+  badge
 }: IndicatorCardProps) {
   
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -210,8 +212,13 @@ export default function IndicatorCard({
         
         {/* Top Section */}
         <div className="flex justify-between items-start mb-4">
-          <div className="flex items-center gap-2 relative z-20">
+          <div className="flex items-center gap-2 relative z-20 flex-wrap">
             <h3 className="text-lg font-semibold text-foreground/90">{title}</h3>
+            {badge && (
+              <span className="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[10px] sm:text-xs font-bold border border-sky-500/30">
+                {badge}
+              </span>
+            )}
             <div className="w-5 h-5 rounded-full border border-foreground/20 text-foreground/50 flex items-center justify-center text-xs cursor-help">
               i
               {/* Tooltip */}

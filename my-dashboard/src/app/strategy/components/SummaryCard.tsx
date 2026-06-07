@@ -37,7 +37,12 @@ export function SummaryCard({
         <div className="flex items-center gap-5">
           <div className={`w-5 h-5 rounded-full ${sc.glow} ${finraStatus === 'red' ? 'animate-pulse' : ''}`}></div>
           <div>
-            <p className="text-foreground/50 text-sm font-medium mb-1">FINRA / 流通貨幣 目前比值</p>
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-foreground/50 text-sm font-medium">FINRA / 流通貨幣 目前比值</p>
+              <span className="inline-block px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 text-[10px] sm:text-xs font-bold border border-violet-500/30">
+                主燈號
+              </span>
+            </div>
             <p className={`text-4xl font-black tracking-tight ${sc.text}`}>{latestFinraValue.toFixed(4)}</p>
           </div>
         </div>

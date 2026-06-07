@@ -58,6 +58,7 @@ export interface MarketData {
   finraToCurrency: IndicatorData;
   spyToCurrency: { history: { date: string; value: number }[] };
   spyToM2: IndicatorData;
+  tips: IndicatorData; // 新增 10年期 TIPS 實質利率
   spy: { history: { date: string; value: number }[] };
   twii: { history: { date: string; value: number }[] };
 }
@@ -317,7 +318,7 @@ async function fetchTaiwanM1BM2(): Promise<{current: number | null, history: {da
 
 export const fetchMarketData = cache(async (finmindToken: string): Promise<MarketData> => {
   try {
-    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin, m1bm2, twExport, usdTwd, cryptoFng, btc, twii, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, twForeignBuy, soxIndex, indpro, currcir] = await Promise.all([
+    const [vix, skew, spy, rsp, copper, gold, dxy, sahm, sloos, yieldCurve, spread, wilshire, gdp, cape, fg, margin, m2, nfci, twMargin, m1bm2, twExport, usdTwd, cryptoFng, btc, twii, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, twForeignBuy, soxIndex, indpro, currcir, tipsData] = await Promise.all([
       fetchYahooChart('^VIX', '1wk'),
       fetchYahooChart('^SKEW', '1wk'),
       fetchYahooChart('SPY', '1wk'),
@@ -356,7 +357,8 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       fetchTaiwanForeignBuy(finmindToken),
       fetchYahooChart('^SOX', '1wk'),
       fetchFredSeries('INDPRO', 'pc1'),
-      fetchFredSeries('MBCURRCIR')
+      fetchFredSeries('MBCURRCIR'),
+      fetchFredSeries('DFII10')
     ]);
 
     // 計算市場廣度歷史 (RSP YoY - SPY YoY 績效差)
@@ -668,7 +670,15 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
        else if (drcc.current > 3) { drccStatus = 'yellow'; drccText = '違約升溫'; }
     }
 
-    const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro, currcir];
+    // TIPS (DFII10)
+    let tipsStatus: 'red'|'yellow'|'green' = 'green';
+    let tipsText = '資金寬鬆';
+    if (!tipsData.isError && tipsData.current !== null) {
+       if (tipsData.current > 2.0) { tipsStatus = 'red'; tipsText = '實質利率過高 (殺估值)'; }
+       else if (tipsData.current > 1.0) { tipsStatus = 'yellow'; tipsText = '資金成本墊高'; }
+    }
+
+    const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro, currcir, tipsData];
     const isDataLoading = Boolean(fredIndicators.some(x => x.isLoading) || margin.isLoading);
 
     // FINRA / Currency in Circulation
@@ -796,6 +806,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       drcc: { ...formatFred(drcc, drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A', drccStatus, drccText), history: drcc.history },
       finraToCurrency: { ...formatFred(margin.isError || currcir.isError ? {isError:true} : {isLoading: margin.isLoading || currcir.isLoading}, finraToCurrencyValueStr, finraToCurrencyStatus, finraToCurrencyText), history: finraToCurrencyHistory },
       spyToM2: { ...formatFred(m2.isError ? {isError:true} : {isLoading: m2.isLoading}, spyToM2ValueStr, spyToM2Status, spyToM2Text), history: spyToM2History },
+      tips: { ...formatFred(tipsData, tipsData.current ? tipsData.current.toFixed(2)+'%' : 'N/A', tipsStatus, tipsText), history: tipsData.history },
       spyToCurrency: { history: spyToCurrencyHistory },
       spy: { history: spy.history },
       twii: { history: twii.history }
@@ -803,7 +814,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
   } catch (error: any) {
     console.error("Error fetching market data:", error);
     const errObj = { value: 0, status: 'loading' as const, text: 'Error', history: [] };
-    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, finraToCurrency: errObj, spyToM2: errObj, spyToCurrency: { history: [] }, spy: { history: [] }, twii: { history: [] } };
+    return { isDataLoading: false, cape: errObj, breadth: errObj, buffett: errObj, sahm: errObj, copperGold: errObj, sloos: errObj, yieldCurve: errObj, vix: errObj, skew: errObj, creditSpreads: errObj, fearGreed: errObj, marginDebt: errObj, m2: errObj, dxy: errObj, nfci: errObj, taiwanBusinessIndicator: errObj, taiwanForeignBuy: errObj, taiwanMargin: errObj, taiwanM1BM2: errObj, taiwanExport: errObj, usdTwd: errObj, sox: errObj, ismProxy: errObj, cryptoFng: errObj, bitcoin: errObj, walcl: errObj, rrpontsyd: errObj, fedfunds: errObj, icsa: errObj, jtsjol: errObj, houst: errObj, mortgage30us: errObj, t10yie: errObj, pcepilfe: errObj, drcc: errObj, finraToCurrency: errObj, spyToM2: errObj, tips: errObj, spyToCurrency: { history: [] }, spy: { history: [] }, twii: { history: [] } };
   }
 });
 

@@ -17,6 +17,17 @@ export function StrategyLimitations() {
               <li><strong className="text-rose-400">當 FINRA 亮紅燈時 (雙重風險)：</strong>代表傳統現貨槓桿已極度擁擠，若再加上 0DTE 隱藏在表外的衍生性曝險，系統總槓桿將遠超歷史紀錄。一旦選擇權造市商被迫拋售避險 (Gamma Unwind)，將引發「選擇權踩踏現貨，現貨引爆融資斷頭」的死亡螺旋，下跌會比過去更為暴烈。</li>
               <li><strong className="text-emerald-400">當 FINRA 亮綠燈時 (最大隱患)：</strong>若投機資金完全棄用傳統融資，全面轉向 0DTE，可能導致 FINRA 數據長期處於低檔 (假綠燈)。這時指標將無法防禦由選擇權引爆的流動性危機，產生「假安全」的錯覺。</li>
             </ul>
+            <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+              <h5 className="font-bold text-amber-200 mb-2 flex items-center">
+                <span className="mr-2">💡</span> 實務反思：FINRA 真的會完全失效嗎？
+              </h5>
+              <p className="text-amber-100/80 leading-relaxed text-sm mb-2">
+                從「行為金融學」與「工具門檻」來看，0DTE 具備極高的權限與知識門檻，主要參與者仍是機構、造市商與硬核散戶。對於廣大的<strong>「一般民眾（如菜籃族、股市新手）」</strong>而言，最容易接觸的終極槓桿依然是券商 APP 中的「一鍵融資」或「買入 TQQQ」。
+              </p>
+              <p className="text-amber-100/80 leading-relaxed text-sm">
+                當牛市走到最後的瘋狂期，往往是這群最缺乏經驗的「終極接盤俠」推升了最後的泡沫。因此，<strong>FINRA 融資餘額依然是測量「全民非理性繁榮 (擦鞋童指標)」最純粹的溫度計。</strong> 只要大眾仍依賴傳統融資，這個防禦雷達就依然非常有效。
+              </p>
+            </div>
           </div>
         </div>
 
@@ -26,8 +37,34 @@ export function StrategyLimitations() {
         </div>
 
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
-          <h4 className="text-lg font-bold text-amber-300 mb-2">3. 流通貨幣 (M0) 的定義局限</h4>
-          <p>策略使用 M0 作為分母來消除印鈔幻覺，但 M0 只是基礎貨幣 (實體紙鈔加準備金)。在量化寬鬆 (QE) 與銀行體系複雜化的今天，有時 M2 (廣義貨幣供應量) 甚至全球央行流動性指標更能代表「在金融市場流竄的熱錢」。如果 M0 因為聯準會的技術性操作 (如準備金規定改變) 而產生劇烈波動，可能會讓分母失真，導致比值出現假訊號。</p>
+          <h4 className="text-lg font-bold text-amber-300 mb-2">3. 進階探討：流動性分母的選擇與拆解 (M0 vs 淨流動性)</h4>
+          <p className="mb-4">策略初始使用 M0 作為分母來消除印鈔幻覺。但在量化寬鬆 (QE) 與銀行體系複雜化的今天，流動性的定義備受挑戰。以下是針對分母選擇的深度實務反思：</p>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+              <h5 className="font-bold text-amber-200 mb-2 flex items-center">
+                <span className="mr-2">💡</span> 迷思一：量化散戶情緒，需要看廣義貨幣 (M2) 嗎？
+              </h5>
+              <p className="text-amber-100/80 leading-relaxed text-sm mb-2">
+                如果我們退一步思考，這個策略的核心目標是測量<strong>「散戶情緒極限與系統性崩潰的風險」</strong>。M2（大眾存款）代表的是「潛在的購買力」，但 M0 或淨流動性（銀行準備金）代表的才是<strong>「金融系統的避震器與放貸底氣」</strong>。
+              </p>
+              <p className="text-amber-100/80 leading-relaxed text-sm">
+                散戶的 FINRA 融資是向券商借的，券商背後依賴的是商業銀行的信用擴張，而銀行放貸的極限就取決於聯準會給的 M0（準備金）。因此，用 FINRA 除以 M0，本質上是在測量：<strong>「散戶的貪婪槓桿，是否已經把華爾街底層的避震器壓榨到了極限？」</strong> 一旦這個比值過高，無論大眾銀行帳戶裡（M2）還有多少錢，只要底層流動性稍微緊縮，金融機構就會被迫抽銀根、引爆散戶的連環斷頭。因此，對於「預警崩盤」而言，M0 依然是最致命且直接的刻度。
+              </p>
+            </div>
+
+            <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+              <h5 className="font-bold text-amber-200 mb-2 flex items-center">
+                <span className="mr-2">💡</span> 迷思二：既然 M0 足夠致命，還要考慮 TGA 與 RRP 嗎？
+              </h5>
+              <p className="text-amber-100/80 leading-relaxed text-sm mb-2">
+                在會計恆等式上：<code className="bg-amber-900/50 px-1 rounded text-amber-300">M0 ≈ 聯準會總資產 - TGA - RRP</code>。這代表當政府發債（TGA 升）或華爾街避險（RRP 升）時，M0 會自動下降。因此，單看 FINRA/M0 比值，其實已經<strong>默默把 TGA 與 RRP 對流動性的傷害計算進去了</strong>。
+              </p>
+              <p className="text-amber-100/80 leading-relaxed text-sm">
+                既然數學結果殊途同歸，為何實戰上仍需將其拆解為「淨流動性公式」？原因在於<strong>「提早預判」</strong>與<strong>「精準歸因」</strong>。官方 M0 數據更新緩慢（雙週或月度），而 TGA/RRP 是每週（甚至每日）更新。將其拆解，不僅能提早 1~2 週預判 M0 的暴跌，還能一眼看透流動性枯竭的真凶——是 Fed 政策轉向（總資產降）、財政部短期吸血（TGA 升）、還是市場恐慌避險（RRP 升），進而擬定完全不同的應對劇本。
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
