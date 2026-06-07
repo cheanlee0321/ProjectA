@@ -376,6 +376,36 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                     </ul>
                   </div>
                 </section>
+
+                {/* Part 3 */}
+                <section>
+                  <h4 className="text-xl font-bold text-rose-300 mb-4 border-b border-slate-700/50 pb-2 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    大師的批評與量化的現實：為何 50% TQQQ 才是甜蜜點？
+                  </h4>
+                  <p className="text-slate-300 mb-6 leading-relaxed">
+                    傳統價值投資大師（如巴菲特、霍華·馬克斯）極度厭惡槓桿與衍生性商品，他們會嚴厲批評持有 TQQQ 這種會因波動率耗損而產生「毀滅性回撤」的工具。然而，量化回測卻無情地揭露了一個數學現實：<strong>如果只操作 1 倍的 QQQ，擇時避險的意義其實並不大；反而必須加上 3 倍槓桿，才能將這套總經指標的價值最大化。</strong>
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div className="bg-slate-900/40 p-6 rounded-xl border border-slate-700">
+                      <div className="font-bold text-emerald-400 mb-2">1. 避險價值的核心：波動率不對稱</div>
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        在 1 倍指數 (QQQ) 中，提早空倉避險雖然能躲過 50% 的股災，但在長達十年的牛市中，指標難免會有「假警報 (Whipsaw)」，錯失的報酬率會吃掉避險的優勢。但當換成 TQQQ 時，遇到 2008 年是 <strong>99.96% 的實質歸零</strong>！這時候提早避險，救的不是 50% 的虧損，而是拯救了整個人生與複利引擎。TQQQ 高達 40% 以上的年化報酬，完全承擔得起假警報的微小磨損。<strong>標的波動率越大，這套防護網的數學期望值就越高。</strong>
+                      </p>
+                    </div>
+                    <div className="bg-slate-900/40 p-6 rounded-xl border border-slate-700">
+                      <div className="font-bold text-sky-400 mb-2">2. 完美的槓鈴策略 (Barbell Strategy)</div>
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        如果 100% All-in TQQQ，雖然最終回報驚人，但過程中的回撤 (-66%) 容易超出人類神經系統的極限，導致恐慌停損在黎明前。<strong>「50% QQQ / 50% TQQQ」</strong>將整體槓桿降至 2 倍左右，既保留了狂暴牛市的複利加速性，也壓縮了回撤。更重要的是，即便黑天鵝讓 TQQQ 瞬間清算，您還有 50% 的 1 倍原型 QQQ 永遠活著，滿足了巴菲特「絕對不要被洗出局」的安全底線。
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-rose-900/10 p-5 rounded-xl border border-rose-500/20 text-sm text-rose-200">
+                    <strong className="text-rose-300">總結：</strong>大師們的批評是對的，因為<strong>「沒有防護網的 3 倍槓桿是毒藥」</strong>；但量化數據也是對的，因為<strong>「沒有 3 倍槓桿的爆發力，就白費了這套頂級避險系統」</strong>。50/50 配置，就是把毒藥提煉成高辛烷值燃料，放入配備頂級總經煞車系統的跑車中，這是傳統法人受限於法規與規模，永遠無法體會的散戶專屬暴力美學。
+                  </div>
+                </section>
               </div>
             </div>
 
