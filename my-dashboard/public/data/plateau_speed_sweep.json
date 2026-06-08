@@ -1,0 +1,702 @@
+[
+  {
+    "buySpeed": 1,
+    "sellSpeed": 1,
+    "cagr": 33.89,
+    "maxDD": -79.75,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 2,
+    "cagr": 34.88,
+    "maxDD": -80.76,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 3,
+    "cagr": 35.12,
+    "maxDD": -83.11,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 4,
+    "cagr": 35.12,
+    "maxDD": -84.92,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 6,
+    "cagr": 34.17,
+    "maxDD": -86.66,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 8,
+    "cagr": 33.5,
+    "maxDD": -87.41,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 10,
+    "cagr": 32.71,
+    "maxDD": -88.45,
+    "calmar": 0.37
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 12,
+    "cagr": 32.09,
+    "maxDD": -89.62,
+    "calmar": 0.36
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 18,
+    "cagr": 30.13,
+    "maxDD": -92.02,
+    "calmar": 0.33
+  },
+  {
+    "buySpeed": 1,
+    "sellSpeed": 24,
+    "cagr": 27.98,
+    "maxDD": -93.07,
+    "calmar": 0.3
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 1,
+    "cagr": 32.23,
+    "maxDD": -78.08,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 2,
+    "cagr": 33.42,
+    "maxDD": -80.18,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 3,
+    "cagr": 33.67,
+    "maxDD": -82.6,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 4,
+    "cagr": 33.68,
+    "maxDD": -84.44,
+    "calmar": 0.4
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 6,
+    "cagr": 32.95,
+    "maxDD": -86.24,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 8,
+    "cagr": 32.41,
+    "maxDD": -87.0,
+    "calmar": 0.37
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 10,
+    "cagr": 31.71,
+    "maxDD": -88.07,
+    "calmar": 0.36
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 12,
+    "cagr": 31.16,
+    "maxDD": -89.27,
+    "calmar": 0.35
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 18,
+    "cagr": 29.3,
+    "maxDD": -91.77,
+    "calmar": 0.32
+  },
+  {
+    "buySpeed": 2,
+    "sellSpeed": 24,
+    "cagr": 27.31,
+    "maxDD": -92.88,
+    "calmar": 0.29
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 1,
+    "cagr": 31.42,
+    "maxDD": -77.29,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 2,
+    "cagr": 33.39,
+    "maxDD": -79.82,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 3,
+    "cagr": 33.69,
+    "maxDD": -82.28,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 4,
+    "cagr": 33.71,
+    "maxDD": -84.16,
+    "calmar": 0.4
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 6,
+    "cagr": 32.88,
+    "maxDD": -85.99,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 8,
+    "cagr": 32.28,
+    "maxDD": -86.77,
+    "calmar": 0.37
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 10,
+    "cagr": 31.59,
+    "maxDD": -87.86,
+    "calmar": 0.36
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 12,
+    "cagr": 31.04,
+    "maxDD": -89.08,
+    "calmar": 0.35
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 18,
+    "cagr": 29.19,
+    "maxDD": -91.66,
+    "calmar": 0.32
+  },
+  {
+    "buySpeed": 3,
+    "sellSpeed": 24,
+    "cagr": 27.1,
+    "maxDD": -92.81,
+    "calmar": 0.29
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 1,
+    "cagr": 31.67,
+    "maxDD": -76.16,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 2,
+    "cagr": 33.77,
+    "maxDD": -78.66,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 3,
+    "cagr": 34.14,
+    "maxDD": -81.02,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 4,
+    "cagr": 34.2,
+    "maxDD": -82.86,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 6,
+    "cagr": 33.25,
+    "maxDD": -84.6,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 8,
+    "cagr": 32.61,
+    "maxDD": -85.33,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 10,
+    "cagr": 31.92,
+    "maxDD": -86.41,
+    "calmar": 0.37
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 12,
+    "cagr": 31.36,
+    "maxDD": -87.7,
+    "calmar": 0.36
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 18,
+    "cagr": 29.53,
+    "maxDD": -90.34,
+    "calmar": 0.33
+  },
+  {
+    "buySpeed": 4,
+    "sellSpeed": 24,
+    "cagr": 27.28,
+    "maxDD": -91.41,
+    "calmar": 0.3
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 1,
+    "cagr": 31.5,
+    "maxDD": -73.65,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 2,
+    "cagr": 33.58,
+    "maxDD": -74.61,
+    "calmar": 0.45
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 3,
+    "cagr": 34.34,
+    "maxDD": -77.07,
+    "calmar": 0.45
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 4,
+    "cagr": 34.46,
+    "maxDD": -79.02,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 6,
+    "cagr": 33.73,
+    "maxDD": -80.8,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 8,
+    "cagr": 33.08,
+    "maxDD": -81.53,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 10,
+    "cagr": 32.31,
+    "maxDD": -82.71,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 12,
+    "cagr": 31.68,
+    "maxDD": -84.27,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 18,
+    "cagr": 29.79,
+    "maxDD": -87.4,
+    "calmar": 0.34
+  },
+  {
+    "buySpeed": 6,
+    "sellSpeed": 24,
+    "cagr": 27.63,
+    "maxDD": -89.21,
+    "calmar": 0.31
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 1,
+    "cagr": 30.37,
+    "maxDD": -73.75,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 2,
+    "cagr": 32.84,
+    "maxDD": -73.78,
+    "calmar": 0.45
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 3,
+    "cagr": 33.51,
+    "maxDD": -76.09,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 4,
+    "cagr": 33.84,
+    "maxDD": -77.95,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 6,
+    "cagr": 33.18,
+    "maxDD": -79.6,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 8,
+    "cagr": 32.48,
+    "maxDD": -80.27,
+    "calmar": 0.4
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 10,
+    "cagr": 31.79,
+    "maxDD": -81.44,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 12,
+    "cagr": 31.2,
+    "maxDD": -83.05,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 18,
+    "cagr": 29.42,
+    "maxDD": -85.85,
+    "calmar": 0.34
+  },
+  {
+    "buySpeed": 8,
+    "sellSpeed": 24,
+    "cagr": 27.67,
+    "maxDD": -87.19,
+    "calmar": 0.32
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 1,
+    "cagr": 29.73,
+    "maxDD": -72.79,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 2,
+    "cagr": 32.05,
+    "maxDD": -72.83,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 3,
+    "cagr": 32.75,
+    "maxDD": -75.07,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 4,
+    "cagr": 33.1,
+    "maxDD": -76.89,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 6,
+    "cagr": 32.62,
+    "maxDD": -78.48,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 8,
+    "cagr": 32.07,
+    "maxDD": -79.11,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 10,
+    "cagr": 31.36,
+    "maxDD": -80.31,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 12,
+    "cagr": 30.74,
+    "maxDD": -81.96,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 18,
+    "cagr": 28.96,
+    "maxDD": -84.97,
+    "calmar": 0.34
+  },
+  {
+    "buySpeed": 10,
+    "sellSpeed": 24,
+    "cagr": 27.28,
+    "maxDD": -86.23,
+    "calmar": 0.32
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 1,
+    "cagr": 29.1,
+    "maxDD": -71.14,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 2,
+    "cagr": 31.46,
+    "maxDD": -71.29,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 3,
+    "cagr": 32.18,
+    "maxDD": -73.55,
+    "calmar": 0.44
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 4,
+    "cagr": 32.49,
+    "maxDD": -75.41,
+    "calmar": 0.43
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 6,
+    "cagr": 32.2,
+    "maxDD": -77.01,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 8,
+    "cagr": 31.74,
+    "maxDD": -77.64,
+    "calmar": 0.41
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 10,
+    "cagr": 31.04,
+    "maxDD": -78.9,
+    "calmar": 0.39
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 12,
+    "cagr": 30.51,
+    "maxDD": -80.63,
+    "calmar": 0.38
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 18,
+    "cagr": 28.48,
+    "maxDD": -84.22,
+    "calmar": 0.34
+  },
+  {
+    "buySpeed": 12,
+    "sellSpeed": 24,
+    "cagr": 26.77,
+    "maxDD": -85.66,
+    "calmar": 0.31
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 1,
+    "cagr": 29.06,
+    "maxDD": -54.03,
+    "calmar": 0.54
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 2,
+    "cagr": 31.37,
+    "maxDD": -58.3,
+    "calmar": 0.54
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 3,
+    "cagr": 32.28,
+    "maxDD": -62.44,
+    "calmar": 0.52
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 4,
+    "cagr": 32.76,
+    "maxDD": -64.12,
+    "calmar": 0.51
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 6,
+    "cagr": 32.62,
+    "maxDD": -65.26,
+    "calmar": 0.5
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 8,
+    "cagr": 32.35,
+    "maxDD": -66.23,
+    "calmar": 0.49
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 10,
+    "cagr": 31.98,
+    "maxDD": -66.69,
+    "calmar": 0.48
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 12,
+    "cagr": 31.67,
+    "maxDD": -66.87,
+    "calmar": 0.47
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 18,
+    "cagr": 29.95,
+    "maxDD": -71.79,
+    "calmar": 0.42
+  },
+  {
+    "buySpeed": 18,
+    "sellSpeed": 24,
+    "cagr": 27.98,
+    "maxDD": -77.59,
+    "calmar": 0.36
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 1,
+    "cagr": 27.4,
+    "maxDD": -46.23,
+    "calmar": 0.59
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 2,
+    "cagr": 30.25,
+    "maxDD": -59.11,
+    "calmar": 0.51
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 3,
+    "cagr": 31.13,
+    "maxDD": -61.88,
+    "calmar": 0.5
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 4,
+    "cagr": 31.74,
+    "maxDD": -63.74,
+    "calmar": 0.5
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 6,
+    "cagr": 31.8,
+    "maxDD": -65.26,
+    "calmar": 0.49
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 8,
+    "cagr": 31.53,
+    "maxDD": -65.76,
+    "calmar": 0.48
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 10,
+    "cagr": 31.2,
+    "maxDD": -66.33,
+    "calmar": 0.47
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 12,
+    "cagr": 31.14,
+    "maxDD": -66.7,
+    "calmar": 0.47
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 18,
+    "cagr": 30.26,
+    "maxDD": -67.01,
+    "calmar": 0.45
+  },
+  {
+    "buySpeed": 24,
+    "sellSpeed": 24,
+    "cagr": 28.96,
+    "maxDD": -69.31,
+    "calmar": 0.42
+  }
+]

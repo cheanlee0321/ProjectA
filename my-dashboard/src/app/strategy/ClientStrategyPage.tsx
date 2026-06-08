@@ -14,6 +14,7 @@ import { DelayedSimulation } from './components/DelayedSimulation';
 import { UnsuitableEtfWarning } from './components/UnsuitableEtfWarning';
 import { ThresholdHeatmap } from './components/ThresholdHeatmap';
 import { SpeedSensitivity } from './components/SpeedSensitivity';
+import { PlateauSpeedSensitivity } from './components/PlateauSpeedSensitivity';
 import { qqqBacktestData, spyBacktestData, qqqBacktestData2010, spyBacktestData2010 } from './data/staticData';
 import { chartDefs } from './data/chartDefs';
 
@@ -430,6 +431,8 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                   <p className="mt-3 text-sky-300/90 font-medium">
                     <strong className="text-sky-200">終極啟示：</strong> 這證明了策略最核心的防禦韌性。即便未來市場發生結構性改變，導致我們設定的參數不小心在半山腰進場，只要堅守<strong>「磁滯緩衝 + 慢速建倉 + 槓鈴配置」</strong>的容錯機制，我們根本不需要完美的預期，依然能活著把龐大的趨勢財賺完。
                   </p>
+
+                  <PlateauSpeedSensitivity />
                 </div>
               </div>
 
@@ -576,14 +579,45 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                   </p>
                 </div>
 
-                <div className="p-5 rounded-xl bg-slate-900/50 border border-slate-700/50 mt-6">
-                  <h4 className="text-indigo-300 font-bold mb-2 flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    持續迭代與改進
+                <div className="p-8 rounded-2xl bg-gradient-to-br from-indigo-900/40 via-slate-900/60 to-emerald-900/20 border border-indigo-500/30 mt-8 relative overflow-hidden shadow-2xl">
+                  {/* Decorative background element */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+                  <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-sky-400 mb-6 flex items-center gap-3">
+                    <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    卷尾語：設計者的備忘錄
                   </h4>
-                  <p className="text-sm text-slate-400">
-                    市場沒有永遠完美的公式。如果未來此量化指標因市場結構或貨幣政策改變而失效，我們仍應依循上述的核心哲學。未來的改進方向，可以依照相同的邏輯概念，持續替換或優化策略中使用的指標數據、投資標的與風控參數。
-                  </p>
+
+                  <div className="space-y-6 text-slate-300">
+                    <div>
+                      <h5 className="font-bold text-indigo-300 mb-2">1. 完美的參數是包裹著蜜糖的毒藥</h5>
+                      <p className="text-sm leading-relaxed">
+                        回測掃出「綠燈 0.24 / 賺 3.9 億美金」時非常令人興奮，但那是用「過去的後照鏡」開未來的車。如果未來的金融結構改變，FINRA / M0 可能再也跌不到 0.24。過度追求回測的最高報酬，會導致策略變成一個脆弱的玻璃大砲——只要未來的股災型態稍有偏移，策略就會因為「苦等不到完美訊號」而完全錯失長達十年的現代大牛市。
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-bold text-emerald-300 mb-2">2. 核心韌性，遠勝過預測的精準</h5>
+                      <p className="text-sm leading-relaxed">
+                        我們用 0.34 高原區壓力測試證明了一個最震撼的量化事實：<strong className="text-emerald-200">「即使我們看錯了、提早接到股災半山腰的飛刀，我們依然能成為億萬富翁。」</strong>
+                        在熱力圖的反覆檢驗下，我們證實了這套邏輯確實存在著廣泛的「安全高原區」。這代表未來只要參數的選擇依然落在這片高原內，即便總經環境發生微幅改變，整體策略也能展現出極強的承受力，最終的年化報酬 (CAGR) 與存活率並不會有太大的落差。這套策略真正的靈魂，根本不是那根「跌破 0.24 的綠燈」，而是以下三大保命機制的交織：
+                      </p>
+                      <ul className="list-disc pl-5 mt-2 space-y-1 text-sm">
+                        <li><strong className="text-amber-300/90">磁滯效應 (半山腰防守)：</strong> 紅轉黃時不急著賣光，強行扛住部位，確保我們永遠不會錯過股災後最肥的第一波 V 轉報復性反彈。</li>
+                        <li><strong className="text-sky-300/90">慢速建倉 (10 個月買入)：</strong> 用時間換取空間。就算綠燈亮得太早，10 個月的慢速滴灌也能完美攤平底部成本，沒收掉一次性接飛刀的毀滅性打擊。</li>
+                        <li><strong className="text-rose-300/90">50/50 槓鈴配置：</strong> 一半 QQQ 保命，一半 TQQQ 衝刺。當極端黑天鵝讓 TQQQ 面臨清算邊緣時，50% 的原型 QQQ 就是保住火種的諾亞方舟。</li>
+                      </ul>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-700/50">
+                      <h5 className="font-bold text-amber-400 mb-3 text-lg text-center">站在高原上，不要爬上孤峰</h5>
+                      <p className="text-center text-sm leading-relaxed text-slate-300/90 max-w-3xl mx-auto">
+                        在投資的世界裡，<strong className="text-white text-base">「活下來」是享受複利的唯一前提。</strong><br /><br />
+                        我們不需要去尋找那個能精準閃過 2008 年的單一完美參數，我們應該選擇一個「就算訊號遲鈍、就算我們提早進場」依然能活得很好的寬廣區間。<br /><br />
+                        只要堅守這套包含<strong className="text-emerald-300">「總經煞車 + 磁滯緩衝 + 慢速建倉 + 槓鈴配置」</strong>的系統，你不需要每天盯盤，也不需要預測明天聯準會要說什麼。你只需要每個月看一次燈號，然後把剩下的時間拿去專注於你繁忙的本業，讓這套充滿容錯率的系統，在未來的數十年為你自動執行跨時代的財富累積。
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
