@@ -7,11 +7,11 @@ export function RiskWarnings() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-foreground/80 text-sm">
         <div className="bg-background/40 p-5 rounded-2xl border border-rose-500/10">
           <h4 className="text-lg font-bold text-rose-300 mb-2">1. 實質性經濟衰退 (如薩姆規則觸發)</h4>
-          <p>當企業獲利衰退、失業率飆升時，股市會有長達半年的熊市。TQQQ 作為 3 倍槓桿，若大盤跌 33%，其淨值幾乎歸零。即使不歸零，只要跌掉 90%，您需要上漲 1000% 才能回本，時間成本極度不划算。</p>
+          <p>當企業獲利衰退、失業率飆升時，股市會有長達半年的熊市。TQQQ 作為 3 倍槓桿，若大盤跌 33%，其淨值幾乎歸零。即使不歸零，只要跌掉 90%，您需要上漲 900% 才能回本，時間成本極度不划算。</p>
         </div>
         <div className="bg-background/40 p-5 rounded-2xl border border-rose-500/10">
           <h4 className="text-lg font-bold text-rose-300 mb-2">2. 資金流動性暴力抽乾 (暴力升息/縮表)</h4>
-          <p>科技股估值高度依賴低利率與充裕資金。當央行暴力升息時，大盤會呈現溫水煮青蛙的階梯式下跌。這正是 FINRA 亮紅燈的時刻！逢低攤平 TQQQ 最終極易在底部斷頭。</p>
+          <p>科技股估值高度依賴低利率與充裕資金。當央行暴力升息時，大盤會呈現溫水煮青蛙的階梯式下跌。逢低攤平 TQQQ 最終極易在底部斷頭。</p>
         </div>
         <div className="bg-background/40 p-5 rounded-2xl border border-rose-500/10">
           <h4 className="text-lg font-bold text-rose-300 mb-2">3. 高波動的橫盤震盪 (波動耗損)</h4>

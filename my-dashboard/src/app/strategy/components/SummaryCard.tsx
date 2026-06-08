@@ -63,7 +63,7 @@ export function SummaryCard({
             雙重確認建議 (操作濾網)
           </div>
           <div className="text-sm text-foreground/80 leading-relaxed">
-            建議當 FINRA / M0 亮紅燈且 CAPE &gt; 30 時再執行清倉賣出，以減少洗盤。但若 FINRA / M0 突破極端值 (大於 0.45)，則無視估值強制清倉。
+            可考慮當 FINRA / M0 亮紅燈且 CAPE &gt; 30 時再執行清倉賣出，以減少洗盤。但若 FINRA / M0 突破極端值 (大於 0.45)，則無視估值強制清倉。
           </div>
         </div>
         <div className="bg-background/40 p-4 rounded-xl border border-foreground/5 shadow-inner">

@@ -19,14 +19,14 @@ export function StrategyGuide() {
             <div className="p-3 bg-amber-900/20 rounded-lg border border-amber-500/20 text-xs text-amber-200/90 leading-relaxed space-y-2">
               <p><span className="mr-1">🔍</span> <strong>回測程式行為解密：</strong></p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>在推薦的「50/50 混搭」：</strong>若處於綠燈，每個月會將手邊閒置現金的 10% 拆成一半（5% 買槓桿、5% 買原型）；一旦進入黃燈，<strong>若前一個燈號是綠燈（市場正在升溫）</strong>，程式會踩剎車降檔，將這 10% 現金全部改為買入 1 倍原型指數。但<strong>若前一個燈號是紅燈（市場剛從崩盤中降溫）</strong>，為了避免過早接到掉下來的刀子，黃燈期間將直接執行 <code>pass</code>（暫停買進和賣出），直到燈號降回綠燈才開始重新加碼。</li>
+                <li><strong>在推薦的「50/50 混搭」：</strong>若處於綠燈，每個月會將手邊閒置現金的 10% 拆成一半（5% 買槓桿、5% 買原型）；一旦進入黃燈，<strong>若前一個燈號是綠燈（市場正在升溫）</strong>，程式會踩剎車降檔，將這 10% 現金全部改為買入 1 倍原型指數。但<strong>若前一個燈號是紅燈（市場剛從崩盤中降溫）</strong>，為了避免過早接到掉下來的刀子，黃燈期間將直接執行 <code>pass</code>，暫停買進和紅燈的賣出，直到燈號降回綠燈才開始重新加碼。</li>
                 <li><strong>在「100% 槓桿 (如純 TQQQ)」：</strong>由於目標配比中沒有 1 倍指數，進入黃燈時程式會直接執行 <code>pass</code>（暫停一切買進），保留手中閒置現金，直到燈號轉為綠燈才繼續加碼，或轉為紅燈才開始拋售。</li>
               </ul>
             </div>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-rose-400 mb-2">🔴 紅燈區間 (比值 &gt; 0.4)</h4>
-            <p><strong>警戒防守：</strong>立刻中斷任何買進計畫，開始將手中所有槓桿與指數部位分 10 個月平均賣出。<strong>賣出後的資金轉入短期美國公債 ETF (如 SHV、BIL、SGOV)</strong>，在等待期間仍可賺取無風險利息收入。</p>
+            <p><strong>警戒防守：</strong>立刻中斷任何買進計畫，開始將手中所有槓桿與指數部位分 10 個月平均賣出。<strong>賣出後的資金轉入短期美國公債 ETF (如 SHV、BIL、SGOV)</strong>，在等待期間仍可賺取無風險利息收入。若在賣出期間降為黃燈，則停止賣出。</p>
           </div>
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-foreground/80">

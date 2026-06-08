@@ -53,11 +53,11 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
           </h1>
           <div className="text-foreground/70 text-lg max-w-4xl space-y-4 leading-relaxed">
             <p>
-              本策略的核心邏輯是將「FINRA 融資餘額」以「實體流通貨幣（或淨流動性）M0」進行標準化。將散戶的投機槓桿，
+              本策略的核心邏輯是將「FINRA 融資餘額」以「實體流通貨幣（或淨流動性）M0」進行標準化。將市場的總體投機槓桿（包含散戶與機構），
               以實體流動性進行標準化，從而消除「印鈔幻覺」，藉此作為市場狂熱程度的客觀參考指標。
               它本質上是一種流動性調整後的情緒指標 (Liquidity-Adjusted Sentiment Indicator)，
               類似於機構投資者使用的「信用脈衝」或「淨流動性驅動因子」。
-              透過與底層流動性的對比，我們能評估資產價格究竟是反映了真實的價值增長，還是由過度的借貸擴張所推動。
+              透過與底層流動性的對比，我們能評估資產價格的推升，究竟是處於健康的流動性擴張，還是已經演變成脆弱的過度借貸泡沫。
             </p>
             <p>
               策略的基礎假設在於：當投機風氣狂熱、槓桿水位過高時，市場蘊含的崩潰風險最大；反之，當投機風氣低迷時，長期佈局的風險則相對較低。
@@ -221,11 +221,11 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                     </h5>
                     <ul className="space-y-4 text-slate-300 text-sm md:text-base">
                       <li className="flex flex-col sm:flex-row sm:items-start gap-2">
-                        <strong className="text-indigo-300 whitespace-nowrap min-w-[120px]">1. 頻率與時效優勢：</strong>
-                        <span>官方 M0 數據發布較慢，而總資產、TGA、RRP 皆來自 Fed 每週四發布的 H.4.1 報告。經理人可藉此<strong className="text-slate-200">每週即時監控</strong> M0 的變化水位。</span>
+                        <strong className="text-indigo-300 whitespace-nowrap min-w-[180px]">1. 華爾街的直覺與習慣：</strong>
+                        <span>其實 M0 (流通貨幣+準備金) 同樣每週公佈在 H.4.1 報告中。但自 QE 以來，華爾街已習慣緊盯「總資產」當作聯準會的放水指標。隨著 TGA 與 RRP 規模暴增，他們才轉而扣除這兩項來算出「淨流動性」。這套公式完美銜接了市場習慣與實際的 M0。</span>
                       </li>
                       <li className="flex flex-col sm:flex-row sm:items-start gap-2">
-                        <strong className="text-indigo-300 whitespace-nowrap min-w-[120px]">2. 精準的歸因分析：</strong>
+                        <strong className="text-indigo-300 whitespace-nowrap min-w-[180px]">2. 精準的歸因分析：</strong>
                         <span>當流動性枯竭時，光看 M0 下降不知道原因。但此公式能讓人一眼看出抽走資金的「吸血鬼」——是 Fed 在縮表（總資產降）、財政部瘋狂發債（TGA 升），還是市場資金恐慌避險（RRP 升）。</span>
                       </li>
                     </ul>

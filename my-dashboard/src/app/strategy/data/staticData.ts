@@ -1,7 +1,7 @@
 import { BacktestTableData } from '../types';
 
 export const qqqBacktestData: BacktestTableData = {
-  title: '歷史回測實驗結果 (NASDAQ 100: QQQ / TQQQ, 1999年3月 - 2026年4月)',
+  title: '歷史回測實驗結果 (NASDAQ 100: QQQ / TQQQ, 1999年3月 - 2026年4月) - 條件: 閾值 0.3/0.4, 分 10 個月買賣',
   titleColor: 'text-blue-300',
   titleIcon: '📊',
   bgColor: 'bg-blue-500/10',
@@ -78,7 +78,7 @@ export const qqqBacktestData: BacktestTableData = {
 };
 
 export const spyBacktestData: BacktestTableData = {
-  title: '歷史回測實驗結果 (S&P 500: SPY / UPRO, 1999年3月 - 2026年4月)',
+  title: '歷史回測實驗結果 (S&P 500: SPY / UPRO, 1999年3月 - 2026年4月) - 條件: 閾值 0.3/0.4, 分 10 個月買賣',
   titleColor: 'text-emerald-300',
   titleIcon: '📊',
   bgColor: 'bg-emerald-500/10',
@@ -157,7 +157,7 @@ export const spyBacktestData: BacktestTableData = {
   conclusion: '👉 最佳性價比：50% SPY + 50% UPRO'
 };
 export const qqqBacktestData2010: BacktestTableData = {
-  title: '歷史回測實驗結果 (NASDAQ 100: QQQ / TQQQ, 2010年2月 - 2026年4月)',
+  title: '歷史回測實驗結果 (NASDAQ 100: QQQ / TQQQ, 2010年2月 - 2026年4月) - 條件: 閾值 0.3/0.4, 分 10 個月買賣',
   titleColor: 'text-violet-300',
   titleIcon: '📊',
   bgColor: 'bg-violet-500/10',
@@ -236,7 +236,7 @@ export const qqqBacktestData2010: BacktestTableData = {
 };
 
 export const spyBacktestData2010: BacktestTableData = {
-  title: '歷史回測實驗結果 (S&P 500: SPY / UPRO, 2010年2月 - 2026年4月)',
+  title: '歷史回測實驗結果 (S&P 500: SPY / UPRO, 2010年2月 - 2026年4月) - 條件: 閾值 0.3/0.4, 分 10 個月買賣',
   titleColor: 'text-emerald-300',
   titleIcon: '📊',
   bgColor: 'bg-emerald-500/10',

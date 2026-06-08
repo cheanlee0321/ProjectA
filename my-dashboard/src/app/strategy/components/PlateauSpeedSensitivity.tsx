@@ -48,7 +48,7 @@ export function PlateauSpeedSensitivity() {
   const getColor = (val: number) => {
     // Normalize between 0 and 1
     const t = (val - minVal) / (maxVal - minVal || 1);
-    
+
     // For Max Drawdown, higher (closer to 0) is better (green), lower (closer to -100) is worse (red)
     let hue = 0 + (t * 120);
     return `hsl(${hue}, 80%, 40%)`;
@@ -67,7 +67,7 @@ export function PlateauSpeedSensitivity() {
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const pData = payload[0].payload;
-      
+
       if (!pData.tooltipData) return null; // Hide tooltip for the star marker
 
       return (
@@ -96,9 +96,9 @@ export function PlateauSpeedSensitivity() {
           <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
           高原區參數 (0.34) 買賣速度熱力圖
         </h4>
-        
+
         <div className="flex gap-4">
-          <select 
+          <select
             className="bg-sky-950 border border-sky-800 text-sky-200 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block p-2"
             value={metric}
             onChange={(e) => setMetric(e.target.value as MetricType)}
@@ -111,7 +111,7 @@ export function PlateauSpeedSensitivity() {
       </div>
 
       <div className="text-sky-200/70 text-sm mb-4 space-y-1">
-        <p>此圖表基於 <strong>固定閾值 0.34 / 0.41</strong> 與 <strong>50% QQQ / 50% TQQQ</strong>，掃描各種買入/賣出分批速度。</p>
+        <p>此圖表基於<strong>實驗 A：閾值敏感度熱力圖</strong>，選擇高原區頂端的固定閾值 0.34 / 0.41 與 50% QQQ / 50% TQQQ，掃描各種買入/賣出分批速度。</p>
         <p className="flex items-center gap-2">
           <span>顏色越綠代表該指標表現越好，越紅代表越差。</span>
           <span className="inline-block w-3 h-3 bg-[hsl(120,80%,40%)] rounded-sm"></span>優
@@ -124,28 +124,28 @@ export function PlateauSpeedSensitivity() {
         <ResponsiveContainer width="100%" height="100%">
           <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 20 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#0c4a6e" opacity={0.5} />
-            <XAxis 
-              type="category" 
-              dataKey="x" 
-              name="Sell Months" 
+            <XAxis
+              type="category"
+              dataKey="x"
+              name="Sell Months"
               allowDuplicatedCategory={false}
               ticks={tickValues}
               stroke="#7dd3fc"
               label={{ value: '賣出分批月數 (Sell Months)', position: 'insideBottom', offset: -10, fill: '#7dd3fc', fontSize: 12 }}
             />
-            <YAxis 
-              type="category" 
-              dataKey="y" 
-              name="Buy Months" 
+            <YAxis
+              type="category"
+              dataKey="y"
+              name="Buy Months"
               allowDuplicatedCategory={false}
               ticks={tickValues}
               stroke="#7dd3fc"
               label={{ value: '買入分批月數 (Buy Months)', angle: -90, position: 'insideLeft', offset: 10, fill: '#7dd3fc', fontSize: 12 }}
             />
             <ZAxis type="number" dataKey="z" range={[350, 350]} />
-            
+
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} isAnimationActive={false} />
-            
+
             <Scatter data={scatterData} shape="square">
               {scatterData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={getColor(entry.z)} opacity={0.85} />
@@ -154,9 +154,9 @@ export function PlateauSpeedSensitivity() {
 
             <ReferenceLine x={10} stroke="#38bdf8" strokeDasharray="3 3" opacity={0.5} />
             <ReferenceLine y={10} stroke="#38bdf8" strokeDasharray="3 3" opacity={0.5} />
-            
-            <Scatter 
-              data={[{x: 10, y: 10, z: 0}]} 
+
+            <Scatter
+              data={[{ x: 10, y: 10, z: 0 }]}
               shape={(props: any) => (
                 <svg x={props.cx - 8} y={props.cy - 8} width="16" height="16" viewBox="0 0 24 24" fill="#38bdf8">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />

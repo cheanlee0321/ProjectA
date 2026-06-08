@@ -39,7 +39,7 @@ export function StrategyLimitations() {
         <div className="bg-background/40 p-5 rounded-2xl border border-amber-500/10">
           <h4 className="text-lg font-bold text-amber-300 mb-2">3. 進階探討：流動性分母的選擇與拆解 (M0 vs 淨流動性)</h4>
           <p className="mb-4">策略初始使用 M0 作為分母來消除印鈔幻覺。但在量化寬鬆 (QE) 與銀行體系複雜化的今天，流動性的定義備受挑戰。以下是針對分母選擇的深度實務反思：</p>
-          
+
           <div className="space-y-4">
             <div className="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl">
               <h5 className="font-bold text-amber-200 mb-2 flex items-center">
@@ -61,7 +61,7 @@ export function StrategyLimitations() {
                 在會計恆等式上：<code className="bg-amber-900/50 px-1 rounded text-amber-300">M0 ≈ 聯準會總資產 - TGA - RRP</code>。這代表當政府發債（TGA 升）或華爾街避險（RRP 升）時，M0 會自動下降。因此，單看 FINRA/M0 比值，其實已經<strong>默默把 TGA 與 RRP 對流動性的傷害計算進去了</strong>。
               </p>
               <p className="text-amber-100/80 leading-relaxed text-sm">
-                既然數學結果殊途同歸，為何實戰上仍需將其拆解為「淨流動性公式」？原因在於<strong>「提早預判」</strong>與<strong>「精準歸因」</strong>。官方 M0 數據更新緩慢（雙週或月度），而 TGA/RRP 是每週（甚至每日）更新。將其拆解，不僅能提早 1~2 週預判 M0 的暴跌，還能一眼看透流動性枯竭的真凶——是 Fed 政策轉向（總資產降）、財政部短期吸血（TGA 升）、還是市場恐慌避險（RRP 升），進而擬定完全不同的應對劇本。
+                既然數學結果殊途同歸，且 M0 同樣每週更新在 H.4.1 報告中，為何實戰上仍需將其拆解為「淨流動性公式」？核心原因在於<strong>「精準歸因（找兇手）」</strong>。將流動性拆解，能讓人一眼看透流動性枯竭的真凶——是 Fed 政策轉向（總資產降）、財政部短期吸血（TGA 升）、還是市場恐慌避險（RRP 升），進而擬定完全不同的應對劇本。這也是華爾街自 QE 以來養成的分析習慣。
               </p>
             </div>
           </div>
@@ -92,8 +92,8 @@ export function StrategyLimitations() {
             <li><strong>降檔位 (降低槓桿倍數)：</strong>在高利率環境下，不要執著於 3 倍的 TQQQ 或 UPRO，改用 <strong>2 倍槓桿</strong> 的 QLD 或 SSO。2 倍槓桿內部借貸成本只有 1 份，耗損大幅減少，長期績效往往反超 3 倍槓桿。</li>
             <li><strong>從「長抱」轉為「波段操作」：</strong>低利率時代您可以「綠燈買入後安心抱 3 年」；但在高利率時代市場容錯率極低，應縮短操作週期。只要獲利達到設定的滿足點，就主動將槓桿 ETF 降轉回 1 倍的原型指數鎖住利潤。</li>
             <li><strong>改用「動態 Z-Score」取代固定閾值：</strong>高利率環境會壓抑融資絕對值，未來可能難以觸及 0.4 的紅燈標準。建議改為計算 FINRA/M0 比值是否超過過去 5 年移動平均線的 +2 個標準差 (Z-Score &gt; 2)，無論利率高低皆能精準警示異常飆升。</li>
-            <li><strong>升級流動性分母 (Fed Net Liquidity)：</strong>考慮將分母的 M0 替換成華爾街更關注的「淨流動性」(聯準會總資產 - TGA - RRP)。這會比單純的 M0 更即時、更精準地反映出真正在推升美股的熱錢水位。</li>
-            <li><strong>不對等的進出場速度：</strong>股市中「上漲是階梯，下跌是電梯」。建議將「分 10 個月買賣」調整為非對稱模式：買入時分批慢買；但賣出時一旦亮紅燈，立刻先砍 40% ~ 50% 轉入短債 (SHV)，剩下的再分批賣出，以提早鎖定利潤防禦閃崩。</li>
+            <li><strong>升級流動性分母 (Fed Net Liquidity)：</strong>考慮將分母的 M0 替換成華爾街更關注的「淨流動性」(聯準會總資產 - TGA - RRP)。雖然兩者數值極為相近且皆為每週更新，但採用淨流動性公式能與華爾街的法人報告對齊，更方便進行流動性收縮的歸因分析。</li>
+            <li><strong>不對等的進出場速度：</strong>股市中「上漲是階梯，下跌是電梯」。可考慮將「分 10 個月買賣」調整為非對稱模式：買入時分批慢買；但賣出時一旦亮紅燈，立刻先砍 40% ~ 50% 轉入短債 (SHV)，剩下的再分批賣出，以提早鎖定利潤防禦閃崩。</li>
           </ul>
         </div>
       </div>
