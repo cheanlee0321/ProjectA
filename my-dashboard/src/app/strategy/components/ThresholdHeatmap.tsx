@@ -50,16 +50,16 @@ export function ThresholdHeatmap() {
   const getColor = (val: number) => {
     // Normalize between 0 and 1
     const t = (val - minVal) / (maxVal - minVal || 1);
-    
+
     // For Max Drawdown, higher (closer to 0) is better (green), lower (closer to -1) is worse (red)
     // For others, higher is better (green), lower is worse (red)
     let hue;
     if (metric === 'maxDD') {
       hue = 0 + (t * 120); // 0 is red, 120 is green
     } else {
-      hue = 0 + (t * 120); 
+      hue = 0 + (t * 120);
     }
-    
+
     return `hsl(${hue}, 80%, 40%)`;
   };
 
@@ -72,7 +72,7 @@ export function ThresholdHeatmap() {
   }));
 
   const formatTick = (val: number) => val.toFixed(2);
-  
+
   const formatTooltipValue = (val: number, name: string) => {
     if (name === 'cagr' || name === 'maxDD') return `${(val * 100).toFixed(2)}%`;
     if (name === 'totalReturn') return `${val.toFixed(0)}%`;
@@ -83,7 +83,7 @@ export function ThresholdHeatmap() {
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
-      
+
       if (!data.tooltipData) return null; // Hide tooltip for the star marker
 
       return (
@@ -119,9 +119,9 @@ export function ThresholdHeatmap() {
         <h3 className="text-2xl font-bold text-white flex items-center">
           <span className="mr-2">🎛️</span> 實驗 A：閾值敏感度熱力圖
         </h3>
-        
+
         <div className="flex flex-col sm:flex-row gap-4">
-          <select 
+          <select
             className="bg-slate-800 border border-slate-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             value={mode}
             onChange={(e) => setMode(e.target.value as StrategyMode)}
@@ -130,8 +130,8 @@ export function ThresholdHeatmap() {
             <option value="mix_50_50">策略 50% QQQ / 50% TQQQ (推薦)</option>
             <option value="tqqq_100">策略 100% TQQQ</option>
           </select>
-          
-          <select 
+
+          <select
             className="bg-slate-800 border border-slate-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             value={metric}
             onChange={(e) => setMetric(e.target.value as MetricType)}
@@ -158,21 +158,21 @@ export function ThresholdHeatmap() {
         <ResponsiveContainer width="100%" height="100%">
           <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 20 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.5} />
-            <XAxis 
-              type="number" 
-              dataKey="x" 
-              name="Red Threshold" 
-              domain={[0.24, 0.56]} 
+            <XAxis
+              type="number"
+              dataKey="x"
+              name="Red Threshold"
+              domain={[0.24, 0.56]}
               tickCount={17}
               tickFormatter={formatTick}
               stroke="#94a3b8"
               label={{ value: '紅燈閾值 (Red Threshold)', position: 'insideBottom', offset: -10, fill: '#94a3b8', fontSize: 14 }}
             />
-            <YAxis 
-              type="number" 
-              dataKey="y" 
-              name="Yellow Threshold" 
-              domain={[0.18, 0.42]} 
+            <YAxis
+              type="number"
+              dataKey="y"
+              name="Yellow Threshold"
+              domain={[0.18, 0.42]}
               tickCount={13}
               tickFormatter={formatTick}
               stroke="#94a3b8"
@@ -180,9 +180,9 @@ export function ThresholdHeatmap() {
             />
             {/* ZAxis domain sets the bubble size range. Since we want a heatmap grid, we set a fixed range */}
             <ZAxis type="number" dataKey="z" range={[400, 400]} />
-            
+
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} isAnimationActive={false} />
-            
+
             <Scatter data={scatterData} shape="square">
               {scatterData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={getColor(entry.z)} opacity={0.85} />
@@ -192,9 +192,9 @@ export function ThresholdHeatmap() {
             {/* Reference markers for the currently used thresholds (0.3, 0.4) */}
             <ReferenceLine x={0.4} stroke="#f59e0b" strokeDasharray="3 3" opacity={0.5} />
             <ReferenceLine y={0.3} stroke="#f59e0b" strokeDasharray="3 3" opacity={0.5} />
-            
-            <Scatter 
-              data={[{x: 0.4, y: 0.3, z: 0}]} 
+
+            <Scatter
+              data={[{ x: 0.4, y: 0.3, z: 0 }]}
               shape={(props: any) => (
                 <svg x={props.cx - 10} y={props.cy - 10} width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -207,7 +207,7 @@ export function ThresholdHeatmap() {
 
       <div className="mt-8 p-5 bg-slate-800/50 rounded-xl border border-slate-700">
         <h4 className="text-lg font-bold text-white mb-3">🔬 分析結論 (已套用磁滯效應更新)</h4>
-        
+
         <div className="mb-5 p-4 bg-emerald-900/30 border border-emerald-500/30 rounded-lg">
           <p className="text-sm text-emerald-400 font-bold mb-1 flex items-center">
             <span className="text-lg mr-2">🏆</span> 綜合最佳化甜蜜點 (考量報酬與風險)：
@@ -223,10 +223,22 @@ export function ThresholdHeatmap() {
           </p>
         </div>
 
-        <ul className="list-disc list-inside space-y-2 text-sm text-slate-300">
-          <li><strong>紅燈的極限不變：</strong> 紅燈設定在 0.40 ~ 0.45 之間依然能發揮極佳的避險效果。這證明了判斷市場過熱的標準具有長期的有效性。但若紅燈設得太高 (&gt;0.48)，會太晚警報而遭遇較大回撤。</li>
-          <li><strong>黃燈甜蜜點下移：</strong> 加入磁滯效應（前一個是紅燈就不買）後，數據顯示將黃燈閾值適度調低至 0.24 ~ 0.28，能讓「確認落底」的標準變得更嚴格，進一步榨出更高的超額報酬。</li>
-          <li><strong>非單一孤島：</strong> 熱力圖顯示，優秀的績效並非只存在於單一點位，而是在一個廣泛的「高原區間」內皆有效。這證明了策略具備良好的<strong>穩健性 (Robustness)</strong>，而非參數過擬合 (Overfitting)。</li>
+        <ul className="list-none pl-0 space-y-4 text-sm text-slate-300">
+          <li className="flex items-start gap-2">
+            <span className="text-amber-400 mt-0.5">●</span>
+            <div><strong>紅燈的極限不變：</strong> 紅燈設定在 0.40 ~ 0.45 之間依然能發揮極佳的避險效果。這證明了判斷市場過熱的標準具有長期的有效性。</div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-amber-400 mt-0.5">●</span>
+            <div><strong>黃燈的雙面刃：</strong> 綠燈（小於黃燈閾值）設定在 0.24 ~ 0.28 能讓「確認落底」的標準變嚴格，避免在 2001 年那種股災半山腰提早接刀。</div>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-emerald-400 mt-0.5">★</span>
+            <div>
+              <strong className="text-emerald-300">防禦過擬合：尋找高原區間而非孤島孤峰</strong><br/>
+              如果我們單純追求最高 CAGR 的參數，極度容易落入「只針對 2000 年與 2008 年股災進行完美擬合」的陷阱 (Overfitting)。在現代央行頻繁干預的高流動性環境下，FINRA 數值可能很難再跌回 0.24 的深淵。因此，我們在選擇參數時，絕不應盲目追求圖表上那一個「報酬率絕對最高」的尖峰，而是應該選擇大面積呈現綠色溫層的「高原平坦區」(Plateau)。搭配策略中黃燈的「容錯緩衝機制 (半山腰扛住不賣光)」，即使未來 FINRA 數值因為市場結構改變而不再跌破 0.24，策略依然能保有極大的容錯空間與生存能力，這才是量化投資對抗未來不確定性的真正邏輯。
+            </div>
+          </li>
         </ul>
       </div>
     </div>

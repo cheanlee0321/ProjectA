@@ -42,7 +42,7 @@ export function BacktestTable({ data }: BacktestTableProps) {
           </tbody>
         </table>
       </div>
-      <p className="mt-4 text-sm text-foreground/60 leading-relaxed">
+      <p className="mt-4 text-sm text-foreground/60 leading-relaxed whitespace-pre-wrap">
         {data.note}
       </p>
       {data.conclusion && (

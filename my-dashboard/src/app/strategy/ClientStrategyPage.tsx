@@ -151,152 +151,6 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
               <span className="text-3xl">🔬</span> 進階策略 (探討中, 未完成)
             </h2>
 
-            {/* 實驗 A：閾值敏感度 */}
-            <ThresholdHeatmap />
-
-            {/* 實驗 B：速度敏感度 */}
-            <SpeedSensitivity />
-
-            <div className="mb-10 mt-8 p-6 rounded-2xl bg-indigo-900/30 border border-indigo-500/30">
-              <h3 className="text-xl font-bold text-indigo-300 mb-4 flex items-center gap-2">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                最佳化總結
-              </h3>
-              <div className="text-slate-300 space-y-3 text-base">
-                <p><strong>黃燈閾值：</strong> <span className="text-amber-400 font-mono text-lg">0.24</span> / <strong>紅燈閾值：</strong> <span className="text-rose-400 font-mono text-lg">0.41</span></p>
-                <p><strong>買入速度：</strong> 分 <span className="text-emerald-400 font-mono text-lg">4</span> 個月 / <strong>賣出速度：</strong> 分 <span className="text-rose-400 font-mono text-lg">10</span> 個月</p>
-              </div>
-            </div>
-            <div className="mb-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
-              <h3 className="text-xl font-bold text-violet-300 mb-2 flex items-center gap-2">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                最佳化參數回測結果 (1999年3月 - 2026年4月)
-              </h3>
-              <p className="text-sm text-slate-400 mb-6">
-                <strong>回測條件：</strong>黃燈閾值 0.24 / 紅燈閾值 0.41，買入分 4 個月 / 賣出分 10 個月，訊號 1 個月延遲反映。
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm text-slate-300">
-                  <thead className="bg-slate-800/80 text-slate-400 uppercase text-xs">
-                    <tr>
-                      <th className="px-4 py-3 rounded-tl-lg">策略配置</th>
-                      <th className="px-4 py-3">總報酬率 (Total Return)</th>
-                      <th className="px-4 py-3">年化報酬率 (CAGR)</th>
-                      <th className="px-4 py-3 rounded-tr-lg">最大回撤 (Max DD)</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-700/50">
-                    <tr className="hover:bg-slate-800/30 transition-colors">
-                      <td className="px-4 py-4 font-medium text-slate-200">1. 無腦 All-in QQQ (Buy &amp; Hold)</td>
-                      <td className="px-4 py-4 font-mono">1,428%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">10.59%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-82.96%</td>
-                    </tr>
-                    <tr className="hover:bg-slate-800/30 transition-colors">
-                      <td className="px-4 py-4 font-medium text-slate-200">2. 無腦 All-in TQQQ (模擬)</td>
-                      <td className="px-4 py-4 font-mono">850%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">8.66%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-99.96%</td>
-                    </tr>
-                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
-                      <td className="px-4 py-4 font-medium text-indigo-200">3. 策略 100% QQQ</td>
-                      <td className="px-4 py-4 font-mono text-indigo-300">7,545%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">17.36%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-28.79%</td>
-                    </tr>
-                    <tr className="bg-indigo-900/20 hover:bg-indigo-900/30 transition-colors border-l-2 border-indigo-400">
-                      <td className="px-4 py-4 font-medium text-indigo-100">4. 策略 50% QQQ / 50% TQQQ</td>
-                      <td className="px-4 py-4 font-mono text-indigo-200">391,808%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">35.72%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-65.13%</td>
-                    </tr>
-                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
-                      <td className="px-4 py-4 font-medium text-indigo-200">5. 策略 100% QLD</td>
-                      <td className="px-4 py-4 font-mono text-indigo-300">140,149%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">30.67%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-48.97%</td>
-                    </tr>
-                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
-                      <td className="px-4 py-4 font-medium text-indigo-200">6. 策略 100% TQQQ</td>
-                      <td className="px-4 py-4 font-mono text-indigo-300">1,106,023%</td>
-                      <td className="px-4 py-4 font-mono text-emerald-400">41.02%</td>
-                      <td className="px-4 py-4 font-mono text-rose-400">-66.54%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="mt-6 text-sm text-slate-400 leading-relaxed space-y-2">
-                <p>
-                  <strong className="text-emerald-300">結論：</strong>
-                  在避開了 2000 年網路泡沫與 2008 年金融海嘯等毀滅性空頭後，策略能夠完美保護資金。無腦持有 TQQQ 雖然在牛市爆發力驚人，但在 2000 年的回撤深達 -99.96%，幾乎歸零。
-                </p>
-                <p>
-                  透過此最佳化參數策略，即便是最激進的「策略 100% TQQQ」方案，其最大回撤也控制在 -66.54%（遠低於無腦 QQQ 的 -82.96%），並創造了高達 41% 的驚人年化報酬率。若想平衡風險，<strong className="text-indigo-300">「策略 50% QQQ / 50% TQQQ」</strong>展現了極佳的性價比，回撤與 100% TQQQ 相近，但心理壓力更小。
-                </p>
-              </div>
-
-              {/* Institutional Metrics Block */}
-              <div className="mt-8 p-6 rounded-xl bg-slate-900/60 border border-indigo-500/20 shadow-inner">
-                <h4 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                  機構級風險指標分析 (以 50% QQQ / 50% TQQQ 為例)
-                </h4>
-                <p className="text-xs text-slate-400 mb-6">
-                  *以下數據為基於年化報酬率 35.72% 與最大回撤 -65.13% 所推估之典型量化特徵，供機構投資人評估風險調整後表現參考。
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
-                    <div className="text-slate-400 text-xs mb-1">夏普值 (Sharpe Ratio)</div>
-                    <div className="text-xl font-bold text-emerald-400">0.85 <span className="text-xs text-slate-500 font-normal">vs 大盤 0.55</span></div>
-                    <div className="text-[10px] text-slate-500 mt-1">衡量承受每單位風險的超額報酬</div>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
-                    <div className="text-slate-400 text-xs mb-1">最長修復期 (Max DD Duration)</div>
-                    <div className="text-xl font-bold text-amber-400">約 38 個月</div>
-                    <div className="text-[10px] text-slate-500 mt-1">跌破高點到重回高點的最長等待期</div>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
-                    <div className="text-slate-400 text-xs mb-1">勝率 (Win Rate)</div>
-                    <div className="text-xl font-bold text-sky-400">62% <span className="text-xs font-normal text-slate-400">(月)</span> / 78% <span className="text-xs font-normal text-slate-400">(年)</span></div>
-                    <div className="text-[10px] text-slate-500 mt-1">歷史中正報酬週期的佔比</div>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
-                    <div className="text-slate-400 text-xs mb-1">Alpha / Beta (對標 S&amp;P 500)</div>
-                    <div className="text-xl font-bold text-violet-400"><span className="text-sm">α:</span> 12.5% <span className="text-sm ml-1">β:</span> 1.85</div>
-                    <div className="text-[10px] text-slate-500 mt-1">絕對超額報酬(α) 與 市場連動波動(β)</div>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-indigo-900/20 rounded border border-indigo-500/20 text-sm text-indigo-200">
-                  <strong className="text-indigo-300">機構觀點解讀：</strong>
-                  此策略的 β 值達 1.85，顯示具備較高波動。但由於成功避開極端尾部風險 (Left-tail risk)，其夏普值 (0.85) 優於單純持有 QQQ 或 SPY，且創造出高達 12.5% 的年化 Alpha。唯一需注意的是 38 個月的水下修復期，對資金流動性要求極高，較適合做為長線 (Long-only) 絕對報酬型部位。
-                </div>
-              </div>
-
-              {/* Retail Edge Block */}
-              <div className="mt-6 p-6 rounded-xl bg-gradient-to-r from-emerald-900/30 to-teal-900/30 border border-emerald-500/30">
-                <h4 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                  華爾街的毒藥，散戶的解藥：非對稱的「散戶優勢」 (Retail Edge)
-                </h4>
-                <p className="text-sm text-emerald-100/80 leading-relaxed mb-4">
-                  對於專業機構而言，高達 38 個月的修復期與 1.85 的 Beta 值是無法承受的「職業生涯風險」。但這正是高風險承受度散戶能獲取 35% 年化報酬的<strong>風險溢酬來源</strong>。
-                </p>
-                <div className="space-y-3 text-sm text-emerald-100/70">
-                  <div className="flex gap-3 items-start">
-                    <div className="mt-1 text-emerald-400"><svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg></div>
-                    <div><strong className="text-emerald-300">沒有贖回壓力與季報考核：</strong>機構經理人若落後大盤半年就會被開除、資金會被抽走；散戶只對自己負責，只要資金並非短期生活費，大可安度 3 年的水下修復期，享受時間的無限性。</div>
-                  </div>
-                  <div className="flex gap-3 items-start">
-                    <div className="mt-1 text-emerald-400"><svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg></div>
-                    <div><strong className="text-emerald-300">零滑價的資金靈活性：</strong>機構幾十億美金的進出會砸穿市場，但散戶的資金量級進出 TQQQ 幾乎是零滑價，能 100% 吃到策略的理論報酬。</div>
-                  </div>
-                </div>
-                <p className="mt-4 text-xs text-emerald-400/80 font-medium">
-                  結論：機構受限於法規與客戶壓力無法長期持有此策略，市場因此將豐厚的超額利潤，留給了具備堅強紀律且不需要短期變現的散戶。
-                </p>
-              </div>
-            </div>
-
             {/* DEEP DIVE DISCUSSION */}
             <div className="mb-16 p-8 rounded-2xl bg-slate-800/40 border border-slate-700/50 shadow-lg">
               <h3 className="text-2xl font-bold text-sky-300 mb-8 flex items-center gap-3">
@@ -386,7 +240,7 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                   <p className="text-slate-300 mb-6 leading-relaxed">
                     傳統價值投資大師（如巴菲特、霍華·馬克斯）極度厭惡槓桿與衍生性商品，他們會嚴厲批評持有 TQQQ 這種會因波動率耗損而產生「毀滅性回撤」的工具。然而，量化回測卻無情地揭露了一個數學現實：<strong>如果只操作 1 倍的 QQQ，擇時避險的意義其實並不大；反而必須加上 3 倍槓桿，才能將這套總經指標的價值最大化。</strong>
                   </p>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-slate-900/40 p-6 rounded-xl border border-slate-700">
                       <div className="font-bold text-emerald-400 mb-2">1. 避險價值的核心：波動率不對稱</div>
@@ -401,11 +255,243 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="bg-rose-900/10 p-5 rounded-xl border border-rose-500/20 text-sm text-rose-200">
                     <strong className="text-rose-300">總結：</strong>大師們的批評是對的，因為<strong>「沒有防護網的 3 倍槓桿是毒藥」</strong>；但量化數據也是對的，因為<strong>「沒有 3 倍槓桿的爆發力，就白費了這套頂級避險系統」</strong>。50/50 配置，就是把毒藥提煉成高辛烷值燃料，放入配備頂級總經煞車系統的跑車中，這是傳統法人受限於法規與規模，永遠無法體會的散戶專屬暴力美學。
                   </div>
                 </section>
+              </div>
+            </div>
+
+            {/* 實驗 A：閾值敏感度 */}
+            <ThresholdHeatmap />
+
+            {/* 實驗 B：速度敏感度 */}
+            <SpeedSensitivity />
+
+            <div className="mb-10 mt-8 p-6 rounded-2xl bg-indigo-900/30 border border-indigo-500/30">
+              <h3 className="text-xl font-bold text-indigo-300 mb-4 flex items-center gap-2">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                最佳化總結
+              </h3>
+              <div className="text-slate-300 space-y-3 text-base">
+                <p><strong>黃燈閾值：</strong> <span className="text-amber-400 font-mono text-lg">0.24</span> / <strong>紅燈閾值：</strong> <span className="text-rose-400 font-mono text-lg">0.41</span></p>
+                <p><strong>買入速度：</strong> 分 <span className="text-emerald-400 font-mono text-lg">4</span> 個月 / <strong>賣出速度：</strong> 分 <span className="text-rose-400 font-mono text-lg">10</span> 個月</p>
+              </div>
+            </div>
+            <div className="mb-10 p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+              <h3 className="text-xl font-bold text-violet-300 mb-2 flex items-center gap-2">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                最佳化參數回測結果 (1999年3月 - 2026年4月)
+              </h3>
+              <p className="text-sm text-slate-400 mb-6">
+                <strong>回測條件：</strong>黃燈閾值 0.24 / 紅燈閾值 0.41，買入分 4 個月 / 賣出分 10 個月，訊號 1 個月延遲反映。
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm text-slate-300">
+                  <thead className="bg-slate-800/80 text-slate-400 uppercase text-xs">
+                    <tr>
+                      <th className="px-4 py-3 rounded-tl-lg">策略配置</th>
+                      <th className="px-4 py-3">總報酬率 (Total Return)</th>
+                      <th className="px-4 py-3">年化報酬率 (CAGR)</th>
+                      <th className="px-4 py-3 rounded-tr-lg">最大回撤 (Max DD)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-700/50">
+                    <tr className="hover:bg-slate-800/30 transition-colors">
+                      <td className="px-4 py-4 font-medium text-slate-200">1. 無腦 All-in QQQ (Buy &amp; Hold)</td>
+                      <td className="px-4 py-4 font-mono">1,428%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">10.59%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-82.96%</td>
+                    </tr>
+                    <tr className="hover:bg-slate-800/30 transition-colors">
+                      <td className="px-4 py-4 font-medium text-slate-200">2. 無腦 All-in TQQQ (模擬)</td>
+                      <td className="px-4 py-4 font-mono">850%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">8.66%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-99.96%</td>
+                    </tr>
+                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
+                      <td className="px-4 py-4 font-medium text-indigo-200">3. 策略 100% QQQ</td>
+                      <td className="px-4 py-4 font-mono text-indigo-300">7,545%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">17.36%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-28.79%</td>
+                    </tr>
+                    <tr className="bg-indigo-900/20 hover:bg-indigo-900/30 transition-colors border-l-2 border-indigo-400">
+                      <td className="px-4 py-4 font-medium text-indigo-100">4. 策略 50% QQQ / 50% TQQQ</td>
+                      <td className="px-4 py-4 font-mono text-indigo-200">391,808%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">35.72%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-65.13%</td>
+                    </tr>
+                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
+                      <td className="px-4 py-4 font-medium text-indigo-200">5. 策略 100% QLD</td>
+                      <td className="px-4 py-4 font-mono text-indigo-300">140,149%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">30.67%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-48.97%</td>
+                    </tr>
+                    <tr className="bg-indigo-900/10 hover:bg-indigo-900/20 transition-colors">
+                      <td className="px-4 py-4 font-medium text-indigo-200">6. 策略 100% TQQQ</td>
+                      <td className="px-4 py-4 font-mono text-indigo-300">1,106,023%</td>
+                      <td className="px-4 py-4 font-mono text-emerald-400">41.02%</td>
+                      <td className="px-4 py-4 font-mono text-rose-400">-66.54%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-6 text-sm text-slate-400 leading-relaxed space-y-2">
+                <p>
+                  <strong className="text-emerald-300">結論：</strong>
+                  在避開了 2000 年網路泡沫與 2008 年金融海嘯等毀滅性空頭後，策略能夠完美保護資金。無腦持有 TQQQ 雖然在牛市爆發力驚人，但在 2000 年的回撤深達 -99.96%，幾乎歸零。
+                </p>
+                <p>
+                  透過此最佳化參數策略，即便是最激進的「策略 100% TQQQ」方案，其最大回撤也控制在 -66.54%（遠低於無腦 QQQ 的 -82.96%），並創造了高達 41% 的驚人年化報酬率。若想平衡風險，<strong className="text-indigo-300">「策略 50% QQQ / 50% TQQQ」</strong>展現了極佳的性價比，回撤與 100% TQQQ 相近，但心理壓力更小。
+                </p>
+                <div className="mt-4 p-5 rounded-lg bg-rose-900/10 border border-rose-500/30">
+                  <h4 className="text-rose-300 font-bold mb-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    參數過擬合陷阱 (Overfitting Trap) 與磁滯效應的靈魂
+                  </h4>
+                  <p className="text-rose-200/90 mb-3">
+                    最佳化回測出來的「3.9 億美金」看似完美，但其實極度依賴 <strong>「黃燈防守 + 磁滯效應 (紅轉黃不接刀)」</strong> 的特殊緩衝機制。如果我們把這個緩衝拿掉，變成「純粹連續清倉」的二元系統，會發現驚人的真相：
+                  </p>
+                  <ul className="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong>嚴格綠底 (0.24) 的代價：</strong>若嚴格遵守 0.24 才買入，策略會在 2018 年底短暫觸發紅燈後，因 FINRA 之後 8 年再也沒跌破 0.24，導致被困在 100% 現金長達 8 年，完美錯失現代大牛市（總獲利銳減至 4,700 萬）。</li>
+                    <li><strong>放寬綠底 (0.30) 的災難：</strong>若為了適應現代牛市，將綠燈放寬為 0.30，策略雖能在 2019 年重回市場，卻會因為在 2001 年達康泡沫半山腰「提早認定見底」，導致進場接刀，吃到高達 <strong>-87.42% 的毀滅性回撤</strong>。</li>
+                  </ul>
+                  <p className="mt-3 text-emerald-300/90 font-medium">
+                    這證明了：量化最佳化掃出來的單一參數 (如 0.24) 只是為了迎合 2000 年與 2008 年的極端股災，非常容易產生過擬合。真正讓策略能跨越時代生存的，是黃燈區間的<strong>「容錯煞車機制（半山腰扛住不賣光）」</strong>，這讓我們不需要一個完美適應各個時代的單一參數，也能靠機制本身的韌性存活下來。
+                  </p>
+                </div>
+
+                {/* Stress Test Block */}
+                <div className="mt-4 p-5 rounded-lg bg-sky-900/10 border border-sky-500/30">
+                  <h4 className="text-sky-300 font-bold mb-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                    極端高原區壓力測試：如果我們提早接到飛刀會怎樣？
+                  </h4>
+                  <p className="text-sky-200/90 mb-3">
+                    為了解決「害怕未來指標不再跌破 0.24」的過擬合焦慮，我們刻意選用了一個<strong>極度寬鬆的高原區參數 (黃燈 0.34)</strong>，並搭配 <strong>「分 10 個月極慢速買入」</strong> 與 <strong>「50% QQQ / 50% TQQQ」</strong> 進行壓力測試：
+                  </p>
+
+                  <div className="my-4 overflow-x-auto">
+                    <table className="w-full text-left text-sm text-slate-300 bg-sky-950/40 rounded-lg overflow-hidden border border-sky-800/50">
+                      <thead className="bg-sky-900/50 text-sky-300 uppercase text-xs">
+                        <tr>
+                          <th className="px-4 py-3">高原區參數配置 (黃燈 0.34)</th>
+                          <th className="px-4 py-3">總報酬率 (Total Return)</th>
+                          <th className="px-4 py-3">年化報酬率 (CAGR)</th>
+                          <th className="px-4 py-3 text-rose-300">最大回撤 (Max DD)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-sky-800/30">
+                        <tr className="hover:bg-sky-900/20 transition-colors">
+                          <td className="px-4 py-3 font-medium text-slate-400">1. 無腦 All-in QQQ (Buy & Hold)</td>
+                          <td className="px-4 py-3 font-mono">1,428%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-400">10.59%</td>
+                          <td className="px-4 py-3 font-mono text-rose-400">-82.96%</td>
+                        </tr>
+                        <tr className="hover:bg-sky-900/20 transition-colors">
+                          <td className="px-4 py-3 font-medium text-slate-400">2. 無腦 All-in TQQQ (模擬)</td>
+                          <td className="px-4 py-3 font-mono">850%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-400">8.66%</td>
+                          <td className="px-4 py-3 font-mono text-rose-400">-99.96%</td>
+                        </tr>
+                        <tr className="hover:bg-sky-900/30 transition-colors">
+                          <td className="px-4 py-3 font-medium text-sky-200/70">3. 策略 100% QQQ</td>
+                          <td className="px-4 py-3 font-mono text-sky-200">5,219%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-300">15.80%</td>
+                          <td className="px-4 py-3 font-mono text-rose-400">-58.78%</td>
+                        </tr>
+                        <tr className="bg-sky-800/30 font-medium border-l-2 border-sky-400">
+                          <td className="px-4 py-3 text-sky-200">4. 策略 50% QQQ / 50% TQQQ</td>
+                          <td className="px-4 py-3 font-mono text-sky-100">161,790%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-300">31.36%</td>
+                          <td className="px-4 py-3 font-mono text-rose-400">-80.31%</td>
+                        </tr>
+                        <tr className="hover:bg-sky-900/30 transition-colors">
+                          <td className="px-4 py-3 font-medium text-sky-200/70">5. 策略 100% QLD</td>
+                          <td className="px-4 py-3 font-mono text-sky-200">70,116%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-300">27.37%</td>
+                          <td className="px-4 py-3 font-mono text-rose-400">-84.28%</td>
+                        </tr>
+                        <tr className="hover:bg-sky-900/30 transition-colors">
+                          <td className="px-4 py-3 font-medium text-sky-200/70">6. 策略 100% TQQQ</td>
+                          <td className="px-4 py-3 font-mono text-sky-200">346,494%</td>
+                          <td className="px-4 py-3 font-mono text-emerald-300">35.11%</td>
+                          <td className="px-4 py-3 font-mono text-rose-500 font-bold">-95.16% (致死)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <ul className="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong className="text-rose-400">接到飛刀的代價：</strong> 因為 0.34 門檻太寬鬆，策略在 2001 年達康泡沫的「半山腰」就觸發了買入訊號，導致最大回撤狂飆至 <strong>-80.31%</strong>，並經歷了近 9 年的痛苦期才重回高點。</li>
+                    <li><strong className="text-emerald-400">機制的終極救贖：</strong> 儘管接滿了飛刀，如果沒有資金控管，100% TQQQ 的回撤會是致死的 -95.16% (歸零)。但透過「50/50 槓鈴 + 10 個月慢速建倉」強行保住火種，策略最終依然創造了高達 <strong>31.36% 的年化報酬</strong>，將 10 萬美金滾成驚人的 <strong>1.61 億美金</strong>！</li>
+                  </ul>
+                  <p className="mt-3 text-sky-300/90 font-medium">
+                    <strong className="text-sky-200">終極啟示：</strong> 這證明了策略最核心的防禦韌性。即便未來市場發生結構性改變，導致我們設定的參數不小心在半山腰進場，只要堅守<strong>「磁滯緩衝 + 慢速建倉 + 槓鈴配置」</strong>的容錯機制，我們根本不需要完美的預期，依然能活著把龐大的趨勢財賺完。
+                  </p>
+                </div>
+              </div>
+
+              {/* Institutional Metrics Block */}
+              <div className="mt-8 p-6 rounded-xl bg-slate-900/60 border border-indigo-500/20 shadow-inner">
+                <h4 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                  機構級風險指標分析 (以 50% QQQ / 50% TQQQ 為例)
+                </h4>
+                <p className="text-xs text-slate-400 mb-6">
+                  *以下數據為基於年化報酬率 35.72% 與最大回撤 -65.13% 所推估之典型量化特徵，供機構投資人評估風險調整後表現參考。
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <div className="text-slate-400 text-xs mb-1">夏普值 (Sharpe Ratio)</div>
+                    <div className="text-xl font-bold text-emerald-400">0.85 <span className="text-xs text-slate-500 font-normal">vs 大盤 0.55</span></div>
+                    <div className="text-[10px] text-slate-500 mt-1">衡量承受每單位風險的超額報酬</div>
+                  </div>
+                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <div className="text-slate-400 text-xs mb-1">最長修復期 (Max DD Duration)</div>
+                    <div className="text-xl font-bold text-amber-400">約 38 個月</div>
+                    <div className="text-[10px] text-slate-500 mt-1">跌破高點到重回高點的最長等待期</div>
+                  </div>
+                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <div className="text-slate-400 text-xs mb-1">勝率 (Win Rate)</div>
+                    <div className="text-xl font-bold text-sky-400">62% <span className="text-xs font-normal text-slate-400">(月)</span> / 78% <span className="text-xs font-normal text-slate-400">(年)</span></div>
+                    <div className="text-[10px] text-slate-500 mt-1">歷史中正報酬週期的佔比</div>
+                  </div>
+                  <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700/50">
+                    <div className="text-slate-400 text-xs mb-1">Alpha / Beta (對標 S&amp;P 500)</div>
+                    <div className="text-xl font-bold text-violet-400"><span className="text-sm">α:</span> 12.5% <span className="text-sm ml-1">β:</span> 1.85</div>
+                    <div className="text-[10px] text-slate-500 mt-1">絕對超額報酬(α) 與 市場連動波動(β)</div>
+                  </div>
+                </div>
+                <div className="mt-4 p-3 bg-indigo-900/20 rounded border border-indigo-500/20 text-sm text-indigo-200">
+                  <strong className="text-indigo-300">機構觀點解讀：</strong>
+                  此策略的 β 值達 1.85，顯示具備較高波動。但由於成功避開極端尾部風險 (Left-tail risk)，其夏普值 (0.85) 優於單純持有 QQQ 或 SPY，且創造出高達 12.5% 的年化 Alpha。唯一需注意的是 38 個月的水下修復期，對資金流動性要求極高，較適合做為長線 (Long-only) 絕對報酬型部位。
+                </div>
+              </div>
+
+              {/* Retail Edge Block */}
+              <div className="mt-6 p-6 rounded-xl bg-gradient-to-r from-emerald-900/30 to-teal-900/30 border border-emerald-500/30">
+                <h4 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  華爾街的毒藥，散戶的解藥：非對稱的「散戶優勢」 (Retail Edge)
+                </h4>
+                <p className="text-sm text-emerald-100/80 leading-relaxed mb-4">
+                  對於專業機構而言，高達 38 個月的修復期與 1.85 的 Beta 值是無法承受的「職業生涯風險」。但這正是高風險承受度散戶能獲取 35% 年化報酬的<strong>風險溢酬來源</strong>。
+                </p>
+                <div className="space-y-3 text-sm text-emerald-100/70">
+                  <div className="flex gap-3 items-start">
+                    <div className="mt-1 text-emerald-400"><svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg></div>
+                    <div><strong className="text-emerald-300">沒有贖回壓力與季報考核：</strong>機構經理人若落後大盤半年就會被開除、資金會被抽走；散戶只對自己負責，只要資金並非短期生活費，大可安度 3 年的水下修復期，享受時間的無限性。</div>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="mt-1 text-emerald-400"><svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg></div>
+                    <div><strong className="text-emerald-300">零滑價的資金靈活性：</strong>機構幾十億美金的進出會砸穿市場，但散戶的資金量級進出 TQQQ 幾乎是零滑價，能 100% 吃到策略的理論報酬。</div>
+                  </div>
+                </div>
+                <p className="mt-4 text-xs text-emerald-400/80 font-medium">
+                  結論：機構受限於法規與客戶壓力無法長期持有此策略，市場因此將豐厚的超額利潤，留給了具備堅強紀律且不需要短期變現的散戶。
+                </p>
               </div>
             </div>
 
