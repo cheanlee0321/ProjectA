@@ -541,6 +541,90 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
               </div>
             </div>
 
+            {/* EXTREME STRESS TESTS & FAILURES */}
+            <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-rose-900/20 to-slate-900 border border-rose-800/30 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+              <h3 className="text-2xl font-bold text-rose-300 mb-6 flex items-center gap-3">
+                <span className="text-2xl">🔥</span>
+                極限壓力測試與失敗紀錄
+              </h3>
+
+              <div className="text-slate-300 space-y-6 text-base leading-relaxed relative z-10">
+                <p>
+                  完美的數據往往是包裹著蜜糖的毒藥。為了驗證這套策略真正的「容錯率」，我們不只尋找最佳解，我們更刻意摧毀防禦機制，把參數設定在最危險的「半山腰」，模擬出無數次血淋淋的接飛刀與踏空慘劇。
+                </p>
+                <p>
+                  我們紀錄了完整的 <strong>8 次核心參數摧毀與演化實驗</strong>。這些失敗的紀錄，才是我們最終能淬鍊出強大「磁滯效應」與「慢速建倉」保命機制的真正基石。
+                </p>
+              </div>
+
+              <div className="mt-8 relative z-10">
+                <Link href="/strategy/experiments" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-rose-600 hover:bg-rose-500 text-white font-bold transition-all shadow-lg shadow-rose-600/30 hover:shadow-rose-500/50 hover:-translate-y-0.5">
+                  👉 極限壓力測試與失敗紀錄
+                  <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* ULTIMATE DEFENSIVE SETTINGS */}
+            <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-amber-900/20 via-slate-900 to-emerald-900/20 border border-amber-500/30 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+              <h3 className="text-2xl font-bold text-amber-400 mb-6 flex items-center gap-3">
+                <span className="text-2xl">🛡️</span>
+                實戰配置：終極防禦型設定推薦
+              </h3>
+
+              <div className="text-slate-300 space-y-6 text-base leading-relaxed relative z-10">
+                <p>
+                  綜合了從「原版神之參數」、「極端接飛刀測試」到「多維熱力圖掃描」的所有數據，如果我們要完全捨棄過去的最優解（孤峰），轉而擁抱未來容錯率最高的設定（高原），我們強烈推薦以下這組<strong>「不求賺最多，但求絕對不死」</strong>的實戰參數：
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <div className="p-5 rounded-xl bg-slate-800/50 border border-slate-600">
+                    <h4 className="font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-emerald-500"></div> 買入閾值：0.28 ~ 0.32
+                    </h4>
+                    <p className="text-sm text-slate-400">
+                      完美的中庸之道。它比 0.24 容易觸發，確保我們絕對不會在現代高流動性環境中錯過未來的股災底部；同時它又比 0.34 嚴格，能幫我們避開股災初期的最致命主跌段。
+                    </p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-slate-800/50 border border-slate-600">
+                    <h4 className="font-bold text-rose-400 mb-2 flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-rose-500"></div> 賣出閾值：0.40 ~ 0.45
+                    </h4>
+                    <p className="text-sm text-slate-400">
+                      給予 0.10 以上的「黃燈磁滯區間 (例如 0.30 ~ 0.42)」，寬廣的黃燈區能保證在股災後死死抱住股票、吃滿整個 V 轉報復性反彈的最強防具。
+                    </p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-slate-800/50 border border-slate-600 md:col-span-2">
+                    <h4 className="font-bold text-sky-400 mb-2 flex items-center gap-2">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      分批速度：10 ~ 12 個月
+                    </h4>
+                    <p className="text-sm text-slate-400">
+                      從速度二維熱力圖可以明確看到，小於 6 個月是紅色死區。10 到 12 個月的滴灌式建倉/清倉，是容錯率最高的高原帶。就算你的閾值設得有點差，長達近一年的分批動作都能完美吸收掉擇時錯誤帶來的衝擊。
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 p-6 rounded-xl bg-amber-900/20 border border-amber-500/30">
+                  <h4 className="font-bold text-amber-300 mb-3 text-lg text-center">總結：未來的裝甲車配置</h4>
+                  <ul className="max-w-md mx-auto space-y-2 text-center text-amber-100 font-mono">
+                    <li>買入：<span className="text-emerald-400">小於 0.30</span></li>
+                    <li>賣出：<span className="text-rose-400">大於 0.42</span></li>
+                    <li>黃燈防守：<span className="text-amber-400">開啟 (0.30 ~ 0.42)</span></li>
+                    <li>速度：<span className="text-sky-400">分 10 個月買 / 分 10 個月賣</span></li>
+                    <li>資金：<span className="text-fuchsia-400">50% QQQ / 50% TQQQ</span></li>
+                  </ul>
+                  <p className="text-center text-sm text-amber-200/70 mt-4">
+                    這組設定可能不是回測數據最漂亮、最極致的跑車，但無論未來市場發生什麼結構性改變，它都能保證你安然度過危機，並穩穩拿下長期驚人的年化報酬。
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* FUTURE EVOLUTION */}
             <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/5 rounded-full blur-[80px] pointer-events-none"></div>
@@ -604,9 +688,29 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                       </p>
                       <ul className="list-disc pl-5 mt-2 space-y-1 text-sm">
                         <li><strong className="text-amber-300/90">磁滯效應 (半山腰防守)：</strong> 紅轉黃時不急著賣光，強行扛住部位，確保我們永遠不會錯過股災後最肥的第一波 V 轉報復性反彈。</li>
-                        <li><strong className="text-sky-300/90">慢速建倉 (10 個月買入)：</strong> 用時間換取空間。就算綠燈亮得太早，10 個月的慢速滴灌也能完美攤平底部成本，沒收掉一次性接飛刀的毀滅性打擊。</li>
+                        <li><strong className="text-sky-300/90">慢速建倉 (10 個月買入)：</strong> 用時間換取空間。就算綠燈亮得太早，10-24 個月的慢速滴灌也能完美攤平底部成本，沒收掉一次性接飛刀的毀滅性打擊。</li>
                         <li><strong className="text-rose-300/90">50/50 槓鈴配置：</strong> 一半 QQQ 保命，一半 TQQQ 衝刺。當極端黑天鵝讓 TQQQ 面臨清算邊緣時，50% 的原型 QQQ 就是保住火種的諾亞方舟。</li>
                       </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-sky-400 mb-2">3. 信仰底層邏輯，而非信仰指標</h5>
+                      <p className="text-sm leading-relaxed">
+                        許多量化策略失效，是因為它們只找到了歷史資料的隨機相關性。但我們的策略有效，是因為它建立在不可撼動的<strong className="text-sky-200">「人類行為學與貨幣本質」</strong>上。只要人類貪婪的本性不變（融資擴張），現代央行的法幣體系不變（M0 擴張），「過度槓桿必將導致流動性枯竭與崩盤」的物理法則就不會改變。我們依賴的是金融運作的底層邏輯，而不是一條死板的公式。
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-bold text-rose-400 mb-2">4. 對黑天鵝保持敬畏（資金控管的本質）</h5>
+                      <p className="text-sm leading-relaxed">
+                        採用 50/50 槓鈴配置，不僅僅是為了讓回撤數據好看，而是承認我們<strong className="text-rose-200">「無法預測未來」</strong>。量化回測再完美，也無法預測未來的「非金融系統性災難」（如戰爭或毀滅性天災）。使用 50% 原型 ETF 的背後哲學是：「我們隨時做好 TQQQ 歸零的準備，但只要原型 QQQ 活著，我們就能在災後廢墟中重建龐大財富。」永遠不要因為系統過去 20 年沒死過，就押上 100% 身家去賭。
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-bold text-violet-400 mb-2">5. 系統是完美的，但執行的人不是</h5>
+                      <p className="text-sm leading-relaxed">
+                        這套系統最難的地方不在於設定參數，而在於<strong className="text-violet-200">「極端行情下的紀律與執行力」</strong>。當系統亮起綠燈，要求你分 10 個月慢速買入時，可能前 3 個月大盤還在崩跌，恐懼會促使你停止買入；而在大牛市中，別人用 100% TQQQ 狂賺 10 倍，你因為 50/50 配置只賺了 5 倍，貪婪會促使你破壞紀律去追高。<strong className="text-white border-b border-white/30">這套系統最大的敵人不是市場，而是看著儀表板的你自己。</strong>當訊號亮起時，把自己當成沒有感情的機器人，是贏得這場遊戲的最後一塊拼圖。
+                      </p>
                     </div>
 
                     <div className="pt-4 border-t border-slate-700/50">
