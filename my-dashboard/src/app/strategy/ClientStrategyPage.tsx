@@ -663,6 +663,50 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                   </p>
                 </div>
 
+                <div className="pt-4 mt-6 border-t border-slate-700">
+                  <h4 className="text-xl font-bold text-rose-400 mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    5. 未來的黑天鵝：最差的四種劇本與防禦
+                  </h4>
+                  <p className="mb-4">
+                    即使我們用了「終極防禦型設定」把容錯率拉到最高，能擊潰我們的就不再是普通的股災，而是<strong className="text-rose-300">「結構性的黑天鵝」</strong>。如果你在未來 20 年使用這套方法，你必須坦然接受以下四種最差狀況的可能性：
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div className="p-4 bg-slate-900 rounded-lg border border-slate-800">
+                      <h5 className="font-bold text-slate-200 mb-1">A. 指標結構性失效 (踏空 10 年的折磨)</h5>
+                      <p className="text-sm text-slate-400">
+                        如果未來金融體系巨變（如央行全面發行 CBDC 或加密貨幣借貸取代傳統融資），導致 FINRA / M0 指標永遠卡在紅燈。最差狀況是你會滿手現金長達 10 年，承受巨大的錯失恐懼症 (FOMO)。這就是為什麼我們需要持續研究與驗證，尋找能反映真實流動性的新指標。
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-slate-900 rounded-lg border border-slate-800">
+                      <h5 className="font-bold text-slate-200 mb-1">B. 聯準會長達十年的「停滯性通膨」 (慢性毒藥)</h5>
+                      <p className="text-sm text-slate-400">
+                        如果未來進入 1970 年代的停滯性通膨，基準利率長年維持 8%~10%。TQQQ 的內扣借貸成本每年將高達 15% 以上。若大盤 10 年在原地上下震盪，TQQQ 將會被高利息與波動率耗損慢性吸乾而歸零。
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-slate-900 rounded-lg border border-slate-800">
+                      <h5 className="font-bold text-slate-200 mb-1">C. 美國國力衰退的「日本化」 (失去的二十年)</h5>
+                      <p className="text-sm text-slate-400">
+                        如果美國步入 1989 年後日本的後塵，股市崩盤後經歷 30 年的通縮與經濟死水，永遠等不到「報復性 V 轉」。分批買入只是一路買在通往地獄的階梯上，你的資產實質購買力將被嚴重摧毀。
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-rose-950/30 rounded-lg border border-rose-900/50">
+                      <h5 className="font-bold text-rose-300 mb-1">D. 監管鐵拳的「強制清算」 (非戰之罪的絕對死局)</h5>
+                      <p className="text-sm text-slate-400">
+                        如果在極度恐慌的股災底部，SEC 為了救市宣布強制關閉所有 3 倍槓桿 ETF。你將被迫在 TQQQ -95% 的絕對谷底強制結算成現金，連等待反彈的機會都被剝奪，50% 的資產瞬間永久灰飛煙滅。
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <p className="mt-4 text-emerald-400 font-medium">
+                    防禦之道：這正是為什麼我們堅持 <strong>50/50 的槓鈴資金控管</strong>。面對上述慢性或急性的黑天鵝，即便 50% 的 TQQQ 遭到清算歸零，剩下的 50% QQQ 就是保證你不至於流落街頭、能在災後廢墟重建財富的諾亞方舟。
+                  </p>
+                </div>
+
                 <div className="p-8 rounded-2xl bg-gradient-to-br from-indigo-900/40 via-slate-900/60 to-emerald-900/20 border border-indigo-500/30 mt-8 relative overflow-hidden shadow-2xl">
                   {/* Decorative background element */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
