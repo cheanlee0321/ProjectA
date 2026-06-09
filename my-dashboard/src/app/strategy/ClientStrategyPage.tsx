@@ -764,6 +764,13 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                         我們不需要去尋找那個能精準閃過 2008 年的單一完美參數，我們應該選擇一個「就算訊號遲鈍、就算我們提早進場」依然能活得很好的寬廣區間。<br /><br />
                         只要堅守這套包含<strong className="text-emerald-300">「總經煞車 + 磁滯緩衝 + 慢速建倉 + 槓鈴配置」</strong>的系統，你不需要每天盯盤，也不需要預測明天聯準會要說什麼。你只需要每個月看一次燈號，然後把剩下的時間拿去專注於你繁忙的本業，讓這套充滿容錯率的系統，在未來的數十年為你自動執行跨時代的財富累積。
                       </p>
+                      
+                      <div className="mt-8 flex justify-center">
+                        <Link href="/strategy/masters" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold transition-all border border-amber-500/30 hover:border-amber-400 shadow-lg hover:shadow-amber-500/20 hover:-translate-y-1">
+                          🏛️ 接受無情的紅隊測試：查看「大師視角」正反評價
+                          <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
