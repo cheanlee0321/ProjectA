@@ -1,6 +1,8 @@
 import YahooFinance from 'yahoo-finance2';
 import { unstable_cache } from 'next/cache';
 import { cache } from 'react';
+import fs from 'fs';
+import path from 'path';
 
 const yahooFinance = new YahooFinance();
 
@@ -329,7 +331,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       fetchFredSeries('SAHMREALTIME'),
       fetchFredSeries('DRTSCIS'),
       fetchFredSeries('T10Y2Y'),
-      fetchFredSeries('BAMLH0A0HYM2'),
+      fetchFredSeries('BAA10Y'),
       fetchFredSeries('NCBEILQ027S'),
       fetchFredSeries('GDP'),
       fetchCapeRatio(),
@@ -681,33 +683,41 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
     const fredIndicators = [sahm, sloos, yieldCurve, spread, wilshire, gdp, m2, nfci, twExport, walcl, rrp, fedfunds, icsa, jtsjol, houst, mort, t10yie, pce, drcc, indpro, currcir, tipsData];
     const isDataLoading = Boolean(fredIndicators.some(x => x.isLoading) || margin.isLoading);
 
-    // FINRA / Currency in Circulation
+    // FINRA / Currency in Circulation (from strategy_data.json)
     let finraToCurrencyStatus: 'red'|'yellow'|'green' = 'green';
     let finraToCurrencyText = '常規水準';
     let finraToCurrencyHistory: {date: string, value: number}[] = [];
     let finraToCurrencyValueStr = 'N/A';
-    if (!margin.isError && !currcir.isError) {
-       let lastMarginVal = null;
-       let mIndex = 0;
-       for (const c of currcir.history) {
-          while (mIndex < margin.history.length && margin.history[mIndex].date <= c.date) {
-            lastMarginVal = margin.history[mIndex].value;
-            mIndex++;
+    let isFinraError = false;
+
+    try {
+      const dataPath = path.join(process.cwd(), 'public', 'data', 'strategy_data.json');
+      if (fs.existsSync(dataPath)) {
+        const fileContent = fs.readFileSync(dataPath, 'utf-8');
+        const strategyData = JSON.parse(fileContent);
+        for (const item of strategyData) {
+          if (item.month && item.finraToM0 !== undefined) {
+            finraToCurrencyHistory.push({
+              date: `${item.month}-01`,
+              value: parseFloat(item.finraToM0.toFixed(4))
+            });
           }
-          if (lastMarginVal !== null && c.value > 0) {
-             finraToCurrencyHistory.push({
-               date: c.date,
-               value: parseFloat((lastMarginVal / (c.value * 1000)).toFixed(4))
-             });
-          }
-       }
-       if (finraToCurrencyHistory.length > 0) {
-         const currentRatio = finraToCurrencyHistory[finraToCurrencyHistory.length - 1].value;
-         finraToCurrencyValueStr = currentRatio.toFixed(4);
-         if (currentRatio > 0.40) { finraToCurrencyStatus = 'red'; finraToCurrencyText = '極限槓桿 (風險高)'; }
-         else if (currentRatio > 0.30) { finraToCurrencyStatus = 'yellow'; finraToCurrencyText = '槓桿偏高'; }
-         else { finraToCurrencyStatus = 'green'; finraToCurrencyText = '常規水準'; }
-       }
+        }
+        if (finraToCurrencyHistory.length > 0) {
+          const currentRatio = finraToCurrencyHistory[finraToCurrencyHistory.length - 1].value;
+          finraToCurrencyValueStr = currentRatio.toFixed(4);
+          if (currentRatio > 0.40) { finraToCurrencyStatus = 'red'; finraToCurrencyText = '極限槓桿 (風險高)'; }
+          else if (currentRatio >= 0.30) { finraToCurrencyStatus = 'yellow'; finraToCurrencyText = '槓桿偏高'; }
+          else { finraToCurrencyStatus = 'green'; finraToCurrencyText = '常規水準'; }
+        } else {
+          isFinraError = true;
+        }
+      } else {
+        isFinraError = true;
+      }
+    } catch (e) {
+      console.error("Error reading strategy_data.json:", e);
+      isFinraError = true;
     }
 
     // SP500 / Currency in Circulation
@@ -780,7 +790,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       dxy: { value: dxyValue.toFixed(2), status: dxyStatus, text: dxyText, history: dxy.history },
       vix: { value: vix.current ? vix.current.toFixed(2) : 'N/A', status: (vix.current ?? 0) > 30 ? 'red' : ((vix.current ?? 0) > 20 ? 'yellow' : 'green'), text: (vix.current ?? 0) > 30 ? '恐慌拋售' : ((vix.current ?? 0) > 20 ? '波動升溫' : '平穩安全'), history: vix.history },
       skew: { value: skew.current ? skew.current.toFixed(2) : 'N/A', status: (skew.current ?? 0) > 140 ? 'red' : ((skew.current ?? 0) > 130 ? 'yellow' : 'green'), text: (skew.current ?? 0) > 140 ? '黑天鵝警戒' : '尾部風險低', history: skew.history },
-      creditSpreads: { ...formatFred(spread, spread.current ? spread.current.toFixed(2)+'%' : 'N/A', (spread.current ?? 0) > 6 ? 'red' : ((spread.current ?? 0) > 4.5 ? 'yellow' : 'green'), (spread.current ?? 0) > 6 ? '違約恐慌' : '資金充裕'), history: spread.history },
+      creditSpreads: { ...formatFred(spread, spread.current ? spread.current.toFixed(2)+'%' : 'N/A', (spread.current ?? 0) > 3.5 ? 'red' : ((spread.current ?? 0) > 2.5 ? 'yellow' : 'green'), (spread.current ?? 0) > 3.5 ? '違約恐慌' : ((spread.current ?? 0) > 2.5 ? '融資成本攀升' : '資金充裕')), history: spread.history },
       fearGreed: { value: fg.current ? Math.round(fg.current) : 'N/A', status: (fg.current ?? 50) > 75 ? 'red' : ((fg.current ?? 50) < 25 ? 'green' : 'yellow'), text: (fg.current ?? 50) > 75 ? '極度貪婪' : '中立', history: fg.history },
       marginDebt: { ...formatFred(margin.isError ? {isError:true} : {isLoading: margin.isLoading}, margin.current ? `$${(margin.current/1000).toFixed(0)}B` : 'N/A', (margin.current ?? 0)/1000 > 1000 ? 'red' : ((margin.current ?? 0)/1000 > 800 ? 'yellow' : 'green'), (margin.current ?? 0)/1000 > 1000 ? '天量槓桿' : '常規水準'), history: margin.history.map(h => ({date: h.date, value: h.value/1000})) },
       nfci: { ...formatFred(nfci, nfciValue.toFixed(2), nfciStatus, nfciText), history: nfci.history },
@@ -804,7 +814,7 @@ export const fetchMarketData = cache(async (finmindToken: string): Promise<Marke
       t10yie: { ...formatFred(t10yie, t10yie.current ? t10yie.current.toFixed(2)+'%' : 'N/A', t10Status, t10Text), history: t10yie.history },
       pcepilfe: { ...formatFred(pce, pce.current ? pce.current.toFixed(2)+'%' : 'N/A', pceStatus, pceText), history: pce.history },
       drcc: { ...formatFred(drcc, drcc.current ? drcc.current.toFixed(2)+'%' : 'N/A', drccStatus, drccText), history: drcc.history },
-      finraToCurrency: { ...formatFred(margin.isError || currcir.isError ? {isError:true} : {isLoading: margin.isLoading || currcir.isLoading}, finraToCurrencyValueStr, finraToCurrencyStatus, finraToCurrencyText), history: finraToCurrencyHistory },
+      finraToCurrency: { ...formatFred(isFinraError ? {isError:true} : {isLoading: false}, finraToCurrencyValueStr, finraToCurrencyStatus, finraToCurrencyText), history: finraToCurrencyHistory },
       spyToM2: { ...formatFred(m2.isError ? {isError:true} : {isLoading: m2.isLoading}, spyToM2ValueStr, spyToM2Status, spyToM2Text), history: spyToM2History },
       tips: { ...formatFred(tipsData, tipsData.current ? tipsData.current.toFixed(2)+'%' : 'N/A', tipsStatus, tipsText), history: tipsData.history },
       spyToCurrency: { history: spyToCurrencyHistory },

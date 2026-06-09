@@ -138,9 +138,9 @@ async function DashboardDataGrid({ finmindKey }: { finmindKey: string }) {
         <IndicatorCard spyHistory={data.spy.history} title="SKEW 黑天鵝指數" value={data.skew.value} status={data.skew.status} statusText={data.skew.text} history={data.skew.history} 
           description="衡量市場對極端尾部風險的定價，大於 140 代表大戶正瘋狂避險。"
           criteria={{ red: '> 140', yellow: '130-140', green: '< 130' }} />
-        <IndicatorCard spyHistory={data.spy.history} title="信用利差 (High Yield)" value={data.creditSpreads.value} status={data.creditSpreads.status} statusText={data.creditSpreads.text} history={data.creditSpreads.history} 
-          description="垃圾債與無風險公債利差。急速飆高代表邊緣企業融資極度困難。"
-          criteria={{ red: '> 6%', yellow: '4.5-6%', green: '< 4.5%' }} />
+        <IndicatorCard spyHistory={data.spy.history} title="企業債信用利差 (BAA10Y)" value={data.creditSpreads.value} status={data.creditSpreads.status} statusText={data.creditSpreads.text} history={data.creditSpreads.history} 
+          description="Moody's Baa級企業債與10年期公債利差。飆高代表企業融資困難，具備40年以上歷史數據。"
+          criteria={{ red: '> 3.5%', yellow: '2.5-3.5%', green: '< 2.5%' }} />
         <IndicatorCard spyHistory={data.spy.history} title="CNN 恐懼與貪婪指數" value={data.fearGreed.value} status={data.fearGreed.status} statusText={data.fearGreed.text} history={data.fearGreed.history} 
           description="綜合動能與避險情緒。長期處於 >75 以上，代表市場被非理性貪婪 (FOMO) 主導。"
           criteria={{ red: '> 75', yellow: '25-75', green: '< 25' }} />

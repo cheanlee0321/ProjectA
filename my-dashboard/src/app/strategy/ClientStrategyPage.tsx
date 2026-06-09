@@ -163,18 +163,18 @@ export default function ClientStrategyPage({ macroCardsNode }: { macroCardsNode?
                 {/* Part 1 */}
                 <section>
                   <h4 className="text-xl font-bold text-amber-300 mb-4 border-b border-slate-700/50 pb-2">
-                    為什麼選擇 M0 而不是 M1 或 M2？
+                    為什麼選擇「流通貨幣 (Currency in Circulation)」做為分母？
                   </h4>
                   <p className="text-slate-300 mb-6 leading-relaxed">
-                    在衡量「投機熱錢」相對於「流動性水池」的比例時，不同的貨幣供給代表了不同性質的資金：
+                    在衡量「投機熱錢 (FINRA)」相對於「流動性水池」的比例時，不同的貨幣供給代表了不同性質的資金：
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-slate-900/40 p-6 rounded-xl border border-slate-700 shadow-inner">
-                      <div className="font-bold text-emerald-400 mb-1 text-lg">M0 (基礎貨幣)</div>
-                      <p className="text-xs text-slate-400 mb-4 pb-2 border-b border-slate-700/50">實體貨幣 + 銀行準備金</p>
+                      <div className="font-bold text-emerald-400 mb-1 text-lg">流通貨幣 (Currency in Circulation)</div>
+                      <p className="text-xs text-slate-400 mb-4 pb-2 border-b border-slate-700/50">實體現金 (剔除銀行準備金)</p>
                       <ul className="text-sm text-slate-300 space-y-3 list-none pl-0">
-                        <li className="flex items-start gap-2"><span className="text-emerald-400 mt-0.5">✓</span> 最純粹的「高能貨幣」，是 Fed 能絕對控制的源頭活水。銀行準備金更是華爾街加槓桿的最底層基石。</li>
-                        <li className="flex items-start gap-2"><span className="text-emerald-400 mt-0.5">✓</span> 將瘋狂的散戶槓桿與最底層流動性對比，能最敏銳地偵測出「底層枯竭但槓桿高舉」的崩盤前兆。</li>
+                        <li className="flex items-start gap-2"><span className="text-emerald-400 mt-0.5">✓</span> 最純粹的實體經濟底層活水。它隨經濟自然增長，不受聯準會 QE 大量印鈔進「銀行準備金」的數字扭曲。</li>
+                        <li className="flex items-start gap-2"><span className="text-emerald-400 mt-0.5">✓</span> 這是我們回測能橫跨 2000、2008、2021 年三次大泡沫的秘密：剔除準備金，才能讓 0.40 這個危險閾值在 QE 時代依然精準有效。</li>
                       </ul>
                     </div>
                     <div className="bg-slate-900/40 p-6 rounded-xl border border-rose-900/30">
